@@ -13,6 +13,8 @@ namespace E_CommerceDB
         public DateTime created_at { get; set; }
         public DateTime modified_at { get; set; }
         public DateTime deleted_at { get; set; }
+        public virtual ICollection<Product> products { get; set; }
+
 
     }
 }
