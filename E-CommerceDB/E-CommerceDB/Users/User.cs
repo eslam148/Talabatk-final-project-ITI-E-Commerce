@@ -17,5 +17,7 @@ namespace E_CommerceDB
 
         public ICollection<UserPayment> user_payment { get; set; }
 
+        public ICollection<Order_Details> order_Details { get; set; }
+
     }
 }

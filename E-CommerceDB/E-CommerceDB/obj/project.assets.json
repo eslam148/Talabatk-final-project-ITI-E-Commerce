@@ -7252,19 +7252,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Elnoby\\.nuget\\packages\\": {}
+    "C:\\Users\\Eslam Alamir\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Education Materials\\1.ITI\\ASP.NET\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj",
+      "projectUniqueName": "D:\\ITI Sohage .NET\\final-project-ITI-E-Commerce\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj",
       "projectName": "E-CommerceDB",
-      "projectPath": "E:\\Education Materials\\1.ITI\\ASP.NET\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj",
-      "packagesPath": "C:\\Users\\Elnoby\\.nuget\\packages\\",
-      "outputPath": "E:\\Education Materials\\1.ITI\\ASP.NET\\E-CommerceDB\\E-CommerceDB\\obj\\",
+      "projectPath": "D:\\ITI Sohage .NET\\final-project-ITI-E-Commerce\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj",
+      "packagesPath": "C:\\Users\\Eslam Alamir\\.nuget\\packages\\",
+      "outputPath": "D:\\ITI Sohage .NET\\final-project-ITI-E-Commerce\\E-CommerceDB\\E-CommerceDB\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Elnoby\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Eslam Alamir\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7343,7 +7343,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100-rc.1.22431.12\\RuntimeIdentifierGraph.json"
       }
     }
   }
