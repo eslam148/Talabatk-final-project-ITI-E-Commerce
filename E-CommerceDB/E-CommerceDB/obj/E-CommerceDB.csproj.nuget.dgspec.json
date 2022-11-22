@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Education Materials\\1.ITI\\ASP.NET\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj": {}
+    "F:\\db f project\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj": {}
   },
   "projects": {
-    "E:\\Education Materials\\1.ITI\\ASP.NET\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj": {
+    "F:\\db f project\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Education Materials\\1.ITI\\ASP.NET\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj",
+        "projectUniqueName": "F:\\db f project\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj",
         "projectName": "E-CommerceDB",
-        "projectPath": "E:\\Education Materials\\1.ITI\\ASP.NET\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj",
-        "packagesPath": "C:\\Users\\Elnoby\\.nuget\\packages\\",
-        "outputPath": "E:\\Education Materials\\1.ITI\\ASP.NET\\E-CommerceDB\\E-CommerceDB\\obj\\",
+        "projectPath": "F:\\db f project\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj",
+        "packagesPath": "C:\\Users\\motaheda\\.nuget\\packages\\",
+        "outputPath": "F:\\db f project\\E-CommerceDB\\E-CommerceDB\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Elnoby\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\motaheda\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
