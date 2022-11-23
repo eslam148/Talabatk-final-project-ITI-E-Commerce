@@ -12,7 +12,14 @@ namespace E_CommerceDB
         public int SessionId { get; set; }
         public int ProductId { get; set; }
         public int Quantity { get; set; }
+        public int Product_id { get; set; }
+
         public DateTime CreatedAt { get; set; }
         public DateTime ModefiedAt { get; set; }
+
+        public virtual Product Product { get; set; }
+
+        public virtual ShoppingSession ShoppingSession { get; set; }
+
     }
 }

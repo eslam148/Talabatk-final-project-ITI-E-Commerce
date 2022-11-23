@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E_CommerceDB.Payment_Details
+namespace E_CommerceDB
 {
     public class PaymentDetails
     {
@@ -15,6 +15,6 @@ namespace E_CommerceDB.Payment_Details
         public DateTime created_at { get; set; }
         public DateTime modified_at { get; set; }
 
-        //object of orderdetails
+        public virtual Order_Details Order_Details { get; set; }
     }
 }

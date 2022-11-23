@@ -16,7 +16,7 @@ namespace E_CommerceDB.Order_Items
             builder.HasKey(i => i.id);
             builder.Property(i => i.id).IsRequired().ValueGeneratedOnAdd();
             builder.Property(i => i.Quantity).IsRequired();
-            builder.Property(i => i.Order_id).IsRequired();
+            builder.Property(i => i.Order_Details_id).IsRequired();
             builder.Property(i => i.Product_id).IsRequired();
             builder.Property(i => i.created_at).IsRequired();
             builder.Property(i => i.modified_at).IsRequired();

@@ -10,8 +10,12 @@ namespace E_CommerceDB
     {
         public int Id { get; set; }
         public decimal total { get; set; }
-        public int UserId { get; set; }
+        public String UserId { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime ModifiedAt { get; set; }
+
+        public virtual User user { get; set; }
+
+        public ICollection<CartItem> CartItem { get; set; }
     }
 }

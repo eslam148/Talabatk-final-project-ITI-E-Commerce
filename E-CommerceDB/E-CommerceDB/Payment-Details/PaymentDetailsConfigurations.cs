@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E_CommerceDB.Payment_Details
+namespace E_CommerceDB
 {
     public class PaymentDetailsConfigurations : IEntityTypeConfiguration<PaymentDetails>
     {
