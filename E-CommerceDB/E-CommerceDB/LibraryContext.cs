@@ -17,6 +17,9 @@ namespace E_CommerceDB
         public DbSet<Product> Product { get; set; }
         public DbSet<UserAddress> UserAddress { get; set; }
         public DbSet<UserPayment> UserPayment { get; set; }
+        public DbSet<ShoppingSession> ShoppingSession { get; set; }
+        public DbSet<CartItem> CartItem { get; set; }
+
 
         public LibraryContext(DbContextOptions options) : base(options)
         { }
@@ -31,6 +34,9 @@ namespace E_CommerceDB
             new ProductConfigurations().Configure(modelBuilder.Entity<Product>());
             new UserAddressConfigurations().Configure(modelBuilder.Entity<UserAddress>());
             new UserPaymentCongigurations().Configure(modelBuilder.Entity<UserPayment>());
+            new ShoppingSessionConfigurations().Configure(modelBuilder.Entity<ShoppingSession>());
+            new CartItemConfigurations().Configure(modelBuilder.Entity<CartItem>());
+
 
             modelBuilder.MappRelationships();
             modelBuilder.SeedData();
