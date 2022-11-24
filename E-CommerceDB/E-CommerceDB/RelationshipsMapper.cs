@@ -1,4 +1,5 @@
 ﻿using E_CommerceDB.Order_Items;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -42,27 +43,29 @@ namespace E_CommerceDB
                         .HasForeignKey<CartItem>(i => i.Product_id)
                         .IsRequired().OnDelete(DeleteBehavior.Cascade);
 
-            builder.Entity<ShoppingSession>()
-                        .HasOne(i => i.user)
-                        .WithOne(i => i.ShoppingSession)
-                        .HasForeignKey<ShoppingSession>(i => i.UserId)
-                        .IsRequired().OnDelete(DeleteBehavior.Cascade);
+            //builder.Entity<ShoppingSession>()
+            //            .HasOne(i => i.user)
+            //            .WithOne(i => i.ShoppingSession)
+            //            .HasForeignKey<ShoppingSession>(i => i.UserId)
+            //            .IsRequired().OnDelete(DeleteBehavior.Cascade);
 
-            builder.Entity<UserAddress>()
-                         .HasOne(i => i.user)
-                         .WithMany(i => i.UserAddress)
-                         .HasForeignKey(i => i.user_id)
-                         .IsRequired().OnDelete(DeleteBehavior.Cascade);
+            //builder.Entity<UserAddress>()
+            //             .HasOne(i => i.user)
+            //             .WithMany(i => i.UserAddress)
+            //             .HasForeignKey(i => i.user_id)
+            //             .IsRequired().OnDelete(DeleteBehavior.Cascade);
 
-            builder.Entity<UserPayment>()
-                        .HasOne(i => i.user)
-                        .WithMany(i => i.UserPayment)
-                        .HasForeignKey(i => i.user_id)
-                        .IsRequired().OnDelete(DeleteBehavior.Cascade);
+            //builder.Entity<UserPayment>()
+            //            .HasOne(i => i.user)
+            //            .WithMany(i => i.UserPayment)
+            //            .HasForeignKey(i => i.user_id)
+            //            .IsRequired().OnDelete(DeleteBehavior.Cascade);
 
-            builder.Entity<Order_Details>()
-                      .HasOne(i => i.user)
-                      .WithOne(i => i.Order_Details)
+
+
+            builder.Entity<User>()
+                      .HasOne(i => i.order_Details)
+                      .WithOne(i => i.user)
                       .HasForeignKey<Order_Details>(i => i.User_id)
                       .IsRequired().OnDelete(DeleteBehavior.Cascade);
 

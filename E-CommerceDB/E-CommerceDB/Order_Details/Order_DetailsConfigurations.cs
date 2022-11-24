@@ -18,6 +18,8 @@ namespace E_CommerceDB
             builder.Property(x => x.Total).IsRequired();
             builder.Property(x => x.Created_at).IsRequired();
             builder.Property(x => x.Modified_at).IsRequired();
+            builder.Property(x => x.User_id);
+
         }
     }
 }

@@ -355,25 +355,19 @@ namespace E_CommerceDB.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    User_id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    User_id = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Total = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Payment_id = table.Column<int>(type: "int", nullable: false),
                     Created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Modified_at = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    userId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Order_Details", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Order_Details_AspNetUsers_User_id",
-                        column: x => x.User_id,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Order_Details_AspNetUsers_UserId",
-                        column: x => x.UserId,
+                        name: "FK_Order_Details_AspNetUsers_userId",
+                        column: x => x.userId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id");
                     table.ForeignKey(
@@ -391,7 +385,6 @@ namespace E_CommerceDB.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     SessionId = table.Column<int>(type: "int", nullable: false),
-                    ProductId = table.Column<int>(type: "int", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false),
                     Product_id = table.Column<int>(type: "int", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -500,15 +493,9 @@ namespace E_CommerceDB.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Order_Details_User_id",
+                name: "IX_Order_Details_userId",
                 table: "Order_Details",
-                column: "User_id",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Order_Details_UserId",
-                table: "Order_Details",
-                column: "UserId");
+                column: "userId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_OrderItems_Order_Details_id",

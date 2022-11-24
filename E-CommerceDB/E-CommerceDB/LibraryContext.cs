@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using E_CommerceDB.Order_Items;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -22,12 +23,15 @@ namespace E_CommerceDB
         public DbSet<CartItem> CartItem { get; set; }
         public DbSet<OrderItems> OrderItems { get; set; }
         public DbSet<PaymentDetails> Payment_Details { get; set; }
+        //public DbSet<IdentityUser> IdentityUser { get; set; }
+        //public DbSet<User> User { get; set; }
+
 
         //public LibraryContext(DbContextOptions options) : base(options)
         //{ 
 
         //}
-      
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

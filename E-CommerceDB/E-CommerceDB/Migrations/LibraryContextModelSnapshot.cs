@@ -36,9 +36,6 @@ namespace E_CommerceDB.Migrations
                     b.Property<DateTime>("ModefiedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Product_id")
                         .HasColumnType("int");
 
@@ -169,11 +166,10 @@ namespace E_CommerceDB.Migrations
                     b.Property<decimal>("Total")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("User_id")
-                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("userId")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -181,10 +177,7 @@ namespace E_CommerceDB.Migrations
                     b.HasIndex("Payment_id")
                         .IsUnique();
 
-                    b.HasIndex("UserId");
-
-                    b.HasIndex("User_id")
-                        .IsUnique();
+                    b.HasIndex("userId");
 
                     b.ToTable("Order_Details", (string)null);
                 });
@@ -657,15 +650,9 @@ namespace E_CommerceDB.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("E_CommerceDB.User", null)
-                        .WithMany("order_Details")
-                        .HasForeignKey("UserId");
-
                     b.HasOne("E_CommerceDB.User", "user")
-                        .WithOne("Order_Details")
-                        .HasForeignKey("E_CommerceDB.Order_Details", "User_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("order_Details")
+                        .HasForeignKey("userId");
 
                     b.Navigation("PaymentDetails");
 
@@ -849,8 +836,6 @@ namespace E_CommerceDB.Migrations
 
             modelBuilder.Entity("E_CommerceDB.User", b =>
                 {
-                    b.Navigation("Order_Details");
-
                     b.Navigation("ShoppingSession");
 
                     b.Navigation("UserAddress");
