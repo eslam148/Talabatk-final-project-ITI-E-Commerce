@@ -16,6 +16,7 @@ namespace E_CommerceDB
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).ValueGeneratedOnAdd().IsRequired();
             builder.Property(x => x.Quantity).IsRequired();
+            builder.Property(x => x.SelledQuantity).IsRequired();
             builder.Property(x => x.created_at).IsRequired();
             builder.Property(x => x.modified_at).IsRequired();
             builder.Property(x => x.deleted_at).IsRequired();

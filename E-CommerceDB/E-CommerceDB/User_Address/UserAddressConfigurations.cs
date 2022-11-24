@@ -22,7 +22,7 @@ namespace E_CommerceDB
             builder.Property(x => x.address_line2).IsRequired();
             builder.Property(x => x.postal_code).IsRequired();
             builder.Property(x => x.telephone).IsRequired();
-            builder.Property(x => x.user_id).IsRequired();
+           // builder.Property(x => x.user_id).IsRequired();
         }
     }
 }

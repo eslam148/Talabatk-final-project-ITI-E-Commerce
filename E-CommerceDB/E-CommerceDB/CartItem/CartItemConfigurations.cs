@@ -21,6 +21,8 @@ namespace E_CommerceDB
             builder.Property(x => x.ModefiedAt).IsRequired();
             builder.Property(x => x.SessionId).IsRequired();
             builder.Property(x => x.Product_id).IsRequired();
+            builder.Property(x => x.IsDeleted).IsRequired();
+
         }
     }
 }

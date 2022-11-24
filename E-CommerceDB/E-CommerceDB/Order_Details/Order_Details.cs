@@ -10,7 +10,7 @@ namespace E_CommerceDB
     public class Order_Details
     {
         public int Id { get; set; }
-        public String User_id { get; set; }
+      //  public String User_id { get; set; }
         public decimal Total { get; set; }
         public int Payment_id { get; set; }
 

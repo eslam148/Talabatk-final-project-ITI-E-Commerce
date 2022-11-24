@@ -17,7 +17,7 @@ namespace E_CommerceDB
         public string telephone { get; set; }
         public string mobile { get; set; }
 
-        public String user_id { get; set; }
+       // public String user_id { get; set; }
 
         public  User user { get; set; }
 

@@ -15,6 +15,7 @@ namespace E_CommerceDB
 
         public DateTime CreatedAt { get; set; }
         public DateTime ModefiedAt { get; set; }
+        public bool IsDeleted { get; set; } = false;
 
         public virtual Product Product { get; set; }
 

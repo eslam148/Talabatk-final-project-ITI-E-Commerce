@@ -19,7 +19,9 @@ namespace E_CommerceDB
             builder.Property(x => x.account_no).IsRequired();
             builder.Property(x => x.provider).IsRequired();
             builder.Property(x => x.expire_date).IsRequired();
-            builder.Property(x => x.user_id).IsRequired();
+            builder.Property(x => x.IsDeleted).IsRequired();
+
+            //builder.Property(x => x.user_id).IsRequired();
         }
     }
 }

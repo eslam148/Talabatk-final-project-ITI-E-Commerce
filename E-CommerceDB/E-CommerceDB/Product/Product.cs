@@ -20,12 +20,20 @@ namespace E_CommerceDB
         public int category_Id { get; set; }
         public int inventory_Id { get; set; }
         public int discount_Id { get; set; }
+        public int Progress { get; set; } = 0;
+        public bool IsDeleted { get; set; } = false;
+
         public virtual Category Category { get; set; }
         public virtual Inventory inventory { get; set; }
         public virtual Discount discount { get; set; }
         public virtual OrderItems OrderItems { get; set; }
 
         public virtual CartItem CartItem { get; set; }
+
+        public virtual ICollection<Complaints> Complaints { get; set; }
+
+        public virtual ICollection<Images> Images { get; set; }
+
 
 
 

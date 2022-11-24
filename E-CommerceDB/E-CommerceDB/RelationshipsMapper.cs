@@ -63,11 +63,11 @@ namespace E_CommerceDB
 
 
 
-            builder.Entity<User>()
-                      .HasOne(i => i.order_Details)
-                      .WithOne(i => i.user)
-                      .HasForeignKey<Order_Details>(i => i.User_id)
-                      .IsRequired().OnDelete(DeleteBehavior.Cascade);
+            //builder.Entity<User>()
+            //          .HasOne(i => i.order_Details)
+            //          .WithOne(i => i.user)
+            //          .HasForeignKey<Order_Details>(i => i.User_id)
+            //          .IsRequired().OnDelete(DeleteBehavior.Cascade);
 
             builder.Entity<CartItem>()
                        .HasOne(i => i.ShoppingSession)
@@ -86,6 +86,24 @@ namespace E_CommerceDB
                        .WithMany(i => i.OrderItems)
                        .HasForeignKey(i => i.Order_Details_id)
                        .IsRequired().OnDelete(DeleteBehavior.Cascade);
+
+            builder.Entity<SubCategories>()
+                    .HasOne(i => i.Category)
+                    .WithMany(i => i.SubCategories)
+                    .HasForeignKey(i => i.CategoryId)
+                    .IsRequired().OnDelete(DeleteBehavior.Cascade);
+
+            builder.Entity<Complaints>()
+                   .HasOne(i => i.Product)
+                   .WithMany(i => i.Complaints)
+                   .HasForeignKey(i => i.ProductId)
+                   .IsRequired().OnDelete(DeleteBehavior.Cascade);
+
+            builder.Entity<Images>()
+                 .HasOne(i => i.Product)
+                 .WithMany(i => i.Images)
+                 .HasForeignKey(i => i.ProductId)
+                 .IsRequired().OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

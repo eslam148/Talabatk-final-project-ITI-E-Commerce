@@ -20,6 +20,8 @@ namespace E_CommerceDB.Order_Items
             builder.Property(i => i.Product_id).IsRequired();
             builder.Property(i => i.created_at).IsRequired();
             builder.Property(i => i.modified_at).IsRequired();
+            builder.Property(x => x.IsDeleted).IsRequired();
+
         }
     }
 }
