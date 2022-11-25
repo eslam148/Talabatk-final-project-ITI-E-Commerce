@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ITI Sohage .NET\\final-project-ITI-E-Commerce\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\E-Commerce-Admin-Dashboard-MVC.csproj": {}
+    "D:\\ITI Sohage .NET\\FinalProject\\final-project-ITI-E-Commerce\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\E-Commerce-Admin-Dashboard-MVC.csproj": {}
   },
   "projects": {
-    "D:\\ITI Sohage .NET\\final-project-ITI-E-Commerce\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\E-Commerce-Admin-Dashboard-MVC.csproj": {
+    "D:\\ITI Sohage .NET\\FinalProject\\final-project-ITI-E-Commerce\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\E-Commerce-Admin-Dashboard-MVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ITI Sohage .NET\\final-project-ITI-E-Commerce\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\E-Commerce-Admin-Dashboard-MVC.csproj",
+        "projectUniqueName": "D:\\ITI Sohage .NET\\FinalProject\\final-project-ITI-E-Commerce\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\E-Commerce-Admin-Dashboard-MVC.csproj",
         "projectName": "E-Commerce-Admin-Dashboard-MVC",
-        "projectPath": "D:\\ITI Sohage .NET\\final-project-ITI-E-Commerce\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\E-Commerce-Admin-Dashboard-MVC.csproj",
+        "projectPath": "D:\\ITI Sohage .NET\\FinalProject\\final-project-ITI-E-Commerce\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\E-Commerce-Admin-Dashboard-MVC.csproj",
         "packagesPath": "C:\\Users\\Eslam Alamir\\.nuget\\packages\\",
-        "outputPath": "D:\\ITI Sohage .NET\\final-project-ITI-E-Commerce\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\obj\\",
+        "outputPath": "D:\\ITI Sohage .NET\\FinalProject\\final-project-ITI-E-Commerce\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Eslam Alamir\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

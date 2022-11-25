@@ -1,0 +1,18 @@
+@import "../common/light/common";
+@import "variables";
+@import "vertical-wrapper";
+@import "sidebar";
+@import "navbar";
+@import "layouts";
+@import "settings-panel";
+@import "../../css/maps/horizontal-layout/style";
+@import "../../css/maps/horizontal-layout-dark/style";
+@import "../../css/maps/horizontal-layout-light/style";
+@import "../../css/maps/vertical-layout-dark/style";
+@import "../../css/maps/vertical-layout-light/style";
+
+
+@mixin display-flex($display: flex) {
+     @include flexbox((display: $display));
+    
+}

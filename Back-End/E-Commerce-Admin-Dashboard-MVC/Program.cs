@@ -7,6 +7,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
