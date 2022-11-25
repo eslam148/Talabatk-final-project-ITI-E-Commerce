@@ -178,11 +178,11 @@ namespace E_CommerceDB.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
-
-                    b.Property<byte[]>("image")
-                        .HasColumnType("varbinary(max)");
 
                     b.HasKey("Id");
 
@@ -477,6 +477,9 @@ namespace E_CommerceDB.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("ProfilieImage")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Role")
                         .HasColumnType("nvarchar(max)");

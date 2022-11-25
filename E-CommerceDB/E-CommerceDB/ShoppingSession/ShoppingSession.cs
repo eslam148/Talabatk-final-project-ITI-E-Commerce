@@ -16,6 +16,6 @@ namespace E_CommerceDB
 
         public virtual User user { get; set; }
 
-        public ICollection<CartItem> CartItem { get; set; }
+        public virtual ICollection<CartItem> CartItem { get; set; }
     }
 }

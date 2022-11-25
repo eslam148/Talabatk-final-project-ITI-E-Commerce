@@ -1,4 +1,5 @@
 ﻿using E_Commerce_Admin_Dashboard_MVC.Models;
+using E_CommerceDB;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,15 +8,32 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private LibraryContext db;
+        IConfiguration con;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger , LibraryContext _db, IConfiguration _con)
         {
+            db = _db;
+            con = _con;
             _logger = logger;
         }
 
         public IActionResult Index()
         {
-            return View();
+            //var x = db.Product.ToArray();/
+            Category c = new Category
+            {
+                Name= "Phone",
+                Description="Electronic Divice",
+                created_at = DateTime.Now,
+                modified_at = DateTime.Now,
+                deleted_at = DateTime.Now,
+                IsDeleted = false
+            };
+            //db.Category.Add(c);
+            //db.SaveChanges();
+            var x = db.Category.ToList();
+            return View(x);
         }
 
         public IActionResult Privacy()

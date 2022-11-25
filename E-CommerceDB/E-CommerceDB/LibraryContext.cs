@@ -12,25 +12,24 @@ namespace E_CommerceDB
 {
     public class LibraryContext: IdentityDbContext<User>
     {
-        public DbSet<Category> Category { get; set; }
-        public DbSet<Discount> Discount { get; set; }
-        public DbSet<Inventory> Inventory { get; set; }
-        public DbSet<Order_Details> Order_Details { get; set; }
-        public DbSet<Product> Product { get; set; }
-        public DbSet<UserAddress> UserAddress { get; set; }
-        public DbSet<UserPayment> UserPayment { get; set; }
-        public DbSet<ShoppingSession> ShoppingSession { get; set; }
-        public DbSet<CartItem> CartItem { get; set; }
-        public DbSet<OrderItems> OrderItems { get; set; }
-        public DbSet<PaymentDetails> Payment_Details { get; set; }
-        //public DbSet<IdentityUser> IdentityUser { get; set; }
-        //public DbSet<User> User { get; set; }
+        public virtual DbSet<Category> Category { get; set; }
+        public virtual DbSet<Discount> Discount { get; set; }
+        public virtual DbSet<Inventory> Inventory { get; set; }
+        public virtual DbSet<Order_Details> Order_Details { get; set; }
+        public virtual DbSet<Product> Product { get; set; }
+        public virtual DbSet<UserAddress> UserAddress { get; set; }
+        public virtual DbSet<UserPayment> UserPayment { get; set; }
+        public virtual DbSet<ShoppingSession> ShoppingSession { get; set; }
+        public virtual DbSet<CartItem> CartItem { get; set; }
+        public virtual DbSet<OrderItems> OrderItems { get; set; }
+        public virtual DbSet<PaymentDetails> Payment_Details { get; set; }
 
 
-        //public LibraryContext(DbContextOptions options) : base(options)
-        //{ 
 
-        //}
+        public LibraryContext(DbContextOptions options) : base(options)
+        {
+
+        }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -50,14 +49,14 @@ namespace E_CommerceDB
 
 
             modelBuilder.MappRelationships();
-           // modelBuilder.SeedData();
+            modelBuilder.SeedData();
             base.OnModelCreating(modelBuilder);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=DB;Integrated Security=True");
+           // optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=DB;Integrated Security=True");
         }
     }
 }

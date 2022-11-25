@@ -1,3 +1,6 @@
+using E_CommerceDB;
+using Microsoft.EntityFrameworkCore;
+
 namespace E_Commerce_Admin_Dashboard_MVC
 {
     public class Program
@@ -8,6 +11,11 @@ namespace E_Commerce_Admin_Dashboard_MVC
 
             // Add services to the container.
             builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+            builder.Services.AddDbContext<LibraryContext>(options =>
+            {
+                options.UseLazyLoadingProxies()
+                    .UseSqlServer(builder.Configuration.GetConnectionString("DBKey"));
+            });
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();

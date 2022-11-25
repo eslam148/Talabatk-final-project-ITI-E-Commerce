@@ -17,7 +17,7 @@ namespace E_CommerceDB
         public DateTime Created_at { get; set; }
         public DateTime Modified_at { get; set; }
 
-        public  User user { get; set; }
+        public virtual User user { get; set; }
 
         public virtual PaymentDetails PaymentDetails { get; set; }
 
