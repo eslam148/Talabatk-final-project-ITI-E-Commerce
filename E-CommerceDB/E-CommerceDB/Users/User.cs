@@ -15,6 +15,7 @@ namespace E_CommerceDB
         public DateTime Created_at { get; set; }
         public DateTime modified_at { get; set; }
         public String Role { get; set; }
+        public String ProfilieImage { get; set; } = "https://www.w3schools.com/w3images/avatar3.png";
         public bool IsDeleted { get; set; } = false;
 
         //public virtual ICollection<UserAddress> user_address { get; set; }

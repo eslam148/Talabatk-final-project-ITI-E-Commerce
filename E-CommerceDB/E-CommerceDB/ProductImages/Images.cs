@@ -9,7 +9,7 @@ namespace E_CommerceDB
     public class Images
     {
         public int Id { get; set; }
-        public byte[] image { get; set; }
+        public String Image { get; set; }
 
         public int ProductId { get; set; }
 

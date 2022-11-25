@@ -15,7 +15,7 @@ namespace E_CommerceDB
             builder.ToTable("ProductImages");
             builder.HasKey(x => x.Id);
             builder.Property(x=>x.Id).ValueGeneratedOnAdd().IsRequired();
-            builder.Property(x => x.image).IsRequired();
+            builder.Property(x => x.Image).IsRequired();
             builder.Property(x => x.ProductId).IsRequired();
         }
     }
