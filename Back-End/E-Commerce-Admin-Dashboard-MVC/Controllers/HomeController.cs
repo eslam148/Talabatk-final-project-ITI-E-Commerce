@@ -25,13 +25,9 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
             {
                 Name= "Phone",
                 Description="Electronic Divice",
-                created_at = DateTime.Now,
-                modified_at = DateTime.Now,
-                deleted_at = DateTime.Now,
-                IsDeleted = false
             };
-            //db.Category.Add(c);
-            //db.SaveChanges();
+            db.Category.Add(c);
+            db.SaveChanges();
             var x = db.Category.ToList();
             return View(x);
         }

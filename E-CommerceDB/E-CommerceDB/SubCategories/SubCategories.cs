@@ -10,7 +10,7 @@ namespace E_CommerceDB
     {
         public int Id { get; set; }
         public string BrandName { get; set; }
-        public bool IsDeleted { get; set; }
+        public bool? IsDeleted { get; set; } = false;
 
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
