@@ -10,6 +10,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace E_CommerceDB
 {
+   public enum progress
+    {
+        pending,
+        Reject,
+        Accept
+    }
     public class LibraryContext: IdentityDbContext<User>
     {
         public virtual DbSet<Category> Category { get; set; }
@@ -23,7 +29,9 @@ namespace E_CommerceDB
         public virtual DbSet<CartItem> CartItem { get; set; }
         public virtual DbSet<OrderItems> OrderItems { get; set; }
         public virtual DbSet<PaymentDetails> Payment_Details { get; set; }
-
+        public virtual DbSet<Complaints> Complaints { get; set; }
+        public virtual DbSet<Images> ProductImages { get; set; }
+        public virtual DbSet<SubCategories> SubCategories { get; set; }
 
 
         public LibraryContext(DbContextOptions options) : base(options)
@@ -56,7 +64,7 @@ namespace E_CommerceDB
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-           // optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=DB;Integrated Security=True");
+            //optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=DB;Integrated Security=True");
         }
     }
 }

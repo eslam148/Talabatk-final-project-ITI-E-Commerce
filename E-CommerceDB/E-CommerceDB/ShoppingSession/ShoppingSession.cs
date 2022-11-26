@@ -13,6 +13,7 @@ namespace E_CommerceDB
         //public String UserId { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime ModifiedAt { get; set; }
+        public bool? IsDeleted { get; set; } = false;
 
         public virtual User user { get; set; }
 

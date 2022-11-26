@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = F:\1\Course\ITI\FinalProject\Final\Back-End\E-Commerce-Admin-Dashboard-MVC
 build_property._RazorSourceGeneratorDebug = 
 
+[F:/1/Course/ITI/FinalProject/Final/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Category/AddCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQWRkQ2F0ZWdvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/1/Course/ITI/FinalProject/Final/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

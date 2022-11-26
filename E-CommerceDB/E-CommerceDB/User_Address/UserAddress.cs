@@ -16,8 +16,9 @@ namespace E_CommerceDB
         public string postal_code { get; set; }
         public string telephone { get; set; }
         public string mobile { get; set; }
+        public bool? IsDeleted { get; set; } = false;
 
-       // public String user_id { get; set; }
+        // public String user_id { get; set; }
 
         public virtual User user { get; set; }
 
