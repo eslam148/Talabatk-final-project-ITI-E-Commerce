@@ -1,0 +1,7 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<Category>
+@foreach(var t in Model){
+    <div>@t.Name</div>
+}

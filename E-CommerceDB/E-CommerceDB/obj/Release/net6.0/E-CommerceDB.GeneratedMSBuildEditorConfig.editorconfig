@@ -1,0 +1,15 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+<<<<<<< HEAD:Back-End/DataBase/obj/Debug/net6.0/DataBase.GeneratedMSBuildEditorConfig.editorconfig
+build_property.RootNamespace = DataBase
+build_property.ProjectDir = F:\1\Course\ITI\FinalProject\Final\Back-End\DataBase\
+=======
+build_property.RootNamespace = E_CommerceDB
+build_property.ProjectDir = D:\ITI Sohage .NET\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\
+>>>>>>> main:E-CommerceDB/E-CommerceDB/obj/Release/net6.0/E-CommerceDB.GeneratedMSBuildEditorConfig.editorconfig
