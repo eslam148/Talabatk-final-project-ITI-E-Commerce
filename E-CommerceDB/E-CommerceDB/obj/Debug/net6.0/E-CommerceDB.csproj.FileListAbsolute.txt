@@ -40,3 +40,17 @@ F:\1\Course\ITI\FinalProject\Final\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\re
 F:\1\Course\ITI\FinalProject\Final\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.pdb
 F:\1\Course\ITI\FinalProject\Final\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.genruntimeconfig.cache
 F:\1\Course\ITI\FinalProject\Final\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\ref\E-CommerceDB.dll
+E:\test Fproj\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.deps.json
+E:\test Fproj\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.runtimeconfig.json
+E:\test Fproj\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.dll
+E:\test Fproj\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.pdb
+E:\test Fproj\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.csproj.AssemblyReference.cache
+E:\test Fproj\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.GeneratedMSBuildEditorConfig.editorconfig
+E:\test Fproj\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.AssemblyInfoInputs.cache
+E:\test Fproj\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.AssemblyInfo.cs
+E:\test Fproj\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.csproj.CoreCompileInputs.cache
+E:\test Fproj\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.dll
+E:\test Fproj\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\refint\E-CommerceDB.dll
+E:\test Fproj\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.pdb
+E:\test Fproj\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.genruntimeconfig.cache
+E:\test Fproj\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\ref\E-CommerceDB.dll
