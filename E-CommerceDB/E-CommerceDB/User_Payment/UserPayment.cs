@@ -14,7 +14,7 @@ namespace E_CommerceDB
         public string provider { get; set; }
         public int account_no { get; set; }
         public DateTime expire_date { get; set; }
-        public bool IsDeleted { get; set; } = false;
+        public bool? IsDeleted { get; set; } = false;
 
         public virtual User user { get; set; }
 

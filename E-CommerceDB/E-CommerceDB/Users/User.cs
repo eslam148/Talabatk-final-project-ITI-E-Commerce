@@ -12,11 +12,11 @@ namespace E_CommerceDB
         
         public string First_Name { get; set; }
         public string Last_Name { get; set; }
-        public DateTime Created_at { get; set; }
-        public DateTime modified_at { get; set; }
+        public DateTime Created_at { get; set; } = DateTime.Now;
+        public DateTime modified_at { get; set; } = DateTime.Now;
         public String Role { get; set; }
         public String ProfilieImage { get; set; } = "https://www.w3schools.com/w3images/avatar3.png";
-        public bool IsDeleted { get; set; } = false;
+        public bool? IsDeleted { get; set; } = false;
 
         //public virtual ICollection<UserAddress> user_address { get; set; }
 

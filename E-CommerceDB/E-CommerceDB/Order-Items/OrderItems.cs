@@ -14,7 +14,7 @@ namespace E_CommerceDB
         public int Quantity { get; set; }
         public DateTime created_at { get; set; }
         public DateTime modified_at { get; set; }
-        public bool IsDeleted { get; set; } = false;
+        public bool? IsDeleted { get; set; } = false;
 
         public virtual Product product { get; set; }
         //orderdetails obj 

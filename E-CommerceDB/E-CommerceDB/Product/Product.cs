@@ -14,14 +14,14 @@ namespace E_CommerceDB
         public string Description { get; set; }
         //public string SKU { get; set; }
         public int Price { get; set; }
-        public DateTime created_at { get; set; }
-        public DateTime modified_at { get; set; }
+        public DateTime created_at { get; set; } = DateTime.Now;
+        public DateTime modified_at { get; set; } = DateTime.Now;
         public DateTime deleted_at { get; set; }
         public int category_Id { get; set; }
         public int inventory_Id { get; set; }
         public int discount_Id { get; set; }
         public int Progress { get; set; } = 0;
-        public bool IsDeleted { get; set; } = false;
+        public bool? IsDeleted { get; set; } = false;
 
         public virtual Category Category { get; set; }
         public virtual Inventory inventory { get; set; }

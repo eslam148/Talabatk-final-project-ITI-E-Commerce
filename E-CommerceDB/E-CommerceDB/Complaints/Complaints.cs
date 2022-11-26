@@ -15,7 +15,7 @@ namespace E_CommerceDB
         public String Noted { get; set; }
         public DateTime Date { get; set; }
         public int Progress { get; set; }
-        public bool IsDeleted { get; set; } = false;
+        public bool? IsDeleted { get; set; } = false;
 
         public virtual Product Product { get; set; }
         public virtual User Seller { get; set; }
