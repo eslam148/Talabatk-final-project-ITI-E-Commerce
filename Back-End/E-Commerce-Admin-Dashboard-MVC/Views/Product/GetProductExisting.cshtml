@@ -1,0 +1,64 @@
+﻿@model IEnumerable<ProductsVM>
+@{
+    ViewData["Title"] = "GetProductExisting";
+}
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                   Name
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Created At
+                </th>
+                 <th>
+                    Modiefied At
+                </th>
+                <th>
+                    Deleted At
+                </th>
+                 <th>
+                    Category Id 
+                </th>
+                <th>
+                    Inventory Id 
+                </th>
+                 <th>
+                    Descount  Id
+                </th>
+                <th>
+                    Progress
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var product in Model)
+            {
+                <tr>
+                    <td>@product.Id</td>
+                    <td>@product.Name</td>
+                    <td>@product.Description</td>
+                    <td>@product.Price</td>
+                    <td>@product.created_at</td>
+                    <td>@product.modified_at</td>
+                    <td>@product.deleted_at</td>
+                    <td>@product.category_Id</td>
+                    <td>@product.inventory_Id</td>
+                    <td>@product.discount_Id</td>
+                    <td>@product.Progress</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
