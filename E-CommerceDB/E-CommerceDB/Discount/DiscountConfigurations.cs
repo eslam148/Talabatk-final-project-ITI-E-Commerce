@@ -20,7 +20,7 @@ namespace E_CommerceDB
             builder.Property(x => x.Disc_Percent).IsRequired();
             builder.Property(x => x.Active).IsRequired();
             builder.Property(x => x.created_at).IsRequired();
-            builder.Property(x => x.deleted_at).IsRequired();
+           // builder.Property(x => x.deleted_at).IsRequired();
             builder.Property(x => x.modified_at).IsRequired();
             builder.Property(x => x.IsDeleted).IsRequired();
 

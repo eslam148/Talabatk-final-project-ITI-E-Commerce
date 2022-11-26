@@ -16,6 +16,7 @@ namespace E_CommerceDB
 
         public DateTime Created_at { get; set; }
         public DateTime Modified_at { get; set; }
+        public bool? IsDeleted { get; set; } = false;
 
         public virtual User user { get; set; }
 

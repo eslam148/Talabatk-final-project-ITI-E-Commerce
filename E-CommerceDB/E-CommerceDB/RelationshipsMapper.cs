@@ -14,9 +14,9 @@ namespace E_CommerceDB
         public static void MappRelationships(this ModelBuilder builder)
         {
             builder.Entity<Product>()
-                          .HasOne(i => i.Category)
+                          .HasOne(i => i.SubCategories)
                           .WithMany(i => i.products)
-                          .HasForeignKey(i => i.category_Id)
+                          .HasForeignKey(i => i.SubCategories_Id)
                           .IsRequired().OnDelete(DeleteBehavior.Cascade);
 
             builder.Entity<Product>()
