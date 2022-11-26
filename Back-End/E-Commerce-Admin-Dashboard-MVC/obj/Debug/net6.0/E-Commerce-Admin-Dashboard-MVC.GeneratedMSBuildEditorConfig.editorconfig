@@ -23,6 +23,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/1/Course/ITI/FinalProject/Final/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Product/GetProductExisting.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxHZXRQcm9kdWN0RXhpc3RpbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/1/Course/ITI/FinalProject/Final/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Product/GetProductSelled.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxHZXRQcm9kdWN0U2VsbGVkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/1/Course/ITI/FinalProject/Final/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
