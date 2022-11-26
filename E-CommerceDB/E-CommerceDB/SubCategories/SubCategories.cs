@@ -14,5 +14,7 @@ namespace E_CommerceDB
 
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
+        public virtual ICollection<Product> products { get; set; }
+
     }
 }

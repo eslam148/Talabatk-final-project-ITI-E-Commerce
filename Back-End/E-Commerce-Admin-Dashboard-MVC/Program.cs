@@ -17,6 +17,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
                     .UseSqlServer(builder.Configuration.GetConnectionString("DBKey"));
             });
             builder.Services.AddTransient<ICategory, CategoryService>();
+            builder.Services.AddTransient<ICategory, CategoryService>();
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();

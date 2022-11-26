@@ -21,8 +21,8 @@ namespace E_CommerceDB
            // builder.Property(x=>x.SKU).IsRequired();
             builder.Property(x => x.Price).IsRequired();
             builder.Property(x => x.Id).IsRequired();
-            builder.Property(x => x.category_Id).IsRequired();
-            builder.Property(x => x.discount_Id).IsRequired();
+            builder.Property(x => x.SubCategories_Id).IsRequired();
+           // builder.Property(x => x.discount_Id).IsRequired();
             builder.Property(x => x.inventory_Id).IsRequired();
             builder.Property(x => x.Progress).IsRequired();
             builder.Property(x => x.created_at).IsRequired();
