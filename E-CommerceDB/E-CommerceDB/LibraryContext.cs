@@ -23,7 +23,9 @@ namespace E_CommerceDB
         public virtual DbSet<CartItem> CartItem { get; set; }
         public virtual DbSet<OrderItems> OrderItems { get; set; }
         public virtual DbSet<PaymentDetails> Payment_Details { get; set; }
-
+        public virtual DbSet<Complaints> Complaints { get; set; }
+        public virtual DbSet<Images> ProductImages { get; set; }
+        public virtual DbSet<SubCategories> SubCategories { get; set; }
 
 
         public LibraryContext(DbContextOptions options) : base(options)
