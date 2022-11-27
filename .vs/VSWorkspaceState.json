@@ -3,12 +3,13 @@
     "",
     "\\Back-End",
     "\\Back-End\\E-Commerce-Admin-Dashboard-MVC",
+    "\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\Controllers",
     "\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\Views",
     "\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\Views\\Home",
     "\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\Views\\Shared",
     "\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\Views\\Shared\\partials",
     "\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\Views\\User"
   ],
-  "SelectedNode": "\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\Views\\User\\GetBuyers.cshtml",
+  "SelectedNode": "\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\Controllers\\UserController.cs",
   "PreviewInSolutionExplorer": false
 }
