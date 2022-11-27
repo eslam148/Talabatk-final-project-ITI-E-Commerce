@@ -8,18 +8,18 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
 {
     public class UserController : Controller
     {
-        
-        LibraryContext db;
-        public UserController(LibraryContext _db)
+
+        private readonly Iuser Iuser;
+        public UserController(Iuser _Iuser)
         {
-            db = _db;
+            Iuser = _Iuser;
         }
 
-
+        
         [HttpGet]
         public IActionResult GetBuyers()
         {
-            var buyers = db.Users.Where(u=>u.Role=="buyer" && u.IsDeleted == false).ToList();
+            var buyers = Iuser.GetAllusers().Where(u => u.Role == "Buyer");
             if (buyers != null)
             {
                 return View(buyers);
@@ -32,7 +32,7 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
         [HttpGet]
         public IActionResult GetSellers()
         {
-            var sellers = db.Users.Where(u => u.Role == "seller" && u.IsDeleted == false).ToList();
+            var sellers= Iuser.GetAllusers().Where(u => u.Role == "Seller");
             if (sellers != null)
             {
                 return View(sellers);
@@ -44,25 +44,30 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
         }
 
         [HttpGet]
-        public IActionResult DeleteBuyer(string id)
+        public IActionResult DeleteUser(string id)
         {
 
-            var user = db.Users.FirstOrDefault(u => u.Id == id);
-            user.IsDeleted = true;
-            db.SaveChanges();
-            return RedirectToAction("GetBuyers");
-
+           var user= Iuser.DeleteUser(id);
+            if (user.Role == "Buyer")
+            {
+                return RedirectToAction("GetBuyers");
+            }else if(user.Role == "Seller")
+            {
+                return RedirectToAction("GetSellers");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+                
         }
-        [HttpGet]
-        public IActionResult DeleteSeller(string id)
-        {
+        //[HttpGet]
+        //public IActionResult DeleteSeller(string id)
+        //{
+        //    Iuser.DeleteUser(id);
+        //    return RedirectToAction("GetSellers");
 
-            var user = db.Users.FirstOrDefault(u => u.Id == id);
-            user.IsDeleted = true;
-            db.SaveChanges();
-            return RedirectToAction("GetSellers");
-
-        }
+        //}
     
 
         [HttpGet]

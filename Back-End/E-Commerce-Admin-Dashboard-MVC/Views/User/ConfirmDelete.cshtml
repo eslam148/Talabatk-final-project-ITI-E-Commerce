@@ -1,18 +1,23 @@
 ﻿
 
-<h2>Are you sure to delete this user: @Model.First_Name</h2>
+<div class="card mx-auto" style="width: 20rem; background-color:lightyellow">
+    <div class="card-body">
+        <h5 class="card-title"> Warning!!</h5>
+        <p class="card-text">Are you sure you want to delete this user: <strong>@Model.First_Name</strong> </p>
+        <a class="btn btn-danger" asp-action="DeleteUser" asp-controller="User" asp-route-id="@Model.Id">Yes</a>
+        @if (Model.Role == "buyer")
+        {
+            <a class="btn btn-info" asp-action="GetBuyers" asp-controller="User">Cancel</a>
+        }
 
-@if (Model.Role == "buyer")
-{
-    <a class="btn btn-danger" asp-action="DeleteBuyer" asp-controller="User" asp-route-id="@Model.Id">Yes</a>
-    <a class="btn btn-info" asp-action="GetBuyers" asp-controller="User">Cansel</a>
-}
+        else
+        {
+            <a class="btn btn-info" asp-action="GetSellers" asp-controller="User">Cancel</a>
+        }
+       
+    </div>
+</div>
 
-else 
-{
-    <a class="btn btn-danger" asp-action="DeleteSeller" asp-controller="User" asp-route-id="@Model.Id">Yes</a>
-    <a class="btn btn-primary" asp-action="GetSellers" asp-controller="User">Cansel</a>
-}
 
 
 

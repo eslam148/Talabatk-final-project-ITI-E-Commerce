@@ -19,7 +19,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
             });
             builder.Services.AddTransient<ICategory, CategoryService>();
             builder.Services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<LibraryContext>();
-            //builder.Services.AddTransient<UserServices>();
+            builder.Services.AddTransient<Iuser,UserServices>();
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
