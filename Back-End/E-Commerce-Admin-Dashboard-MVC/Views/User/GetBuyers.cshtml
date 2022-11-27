@@ -1,1 +1,38 @@
-﻿<h1>buyer</h1>
+﻿
+@model List<User>
+
+<h5> Buyers list:</h5>
+
+    <table class="table table-striped table-hover table-bordered border-dark table-sm">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">User Name</th>
+                <th scope="col">Mobile Number</th>
+                <th scope="col">Created at</th>
+                <th scope="col">Modified at</th>
+                <th scope="col">Delete user</th>
+            </tr>
+        </thead>
+        <tbody>
+         @foreach (var user in Model){
+               <tr>
+                <td>@user.First_Name</td>
+                <td>@user.Last_Name</td>
+                <td>@user.Email</td>
+                <td>@user.UserName</td>
+                <td>@user.PhoneNumber</td>
+                <td>@user.Created_at</td>
+                <td>@user.modified_at</td>
+                <td>
+                    <a class="btn btn-danger" asp-action="ConfirmDelete" asp-controller="User"
+                        asp-route-id="@user.Id"
+                        asp-route-FirstName="@user.First_Name"
+                    asp-route-Role="@user.Role"> Delete</a>
+                </td>
+            </tr>
+         }
+        </tbody>
+    </table>

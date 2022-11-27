@@ -1,9 +1,14 @@
 {
   "ExpandedNodes": [
     "",
-    "\\E-CommerceDB",
-    "\\E-CommerceDB\\E-CommerceDB"
+    "\\Back-End",
+    "\\Back-End\\E-Commerce-Admin-Dashboard-MVC",
+    "\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\Views",
+    "\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\Views\\Home",
+    "\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\Views\\Shared",
+    "\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\Views\\Shared\\partials",
+    "\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\Views\\User"
   ],
-  "SelectedNode": "\\E-CommerceDB\\E-CommerceDB.sln",
+  "SelectedNode": "\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\Views\\User\\GetBuyers.cshtml",
   "PreviewInSolutionExplorer": false
 }

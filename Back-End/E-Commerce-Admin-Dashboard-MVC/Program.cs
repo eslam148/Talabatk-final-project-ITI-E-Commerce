@@ -1,4 +1,5 @@
 using E_CommerceDB;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace E_Commerce_Admin_Dashboard_MVC
@@ -17,6 +18,8 @@ namespace E_Commerce_Admin_Dashboard_MVC
                     .UseSqlServer(builder.Configuration.GetConnectionString("DBKey"));
             });
             builder.Services.AddTransient<ICategory, CategoryService>();
+            builder.Services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<LibraryContext>();
+            //builder.Services.AddTransient<UserServices>();
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();

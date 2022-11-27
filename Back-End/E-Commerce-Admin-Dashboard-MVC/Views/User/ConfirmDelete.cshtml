@@ -1,0 +1,18 @@
+﻿
+
+<h2>Are you sure to delete this user: @Model.First_Name</h2>
+
+@if (Model.Role == "buyer")
+{
+    <a class="btn btn-danger" asp-action="DeleteBuyer" asp-controller="User" asp-route-id="@Model.Id">Yes</a>
+    <a class="btn btn-info" asp-action="GetBuyers" asp-controller="User">Cansel</a>
+}
+
+else 
+{
+    <a class="btn btn-danger" asp-action="DeleteSeller" asp-controller="User" asp-route-id="@Model.Id">Yes</a>
+    <a class="btn btn-primary" asp-action="GetSellers" asp-controller="User">Cansel</a>
+}
+
+
+
