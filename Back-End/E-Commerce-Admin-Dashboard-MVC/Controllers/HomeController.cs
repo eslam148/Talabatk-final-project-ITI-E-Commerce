@@ -20,16 +20,32 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
 
         public IActionResult Index()
         {
-            //var x = db.Product.ToArray();/
-            Category c = new Category
-            {
-                Name= "Phone",
-                Description="Electronic Divice",
-            };
-            db.Category.Add(c);
-            db.SaveChanges();
-            var x = db.Category.ToList();
-            return View(x);
+        //    var x = db.Product.ToArray();
+        //    Category c = new Category
+        //    {
+        //        Name = "Phone",
+        //        Description = "Electronic Divice",
+        //    };
+        //    db.Category.Add(c);
+        //    db.SaveChanges();
+        //    var x = db.Category.ToList();
+        //    return View(x);
+            //User u = new User
+            //{
+            //    First_Name = "sara",
+            //    Last_Name = "kenady",
+            //    UserName = "saraKenady",
+            //    Email = "sara@gmail.com",
+            //    PhoneNumber = "01098076543",
+            //    Role = "Seller",
+            //    IsDeleted = false,
+            //    Created_at = DateTime.Now
+            //};
+            //db.Users.Add(u);
+            //db.SaveChanges();
+            //var x = db.Users.ToList();
+            //return View(x);
+            return View();
         }
 
         public IActionResult Privacy()

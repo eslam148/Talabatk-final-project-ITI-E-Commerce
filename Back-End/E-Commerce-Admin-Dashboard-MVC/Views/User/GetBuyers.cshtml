@@ -1,10 +1,21 @@
 ﻿@model IEnumerable<User>
+@{
+    int i = 0; ;
+}
 
-<h5> Buyers list:</h5>
+<form class="form-inline">
+    <p class="navbar-brand ml-3">Search Buyers by First Name:</p>
+    <input class="form-control mr-sm-2" name="SearchedString" value="@ViewData["search"]" type="text" placeholder="Search" aria-label="Search">
+    <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search"></input>
+    <a class="ml-5" asp-action="GetBuyers" asp-controller="User">Return to full list</a>
+</form>
+<hr />
+
 <div class="table-responsive">
     <table class="table table-striped table-hover table-bordered border-dark table-sm">
         <thead class="table-dark">
             <tr>
+                <th scope="col">#</th>
                 <th scope="col">First Name</th>
                 <th scope="col">Last Name</th>
                 <th scope="col">Email</th>
@@ -19,6 +30,7 @@
             @foreach (var user in Model)
             {
                 <tr>
+                    <td>@(++i)</td>
                     <td>@user.First_Name</td>
                     <td>@user.Last_Name</td>
                     <td>@user.Email</td>

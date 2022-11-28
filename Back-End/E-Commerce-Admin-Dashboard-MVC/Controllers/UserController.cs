@@ -15,32 +15,50 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
             Iuser = _Iuser;
         }
 
-        
+  
         [HttpGet]
-        public IActionResult GetBuyers()
+        public IActionResult GetBuyers(string SearchedString)
         {
-            var buyers = Iuser.GetAllusers().Where(u => u.Role == "Buyer");
-            if (buyers != null)
+            if (!String.IsNullOrEmpty(SearchedString))
             {
-                return View(buyers);
+                var users = Iuser.Search(SearchedString).Where(u => u.Role == "Buyer");
+                return View(users);
             }
             else
             {
-                return RedirectToAction("Index","Home");
-            }   
+                var buyers = Iuser.GetAllusers().Where(u => u.Role == "Buyer");
+                if (buyers != null)
+                {
+                    return View(buyers);
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+
+            }
         }
         [HttpGet]
-        public IActionResult GetSellers()
+        public IActionResult GetSellers(string SearchedString)
         {
-            var sellers= Iuser.GetAllusers().Where(u => u.Role == "Seller");
-            if (sellers != null)
+            if (!String.IsNullOrEmpty(SearchedString))
             {
-                return View(sellers);
+                var users = Iuser.Search(SearchedString).Where(u => u.Role == "Seller");
+                return View(users);
             }
             else
             {
-                return RedirectToAction("Index","Home");
+                var sellers = Iuser.GetAllusers().Where(u => u.Role == "Seller");
+                if (sellers != null)
+                {
+                    return View(sellers);
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
             }
+          
         }
 
         [HttpGet]
@@ -61,14 +79,6 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
             }
                 
         }
-        //[HttpGet]
-        //public IActionResult DeleteSeller(string id)
-        //{
-        //    Iuser.DeleteUser(id);
-        //    return RedirectToAction("GetSellers");
-
-        //}
-    
 
         [HttpGet]
         public IActionResult ConfirmDelete(string id, string FirstName, string role)

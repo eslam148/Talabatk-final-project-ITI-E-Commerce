@@ -22,5 +22,10 @@ namespace E_Commerce_Admin_Dashboard_MVC
             db.SaveChanges();
             return user; 
         }
+        public List<User> Search(string SearchedString)
+        {
+            var searchedUser = db.Users.Where(u => u.First_Name.Contains(SearchedString)).ToList();
+            return searchedUser;
+        }
     }
 }

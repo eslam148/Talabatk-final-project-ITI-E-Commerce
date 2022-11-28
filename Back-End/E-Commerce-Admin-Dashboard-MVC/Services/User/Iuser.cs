@@ -5,6 +5,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
     {
         public List<User> GetAllusers();
         public User DeleteUser(string id);
+        public List<User> Search(string SearchedString);
         
     }
 }
