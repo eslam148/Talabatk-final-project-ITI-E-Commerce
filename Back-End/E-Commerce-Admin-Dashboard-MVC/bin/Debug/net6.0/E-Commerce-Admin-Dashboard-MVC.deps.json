@@ -333,6 +333,11 @@
         "runtime": {
           "E-Commerce-Admin-Dashboard-MVC.dll": {}
         },
+        "resources": {
+          "ar-EG/E-Commerce-Admin-Dashboard-MVC.resources.dll": {
+            "locale": "ar-EG"
+          }
+        },
         "compile": {
           "E-Commerce-Admin-Dashboard-MVC.dll": {}
         }

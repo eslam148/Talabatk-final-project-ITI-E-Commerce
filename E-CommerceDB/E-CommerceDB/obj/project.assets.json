@@ -7257,11 +7257,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ITI Sohage .NET\\FinalProject\\BackUp\\final-project-ITI-E-Commerce\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj",
+      "projectUniqueName": "D:\\ITI Sohage .NET\\New folder (3)\\New folder\\final-project-ITI-E-Commerce\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj",
       "projectName": "E-CommerceDB",
-      "projectPath": "D:\\ITI Sohage .NET\\FinalProject\\BackUp\\final-project-ITI-E-Commerce\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj",
+      "projectPath": "D:\\ITI Sohage .NET\\New folder (3)\\New folder\\final-project-ITI-E-Commerce\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj",
       "packagesPath": "C:\\Users\\Eslam Alamir\\.nuget\\packages\\",
-      "outputPath": "D:\\ITI Sohage .NET\\FinalProject\\BackUp\\final-project-ITI-E-Commerce\\E-CommerceDB\\E-CommerceDB\\obj\\",
+      "outputPath": "D:\\ITI Sohage .NET\\New folder (3)\\New folder\\final-project-ITI-E-Commerce\\E-CommerceDB\\E-CommerceDB\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Eslam Alamir\\AppData\\Roaming\\NuGet\\NuGet.Config",

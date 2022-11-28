@@ -9,69 +9,69 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = E_Commerce_Admin_Dashboard_MVC
 build_property.RootNamespace = E_Commerce_Admin_Dashboard_MVC
-build_property.ProjectDir = D:\ITI Sohage .NET\FinalProject\BackUp\final-project-ITI-E-Commerce\Back-End\E-Commerce-Admin-Dashboard-MVC\
+build_property.ProjectDir = D:\ITI Sohage .NET\New folder (3)\New folder\final-project-ITI-E-Commerce\Back-End\E-Commerce-Admin-Dashboard-MVC\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = D:\ITI Sohage .NET\FinalProject\BackUp\final-project-ITI-E-Commerce\Back-End\E-Commerce-Admin-Dashboard-MVC
+build_property.MSBuildProjectDirectory = D:\ITI Sohage .NET\New folder (3)\New folder\final-project-ITI-E-Commerce\Back-End\E-Commerce-Admin-Dashboard-MVC
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/ITI Sohage .NET/FinalProject/BackUp/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Category/AddCategory.cshtml]
+[D:/ITI Sohage .NET/New folder (3)/New folder/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Category/AddCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQWRkQ2F0ZWdvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ITI Sohage .NET/FinalProject/BackUp/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Home/Index.cshtml]
+[D:/ITI Sohage .NET/New folder (3)/New folder/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ITI Sohage .NET/FinalProject/BackUp/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Home/Privacy.cshtml]
+[D:/ITI Sohage .NET/New folder (3)/New folder/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ITI Sohage .NET/FinalProject/BackUp/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Product/Delete.cshtml]
+[D:/ITI Sohage .NET/New folder (3)/New folder/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Product/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ITI Sohage .NET/FinalProject/BackUp/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Product/GetProductExisting.cshtml]
+[D:/ITI Sohage .NET/New folder (3)/New folder/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Product/GetProductExisting.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxHZXRQcm9kdWN0RXhpc3RpbmcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ITI Sohage .NET/FinalProject/BackUp/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Product/GetProductSelled.cshtml]
+[D:/ITI Sohage .NET/New folder (3)/New folder/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Product/GetProductSelled.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxHZXRQcm9kdWN0U2VsbGVkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ITI Sohage .NET/FinalProject/BackUp/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Shared/Error.cshtml]
+[D:/ITI Sohage .NET/New folder (3)/New folder/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ITI Sohage .NET/FinalProject/BackUp/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Shared/partials/_footer.cshtml]
+[D:/ITI Sohage .NET/New folder (3)/New folder/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Shared/partials/_footer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXHBhcnRpYWxzXF9mb290ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ITI Sohage .NET/FinalProject/BackUp/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Shared/partials/_navbar.cshtml]
+[D:/ITI Sohage .NET/New folder (3)/New folder/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Shared/partials/_navbar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXHBhcnRpYWxzXF9uYXZiYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ITI Sohage .NET/FinalProject/BackUp/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Shared/partials/_settings-panel.cshtml]
+[D:/ITI Sohage .NET/New folder (3)/New folder/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Shared/partials/_settings-panel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXHBhcnRpYWxzXF9zZXR0aW5ncy1wYW5lbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ITI Sohage .NET/FinalProject/BackUp/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Shared/partials/_sidebar.cshtml]
+[D:/ITI Sohage .NET/New folder (3)/New folder/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Shared/partials/_sidebar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXHBhcnRpYWxzXF9zaWRlYmFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ITI Sohage .NET/FinalProject/BackUp/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/ITI Sohage .NET/New folder (3)/New folder/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ITI Sohage .NET/FinalProject/BackUp/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/_ViewImports.cshtml]
+[D:/ITI Sohage .NET/New folder (3)/New folder/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ITI Sohage .NET/FinalProject/BackUp/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/_ViewStart.cshtml]
+[D:/ITI Sohage .NET/New folder (3)/New folder/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ITI Sohage .NET/FinalProject/BackUp/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Shared/_Layout.cshtml]
+[D:/ITI Sohage .NET/New folder (3)/New folder/final-project-ITI-E-Commerce/Back-End/E-Commerce-Admin-Dashboard-MVC/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ckru3brmkk
