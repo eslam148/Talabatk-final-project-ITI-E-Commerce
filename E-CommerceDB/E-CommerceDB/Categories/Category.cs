@@ -16,7 +16,6 @@ namespace E_CommerceDB
         public DateTime? deleted_at { get; set; }
         public bool? IsDeleted { get; set; } = false;
 
-        public virtual ICollection<Product> products { get; set; }
 
         public virtual ICollection<SubCategories> SubCategories { get; set; }
     }

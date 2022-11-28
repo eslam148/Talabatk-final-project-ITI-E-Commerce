@@ -12,7 +12,7 @@ namespace E_CommerceDB
         public string Name { get; set; }
         public string Description { get; set; }
         public decimal Disc_Percent { get; set; }
-        public bool Active { get; set; }
+        public bool Active { get; set; } = true;
         public DateTime created_at { get; set; } = DateTime.Now;
         public DateTime modified_at { get; set; } = DateTime.Now;
         public DateTime? deleted_at { get; set; }

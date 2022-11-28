@@ -10,6 +10,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace E_CommerceDB
 {
+   public enum progress
+    {
+        pending,
+        Reject,
+        Accept
+    }
     public class LibraryContext: IdentityDbContext<User>
     {
         public virtual DbSet<Category> Category { get; set; }
@@ -58,7 +64,7 @@ namespace E_CommerceDB
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-           // optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=DB;Integrated Security=True");
+            //optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=DB;Integrated Security=True");
         }
     }
 }

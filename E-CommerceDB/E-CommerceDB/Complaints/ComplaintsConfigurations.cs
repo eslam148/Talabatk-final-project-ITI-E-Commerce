@@ -19,7 +19,7 @@ namespace E_CommerceDB
            // builder.Property(x => x.BuyerId).IsRequired();
             builder.Property(x => x.Noted).IsRequired();
             builder.Property(x => x.Date).IsRequired();
-            builder.Property(x => x.ProductId).IsRequired();
+           // builder.Property(x => x.ProductId).IsRequired();
             builder.Property(x => x.Progress).IsRequired();
             builder.Property(x => x.IsDeleted).IsRequired();
 
