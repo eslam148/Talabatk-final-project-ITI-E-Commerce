@@ -10,6 +10,6 @@
     "\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\Views\\Shared\\partials",
     "\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\Views\\User"
   ],
-  "SelectedNode": "\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\Controllers\\UserController.cs",
+  "SelectedNode": "\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\Views\\User\\GetSellers.cshtml",
   "PreviewInSolutionExplorer": false
 }
