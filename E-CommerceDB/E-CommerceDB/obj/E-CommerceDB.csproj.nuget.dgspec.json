@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "F:\\1\\Course\\ITI\\FinalProject\\final2\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj": {}
+    "D:\\ITI Sohage .NET\\FinalProject\\BackUp\\final-project-ITI-E-Commerce\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj": {}
   },
   "projects": {
-    "F:\\1\\Course\\ITI\\FinalProject\\final2\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj": {
+    "D:\\ITI Sohage .NET\\FinalProject\\BackUp\\final-project-ITI-E-Commerce\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\1\\Course\\ITI\\FinalProject\\final2\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj",
+        "projectUniqueName": "D:\\ITI Sohage .NET\\FinalProject\\BackUp\\final-project-ITI-E-Commerce\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj",
         "projectName": "E-CommerceDB",
-        "projectPath": "F:\\1\\Course\\ITI\\FinalProject\\final2\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj",
-        "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
-        "outputPath": "F:\\1\\Course\\ITI\\FinalProject\\final2\\E-CommerceDB\\E-CommerceDB\\obj\\",
+        "projectPath": "D:\\ITI Sohage .NET\\FinalProject\\BackUp\\final-project-ITI-E-Commerce\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj",
+        "packagesPath": "C:\\Users\\Eslam Alamir\\.nuget\\packages\\",
+        "outputPath": "D:\\ITI Sohage .NET\\FinalProject\\BackUp\\final-project-ITI-E-Commerce\\E-CommerceDB\\E-CommerceDB\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Eslam Alamir\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -83,7 +83,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -92,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
