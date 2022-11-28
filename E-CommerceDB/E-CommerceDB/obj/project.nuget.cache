@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vTIkOc52EJaVZ3HDEmZBOK3+Vz9go9hksF3bWmxUiPnYyxCn0EqIaaDVfQegziD9AVnqeelfy0nfqnTDDxOxtg==",
+  "dgSpecHash": "SQW5Z9LFDlP3kzM5GRIeqQA6P22m8k7WoRLJPswLt++2TMtyfgiubYx0w5G3i3PEGrCj9JegGUhGxQQgak0U9g==",
   "success": true,
-  "projectFilePath": "F:\\1\\Course\\ITI\\FinalProject\\Final\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj",
+  "projectFilePath": "F:\\1\\Course\\ITI\\FinalProject\\final2\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pc\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

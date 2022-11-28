@@ -1,5 +1,8 @@
 using E_CommerceDB;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 
 namespace E_Commerce_Admin_Dashboard_MVC
 {
@@ -17,11 +20,35 @@ namespace E_Commerce_Admin_Dashboard_MVC
                     .UseSqlServer(builder.Configuration.GetConnectionString("DBKey"));
             });
             builder.Services.AddTransient<ICategory, CategoryService>();
-            builder.Services.AddTransient<ICategory, CategoryService>();
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddTransient<IProductServices, ProductServices>();
+            builder.Services.AddControllersWithViews()
+                //locazation
+                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+                .AddDataAnnotationsLocalization(options =>
+                {
+                    options.DataAnnotationLocalizerProvider = (type, factory) =>
+                        factory.Create(typeof(SharedResource));
+                   }); ;
+            builder.Services.AddScoped<IProductServices, ProductServices>();
 
             var app = builder.Build();
-
+            //Localiztion
+            var supportedCultures = new[] {
+                      new CultureInfo("ar-EG"),
+                      new CultureInfo("en-US"),
+             };
+            //locaiztion
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture("en-US"),//Default
+                SupportedCultures = supportedCultures,
+                SupportedUICultures = supportedCultures,
+                RequestCultureProviders = new List<IRequestCultureProvider>//cookies Best in clients
+                {
+                new QueryStringRequestCultureProvider(),
+                new CookieRequestCultureProvider()
+                }
+            });
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {

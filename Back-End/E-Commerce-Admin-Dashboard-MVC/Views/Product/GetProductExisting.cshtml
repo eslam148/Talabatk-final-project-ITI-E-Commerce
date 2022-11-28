@@ -1,44 +1,46 @@
 ﻿@model IEnumerable<ProductsVM>
 @{
     ViewData["Title"] = "GetProductExisting";
+   
 }
 
 <div class="table-responsive">
     <table class="table table-striped">
         <thead>
-            <tr>
+              <tr>
+          
                 <th>
-                    Id
-                </th>
-                <th>
-                   Name
+                    @SharedLocalizer["Name"]
                 </th>
                 <th>
-                    Description
+                   @SharedLocalizer["Description"]
                 </th>
                 <th>
-                    Price
+                     @SharedLocalizer["price"]
                 </th>
                 <th>
-                    Created At
-                </th>
-                 <th>
-                    Modiefied At
+                     @SharedLocalizer["CreatedAt"]
                 </th>
                 <th>
-                    Deleted At
-                </th>
-                 <th>
-                    Category Id 
+                      @SharedLocalizer["ModefiedAt"]
                 </th>
                 <th>
-                    Inventory Id 
+                    @SharedLocalizer["DeletedAt"]
                 </th>
-                 <th>
-                    Descount  Id
+                <th>                    
+                      @SharedLocalizer["Category"]
                 </th>
                 <th>
-                    Progress
+                    @SharedLocalizer["InventoryId"]
+                </th>
+                <th>
+                   @SharedLocalizer["Discount"]
+                </th>
+                <th>
+                    @SharedLocalizer["progress"]
+                </th>
+                <th>
+                      @SharedLocalizer["Delete"]
                 </th>
             </tr>
         </thead>
@@ -46,17 +48,18 @@
             @foreach(var product in Model)
             {
                 <tr>
-                    <td>@product.Id</td>
+                   
                     <td>@product.Name</td>
                     <td>@product.Description</td>
                     <td>@product.Price</td>
                     <td>@product.created_at</td>
                     <td>@product.modified_at</td>
                     <td>@product.deleted_at</td>
-                    <td>@product.category_Id</td>
+                    <td>@product.Category</td>
                     <td>@product.inventory_Id</td>
-                    <td>@product.discount_Id</td>
+                    <td>@product.Discount</td>
                     <td>@product.Progress</td>
+                    <td><a asp-action="Delete" asp-controller="Product" asp-route-Id="@product.No" class="btn btn-danger">Delete</a></td>
                 </tr>
             }
         </tbody>

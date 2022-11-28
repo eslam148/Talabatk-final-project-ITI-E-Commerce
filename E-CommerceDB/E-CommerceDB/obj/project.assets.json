@@ -6975,11 +6975,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\1\\Course\\ITI\\FinalProject\\Final\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj",
+      "projectUniqueName": "F:\\1\\Course\\ITI\\FinalProject\\final2\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj",
       "projectName": "E-CommerceDB",
-      "projectPath": "F:\\1\\Course\\ITI\\FinalProject\\Final\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj",
+      "projectPath": "F:\\1\\Course\\ITI\\FinalProject\\final2\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj",
       "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
-      "outputPath": "F:\\1\\Course\\ITI\\FinalProject\\Final\\E-CommerceDB\\E-CommerceDB\\obj\\",
+      "outputPath": "F:\\1\\Course\\ITI\\FinalProject\\final2\\E-CommerceDB\\E-CommerceDB\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config",

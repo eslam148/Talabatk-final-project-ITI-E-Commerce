@@ -1,4 +1,4 @@
-﻿using E_Commerce_Admin_Dashboard_MVC.Services;
+﻿using E_Commerce_Admin_Dashboard_MVC;
 using Microsoft.AspNetCore.Mvc;
 
 namespace E_Commerce_Admin_Dashboard_MVC.Controllers
@@ -22,6 +22,17 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
 
             var result = services.GetAllSold();
             return View(result);
+        }
+        [HttpGet]
+        public IActionResult Delete(int Id)
+        {
+            var prod = services.GetProductById(Id);
+            return View(prod);
+        }
+        public IActionResult ConfirmDelete(int Id)
+        {
+            services.DeleteProduct(Id);
+            return RedirectToAction("GetProductExisting");
         }
     }
 }
