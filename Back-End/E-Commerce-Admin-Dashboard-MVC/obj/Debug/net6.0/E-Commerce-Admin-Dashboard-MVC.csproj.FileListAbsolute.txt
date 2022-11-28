@@ -1924,7 +1924,6 @@ D:\ITI Sohage .NET\New folder (3)\New folder\final-project-ITI-E-Commerce\Back-E
 D:\ITI Sohage .NET\New folder (3)\New folder\final-project-ITI-E-Commerce\Back-End\E-Commerce-Admin-Dashboard-MVC\obj\Debug\net6.0\E-Commerce-Admin-Dashboard-MVC.MvcApplicationPartsAssemblyInfo.cache
 D:\ITI Sohage .NET\New folder (3)\New folder\final-project-ITI-E-Commerce\Back-End\E-Commerce-Admin-Dashboard-MVC\obj\Debug\net6.0\E-Commerce-Admin-Dashboard-MVC.RazorAssemblyInfo.cache
 D:\ITI Sohage .NET\New folder (3)\New folder\final-project-ITI-E-Commerce\Back-End\E-Commerce-Admin-Dashboard-MVC\obj\Debug\net6.0\E-Commerce-Admin-Dashboard-MVC.RazorAssemblyInfo.cs
-D:\ITI Sohage .NET\New folder (3)\New folder\final-project-ITI-E-Commerce\Back-End\E-Commerce-Admin-Dashboard-MVC\obj\Debug\net6.0\ar-EG\E-Commerce-Admin-Dashboard-MVC.resources.cs
 D:\ITI Sohage .NET\New folder (3)\New folder\final-project-ITI-E-Commerce\Back-End\E-Commerce-Admin-Dashboard-MVC\obj\Debug\net6.0\ar-EG\E-Commerce-Admin-Dashboard-MVC.resources.dll
 D:\ITI Sohage .NET\New folder (3)\New folder\final-project-ITI-E-Commerce\Back-End\E-Commerce-Admin-Dashboard-MVC\obj\Debug\net6.0\staticwebassets\msbuild.E-Commerce-Admin-Dashboard-MVC.Microsoft.AspNetCore.StaticWebAssets.props
 D:\ITI Sohage .NET\New folder (3)\New folder\final-project-ITI-E-Commerce\Back-End\E-Commerce-Admin-Dashboard-MVC\obj\Debug\net6.0\staticwebassets\msbuild.build.E-Commerce-Admin-Dashboard-MVC.props

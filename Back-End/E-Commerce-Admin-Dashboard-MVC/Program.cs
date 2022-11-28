@@ -21,6 +21,8 @@ namespace E_Commerce_Admin_Dashboard_MVC
             });
             builder.Services.AddTransient<ICategory, CategoryService>();
             builder.Services.AddTransient<IProductServices, ProductServices>();
+            builder.Services.AddTransient<ISubcategory, SubcategoryService>();
+
             builder.Services.AddControllersWithViews()
                 //locazation
                 .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)

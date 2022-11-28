@@ -15,7 +15,8 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            
+            return View(Icategory.get());
         }
         [HttpGet]
         public IActionResult AddCategory()
@@ -27,27 +28,31 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
         {
             if (ModelState.IsValid == false)
             {
-                var errors =
-                    ModelState.SelectMany(i => i.Value.Errors.Select(x => x.ErrorMessage));
+                var errors = ModelState.SelectMany(i => i.Value.Errors.Select(x => x.ErrorMessage));
 
                 foreach (string err in errors)ModelState.AddModelError("", err);
 
                 return View();
             }
             else {
-                Category Cat = new Category
-                {
-                    Name = category.Name,
-                    Description = category.Description,
-                    created_at = DateTime.Now,
-                    deleted_at = DateTime.Now,
-                    modified_at = DateTime.Now
-                };
-                Icategory.Add(Cat);
-                return View();
+          
+                Icategory.Add(category);
+                return RedirectToAction("Index");
 
             }
            
+        }
+
+        public IActionResult EditCategory(CategoryCreateModel category) {
+
+            Icategory.update(category);
+            return RedirectToAction("Index");
+
+        }
+        public IActionResult DeleteCategory(int id)
+        {
+            Icategory.delete(id);
+            return RedirectToAction("Index");
         }
     }
 }

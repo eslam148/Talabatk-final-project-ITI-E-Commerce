@@ -11,7 +11,8 @@ namespace E_CommerceDB
         public int Id { get; set; }
         public string BrandName { get; set; }
         public bool? IsDeleted { get; set; } = false;
-
+        public DateTime created_at { get; set; } = DateTime.Now;
+        public DateTime modified_at { get; set; } = DateTime.Now;
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
         public virtual ICollection<Product> products { get; set; }

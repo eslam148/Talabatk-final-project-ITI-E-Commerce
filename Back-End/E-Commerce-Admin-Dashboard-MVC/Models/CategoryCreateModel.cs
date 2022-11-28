@@ -1,4 +1,6 @@
 ﻿using Castle.Core.Resource;
+using E_CommerceDB;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Linq;
 
@@ -6,6 +8,7 @@ namespace E_Commerce_Admin_Dashboard_MVC.Models
 {
     public class CategoryCreateModel
     {
+        public int Id { get; set; }
         [Display(Name = "Category Name")]
         [Required(ErrorMessage = "This Faild is Requerd")]
         [MinLength(4, ErrorMessage = "Must Be More Than Or Equals 4 Chars.")]
@@ -19,5 +22,6 @@ namespace E_Commerce_Admin_Dashboard_MVC.Models
         public DateTime modified_at { get; set; }= DateTime.Now;
         public DateTime deleted_at { get; set; }=DateTime.Now;
 
+   
     }
 }

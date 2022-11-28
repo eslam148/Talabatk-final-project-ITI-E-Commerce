@@ -24,7 +24,8 @@ namespace E_CommerceDB
         public int? discount_Id { get; set; } = 1;
         public int Progress { get; set; } = (int)progress.pending;
         public bool? IsDeleted { get; set; } = false;
-
+        public int Quantity { get; set; }
+        public int SelledQuantity { get; set; } = 0;
         [ForeignKey("Sellyer")]
         public String? SellerId { get; set; }
 

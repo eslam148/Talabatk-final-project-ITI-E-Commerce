@@ -1,10 +1,15 @@
-﻿using E_CommerceDB;
+﻿using E_Commerce_Admin_Dashboard_MVC.Models;
+using E_CommerceDB;
 
 namespace E_Commerce_Admin_Dashboard_MVC
 {
-    public interface ICategory
+    public interface ICategory 
     {
-        public void Add(Category category);
+        public List<CategoryCreateModel> get();
+        public CategoryCreateModel get(int id);
+        public void Add(CategoryCreateModel category);
+        public void update(CategoryCreateModel category);
+        public void delete(int id);
         public void save();
     }
 }
