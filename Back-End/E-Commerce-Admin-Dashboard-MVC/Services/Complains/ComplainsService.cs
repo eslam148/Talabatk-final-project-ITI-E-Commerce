@@ -15,6 +15,18 @@ namespace E_Commerce_Admin_Dashboard_MVC
         public List<Complaints> getAllComplains()
         {
             var x = db.Complaints.ToList();
+            
+            return x;
+        }
+
+        public Complaints getDeatils( int id)
+        {
+            var x=db.Complaints.Where(c => c.Id == id).FirstOrDefault();
+            db.Complaints
+                .Where(c => c.Id == id)
+                .FirstOrDefault().Progress=(int) ComplainsStatus.Pending;
+            db.SaveChanges();
+
             return x;
         }
 

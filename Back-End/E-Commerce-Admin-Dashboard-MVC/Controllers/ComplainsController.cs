@@ -35,5 +35,11 @@ namespace E_Commerce_Admin_Dashboard_MVC
             ViewBag.Status = ComplainsStatus.Solved;
             return View(data);
         }
+        [HttpGet]
+        public IActionResult Show(int id)
+        {
+            var data = ic.getDeatils(id);    
+            return View(data);
+        }
     }
 }

@@ -8,5 +8,6 @@ namespace E_Commerce_Admin_Dashboard_MVC
         List<Complaints> getPendingComplains();
 
         List<Complaints> getSolvedComplains();
+        Complaints getDeatils(int id);
     }
 }

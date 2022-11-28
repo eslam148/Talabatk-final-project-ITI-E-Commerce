@@ -8,6 +8,7 @@
         <th>Seller Name</th>
         <th>Customer Name</th>
         <th>Complain Date</th>
+        <th>Read Complains</th>
       </tr>
     </thead>
     <tbody>
@@ -31,6 +32,12 @@
                 <td>@item.Seller.First_Name   </td>
                 <td>@item.Buyer.First_Name</td>
                 <td>@item.Date</td>
+                @if (item.Progress == 0)
+                {
+                    <td>
+                        <a class="btn btn-danger" asp-action="Show" asp-controller="Complains" asp-route-id="@item.Id">Show</a>
+                    </td>
+                }
             </tr>
 
         }
