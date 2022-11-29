@@ -17,26 +17,26 @@
                         </div>
                         <div>
                             <div class="d-flex justify-content-between">
-                                <span>Price</span><span>@Model.Price</span>
+                                <span>@SharedLocalizer["price"]</span><span>@Model.Price</span>
                             </div>
                             <div class="d-flex justify-content-between">
-                                <span>Category</span><span>@Model.Category</span>
+                                <span>@SharedLocalizer["Category"]</span><span>@Model.Category</span>
                             </div>
                             <div class="d-flex justify-content-between">
-                                <span>Created At</span><span>@Model.created_at</span>
+                                <span>@SharedLocalizer["CreatedAt"]</span><span>@Model.created_at</span>
                             </div>
                         </div>
                         @if (Model.Discount != null)
                         {
                             <div class="d-flex justify-content-between total font-weight-bold mt-4">
-                                <span>Discount</span><span>@Model.Discount</span>
+                                <span>@SharedLocalizer["Discount"]</span><span>@Model.Discount</span>
                             </div>
 
                         }
                         <div class="d-flex justify-content-around total font-weight-bold mt-4">
-                            <a asp-action="GetProductExisting" asp-controller="Product" class="btn btn-secondary">Cancel</a>
+                            <a asp-action="GetProductExisting" asp-controller="Product" class="btn btn-secondary">@SharedLocalizer["Cancel"]</a>
 
-                            <a asp-action="ConfirmDelete" asp-controller="Product" asp-route-Id="@Model.No" class="btn btn-danger">Delete</a>
+                            <a asp-action="ConfirmDelete" asp-controller="Product" asp-route-Id="@Model.No" class="btn btn-danger">@SharedLocalizer["Delete"]</a>
 
                         </div>
                     </div>

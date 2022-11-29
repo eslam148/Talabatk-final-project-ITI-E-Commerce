@@ -9,7 +9,7 @@ namespace E_CommerceDB
     public class UserPayment
     {
         public int Id { get; set; }
-       // public String user_id { get; set; }
+        public String user_id { get; set; }
         public string paymenr_type { get; set; }
         public string provider { get; set; }
         public int account_no { get; set; }

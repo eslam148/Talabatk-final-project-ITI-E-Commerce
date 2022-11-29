@@ -27,6 +27,9 @@
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="form-elements">
+                 <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"><a class="nav-link" asp-controller="Product" asp-action="AddProduct">@SharedLocalizer["AddProduct"]</a></li>
+                </ul>
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"><a class="nav-link" asp-controller="Product" asp-action="GetProductSelled">@SharedLocalizer["AllBuyed"]</a></li>
                 </ul>

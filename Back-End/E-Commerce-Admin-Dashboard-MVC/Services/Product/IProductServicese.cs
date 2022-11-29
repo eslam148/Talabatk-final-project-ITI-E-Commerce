@@ -8,6 +8,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
         public IEnumerable<ProductsVM> GetAllExisting();
         public void DeleteProduct(int Id);
         public ProductsVM GetProductById(int Id);
+        public void AddProdcut(ProductsVM product);
 
     }
 }
