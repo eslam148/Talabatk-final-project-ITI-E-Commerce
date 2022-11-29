@@ -1,4 +1,4 @@
-﻿@model List<Complaints>
+﻿@model IPagedList<Complaints>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -12,7 +12,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var item in Model.ToList<Complaints>())
         {
             <tr>
                 <td>@item.Product.Name</td>
@@ -30,3 +30,4 @@
         }
     </tbody>
 </table>
+@Html.PagedListPager(Model, num => Url.Action("getAll", new { num  }))

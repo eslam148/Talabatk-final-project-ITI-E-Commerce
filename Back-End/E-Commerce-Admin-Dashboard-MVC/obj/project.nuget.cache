@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "kqmOT7W57v4SS9h17+HfDI1UUZCrK0FjqJUCO773AYCMOK9SwYPLqNC1gNe9u8wJUAtGfd0ZzREDMiJNGD1lXw==",
+  "dgSpecHash": "ZCAarX2ZXYV+hEuWIE2g+A3AKMEbLe1s5U1u1rYsA9h4bC0u11oRI+abcpTn8iBEqPPrj+n36k0a2xvnxomcKw==",
   "success": true,
   "projectFilePath": "E:\\Education Materials\\1.ITI\\FinalProject V2\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\E-Commerce-Admin-Dashboard-MVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Elnoby\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\Elnoby\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\Elnoby\\.nuget\\packages\\jetbrains.annotations\\2022.1.0\\jetbrains.annotations.2022.1.0.nupkg.sha512",
     "C:\\Users\\Elnoby\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\Elnoby\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
     "C:\\Users\\Elnoby\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",
@@ -192,7 +193,9 @@
     "C:\\Users\\Elnoby\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\Elnoby\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Elnoby\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\Elnoby\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\Elnoby\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\Elnoby\\.nuget\\packages\\x.pagedlist\\8.4.3\\x.pagedlist.8.4.3.nupkg.sha512",
+    "C:\\Users\\Elnoby\\.nuget\\packages\\x.pagedlist.mvc.core\\8.4.3\\x.pagedlist.mvc.core.8.4.3.nupkg.sha512"
   ],
   "logs": []
 }

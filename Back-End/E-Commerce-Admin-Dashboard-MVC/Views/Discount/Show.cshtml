@@ -1,4 +1,4 @@
-﻿@model List<Discount>
+﻿@model IPagedList<Discount>
 
 <table class="table table-striped">
     <thead>
@@ -12,7 +12,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var item in Model.ToList<Discount>())
         {
             <tr>
                 <td>@item.Name</td>
@@ -38,3 +38,4 @@
         }
     </tbody>
 </table>
+@Html.PagedListPager(Model, num => Url.Action("Show", new { num  }))

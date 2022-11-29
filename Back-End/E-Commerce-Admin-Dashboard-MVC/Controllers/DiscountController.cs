@@ -1,6 +1,7 @@
 ﻿using E_CommerceDB;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography.X509Certificates;
+using X.PagedList;
 
 namespace E_Commerce_Admin_Dashboard_MVC
 {
@@ -43,9 +44,9 @@ namespace E_Commerce_Admin_Dashboard_MVC
             }
         }
         [HttpGet]
-        public IActionResult Show()
+        public IActionResult Show(int num=1,int size=2)
         {
-            var disc = idisc.getAllDiscount();
+            var disc = idisc.getAllDiscount().ToPagedList(num,size);
             return View(disc);
 
         }

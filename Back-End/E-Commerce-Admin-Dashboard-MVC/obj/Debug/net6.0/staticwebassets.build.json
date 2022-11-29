@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0yLwtZslAsI+MEclbQ0Eezfb12FNVOyTVUNmdOF6SJk=",
+  "Hash": "r8Q8yF8W/vMlA8la+OM5gmjDxUyflJgHO+HVt4bgosU=",
   "Source": "E-Commerce-Admin-Dashboard-MVC",
   "BasePath": "_content/E-Commerce-Admin-Dashboard-MVC",
   "Mode": "Default",
@@ -151,6 +151,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\maps\\vertical-layout-light\\style.css.map"
+    },
+    {
+      "Identity": "E:\\Education Materials\\1.ITI\\FinalProject V2\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\wwwroot\\css\\PagedList.css",
+      "SourceId": "E-Commerce-Admin-Dashboard-MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Education Materials\\1.ITI\\FinalProject V2\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\wwwroot\\",
+      "BasePath": "_content/E-Commerce-Admin-Dashboard-MVC",
+      "RelativePath": "css/PagedList.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\PagedList.css"
     },
     {
       "Identity": "E:\\Education Materials\\1.ITI\\FinalProject V2\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\wwwroot\\css\\site.css",

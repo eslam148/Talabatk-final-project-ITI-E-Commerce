@@ -3251,3 +3251,6 @@ E:\Education Materials\1.ITI\FinalProject V2\Back-End\E-Commerce-Admin-Dashboard
 E:\Education Materials\1.ITI\FinalProject V2\Back-End\E-Commerce-Admin-Dashboard-MVC\obj\Debug\net6.0\E-Commerce-Admin-Dashboard-MVC.pdb
 E:\Education Materials\1.ITI\FinalProject V2\Back-End\E-Commerce-Admin-Dashboard-MVC\obj\Debug\net6.0\E-Commerce-Admin-Dashboard-MVC.genruntimeconfig.cache
 E:\Education Materials\1.ITI\FinalProject V2\Back-End\E-Commerce-Admin-Dashboard-MVC\obj\Debug\net6.0\ref\E-Commerce-Admin-Dashboard-MVC.dll
+E:\Education Materials\1.ITI\FinalProject V2\Back-End\E-Commerce-Admin-Dashboard-MVC\bin\Debug\net6.0\JetBrains.Annotations.dll
+E:\Education Materials\1.ITI\FinalProject V2\Back-End\E-Commerce-Admin-Dashboard-MVC\bin\Debug\net6.0\X.PagedList.dll
+E:\Education Materials\1.ITI\FinalProject V2\Back-End\E-Commerce-Admin-Dashboard-MVC\bin\Debug\net6.0\X.PagedList.Mvc.Core.dll
