@@ -8,6 +8,12 @@ using System.Threading.Tasks;
 
 namespace E_CommerceDB
 {
+    public enum ComplainsStatus
+    {
+        Unread,
+        Pending,
+        Solved
+    }
     public class Complaints
     {
         public int Id { get; set; }

@@ -21,13 +21,13 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
         public IActionResult Index()
         {
             //var x = db.Product.ToArray();/
-            Category c = new Category
-            {
-                Name= "Phone",
-                Description="Electronic Divice",
-            };
-            db.Category.Add(c);
-            db.SaveChanges();
+            //Category c = new Category
+            //{
+            //    Name= "Phone",
+            //    Description="Electronic Divice",
+            //};
+            //db.Category.Add(c);
+            //db.SaveChanges();
             var x = db.Category.ToList();
             return View(x);
         }

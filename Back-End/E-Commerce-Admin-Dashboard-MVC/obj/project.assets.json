@@ -10893,11 +10893,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ITI Sohage .NET\\New folder (3)\\New folder\\final-project-ITI-E-Commerce\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\E-Commerce-Admin-Dashboard-MVC.csproj",
+      "projectUniqueName": "D:\\ITI Sohage .NET\\FinalProject\\final-project-ITI-E-Commerce\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\E-Commerce-Admin-Dashboard-MVC.csproj",
       "projectName": "E-Commerce-Admin-Dashboard-MVC",
-      "projectPath": "D:\\ITI Sohage .NET\\New folder (3)\\New folder\\final-project-ITI-E-Commerce\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\E-Commerce-Admin-Dashboard-MVC.csproj",
+      "projectPath": "D:\\ITI Sohage .NET\\FinalProject\\final-project-ITI-E-Commerce\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\E-Commerce-Admin-Dashboard-MVC.csproj",
       "packagesPath": "C:\\Users\\Eslam Alamir\\.nuget\\packages\\",
-      "outputPath": "D:\\ITI Sohage .NET\\New folder (3)\\New folder\\final-project-ITI-E-Commerce\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\obj\\",
+      "outputPath": "D:\\ITI Sohage .NET\\FinalProject\\final-project-ITI-E-Commerce\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Eslam Alamir\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -10914,8 +10914,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\ITI Sohage .NET\\New folder (3)\\New folder\\final-project-ITI-E-Commerce\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj": {
-              "projectPath": "D:\\ITI Sohage .NET\\New folder (3)\\New folder\\final-project-ITI-E-Commerce\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj"
+            "D:\\ITI Sohage .NET\\FinalProject\\final-project-ITI-E-Commerce\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj": {
+              "projectPath": "D:\\ITI Sohage .NET\\FinalProject\\final-project-ITI-E-Commerce\\E-CommerceDB\\E-CommerceDB\\E-CommerceDB.csproj"
             }
           }
         }
