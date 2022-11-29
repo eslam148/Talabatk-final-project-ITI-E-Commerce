@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YFDc617ALSJkEy9VHThgAQVMbKUSWFXx0RAPl8Qikb0naElsJHiyOvQlnznYj6tZO/bFkI1sPDDaTUHbLcT7JQ==",
+  "dgSpecHash": "8SsyL/OiU4kHecPCKS/wVsELFfti7QObyfs/VVvj8Bg0nWWYZ3mRiTCBYrx/koLqtptA3MkMiZttpzmMp+GOmA==",
   "success": true,
-  "projectFilePath": "D:\\ITI Sohage .NET\\FinalProject\\final-project-ITI-E-Commerce\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\E-Commerce-Admin-Dashboard-MVC.csproj",
+  "projectFilePath": "D:\\ITI Sohage .NET\\FinalProject\\Templets\\final-project-ITI-E-Commerce\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\E-Commerce-Admin-Dashboard-MVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Eslam Alamir\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\Eslam Alamir\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

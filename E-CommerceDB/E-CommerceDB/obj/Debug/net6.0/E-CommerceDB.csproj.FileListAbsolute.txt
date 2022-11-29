@@ -68,3 +68,17 @@ D:\ITI Sohage .NET\New folder (3)\New folder\final-project-ITI-E-Commerce\E-Comm
 D:\ITI Sohage .NET\New folder (3)\New folder\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.pdb
 D:\ITI Sohage .NET\New folder (3)\New folder\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.genruntimeconfig.cache
 D:\ITI Sohage .NET\New folder (3)\New folder\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\ref\E-CommerceDB.dll
+D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.deps.json
+D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.runtimeconfig.json
+D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.dll
+D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.pdb
+D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.csproj.AssemblyReference.cache
+D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.GeneratedMSBuildEditorConfig.editorconfig
+D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.AssemblyInfoInputs.cache
+D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.AssemblyInfo.cs
+D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.csproj.CoreCompileInputs.cache
+D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.dll
+D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\refint\E-CommerceDB.dll
+D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.pdb
+D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.genruntimeconfig.cache
+D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\ref\E-CommerceDB.dll
