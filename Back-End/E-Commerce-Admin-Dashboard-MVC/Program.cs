@@ -19,6 +19,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
             builder.Services.AddTransient<ICategory, CategoryService>();
             builder.Services.AddTransient<IComplains, ComplainsService>();
 
+            builder.Services.AddTransient<IDiscount, DiscountService>();
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
