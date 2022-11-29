@@ -8,6 +8,7 @@
             <th>Seller Name</th>
             <th>Customer Name</th>
             <th>Complain Date</th>
+            <th>Take Action</th>
         </tr>
     </thead>
     <tbody>
@@ -15,11 +16,15 @@
         {
             <tr>
                 <td>@item.Product.Name</td>
+                @*<td>Not Avilable</td>*@
                 <td>@item.Noted</td>
                 <td>@ViewBag.Status</td>
                 <td>@item.Seller.First_Name   </td>
                 <td>@item.Buyer.First_Name</td>
                 <td>@item.Date</td>
+                <td>
+                    <a class="btn btn-danger" asp-action="" asp-controller="Complains" asp-route-id="@item.Id">Replay</a>
+                </td>
             </tr>
 
         }

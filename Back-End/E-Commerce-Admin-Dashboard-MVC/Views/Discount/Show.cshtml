@@ -1,0 +1,40 @@
+﻿@model List<Discount>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Discount Name</th>
+            <th>Discription</th>
+            <th>Discount Percent</th>
+            <th>Product Name</th>
+            <th>Created At</th>
+            <th>Take Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                @*<td>Not Avilable</td>*@
+                <td>@item.Description</td>
+                <td>@item.Disc_Percent</td>
+                @if(item.products!=null)
+                {
+                    <td>@item.products.Name</td>
+
+                }
+                else
+                {
+                    <td>No Product To Show</td>
+
+                }
+                <td>@item.created_at</td>
+                <td>
+                    <a class="btn btn-danger" asp-action="Delete" asp-controller="Discount" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>

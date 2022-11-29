@@ -17,7 +17,9 @@ namespace E_Commerce_Admin_Dashboard_MVC
 
             var data=ic.getAllComplains();
             //ViewBag.Status = ComplainsStatus.Unread;
-            return View(data);
+           
+                return View(data);
+           
         }
         [HttpGet]
         public IActionResult getPending()

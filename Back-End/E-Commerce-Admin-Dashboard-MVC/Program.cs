@@ -1,3 +1,4 @@
+using E_Commerce_Admin_Dashboard_MVC;
 using E_CommerceDB;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
@@ -24,7 +25,8 @@ namespace E_Commerce_Admin_Dashboard_MVC
             builder.Services.AddTransient<ISubcategory, SubcategoryService>();
             builder.Services.AddTransient<IComplains, ComplainsService>();
             builder.Services.AddTransient<Iuser, UserServices>();
-
+           
+            builder.Services.AddTransient<IDiscount, DiscountService>();
 
 
             builder.Services.AddControllersWithViews()
