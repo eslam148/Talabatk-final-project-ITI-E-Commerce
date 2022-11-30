@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\ConfirmDelete.css"
     },
     {
+      "Id": "D:\\ITI Sohage .NET\\FinalProject\\Templets\\final-project-ITI-E-Commerce\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\wwwroot\\css\\PagedList.css",
+      "PackagePath": "staticwebassets\\css\\PagedList.css"
+    },
+    {
       "Id": "D:\\ITI Sohage .NET\\FinalProject\\Templets\\final-project-ITI-E-Commerce\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\wwwroot\\css\\maps\\horizontal-layout-dark\\style.css.map",
       "PackagePath": "staticwebassets\\css\\maps\\horizontal-layout-dark\\style.css.map"
     },

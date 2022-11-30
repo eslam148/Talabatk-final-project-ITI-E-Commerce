@@ -3,6 +3,8 @@ using E_Commerce_Admin_Dashboard_MVC;
 using E_CommerceDB;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using X.PagedList;
+using System.Drawing.Printing;
 
 namespace E_Commerce_Admin_Dashboard_MVC.Controllers
 {
@@ -13,10 +15,11 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
         {
             Icategory = _category;
         }
-        public IActionResult Index()
+        [HttpGet]
+        public IActionResult Index(int pageIndex = 1, int pageSize = 4)
         {
             
-            return View(Icategory.get());
+            return View(Icategory.get().ToPagedList(pageIndex, pageSize));
         }
         [HttpGet]
         public IActionResult AddCategory()
@@ -37,7 +40,7 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
             else {
           
                 Icategory.Add(category);
-                return RedirectToAction("Index");
+                return Redirect("Index");
 
             }
            
@@ -53,6 +56,12 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
         {
             Icategory.delete(id);
             return RedirectToAction("Index");
+        }
+
+        public IActionResult SearchNameCategory(string Name, int pageIndex = 1, int pageSize = 4)
+        {
+
+            return View("index",Icategory.get(Name).ToPagedList(pageIndex, pageSize));
         }
     }
 }

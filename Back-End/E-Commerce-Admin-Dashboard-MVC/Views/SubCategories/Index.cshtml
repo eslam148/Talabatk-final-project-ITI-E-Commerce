@@ -1,4 +1,6 @@
-﻿@model List<SubcategoryModelView>
+﻿@*@model List<SubcategoryModelView>*@
+@model IPagedList<SubcategoryModelView>
+
 
 <div class="card-body">
     <h4 class="card-title">Hoverable Table</h4>
@@ -20,7 +22,7 @@
 
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="data">
                 @{
                     int i = 0;
                 }
@@ -58,6 +60,19 @@
 
             </tbody>
         </table>
+        @Html.PagedListPager(Model, pageIndex => Url.Action("index", new { pageIndex  }),
+        PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(
+        new PagedListRenderOptions()
+        {
+        MaximumPageNumbersToDisplay=1,
+        LiElementClasses = new List<string> {"Page navigation example","pagination", "page-item","page-link"}
+        },
+        new AjaxOptions()
+        {
+        HttpMethod ="GET",
+        UpdateTargetId="data"
+        }
+        ))
     </div>
 </div>
 

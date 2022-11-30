@@ -1,11 +1,24 @@
-﻿@model List<CategoryCreateModel>
+﻿
+@*@model List<CategoryCreateModel>*@
+@model IPagedList<CategoryCreateModel>
+
+
 @{
     int i = 0;
 }
-<div class="card-body">
+<div id="data" class="card-body">
     <h4 class="card-title">Hoverable Table</h4>
     <p class="card-description">
-        Add class <code>.table-hover</code>
+        <div class="input-group">
+            <input name="Name" class="form-control border-end-0 border rounded-pill" type="search" value="search" id="example-search-input">
+            <span class="input-group-append">
+                <form asp-controller="Category" asp-action="SearchNameCategory">
+                <button id="btn" class="btn btn-outline-secondary bg-white border-bottom-0 border rounded-pill ms-n5" type="submit">
+                    <i class="fa fa-search"></i>
+                </button>
+                </form>
+            </span>
+        </div>
     </p>
     <div class="table-responsive">
         <table class="table table-hover">
@@ -13,19 +26,16 @@
                 <tr>
                     <th>#</th>
                     @*<th>Id</th>*@
-                    <th>Category Name</th>
-                    <th>Description</th>
-                    <th>created at</th>
-                    <th>modified at</th>
-                    <th>Control</th>
-
-
-
+                    <th>@SharedLocalizer["Category"]</th>
+                    <th>@SharedLocalizer["Description"]</th>
+                    <th>@SharedLocalizer["CreatedAt"]</th>
+                    <th>@SharedLocalizer["ModefiedAt"]</th>
+                    <th>@SharedLocalizer["Control"]</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody >
                
-                @foreach (var cat in Model)
+                @foreach (var cat in Model.ToList())
                     {
                         String d = "delete" + cat.Id.ToString();
                         String e = "edite" + cat.Id.ToString();
@@ -60,6 +70,20 @@
               
             </tbody>
         </table>
+       
     </div>
 </div>
+@Html.PagedListPager(Model, pageIndex => Url.Action("index", new { pageIndex  }))
 
+<script>
+    async function testFakeApi() {
+        try {
+            var res = await fetch("https://jsonplaceholder.typicode.com/users");
+            var data = await res.json();
+            console.log(data[0].name);
+        }
+        catch (e) {
+            console.log(e);
+        }
+    }
+</script>

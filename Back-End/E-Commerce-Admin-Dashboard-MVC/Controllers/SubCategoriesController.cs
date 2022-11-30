@@ -1,6 +1,8 @@
 ﻿using E_Commerce_Admin_Dashboard_MVC.Models;
 using E_CommerceDB;
 using Microsoft.AspNetCore.Mvc;
+using System.Drawing.Printing;
+using X.PagedList;
 
 namespace E_Commerce_Admin_Dashboard_MVC.Controllers
 {
@@ -13,9 +15,9 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
             ISubCategorie = _SubCategorie;
             Icategory=_icategory;
         }
-        public IActionResult Index(int Id)
+        public IActionResult Index(int Id, int pageIndex = 1, int pageSize = 1)
         {
-            return View(ISubCategorie.GetSubcategoryByCategoryId(Id));
+            return View(ISubCategorie.GetSubcategoryByCategoryId(Id).ToPagedList(pageIndex, pageSize));
         }
         [HttpGet]
         public IActionResult Add() {

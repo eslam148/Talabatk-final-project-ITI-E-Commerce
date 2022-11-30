@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GGBziUvPPddZN5Cthdu8888/2eMWA3UKb/w1Im98xm0=",
+  "Hash": "MQgilBFaren0Ltqgth0L3vbF3sdGjgN0TMJK675rkCw=",
   "Source": "E-Commerce-Admin-Dashboard-MVC",
   "BasePath": "_content/E-Commerce-Admin-Dashboard-MVC",
   "Mode": "Default",
@@ -151,6 +151,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\maps\\vertical-layout-light\\style.css.map"
+    },
+    {
+      "Identity": "D:\\ITI Sohage .NET\\FinalProject\\Templets\\final-project-ITI-E-Commerce\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\wwwroot\\css\\PagedList.css",
+      "SourceId": "E-Commerce-Admin-Dashboard-MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ITI Sohage .NET\\FinalProject\\Templets\\final-project-ITI-E-Commerce\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\wwwroot\\",
+      "BasePath": "_content/E-Commerce-Admin-Dashboard-MVC",
+      "RelativePath": "css/PagedList.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\PagedList.css"
     },
     {
       "Identity": "D:\\ITI Sohage .NET\\FinalProject\\Templets\\final-project-ITI-E-Commerce\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\wwwroot\\css\\site.css",

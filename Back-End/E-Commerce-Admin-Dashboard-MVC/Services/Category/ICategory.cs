@@ -11,5 +11,6 @@ namespace E_Commerce_Admin_Dashboard_MVC
         public void update(CategoryCreateModel category);
         public void delete(int id);
         public void save();
+        public List<CategoryCreateModel> get(string Name);
     }
 }

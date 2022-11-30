@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/E_Commerce_Admin_Dashboard_MVC.styles.css" asp-append-version="true" />
-
+    <link rel="stylesheet" href="~/css/PagedList.css" />
 
     @*//////////////*@
     <link rel="stylesheet" href="~/css/vertical-layout-light/style.css">
@@ -105,10 +105,13 @@
 
     </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.min.js"></script>
+
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     @*<script src="~/js/site.js" asp-append-version="true"></script>*@
     <!-- base:js -->
-    <script src="~/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page-->
     <script src="~/vendors/chart.js/Chart.min.js"></script>
@@ -122,6 +125,8 @@
     <!-- endinject -->
     <!-- Custom js for this page-->
     <script src="~/js/dashboard.js"></script>
+    <script src="~/vendors/js/vendor.bundle.base.js"></script>
+
     <!-- End custom js for this page-->
     @await RenderSectionAsync("Scripts", required: false)
 </body>

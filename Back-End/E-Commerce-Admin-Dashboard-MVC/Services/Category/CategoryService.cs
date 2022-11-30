@@ -39,7 +39,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
 
         public List<CategoryCreateModel> get()
         {
-            var cats = db.Category.Where(c=>c.IsDeleted ==false);
+            var cats = db.Category.Where(c => c.IsDeleted ==false);
             List<CategoryCreateModel> CatList = new List<CategoryCreateModel>();
             foreach (var cat in cats)
             {
@@ -58,9 +58,9 @@ namespace E_Commerce_Admin_Dashboard_MVC
 
         public CategoryCreateModel get(int id)
         {
-            var cats = db.Category.FirstOrDefault(c=>c.Id == id);
+            var cats = db.Category.FirstOrDefault(c => c.Id == id);
 
-           return new CategoryCreateModel()
+            return new CategoryCreateModel()
             {
                 Id = cats.Id,
                 Name = cats.Name,
@@ -82,6 +82,23 @@ namespace E_Commerce_Admin_Dashboard_MVC
             db.SaveChanges();
         }
 
-       
+        public List<CategoryCreateModel> get(string Name)
+        {
+            var cats = db.Category.Where(c => c.IsDeleted ==false && c.Name.StartsWith("c"));
+            List<CategoryCreateModel> CatList = new List<CategoryCreateModel>();
+            foreach (var cat in cats)
+            {
+                CatList.Add(new CategoryCreateModel()
+                {
+                    Id = cat.Id,
+                    Name = cat.Name,
+                    created_at = cat.created_at,
+                    Description = cat.Description,
+                    modified_at = cat.modified_at,
+                });
+
+            }
+            return CatList;
+        }
     }
 }

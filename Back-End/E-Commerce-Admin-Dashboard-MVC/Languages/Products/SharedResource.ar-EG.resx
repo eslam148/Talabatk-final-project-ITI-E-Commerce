@@ -138,6 +138,9 @@
   <data name="Category" xml:space="preserve">
     <value>الصنف</value>
   </data>
+  <data name="Control" xml:space="preserve">
+    <value>التحكم</value>
+  </data>
   <data name="CreatedAt" xml:space="preserve">
     <value>تاريخ الاضافه</value>
   </data>

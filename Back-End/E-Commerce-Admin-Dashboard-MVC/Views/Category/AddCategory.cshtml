@@ -4,8 +4,9 @@
         <h4 class="card-title">Default form</h4>
         <p class="card-description">
             Basic form layout
-        </p>
-        <form class="forms-sample" data-ajax="true" method="post" asp-controller="Category" asp-action="AddCategory" enctype="multipart/form-data">
+        </p> 
+         
+        <form data-ajax="true" class="forms-sample" data-ajax-complete="Sucess" method="post" asp-controller="Category" asp-action="AddCategory" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly"></div>
             <div class="form-group">
                 <label asp-for="Name">Name</label>
@@ -19,8 +20,15 @@
                 <span asp-validation-for="Description" class="alert-danger"></span>
 
             </div>
-            <button type="submit" class="btn btn-primary mr-2">Submit</button>
+            <input type="submit" class="btn btn-primary mr-2" value="Submit">
             <button class="btn btn-light">Cancel</button>
         </form>
     </div>
 </div>
+
+<script>
+    function Sucess(data) {
+        alert("Add Saccessfully")
+        window.location.href = "/Category/Index";
+    }
+</script>

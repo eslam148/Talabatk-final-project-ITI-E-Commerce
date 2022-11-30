@@ -1,7 +1,10 @@
+using E_Commerce_Admin_Dashboard_MVC;
 using E_CommerceDB;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.CodeAnalysis.Options;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using System.Globalization;
 
 namespace E_Commerce_Admin_Dashboard_MVC
@@ -10,6 +13,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
     {
         public static void Main(string[] args)
         {
+            //const string language = "en-GB"; 
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
@@ -24,7 +28,8 @@ namespace E_Commerce_Admin_Dashboard_MVC
             builder.Services.AddTransient<ISubcategory, SubcategoryService>();
             builder.Services.AddTransient<IComplains, ComplainsService>();
             builder.Services.AddTransient<Iuser, UserServices>();
-
+           
+            builder.Services.AddTransient<IDiscount, DiscountService>();
 
 
             builder.Services.AddControllersWithViews()
@@ -37,8 +42,10 @@ namespace E_Commerce_Admin_Dashboard_MVC
                    }); ;
             builder.Services.AddScoped<IProductServices, ProductServices>();
 
+  
             var app = builder.Build();
-            //Localiztion
+
+           //Localiztion
             var supportedCultures = new[] {
                       new CultureInfo("ar-EG"),
                       new CultureInfo("en-US"),

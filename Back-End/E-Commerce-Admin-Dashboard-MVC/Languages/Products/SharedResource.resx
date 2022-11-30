@@ -138,6 +138,9 @@
   <data name="Category" xml:space="preserve">
     <value>Category</value>
   </data>
+  <data name="Control" xml:space="preserve">
+    <value>Control</value>
+  </data>
   <data name="CreatedAt" xml:space="preserve">
     <value>Created At</value>
   </data>

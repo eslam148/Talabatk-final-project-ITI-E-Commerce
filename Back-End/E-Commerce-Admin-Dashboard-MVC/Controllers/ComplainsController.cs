@@ -1,5 +1,6 @@
 ﻿using E_CommerceDB;
 using Microsoft.AspNetCore.Mvc;
+using X.PagedList;
 
 namespace E_Commerce_Admin_Dashboard_MVC
 {
@@ -12,26 +13,28 @@ namespace E_Commerce_Admin_Dashboard_MVC
         }
 
         [HttpGet]
-        public IActionResult getAll()
+        public IActionResult getAll(int num=1,int size=2)
         {
 
-            var data=ic.getAllComplains();
+            var data=ic.getAllComplains().ToPagedList(num,size);
             //ViewBag.Status = ComplainsStatus.Unread;
-            return View(data);
+           
+                return View(data);
+           
         }
         [HttpGet]
-        public IActionResult getPending()
+        public IActionResult getPending(int num = 1, int size = 2)
         {
 
-            var data = ic.getPendingComplains();
+            var data = ic.getPendingComplains().ToPagedList(num,size);
             ViewBag.Status = ComplainsStatus.Pending;
             return View(data);
         }
         [HttpGet]
-        public IActionResult getSolved()
+        public IActionResult getSolved(int num = 1, int size = 2)
         {
 
-            var data = ic.getSolvedComplains();
+            var data = ic.getSolvedComplains().ToPagedList(num, size);
             ViewBag.Status = ComplainsStatus.Solved;
             return View(data);
         }
