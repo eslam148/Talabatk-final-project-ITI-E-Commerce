@@ -82,3 +82,17 @@ D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-Commerce
 D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.pdb
 D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.genruntimeconfig.cache
 D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\ref\E-CommerceDB.dll
+E:\project\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.deps.json
+E:\project\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.runtimeconfig.json
+E:\project\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.dll
+E:\project\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.pdb
+E:\project\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.csproj.AssemblyReference.cache
+E:\project\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.GeneratedMSBuildEditorConfig.editorconfig
+E:\project\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.AssemblyInfoInputs.cache
+E:\project\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.AssemblyInfo.cs
+E:\project\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.csproj.CoreCompileInputs.cache
+E:\project\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.dll
+E:\project\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\refint\E-CommerceDB.dll
+E:\project\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.pdb
+E:\project\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.genruntimeconfig.cache
+E:\project\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\ref\E-CommerceDB.dll

@@ -1,9 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Back-End",
+    "\\Back-End\\E-Commerce-Admin-Dashboard-MVC",
+    "\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\Services",
+    "\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\Services\\Order",
+    "\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\Views",
+    "\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\Views\\Order",
     "\\E-CommerceDB",
-    "\\E-CommerceDB\\E-CommerceDB"
+    "\\E-CommerceDB\\E-CommerceDB",
+    "\\E-CommerceDB\\E-CommerceDB\\Order_Details"
   ],
-  "SelectedNode": "\\E-CommerceDB\\E-CommerceDB.sln",
+  "SelectedNode": "\\Back-End\\E-Commerce-Admin-Dashboard-MVC\\Views\\Order\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }

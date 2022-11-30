@@ -17,12 +17,12 @@ namespace E_CommerceDB
     public class Complaints
     {
         public int Id { get; set; }
-        [ForeignKey("Seller")]
-        public String? SellerId { get; set; }
-        [ForeignKey("Buyer")]
-        public String? BuyerId { get; set; }
-        [ForeignKey("Product")]
-        public int? ProductId { get; set; } = 1;
+        //[ForeignKey("Seller")]
+        public String SellerId { get; set; }
+        //[ForeignKey("Buyer")]
+        public String BuyerId { get; set; }
+       // [ForeignKey("Product")]
+        public int ProductId { get; set; } = 1;
         public String Noted { get; set; }
         public DateTime Date { get; set; } = DateTime.Now;
         public int Progress { get; set; } =(int)progress.pending;
