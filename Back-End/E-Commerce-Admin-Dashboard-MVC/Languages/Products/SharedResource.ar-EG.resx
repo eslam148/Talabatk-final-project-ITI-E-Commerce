@@ -261,4 +261,52 @@
   <data name="Value" xml:space="preserve">
     <value>القيمه</value>
   </data>
+  <data name="All" xml:space="preserve">
+    <value>الكل</value>
+  </data>
+  <data name="Complain" xml:space="preserve">
+    <value>الشكوى</value>
+  </data>
+  <data name="Complain Date" xml:space="preserve">
+    <value>تاريخ الشكوى</value>
+  </data>
+  <data name="Complains" xml:space="preserve">
+    <value>الشكاوى</value>
+  </data>
+  <data name="Customer Name" xml:space="preserve">
+    <value>اسم المشترى</value>
+  </data>
+  <data name="Discoun Percent" xml:space="preserve">
+    <value>نسبة الخصم</value>
+  </data>
+  <data name="Discount Name" xml:space="preserve">
+    <value>اسم الخصم</value>
+  </data>
+  <data name="Discounts" xml:space="preserve">
+    <value>التخفيضات</value>
+  </data>
+  <data name="Product Name" xml:space="preserve">
+    <value>اسم المنتج </value>
+  </data>
+  <data name="Seller Name" xml:space="preserve">
+    <value>اسم البائع</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>عرض</value>
+  </data>
+  <data name="Show Discounts" xml:space="preserve">
+    <value>عرض التخفيضات</value>
+  </data>
+  <data name="Solved" xml:space="preserve">
+    <value>تم الحل</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>حالة الشكوى</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>إرسال</value>
+  </data>
+  <data name="Take Action" xml:space="preserve">
+    <value>اتخذ اجراء</value>
+  </data>
 </root>
