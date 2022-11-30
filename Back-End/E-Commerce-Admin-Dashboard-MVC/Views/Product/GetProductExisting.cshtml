@@ -24,14 +24,12 @@
                 <th>
                       @SharedLocalizer["ModefiedAt"]
                 </th>
-                <th>
-                    @SharedLocalizer["DeletedAt"]
-                </th>
+               
                 <th>                    
                       @SharedLocalizer["Category"]
                 </th>
                 <th>
-                    @SharedLocalizer["InventoryId"]
+                       @SharedLocalizer["Quantity"]
                 </th>
                 <th>
                    @SharedLocalizer["Discount"]
@@ -48,19 +46,21 @@
             @foreach(var product in Model)
             {
                 <tr>
-                   
+                      
                     <td>@product.Name</td>
                     <td>@product.Description</td>
                     <td>@product.Price</td>
                     <td>@product.created_at</td>
                     <td>@product.modified_at</td>
-                    <td>@product.deleted_at</td>
+                   
                     <td>@product.Category</td>
-                    <td>@product.inventory_Id</td>
+                    <td>@product.Qauntity</td>
                     <td>@product.Discount</td>
                     <td>@product.Progress</td>
-                    <td><a asp-action="Delete" asp-controller="Product" asp-route-Id="@product.No" class="btn btn-danger">Delete</a></td>
-                </tr>
+
+                    <td><a asp-action="Delete" asp-controller="Product" asp-route-Id="@product.No" class="btn btn-danger">@SharedLocalizer["Delete"]</a></td>
+               </tr>
+
             }
         </tbody>
     </table>

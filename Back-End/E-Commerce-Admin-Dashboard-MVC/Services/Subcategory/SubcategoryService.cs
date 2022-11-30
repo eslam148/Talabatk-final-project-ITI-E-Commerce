@@ -41,6 +41,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
             {
                 sub.Add(new SubcategoryModelView()
                 {
+                    Id  = s.Id,
                     BrandName = s.BrandName,
                     CategoryId = s.CategoryId,
                     CategoryName = db.Category.Where(i=>i.Id==s.CategoryId).Select(x=>x.Name).FirstOrDefault(),

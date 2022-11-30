@@ -10,7 +10,7 @@ namespace E_CommerceDB
     {
         public int Id { get; set; }
         public decimal total { get; set; }
-        //public String UserId { get; set; }
+        public String UserId { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime ModifiedAt { get; set; }
         public bool? IsDeleted { get; set; } = false;

@@ -19,7 +19,7 @@
                 @*<td>Not Avilable</td>*@
                 <td>@item.Description</td>
                 <td>@item.Disc_Percent</td>
-                @if(item.products!=null)
+              @*  @if(item.products!=null)
                 {
                     <td>@item.products.Name</td>
 
@@ -28,7 +28,7 @@
                 {
                     <td>No Product To Show</td>
 
-                }
+                }*@
                 <td>@item.created_at</td>
                 <td>
                     <a class="btn btn-danger" asp-action="Delete" asp-controller="Discount" asp-route-id="@item.Id">Delete</a>

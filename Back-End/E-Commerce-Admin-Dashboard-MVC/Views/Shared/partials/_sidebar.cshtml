@@ -28,10 +28,17 @@
             </a>
             <div class="collapse" id="form-elements">
                 <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"><a class="nav-link" asp-controller="Product" asp-action="AddProduct">@SharedLocalizer["AddProduct"]</a></li>
+                </ul>
+                <ul class="nav flex-column sub-menu">
                     <li class="nav-item"><a class="nav-link" asp-controller="Product" asp-action="GetProductSelled">@SharedLocalizer["AllBuyed"]</a></li>
+                </ul>
+                <ul class="nav flex-column sub-menu">
                     <li class="nav-item"><a class="nav-link" asp-controller="Product" asp-action="GetProductExisting">@SharedLocalizer["AllExisting"]</a></li>
                 </ul>
-              
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"><a class="nav-link" asp-controller="Product" asp-action="GetAdminProduct">@SharedLocalizer["AdminProduct"]</a></li>
+                </ul>
             </div>
         </li>
         <li class="nav-item">
