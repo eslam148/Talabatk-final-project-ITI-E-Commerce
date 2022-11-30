@@ -1,0 +1,59 @@
+﻿@using X.PagedList.Mvc.Core
+@model IPagedList<OrderItems>
+@{
+    int i = 0; ;
+}
+<link rel="stylesheet" href="~/css/PagedList.css" />
+
+<h5>@SharedLocalizer["Delivered Orders list:"]</h5>
+<div class="table-responsive">
+    <table class="table table-striped table-hover table-bordered border-dark table-sm">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">@SharedLocalizer["Product Name"]</th>
+                <th scope="col">@SharedLocalizer["Product Price"]</th>
+                <th scope="col">@SharedLocalizer["Quantity"]</th>
+                <th scope="col">@SharedLocalizer["Total Price"]</th>
+                <th scope="col">@SharedLocalizer["User Full Name"]</th>
+                <th scope="col">@SharedLocalizer["User Email"]</th>
+                <th scope="col">@SharedLocalizer["Payent Details"]</th>
+                <th scope="col">@SharedLocalizer["Created at"]</th>
+                <th scope="col">@SharedLocalizer["Modified at"]</th>
+                <th scope="col">@SharedLocalizer["Delete Order"]</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model.ToList<OrderItems>())
+            {
+                String d = "delete" + order.Id.ToString();
+                ConfirmModel y = new ConfirmModel()
+                {
+                    Id = order.Id,
+                    TagID = d,
+                    Controller = "Order",
+                    Action = "Delete"
+
+                };
+                decimal totalPrice = order.Product.Price * order.Quantity;
+                <tr>
+                    <td>@(++i)</td>
+                    <td>@order.Product.Name</td>
+                    <td>@order.Product.Price</td>
+                    <td>@order.Quantity</td>
+                    <td>@totalPrice</td>
+                    <td>@order.Order_Details.user.First_Name  @order.Order_Details.user.First_Name</td>
+                    <td>@order.Order_Details.user.Email</td>
+                    <td>@order.Order_Details.PaymentDetails.Provider</td>
+                    <td>@order.created_at</td>
+                    <td>@order.modified_at</td>
+                    <td>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#@d">@SharedLocalizer["Delete"]</button>
+                    </td>
+                </tr>
+                <partial name="Confirm" model="y"></partial>
+            }
+        </tbody>
+    </table>
+</div>
+@Html.PagedListPager(Model, PageIndex => Url.Action("GetBuyers", new { PageIndex  }))

@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="All Orders" xml:space="preserve">
+    <value>كل الطلبات</value>
+  </data>
   <data name="Add" xml:space="preserve">
     <value>اضافه</value>
   </data>
@@ -138,8 +141,14 @@
   <data name="Arabic" xml:space="preserve">
     <value>Arabic</value>
   </data>
+  <data name="Are you sure you want to delete this user" xml:space="preserve">
+    <value>هل انت متأكد من رغبتك في مسح هذا المستخدم</value>
+  </data>
   <data name="BuyedProducts" xml:space="preserve">
     <value>المنتاجات المباعه</value>
+  </data>
+  <data name="Buyers" xml:space="preserve">
+    <value>المشترين</value>
   </data>
   <data name="Cancel" xml:space="preserve">
     <value>الغاء</value>
@@ -147,14 +156,26 @@
   <data name="Category" xml:space="preserve">
     <value>الصنف</value>
   </data>
+  <data name="Created at" xml:space="preserve">
+    <value>تاريخ الاضافة</value>
+  </data>
   <data name="CreatedAt" xml:space="preserve">
     <value>تاريخ الاضافه</value>
   </data>
   <data name="Delete" xml:space="preserve">
     <value>حذف</value>
   </data>
+  <data name="Delete Order" xml:space="preserve">
+    <value>مسح الطلب</value>
+  </data>
   <data name="DeletedAt" xml:space="preserve">
     <value>تاريخ الحذف</value>
+  </data>
+  <data name="Delivered" xml:space="preserve">
+    <value>تم استلامها</value>
+  </data>
+  <data name="Delivered Orders list:" xml:space="preserve">
+    <value>قائمة الطلبات المستلمة</value>
   </data>
   <data name="Description" xml:space="preserve">
     <value>الوصف</value>
@@ -168,13 +189,25 @@
   <data name="ExistingProducts" xml:space="preserve">
     <value>البضائع المتبقيه</value>
   </data>
+  <data name="First Name" xml:space="preserve">
+    <value>الاسم الأول</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>الرئيسيه</value>
   </data>
   <data name="InventoryId" xml:space="preserve">
     <value>رقم المخزن</value>
   </data>
+  <data name="Last Name" xml:space="preserve">
+    <value>الاسم الأخير</value>
+  </data>
+  <data name="Mobile Number" xml:space="preserve">
+    <value>رقم الهاتف</value>
+  </data>
   <data name="ModefiedAt" xml:space="preserve">
+    <value>تاريخ التعديل</value>
+  </data>
+  <data name="Modified at" xml:space="preserve">
     <value>تاريخ التعديل</value>
   </data>
   <data name="Name" xml:space="preserve">
@@ -182,6 +215,18 @@
   </data>
   <data name="No" xml:space="preserve">
     <value>الرقم</value>
+  </data>
+  <data name="Orders" xml:space="preserve">
+    <value>الطلبات</value>
+  </data>
+  <data name="Payent Details" xml:space="preserve">
+    <value>تفاصيل الدفع</value>
+  </data>
+  <data name="Pending" xml:space="preserve">
+    <value>لم تصل بعد</value>
+  </data>
+  <data name="Pending Orders list:" xml:space="preserve">
+    <value>قائمة الطلبات المعلقة</value>
   </data>
   <data name="price" xml:space="preserve">
     <value>السعر</value>
@@ -206,6 +251,9 @@
   </data>
   <data name="SelledProducts" xml:space="preserve">
     <value>المنتاجات المباعه</value>
+  </data>
+  <data name="Sellers" xml:space="preserve">
+    <value>البائعين</value>
   </data>
   <data name="setting" xml:space="preserve">
     <value>الاعدادات</value>

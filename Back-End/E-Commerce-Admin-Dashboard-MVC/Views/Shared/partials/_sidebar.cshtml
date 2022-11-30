@@ -76,13 +76,13 @@
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
                 <i class="typcn typcn-th-small-outline menu-icon"></i>
-                <span class="menu-title">Users</span>
+                <span class="menu-title">@SharedLocalizer["Users"]</span>
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="tables">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" asp-action="GetBuyers" asp-controller="User">Buyers</a></li>
-                    <li class="nav-item"> <a class="nav-link" asp-action="GetSellers" asp-controller="User">Sellers</a></li>
+                    <li class="nav-item"> <a class="nav-link" asp-action="GetBuyers" asp-controller="User">@SharedLocalizer["Buyers"]</a></li>
+                    <li class="nav-item"> <a class="nav-link" asp-action="GetSellers" asp-controller="User">@SharedLocalizer["Sellers"]</a></li>
 
                 </ul>
             </div>
@@ -90,12 +90,14 @@
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
                 <i class="typcn typcn-compass menu-icon"></i>
-                <span class="menu-title">Icons</span>
+                <span class="menu-title">@SharedLocalizer["Orders"]</span>
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="icons">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Mdi icons</a></li>
+                    <li class="nav-item"> <a class="nav-link" asp-action="Index" asp-controller="Order">@SharedLocalizer["All Orders"]</a></li>
+                    <li class="nav-item"> <a class="nav-link" asp-action="GetPendingOrders" asp-controller="Order">@SharedLocalizer["Pending"]</a></li>
+                    <li class="nav-item"> <a class="nav-link" asp-action="GetDeliveredOrders" asp-controller="Order">@SharedLocalizer["Delivered"]</a></li>
                 </ul>
             </div>
         </li>

@@ -1,13 +1,14 @@
-﻿@model IEnumerable<User>
+﻿@using X.PagedList.Mvc.Core
+@model IPagedList<User>
 @{
     int i = 0;
 }
-    
-    <form class="form-inline">
-    <p class="navbar-brand ml-3">Search Sellers by First Name:</p>
-        <input class="form-control mr-sm-2" name="SearchedString" value="@ViewData["search"]" type="text" placeholder="Search" aria-label="Search">
-        <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search"></input>
-    <a class="ml-5" asp-action="GetSellers" asp-controller="User">Return to full list</a>
+<link rel="stylesheet" href="~/css/PagedList.css" />
+<form class="form-inline">
+    <p class="navbar-brand ml-3">@SharedLocalizer["Search Sellers by First Name"]:</p>
+        <input class="form-control mr-sm-2" name="SearchedString" value="@ViewData["search"]" type="text" aria-label="Search">
+    <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="@SharedLocalizer["Search"]"></input>
+    <a class="ml-5" asp-action="GetSellers" asp-controller="User">@SharedLocalizer["Return to full list"]</a>
     </form>
     <hr />
 
@@ -16,18 +17,18 @@
         <thead class="table-dark">
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">First Name</th>
-                <th scope="col">Last Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">User Name</th>
-                <th scope="col">Mobile Number</th>
-                <th scope="col">Created at</th>
-                <th scope="col">Modified at</th>
-                <th scope="col">Delete user</th>
+                <th scope="col">@SharedLocalizer["First Name"]</th>
+                <th scope="col">@SharedLocalizer["Last Name"]</th>
+                <th scope="col">@SharedLocalizer["Email"]</th>
+                <th scope="col">@SharedLocalizer["User Name"]</th>
+                <th scope="col">@SharedLocalizer["Mobile Number"]</th>
+                <th scope="col">@SharedLocalizer["Created at"]</th>
+                <th scope="col">@SharedLocalizer["Modified at"]</th>
+                <th scope="col">@SharedLocalizer["Delete"]</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var user in Model)
+            @foreach (var user in Model.ToList<User>())
             {
                 <tr>
                     <td>@(++i)</td>
@@ -42,7 +43,8 @@
                         <a class="btn btn-danger" asp-action="ConfirmDelete" asp-controller="User"
                        asp-route-id="@user.Id"
                        asp-route-FirstName="@user.First_Name"
-                       asp-route-Role=@user.Role> Delete</a>
+                       asp-route-LastName="@user.Last_Name"
+                       asp-route-Role=@user.Role>@SharedLocalizer["Delete"]</a>
                     </td>
                 </tr>
             }
@@ -50,3 +52,4 @@
     </table>
 
 </div>
+@Html.PagedListPager(Model, PageIndex => Url.Action("GetBuyers", new { PageIndex  }))

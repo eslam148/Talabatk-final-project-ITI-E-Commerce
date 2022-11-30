@@ -1,0 +1,98 @@
+D:\ITI Sohage .NET\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.csproj.AssemblyReference.cache
+D:\ITI Sohage .NET\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.GeneratedMSBuildEditorConfig.editorconfig
+D:\ITI Sohage .NET\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.AssemblyInfoInputs.cache
+D:\ITI Sohage .NET\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.AssemblyInfo.cs
+D:\ITI Sohage .NET\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.csproj.CoreCompileInputs.cache
+D:\ITI Sohage .NET\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.deps.json
+D:\ITI Sohage .NET\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.runtimeconfig.json
+D:\ITI Sohage .NET\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.dll
+D:\ITI Sohage .NET\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.pdb
+D:\ITI Sohage .NET\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.dll
+D:\ITI Sohage .NET\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\refint\E-CommerceDB.dll
+D:\ITI Sohage .NET\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.pdb
+D:\ITI Sohage .NET\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.genruntimeconfig.cache
+D:\ITI Sohage .NET\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\ref\E-CommerceDB.dll
+D:\ITI Sohage .NET\FinalProject\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.deps.json
+D:\ITI Sohage .NET\FinalProject\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.runtimeconfig.json
+D:\ITI Sohage .NET\FinalProject\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.dll
+D:\ITI Sohage .NET\FinalProject\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.pdb
+D:\ITI Sohage .NET\FinalProject\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.csproj.AssemblyReference.cache
+D:\ITI Sohage .NET\FinalProject\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.GeneratedMSBuildEditorConfig.editorconfig
+D:\ITI Sohage .NET\FinalProject\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.AssemblyInfoInputs.cache
+D:\ITI Sohage .NET\FinalProject\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.AssemblyInfo.cs
+D:\ITI Sohage .NET\FinalProject\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.csproj.CoreCompileInputs.cache
+D:\ITI Sohage .NET\FinalProject\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.dll
+D:\ITI Sohage .NET\FinalProject\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\refint\E-CommerceDB.dll
+D:\ITI Sohage .NET\FinalProject\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.pdb
+D:\ITI Sohage .NET\FinalProject\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.genruntimeconfig.cache
+D:\ITI Sohage .NET\FinalProject\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\ref\E-CommerceDB.dll
+F:\1\Course\ITI\FinalProject\Final\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.deps.json
+F:\1\Course\ITI\FinalProject\Final\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.runtimeconfig.json
+F:\1\Course\ITI\FinalProject\Final\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.dll
+F:\1\Course\ITI\FinalProject\Final\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.pdb
+F:\1\Course\ITI\FinalProject\Final\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.csproj.AssemblyReference.cache
+F:\1\Course\ITI\FinalProject\Final\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.GeneratedMSBuildEditorConfig.editorconfig
+F:\1\Course\ITI\FinalProject\Final\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.AssemblyInfoInputs.cache
+F:\1\Course\ITI\FinalProject\Final\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.AssemblyInfo.cs
+F:\1\Course\ITI\FinalProject\Final\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.csproj.CoreCompileInputs.cache
+F:\1\Course\ITI\FinalProject\Final\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.dll
+F:\1\Course\ITI\FinalProject\Final\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\refint\E-CommerceDB.dll
+F:\1\Course\ITI\FinalProject\Final\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.pdb
+F:\1\Course\ITI\FinalProject\Final\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.genruntimeconfig.cache
+F:\1\Course\ITI\FinalProject\Final\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\ref\E-CommerceDB.dll
+F:\1\Course\ITI\FinalProject\final2\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.deps.json
+F:\1\Course\ITI\FinalProject\final2\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.runtimeconfig.json
+F:\1\Course\ITI\FinalProject\final2\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.dll
+F:\1\Course\ITI\FinalProject\final2\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.pdb
+F:\1\Course\ITI\FinalProject\final2\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.csproj.AssemblyReference.cache
+F:\1\Course\ITI\FinalProject\final2\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.GeneratedMSBuildEditorConfig.editorconfig
+F:\1\Course\ITI\FinalProject\final2\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.AssemblyInfoInputs.cache
+F:\1\Course\ITI\FinalProject\final2\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.AssemblyInfo.cs
+F:\1\Course\ITI\FinalProject\final2\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.csproj.CoreCompileInputs.cache
+F:\1\Course\ITI\FinalProject\final2\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.dll
+F:\1\Course\ITI\FinalProject\final2\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\refint\E-CommerceDB.dll
+F:\1\Course\ITI\FinalProject\final2\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.pdb
+F:\1\Course\ITI\FinalProject\final2\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.genruntimeconfig.cache
+F:\1\Course\ITI\FinalProject\final2\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\ref\E-CommerceDB.dll
+D:\ITI Sohage .NET\New folder (3)\New folder\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.deps.json
+D:\ITI Sohage .NET\New folder (3)\New folder\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.runtimeconfig.json
+D:\ITI Sohage .NET\New folder (3)\New folder\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.dll
+D:\ITI Sohage .NET\New folder (3)\New folder\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.pdb
+D:\ITI Sohage .NET\New folder (3)\New folder\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.csproj.AssemblyReference.cache
+D:\ITI Sohage .NET\New folder (3)\New folder\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.GeneratedMSBuildEditorConfig.editorconfig
+D:\ITI Sohage .NET\New folder (3)\New folder\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.AssemblyInfoInputs.cache
+D:\ITI Sohage .NET\New folder (3)\New folder\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.AssemblyInfo.cs
+D:\ITI Sohage .NET\New folder (3)\New folder\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.csproj.CoreCompileInputs.cache
+D:\ITI Sohage .NET\New folder (3)\New folder\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.dll
+D:\ITI Sohage .NET\New folder (3)\New folder\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\refint\E-CommerceDB.dll
+D:\ITI Sohage .NET\New folder (3)\New folder\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.pdb
+D:\ITI Sohage .NET\New folder (3)\New folder\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.genruntimeconfig.cache
+D:\ITI Sohage .NET\New folder (3)\New folder\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\ref\E-CommerceDB.dll
+D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.deps.json
+D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.runtimeconfig.json
+D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.dll
+D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.pdb
+D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.csproj.AssemblyReference.cache
+D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.GeneratedMSBuildEditorConfig.editorconfig
+D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.AssemblyInfoInputs.cache
+D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.AssemblyInfo.cs
+D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.csproj.CoreCompileInputs.cache
+D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.dll
+D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\refint\E-CommerceDB.dll
+D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.pdb
+D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.genruntimeconfig.cache
+D:\ITI Sohage .NET\FinalProject\Templets\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\ref\E-CommerceDB.dll
+E:\project\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.deps.json
+E:\project\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.runtimeconfig.json
+E:\project\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.dll
+E:\project\E-CommerceDB\E-CommerceDB\bin\Debug\net6.0\E-CommerceDB.pdb
+E:\project\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.csproj.AssemblyReference.cache
+E:\project\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.GeneratedMSBuildEditorConfig.editorconfig
+E:\project\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.AssemblyInfoInputs.cache
+E:\project\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.AssemblyInfo.cs
+E:\project\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.csproj.CoreCompileInputs.cache
+E:\project\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.dll
+E:\project\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\refint\E-CommerceDB.dll
+E:\project\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.pdb
+E:\project\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\E-CommerceDB.genruntimeconfig.cache
+E:\project\E-CommerceDB\E-CommerceDB\obj\Debug\net6.0\ref\E-CommerceDB.dll
