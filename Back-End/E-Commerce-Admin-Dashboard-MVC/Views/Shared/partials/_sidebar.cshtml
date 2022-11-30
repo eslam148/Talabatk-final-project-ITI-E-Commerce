@@ -38,14 +38,14 @@
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
                 <i class="typcn typcn-chart-pie-outline menu-icon"></i>
-                <span class="menu-title">Complains</span>
+                <span class="menu-title">@SharedLocalizer["Complains"]</span>
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="charts">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link" asp-controller="Complains" asp-action="getAll">All</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Complains" asp-action="getPending">Pending</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Complains" asp-action="getSolved">Solved</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Complains" asp-action="getAll">@SharedLocalizer["All"]</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Complains" asp-action="getPending">@SharedLocalizer["Pending"]</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Complains" asp-action="getSolved">@SharedLocalizer["Solved"]</a></li>
                   
                 </ul>
             </div>
@@ -54,13 +54,13 @@
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#chart" aria-expanded="false" aria-controls="chart">
                 <i class="typcn typcn-chart-pie-outline menu-icon"></i>
-                <span class="menu-title">Discount</span>
+                <span class="menu-title">@SharedLocalizer["Discounts"]</span>
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="chart">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link" asp-controller="Discount" asp-action="Add">Add</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Discount" asp-action="Show">Show Discounts</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Discount" asp-action="Add">@SharedLocalizer["Add"]</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Discount" asp-action="Show">@SharedLocalizer["Show Discounts"]</a></li>
                     
 
                 </ul>

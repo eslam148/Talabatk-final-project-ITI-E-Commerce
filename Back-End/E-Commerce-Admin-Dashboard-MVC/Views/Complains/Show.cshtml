@@ -4,15 +4,17 @@
   @*<img src="..." class="card-img-top" alt="...">*@
   <div class="card-body">
 
-        <span class="font-weight-bold me-2"> Customer Name:</span>@Model.Buyer.First_Name
+        <span class="font-weight-bold me-2"> @SharedLocalizer["Customer Name"]:</span>@Model.Buyer.First_Name
         <span class="font-weight-bold me-2">
-            Product Provider:</span>@Model.Seller.First_Name
+            @SharedLocalizer["Seller Name"]:
+        </span>@Model.Seller.First_Name
             <span class="font-weight-bold me-2">
-                Product Name:</span>@Model.Product.Name @*Not Avilable*@
+            @SharedLocalizer["Product Name"] :
+        </span>@Model.Product.Name @*Not Avilable*@
         <span class="font-weight-bold me-2">
-            Description:
+            @SharedLocalizer["Description"]:
         </span>
     <p class="card-text">@Model.Noted</p>
-    <a href="#" class="btn btn-primary">Replay</a>
+        <a href="#" class="btn btn-primary">@SharedLocalizer["Reply"]</a>
   </div>
 </div>

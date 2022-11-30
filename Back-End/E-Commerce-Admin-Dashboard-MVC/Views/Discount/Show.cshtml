@@ -3,12 +3,12 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Discount Name</th>
-            <th>Discription</th>
-            <th>Discount Percent</th>
-            <th>Product Name</th>
-            <th>Created At</th>
-            <th>Take Action</th>
+            <th>@SharedLocalizer["Discount Name"]</th>
+            <th>@SharedLocalizer["Description"]</th>
+            <th>@SharedLocalizer["Discoun Percent"]</th>
+            <th>@SharedLocalizer["Product Name"]</th>
+            <th>@SharedLocalizer["CreatedAt"]</th>
+            <th>@SharedLocalizer["Take Action"]</th>
         </tr>
     </thead>
     <tbody>
@@ -31,7 +31,7 @@
                 }
                 <td>@item.created_at</td>
                 <td>
-                    <a class="btn btn-danger" asp-action="Delete" asp-controller="Discount" asp-route-id="@item.Id">Delete</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-controller="Discount" asp-route-id="@item.Id">@SharedLocalizer["Delete"]</a>
                 </td>
             </tr>
 

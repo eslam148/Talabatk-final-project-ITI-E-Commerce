@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>All</value>
+  </data>
   <data name="AllBuyed" xml:space="preserve">
     <value>All Buyed</value>
   </data>
@@ -138,8 +144,20 @@
   <data name="Category" xml:space="preserve">
     <value>Category</value>
   </data>
+  <data name="Complain" xml:space="preserve">
+    <value>Complain</value>
+  </data>
+  <data name="Complain Date" xml:space="preserve">
+    <value>Complain Date</value>
+  </data>
+  <data name="Complains" xml:space="preserve">
+    <value>Complains</value>
+  </data>
   <data name="CreatedAt" xml:space="preserve">
     <value>Created At</value>
+  </data>
+  <data name="Customer Name" xml:space="preserve">
+    <value>Customer Name</value>
   </data>
   <data name="Delete" xml:space="preserve">
     <value>Delete</value>
@@ -150,8 +168,17 @@
   <data name="Description" xml:space="preserve">
     <value>Description</value>
   </data>
+  <data name="Discoun Percent" xml:space="preserve">
+    <value>Discoun Percent</value>
+  </data>
   <data name="Discount" xml:space="preserve">
     <value>Discount </value>
+  </data>
+  <data name="Discount Name" xml:space="preserve">
+    <value>Discount Name</value>
+  </data>
+  <data name="Discounts" xml:space="preserve">
+    <value>Discounts</value>
   </data>
   <data name="English" xml:space="preserve">
     <value>English</value>
@@ -174,8 +201,14 @@
   <data name="No" xml:space="preserve">
     <value>No</value>
   </data>
+  <data name="Pending" xml:space="preserve">
+    <value>Pending</value>
+  </data>
   <data name="price" xml:space="preserve">
     <value>Price</value>
+  </data>
+  <data name="Product Name" xml:space="preserve">
+    <value>Product Name</value>
   </data>
   <data name="Products" xml:space="preserve">
     <value>Products</value>
@@ -186,7 +219,31 @@
   <data name="progress" xml:space="preserve">
     <value>Progress</value>
   </data>
+  <data name="Reply" xml:space="preserve">
+    <value>Reply</value>
+  </data>
   <data name="SelledProducts" xml:space="preserve">
     <value>Selled Products</value>
+  </data>
+  <data name="Seller Name" xml:space="preserve">
+    <value>Seller Name</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="Show Discounts" xml:space="preserve">
+    <value>Show Discounts</value>
+  </data>
+  <data name="Solved" xml:space="preserve">
+    <value>Solved</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="Take Action" xml:space="preserve">
+    <value>Take Action</value>
   </data>
 </root>
