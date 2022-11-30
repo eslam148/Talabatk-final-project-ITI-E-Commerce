@@ -28,7 +28,7 @@
                       @SharedLocalizer["Category"]
                 </th>
                 <th>
-                       @SharedLocalizer["Quantity"]
+                    @SharedLocalizer["Quantity"]
                 </th>
                 <th>
                    @SharedLocalizer["Discount"]
@@ -38,6 +38,9 @@
                 </th>
                 <th>
                       @SharedLocalizer["Delete"]
+                </th>
+                  <th>
+                      @SharedLocalizer["Edit"]
                 </th>
             </tr>
         </thead>
@@ -53,10 +56,11 @@
                     <td>@product.modified_at</td>
                    
                     <td>@product.Category</td>
-                    <td>@product.inventory_Id</td>
+                    <td>@product.Qauntity</td>
                     <td>@product.Discount</td>
                     <td>@product.Progress</td>
                     <td><a asp-action="Delete" asp-controller="Product" asp-route-Id="@product.No" class="btn btn-danger">@SharedLocalizer["Delete"]</a></td>
+                    <td><a asp-action="Edit" asp-controller="Product" asp-route-Id="@product.No" class="btn btn-info">@SharedLocalizer["Edit"]</a></td>
 
                 </tr>
             }

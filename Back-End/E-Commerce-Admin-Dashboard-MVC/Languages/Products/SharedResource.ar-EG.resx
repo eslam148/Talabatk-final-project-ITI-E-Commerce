@@ -123,6 +123,9 @@
   <data name="AddProduct" xml:space="preserve">
     <value>اضافه منتج</value>
   </data>
+  <data name="AdminProduct" xml:space="preserve">
+    <value>منتجات المالك</value>
+  </data>
   <data name="AllBuyed" xml:space="preserve">
     <value>كل المشتري</value>
   </data>
@@ -158,6 +161,9 @@
   </data>
   <data name="Discount" xml:space="preserve">
     <value>الخصم</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>تعديل</value>
   </data>
   <data name="ExistingProducts" xml:space="preserve">
     <value>البضائع المتبقيه</value>

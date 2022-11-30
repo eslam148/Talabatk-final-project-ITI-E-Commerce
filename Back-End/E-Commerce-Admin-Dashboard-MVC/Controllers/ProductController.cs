@@ -42,6 +42,7 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
         public IActionResult AddProduct()
         {
             ViewBag.Category = subcategory.Get();//.Select(i=>new SelectListItem(i.BrandName,i.Id.ToString()));
+            ViewBag.Discount = services.GitALlDiscount();
             return View();
         }
         [HttpPost]
@@ -57,13 +58,51 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
                     ModelState.AddModelError("", err);
                 }
                 ViewBag.Category = subcategory.Get();
+                ViewBag.Discount = services.GitALlDiscount();
                 return View();
             }
             else {
                 services.AddProdcut(product);
-                return RedirectToAction("GetProductExisting");
+                return RedirectToAction("GetAdminProduct");
             }
             
+        }
+
+        [HttpGet]
+        public IActionResult GetAdminProduct()
+        {
+            var result = services.GetAllAdminProduct();
+            return View(result);
+        }
+        [HttpGet]
+        public IActionResult Edit(int Id)
+        {
+            ViewBag.Category = subcategory.Get();//.Select(i=>new SelectListItem(i.BrandName,i.Id.ToString()));
+            ViewBag.Discount = services.GitALlDiscount();
+            var prod = services.GetProductById(Id);
+            return View(prod);
+        }
+        [HttpPost]
+        public IActionResult EditProduct(ProductsVM product)
+        {
+            if (ModelState.IsValid == false)
+            {
+                var errors =
+                    ModelState.SelectMany(i => i.Value.Errors.Select(x => x.ErrorMessage));
+
+                foreach (string err in errors)
+                {
+                    ModelState.AddModelError("", err);
+                }
+                ViewBag.Category = subcategory.Get();
+                ViewBag.Discount = services.GitALlDiscount();
+                return View();
+            }
+            else
+            {
+                services.Edit(product);
+                return RedirectToAction("GetAdminProduct");
+            }
         }
     }
 }

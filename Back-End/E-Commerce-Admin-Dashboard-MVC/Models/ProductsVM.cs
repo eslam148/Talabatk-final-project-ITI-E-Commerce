@@ -25,7 +25,8 @@ namespace E_Commerce_Admin_Dashboard_MVC.Models
         [Required(ErrorMessage = "Category Required")]
         public int subCategory { get; set; }
         public int? inventory_Id { get; set; }
-       
+        public int DiscountID { get; set; }
+
         public string Discount { get; set; }
         public int? Progress { get; set; } = 0;
         public bool? IsDeleted { get; set; } = false;

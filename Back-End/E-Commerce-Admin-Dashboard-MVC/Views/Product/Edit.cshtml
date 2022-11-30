@@ -1,6 +1,6 @@
 ﻿@model ProductsVM
 @{
-    ViewData["Title"] = SharedLocalizer["AddProduct"];
+    ViewData["Title"] = SharedLocalizer["Edit"];
 }
 
 
@@ -9,7 +9,7 @@
 *@              <div class="card d-flex justify-content-center">
                 <div class="card-body">
                   <h4 class="card-title">Add Product</h4>
-                  <form data-ajax="true" enctype="multipart/form-data"  class="form-sample" method="post" asp-action="AddProduct" asp-controller="Product" >
+                  <form data-ajax="true" enctype="multipart/form-data"  class="form-sample" method="post" asp-action="EditProduct" asp-controller="Product" >
                     <p class="card-description">
                       @SharedLocalizer["ProductInfo"]
                     </p>
@@ -18,27 +18,27 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">@SharedLocalizer["ProductName"]</label>
                           <div class="col-sm-9">
-                            <input asp-for="Name" type="text" class="form-control" />
+                            <input asp-for="Name" type="text" class="form-control" value="@Model.Name"/>
                              <span asp-validation-for="Name"></span>
                           </div>
                           
                         </div>
                       </div>
-                    @*  <div class="col-md-6">
+                      <div class="col-md-6">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Last Name</label>
+                          
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" />
+                            <input asp-for="No" type="number" class="form-control" hidden value="@Model.No" />
                           </div>
                         </div>
-                      </div>*@
+                      </div>
                     </div>
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">@SharedLocalizer["Category"]</label>
                           <div class="col-sm-9">
-                            <select asp-for="subCategory" class="form-control">
+                            <select asp-for="subCategory" class="form-control" >
                                   @foreach (var cat in ViewBag.Category)
                                     {
                                         <option value="@cat.Id">@cat.BrandName</option>
@@ -99,7 +99,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label"> @SharedLocalizer["Description"]</label>
                           <div class="col-sm-9">
-                            <textarea asp-for="Description" type="text" class="form-control" rows="4"></textarea>
+                            <textarea asp-for="Description" type="text" class="form-control" rows="4" value="@Model.Description"></textarea>
                             <span asp-validation-for="Description"></span>
                           </div>
                         </div>
@@ -111,7 +111,7 @@
                         <div class="form-group row">
                           <label asp-for="Price" class="col-sm-3 col-form-label">@SharedLocalizer["price"]</label>
                           <div class="col-sm-9">
-                            <input asp-for="Price" type="number" class="form-control" />
+                            <input asp-for="Price" type="number" class="form-control" value="@Model.Price"/>
                             <span asp-validation-for="Price"></span>
                           </div>
                         </div>
@@ -123,14 +123,14 @@
                         <div class="form-group row">
                           <label asp-for="Qauntity" class="col-sm-3 col-form-label">@SharedLocalizer["Quantity"]</label>
                           <div class="col-sm-9">
-                            <input asp-for="Qauntity" type="number" class="form-control" />
+                            <input asp-for="Qauntity" type="number" class="form-control" value="@Model.Qauntity"/>
                             <span asp-validation-for="Qauntity"></span>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div class="text-center">
-                        <button type="submit" class="btn btn-success">@SharedLocalizer["Add"]</button>
+                        <button type="submit" class="btn btn-info">@SharedLocalizer["Edit"]</button>
                     </div>
                   </form>
                 </div>
