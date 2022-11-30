@@ -31,6 +31,7 @@
             color:red;
         }
     </style>
+      <link rel="stylesheet" href="~/css/paged.css"/>
 </head>
 <body>
     <div class="container-scroller">
@@ -111,6 +112,11 @@
 
     </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+@* <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+ 
+ <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+ 
+ <script src="~/lib/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.min.js"></script>*@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     @*<script src="~/js/site.js" asp-append-version="true"></script>*@
     <!-- base:js -->
@@ -128,7 +134,11 @@
     <!-- endinject -->
     <!-- Custom js for this page-->
     <script src="~/js/dashboard.js"></script>
-    <!-- End custom js for this page-->
+  <!-- End custom js for this page-->
     @await RenderSectionAsync("Scripts", required: false)
+
+ 
+
+
 </body>
 </html>

@@ -9,7 +9,7 @@
 *@              <div class="card d-flex justify-content-center">
                 <div class="card-body">
                   <h4 class="card-title">Add Product</h4>
-                  <form data-ajax="true" enctype="multipart/form-data"  class="form-sample" method="post" asp-action="AddProduct" asp-controller="Product" >
+                  <form data-ajax="true" enctype="multipart/form-data"  class="form-sample" data-ajax-complete="ProductAdd"  method="post" asp-action="AddProduct" asp-controller="Product" >
                     <p class="card-description">
                       @SharedLocalizer["ProductInfo"]
                     </p>
@@ -136,3 +136,14 @@
                 </div>
               </div>
             </div>
+  <script src="~/lib/jquery/dist/jquery.min.js"></script>
+ <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+ 
+ <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+ 
+ <script src="~/lib/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.min.js"></script>
+ <script>
+function ProductAdd(data) {
+    window.location.href = "/Product/GetAdminProduct"
+}
+</script>

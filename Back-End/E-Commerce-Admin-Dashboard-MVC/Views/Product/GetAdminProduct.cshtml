@@ -1,10 +1,14 @@
-﻿@model IEnumerable<ProductsVM>
+﻿@using X.PagedList.Web.Common
+@model IPagedList<ProductsVM>
 @{
     ViewData["Title"] = SharedLocalizer["SelledProducts"];
     
 }
+
+  
+
 <div class="table-responsive">
-    <table class="table table-striped">
+    <table id="prodcuts" class="table table-striped">
         <thead>
             <tr>
           
@@ -45,7 +49,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var product in Model)
+            @foreach (var product in Model.ToList<ProductsVM>())
             {
                 <tr>
                     
@@ -66,5 +70,17 @@
             }
         </tbody>
     </table>
+     @Html.PagedListPager(Model, pageIndex => Url.Action("GetAdminProduct", new { pageIndex  }),
+      PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(
+    new PagedListRenderOptions()
+    {
+    MaximumPageNumbersToDisplay=3
+    },
+    new AjaxOptions()
+    {
+         HttpMethod ="GET",
+          UpdateTargetId="prodcuts"
+    }
+    ))
 </div>
 

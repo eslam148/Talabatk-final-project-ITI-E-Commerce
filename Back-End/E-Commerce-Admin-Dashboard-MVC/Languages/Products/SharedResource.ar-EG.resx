@@ -210,4 +210,7 @@
   <data name="setting" xml:space="preserve">
     <value>الاعدادات</value>
   </data>
+  <data name="Value" xml:space="preserve">
+    <value>القيمه</value>
+  </data>
 </root>

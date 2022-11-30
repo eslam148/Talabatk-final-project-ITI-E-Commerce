@@ -210,4 +210,7 @@
   <data name="SelledProducts" xml:space="preserve">
     <value>Selled Products</value>
   </data>
+  <data name="Value" xml:space="preserve">
+    <value>Value</value>
+  </data>
 </root>

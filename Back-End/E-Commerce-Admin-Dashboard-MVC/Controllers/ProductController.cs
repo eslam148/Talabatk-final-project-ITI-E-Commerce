@@ -2,6 +2,7 @@
 using E_Commerce_Admin_Dashboard_MVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using X.PagedList;
 
 namespace E_Commerce_Admin_Dashboard_MVC.Controllers
 {
@@ -65,13 +66,14 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
                 services.AddProdcut(product);
                 return RedirectToAction("GetAdminProduct");
             }
-            
+          //  return RedirectToAction("GetAdminProduct");
         }
 
         [HttpGet]
-        public IActionResult GetAdminProduct()
+        public IActionResult GetAdminProduct(int pageIndex = 1, int pageSize = 4)
         {
-            var result = services.GetAllAdminProduct();
+            var result = services.GetAllAdminProduct().ToPagedList(pageIndex, pageSize); ;
+           // result.ToPagedList(pageIndex, pageSize);
             return View(result);
         }
         [HttpGet]
@@ -101,7 +103,7 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
             else
             {
                 services.Edit(product);
-                return RedirectToAction("GetAdminProduct");
+                return Redirect("GetAdminProduct");
             }
         }
     }
