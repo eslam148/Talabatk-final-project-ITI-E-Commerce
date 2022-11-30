@@ -337,6 +337,12 @@
         "resources": {
           "ar-EG/E-Commerce-Admin-Dashboard-MVC.resources.dll": {
             "locale": "ar-EG"
+          },
+          "ar/E-Commerce-Admin-Dashboard-MVC.resources.dll": {
+            "locale": "ar"
+          },
+          "en/E-Commerce-Admin-Dashboard-MVC.resources.dll": {
+            "locale": "en"
           }
         },
         "compile": {
