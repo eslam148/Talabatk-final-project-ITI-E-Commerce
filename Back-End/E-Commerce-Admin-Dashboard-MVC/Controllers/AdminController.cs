@@ -3,6 +3,8 @@ using E_CommerceDB;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Net.Mail;
+using System.Net;
 
 namespace E_Commerce_Admin_Dashboard_MVC.Controllers
 {
@@ -66,10 +68,38 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult SignUp(AdminRegistrationModel admin)
+        public async Task<IActionResult> SignUp(AdminRegistrationModel admin)
         {
-            ViewBag.Roles = RoleManager.Roles
-               .Select(i => new SelectListItem(i.Name, i.Name));
+            if (ModelState.IsValid == false)
+                return View();
+            else
+            {
+                User user = new User()
+                {
+                    First_Name = admin.FirstName,
+                    Last_Name = admin.LastName,
+                    Email = admin.Email,
+                    PhoneNumber = admin.PhoneNumber
+                   
+                };
+                IdentityResult result = await UserManager.CreateAsync(user, admin.Password);
+                if (result.Succeeded == false)
+                {
+                    result.Errors.ToList().ForEach(i => { ModelState.AddModelError("", i.Description); });
+                    return View();
+                }
+                else
+                {
+                    await UserManager.AddToRoleAsync(user, admin.Role);
+                    return RedirectToAction("LogIn");
+
+                    
+                }
+            }
+        }
+        [HttpGet]
+        public IActionResult LogIn()
+        {
             return View();
         }
         [HttpPost]
