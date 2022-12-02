@@ -3,13 +3,13 @@
 <table class="table table-striped">
     <thead>
       <tr>
-        <th>Product Name</th>
-        <th>Complain</th>
-        <th>Status</th>
-        <th>Seller Name</th>
-        <th>Customer Name</th>
-        <th>Complain Date</th>
-        <th>Take Action</th>
+        <th>@SharedLocalizer["Product Name"]</th>
+            <th>@SharedLocalizer["Complain"]</th>
+            <th>@SharedLocalizer["Status"]</th>
+            <th>@SharedLocalizer["Seller Name"]</th>
+            <th>@SharedLocalizer["Customer Name"]</th>
+            <th>@SharedLocalizer["Complain Date"]</th>
+            <th>@SharedLocalizer["Take Action"]</th>
       </tr>
     </thead>
     <tbody>
@@ -38,13 +38,13 @@
                 @if (item.Progress == 0)
                 {
                     <td>
-                        <a class="btn btn-danger" asp-action="Show" asp-controller="Complains" asp-route-id="@item.Id">Show</a>
+                        <a class="btn btn-danger" asp-action="Show" asp-controller="Complains" asp-route-id="@item.Id">@SharedLocalizer["Show"]</a>
                     </td>
                 }
                 else if (item.Progress == 1)
                 {
                     <td>
-                        <a class="btn btn-danger" asp-action="" asp-controller="Complains" asp-route-id="@item.Id">Replay</a>
+                        <a class="btn btn-danger" asp-action="" asp-controller="Complains" asp-route-id="@item.Id">@SharedLocalizer["Reply"]</a>
                     </td>
                 }
                 else
