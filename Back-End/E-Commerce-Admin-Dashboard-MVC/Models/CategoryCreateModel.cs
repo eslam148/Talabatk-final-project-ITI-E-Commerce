@@ -9,13 +9,13 @@ namespace E_Commerce_Admin_Dashboard_MVC.Models
     public class CategoryCreateModel
     {
         public int Id { get; set; }
-        [Display(Name = "Category Name")]
-        [Required(ErrorMessage = "This Faild is Requerd")]
-        [MinLength(4, ErrorMessage = "Must Be More Than Or Equals 4 Chars.")]
+        [Display(Name = "CategoryName")]
+        [Required(ErrorMessage = "Required")]
+        [MinLength(4, ErrorMessage = "MinLength")]
          public string Name { get; set; }
-        [Required]
-        [MinLength(5)]
-        [Display(Name = "Category Description")]
+        [MinLength(4, ErrorMessage = "MinLength")]
+        [Display(Name = "Description")]
+        [Required(ErrorMessage = "Required")]
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
         public DateTime created_at { get; set; } = DateTime.Now;

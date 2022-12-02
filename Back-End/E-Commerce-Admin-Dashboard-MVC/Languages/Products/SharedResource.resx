@@ -243,4 +243,40 @@
   <data name="SelledProducts" xml:space="preserve">
     <value>Selled Products</value>
   </data>
+  <data name="AddCategory" xml:space="preserve">
+    <value>Add Category</value>
+  </data>
+  <data name="ShowCategory" xml:space="preserve">
+    <value>Show Category</value>
+  </data>
+  <data name="CategoryName" xml:space="preserve">
+    <value>Category Name</value>
+  </data>
+  <data name="MinLength" xml:space="preserve">
+    <value>Must Be More Than Or Equals 4 Chars.</value>
+  </data>
+  <data name="Required" xml:space="preserve">
+    <value>This Faild is Required</value>
+  </data>
+  <data name="BrandName" xml:space="preserve">
+    <value>Brand Name</value>
+  </data>
+  <data name="Control" xml:space="preserve">
+    <value>Control</value>
+  </data>
+  <data name="Direction" xml:space="preserve">
+    <value>ltr</value>
+  </data>
+  <data name="flex-dir" xml:space="preserve">
+    <value>flex-row-</value>
+  </data>
+  <data name="float" xml:space="preserve">
+    <value>float-start</value>
+  </data>
+  <data name="Show Product" xml:space="preserve">
+    <value>Show Product</value>
+  </data>
+  <data name="Show Subcategory" xml:space="preserve">
+    <value>Show Subcategory</value>
+  </data>
 </root>

@@ -7,6 +7,7 @@ using Microsoft.CodeAnalysis.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using System.Globalization;
+using Microsoft.AspNetCore.Identity;
 
 namespace E_Commerce_Admin_Dashboard_MVC
 {
@@ -24,16 +25,21 @@ namespace E_Commerce_Admin_Dashboard_MVC
                 options.UseLazyLoadingProxies()
                     .UseSqlServer(builder.Configuration.GetConnectionString("DBKey"));
             });
+
+            builder.Services.AddIdentity<User, IdentityRole>
+            ().AddEntityFrameworkStores<LibraryContext>().AddDefaultTokenProviders();
+
+            #region inject service
             builder.Services.AddTransient<ICategory, CategoryService>();
-            builder.Services.AddTransient<IProductServices, ProductServices>();
-            builder.Services.AddTransient<ISubcategory, SubcategoryService>();
-            builder.Services.AddTransient<IComplains, ComplainsService>();
-            builder.Services.AddTransient<Iuser, UserServices>();
-            builder.Services.AddTransient<Iorder, OrderServices>();
+                builder.Services.AddTransient<IProductServices, ProductServices>();
+                builder.Services.AddTransient<ISubcategory, SubcategoryService>();
+                builder.Services.AddTransient<IComplains, ComplainsService>();
+                builder.Services.AddTransient<Iuser, UserServices>();
+                builder.Services.AddTransient<Iorder, OrderServices>();
+                builder.Services.AddTransient<IDiscount, DiscountService>();
+                builder.Services.AddTransient<IAdmin, AdminServeice>();
 
-           
-            builder.Services.AddTransient<IDiscount, DiscountService>();
-
+            #endregion
 
             builder.Services.AddControllersWithViews()
                 //locazation

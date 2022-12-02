@@ -1,0 +1,16 @@
+﻿@model RoleCreateModel
+<div class="card">
+    <div class="card-body">
+        <form data-ajax="true" class="forms-sample" data-ajax-complete="Sucess" method="post" asp-controller="Admin" asp-action="AddRole">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="form-group ">
+                <label asp-for="Name" class="form-label @SharedLocalizer["float"]"></label>
+                <input asp-for="Name" class="form-control" placeholder="@SharedLocalizer["CategoryName"]">
+                <span asp-validation-for="Name" class="alert-danger"></span>
+            </div>
+           
+            <input type="submit" class="btn btn-primary mr-2  @SharedLocalizer["float"]" value="@SharedLocalizer["Add"]">
+            <button class="btn btn-light  @SharedLocalizer["float"]">@SharedLocalizer["Cancel"]</button>
+        </form>
+    </div>
+</div>

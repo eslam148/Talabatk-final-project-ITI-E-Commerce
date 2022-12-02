@@ -12,13 +12,9 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Brand Name</th>
-                    <th>Category</th>
-                    <th>created at</th>
-                    <th>modified at</th>
-                    <th>Control</th>
-                    
-
+                    <th>@SharedLocalizer["BrandName"]</th>
+                    <th>@SharedLocalizer["Category"]</th>
+                    <th>@SharedLocalizer["Control"]</th>
 
                 </tr>
             </thead>
@@ -43,12 +39,10 @@
                         <td>@i</td>
                         <td>@subcat.BrandName</td>
                         <td>@subcat.CategoryName</td>
-                        <td>@subcat.created_at</td>
-                        <td>@subcat.modified_at</td>
                         <td>
-                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#@d">Delete</button>
-                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#@e">Edit</button>
-                            <a class="btn btn-info" asp-controller="SubCategories" asp-action="index">Show Product</a>
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#@d">@SharedLocalizer["Delete"]</button>
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#@e">@SharedLocalizer["Edit"]</button>
+                            <a class="btn btn-info" asp-controller="SubCategories" asp-action="index">@SharedLocalizer["Show Product"]</a>
 
                         </td>
                        

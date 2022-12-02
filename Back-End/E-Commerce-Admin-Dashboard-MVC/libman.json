@@ -3,16 +3,16 @@
   "defaultProvider": "cdnjs",
   "libraries": [
     {
-      "library": "font-awesome@6.2.1",
-      "destination": "wwwroot/font-awesome/"
-    },
-    {
       "library": "jquery-ajax-unobtrusive@3.2.6",
       "destination": "wwwroot/jquery-ajax-unobtrusive/"
     },
     {
       "library": "jquery-ajaxy@1.6.1",
       "destination": "wwwroot/lib/jquery-ajaxy/"
+    },
+    {
+      "library": "font-awesome@6.2.1",
+      "destination": "wwwroot/lib/font-awesome/"
     }
   ]
 }

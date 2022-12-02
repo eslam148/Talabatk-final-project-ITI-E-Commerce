@@ -8,8 +8,8 @@
         public string UserName { get; set; }
         public string PhoneNumber { get; set; }
 
-        public DateTime Created_at { get; set; }
-        public DateTime modified_at { get; set; }
+        public DateTime Created_at { get; set; } = DateTime.Now;
+        public DateTime modified_at { get; set; } = DateTime.Now;
 
         public bool IsDeleted { get; set; } = false;
         public string Role { get; set; }
