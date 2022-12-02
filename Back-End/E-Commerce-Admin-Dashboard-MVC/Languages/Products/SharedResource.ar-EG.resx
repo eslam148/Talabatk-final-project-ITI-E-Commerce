@@ -309,4 +309,46 @@
   <data name="Take Action" xml:space="preserve">
     <value>اتخذ اجراء</value>
   </data>
+  <data name="Email" xml:space="preserve">
+    <value>البريد الالكتروني</value>
+  </data>
+  <data name="Order Status" xml:space="preserve">
+    <value>حالة الطلب</value>
+  </data>
+  <data name="Product Price" xml:space="preserve">
+    <value>سعر المنتج</value>
+  </data>
+  <data name="Return to full list" xml:space="preserve">
+    <value>الرجوع الى القائمة الكلية</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>بحث</value>
+  </data>
+  <data name="Search Buyers by First Name" xml:space="preserve">
+    <value>البحث بالاسم الاول للمشتري</value>
+  </data>
+  <data name="Search Sellers by First Name" xml:space="preserve">
+    <value>البحث بالاسم الاول للبائع</value>
+  </data>
+  <data name="Total Price" xml:space="preserve">
+    <value>السعر الكلي</value>
+  </data>
+  <data name="User Email" xml:space="preserve">
+    <value>البريد الالكتروني للمستخدم</value>
+  </data>
+  <data name="User Full Name" xml:space="preserve">
+    <value>اسم المستخدم بالكامل</value>
+  </data>
+  <data name="User Name" xml:space="preserve">
+    <value>اسم المستخدم</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>المستخدمين</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>تحذير</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>نعم</value>
+  </data>
 </root>
