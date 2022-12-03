@@ -15,7 +15,7 @@ namespace E_Commerce_Admin_Dashboard_MVC.Models
         [Required, EmailAddress]
         [Display(Name = "Email Address")]
         public string Email { get; set; }
-        [Required,DataType(DataType.PhoneNumber)]
+        [Required]
         [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
         [Required, MinLength(6), MaxLength(16)]

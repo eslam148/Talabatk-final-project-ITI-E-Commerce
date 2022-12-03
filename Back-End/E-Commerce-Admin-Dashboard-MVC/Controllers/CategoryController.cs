@@ -5,9 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using X.PagedList;
 using System.Drawing.Printing;
+using Microsoft.AspNetCore.Authorization;
 
 namespace E_Commerce_Admin_Dashboard_MVC.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CategoryController : Controller
     {
       private readonly ICategory Icategory;

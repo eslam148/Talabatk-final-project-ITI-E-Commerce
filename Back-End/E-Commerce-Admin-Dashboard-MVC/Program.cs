@@ -28,7 +28,23 @@ namespace E_Commerce_Admin_Dashboard_MVC
 
             builder.Services.AddIdentity<User, IdentityRole>
             ().AddEntityFrameworkStores<LibraryContext>().AddDefaultTokenProviders();
+            builder.Services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireNonAlphanumeric = false;
 
+                //options.Lockout.MaxFailedAccessAttempts = 3;
+                //options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(1);
+
+                //options.SignIn.RequireConfirmedEmail = true;
+            });
+            builder.Services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/admin/login";
+               // options.AccessDeniedPath = "/User/NotAuthorized";
+            });
             #region inject service
             builder.Services.AddTransient<ICategory, CategoryService>();
                 builder.Services.AddTransient<IProductServices, ProductServices>();
@@ -84,7 +100,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=admin}/{action=login}/{id?}");
 
             app.Run();
         }

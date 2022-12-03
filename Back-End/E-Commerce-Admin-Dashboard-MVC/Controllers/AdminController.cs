@@ -60,7 +60,7 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
         }
 
         [HttpGet]
-        public IActionResult SignUp()
+        public IActionResult SignUp(string ReturnUrl = null)
         {
             ViewBag.Roles = RoleManager.Roles
                .Select(i => new SelectListItem(i.Name, i.Name));
@@ -78,6 +78,7 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
                 {
                     First_Name = admin.FirstName,
                     Last_Name = admin.LastName,
+                    UserName = admin.UserName,
                     Email = admin.Email,
                     PhoneNumber = admin.PhoneNumber
                    
@@ -103,9 +104,42 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult LogIn(LogInModel logInModel)
+        public async Task<IActionResult> LogIn(LogInModel logInModel)
         {
-            return View();
+            if (ModelState.IsValid == false)
+                return View();
+            else
+            {
+                var result
+                     = await SignInManager.PasswordSignInAsync
+                        (logInModel.UserName, logInModel.Password, logInModel.RememberMe,
+                             true);
+                if (result.IsNotAllowed == true)
+                {
+                    ModelState.AddModelError("", "Invalid User Name Of Password");
+                    return View();
+                }
+                else if (result.IsLockedOut)
+                {
+                    ModelState.AddModelError("", "You're Locked Out Please Try Again After 1 Minute");
+                    return View();
+                }
+                else
+                {
+                    if (!string.IsNullOrEmpty(logInModel.ReturnUrl))
+                        return LocalRedirect(logInModel.ReturnUrl);
+                    else
+                        return RedirectToAction("Index", "Home");
+                }
+
+            }
+        }
+
+        [HttpGet]
+        public new async Task<IActionResult> SignOut()
+        {
+            await SignInManager.SignOutAsync();
+            return RedirectToAction("LogIn", "Admin");
         }
     }
 }

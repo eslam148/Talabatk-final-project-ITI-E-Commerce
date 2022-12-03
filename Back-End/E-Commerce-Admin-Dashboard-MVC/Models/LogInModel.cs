@@ -1,12 +1,19 @@
-﻿using Microsoft.Build.Framework;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace E_Commerce_Admin_Dashboard_MVC.Models
 {
     public class LogInModel
     {
         [Required]
-        public String UserName { get; set; }
+        [Display(Name = "UserName")]
+        public string UserName { get; set; }
         [Required]
-        public String Password { get; set; }
+        [MinLength(3)]
+        [MaxLength(16)]
+        [Display(Name = "Password")]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
+        public bool RememberMe { get; set; }
+        public string ReturnUrl { get; set; }
     }
 }
