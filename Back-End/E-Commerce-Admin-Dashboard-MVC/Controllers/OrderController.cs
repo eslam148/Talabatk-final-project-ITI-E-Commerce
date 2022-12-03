@@ -1,10 +1,13 @@
 ﻿using E_Commerce_Admin_Dashboard_MVC.Services;
 using E_CommerceDB;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using X.PagedList;
 
 namespace E_Commerce_Admin_Dashboard_MVC.Controllers
 {
+    [Authorize(Roles = "Admin")]
+
     public class OrderController : Controller
     {
         private readonly Iorder Iorder;

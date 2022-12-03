@@ -1,12 +1,15 @@
 ﻿using E_CommerceDB;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 using System.Dynamic;
 using X.PagedList;
 
 namespace E_Commerce_Admin_Dashboard_MVC.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class UserController : Controller
     {
 

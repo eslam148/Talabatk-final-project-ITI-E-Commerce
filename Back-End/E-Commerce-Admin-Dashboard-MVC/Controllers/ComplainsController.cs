@@ -1,9 +1,12 @@
 ﻿using E_CommerceDB;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using X.PagedList;
 
 namespace E_Commerce_Admin_Dashboard_MVC
 {
+    [Authorize(Roles = "Admin")]
+
     public class ComplainsController : Controller
     {
         private readonly IComplains ic;

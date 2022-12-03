@@ -1,11 +1,14 @@
 ﻿using E_Commerce_Admin_Dashboard_MVC.Models;
 using E_CommerceDB;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Drawing.Printing;
 using X.PagedList;
 
 namespace E_Commerce_Admin_Dashboard_MVC.Controllers
 {
+    [Authorize(Roles = "Admin")]
+
     public class SubCategoriesController : Controller
     {
         private readonly ISubcategory ISubCategorie;
