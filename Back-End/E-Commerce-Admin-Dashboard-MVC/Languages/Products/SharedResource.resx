@@ -333,6 +333,48 @@
   <data name="Take Action" xml:space="preserve">
     <value>Take Action</value>
   </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Order Status" xml:space="preserve">
+    <value>Order Status</value>
+  </data>
+  <data name="Product Price" xml:space="preserve">
+    <value>Product Price</value>
+  </data>
+  <data name="Return to full list" xml:space="preserve">
+    <value>Return to full list</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Search Buyers by First Name" xml:space="preserve">
+    <value>Search Buyers by First Name</value>
+  </data>
+  <data name="Search Sellers by First Name" xml:space="preserve">
+    <value>Search Sellers by First Name</value>
+  </data>
+  <data name="Total Price" xml:space="preserve">
+    <value>Total Price</value>
+  </data>
+  <data name="User Email" xml:space="preserve">
+    <value>User Email</value>
+  </data>
+  <data name="User Full Name" xml:space="preserve">
+    <value>User Full Name</value>
+  </data>
+  <data name="User Name" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
   <data name="Users" xml:space="preserve">
     <value>Users</value>
   </data>
