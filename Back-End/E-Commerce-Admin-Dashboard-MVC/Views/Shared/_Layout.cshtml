@@ -3,29 +3,9 @@
 }
 
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - E_Commerce_Admin_Dashboard_MVC</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/E_Commerce_Admin_Dashboard_MVC.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/PagedList.css" />
+<html lang="en" dir="@SharedLocalizer["Direction"]">
+       <partial name="partials/_head"></partial>
 
-    @*//////////////*@
-    <link rel="stylesheet" href="~/css/vertical-layout-light/style.css">
-
-    <link rel="stylesheet" href="~/vendors/typicons/typicons.css">
-    <link rel="stylesheet" href="~/vendors/css/vendor.bundle.base.css">
-    <!-- endinject -->
-    <!-- plugin css for this page -->
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="~/css/vertical-layout-light/style.css">
-    <!-- endinject -->
-    <link rel="shortcut icon" href="~/images/favicon.png" />
-</head>
 <body>
     <div class="container-scroller">
         <partial name="partials/_navbar"></partial>
@@ -122,11 +102,13 @@
     <script src="~/js/template.js"></script>
     <script src="~/js/settings.js"></script>
     <script src="~/js/todolist.js"></script>
+    <script src="~/~/lib/font-awesome/js/all.js"></script>
+
     <!-- endinject -->
     <!-- Custom js for this page-->
     <script src="~/js/dashboard.js"></script>
     <script src="~/vendors/js/vendor.bundle.base.js"></script>
-
+    <script src="https://kit.fontawesome.com/59a9cf4a82.js" crossorigin="anonymous"></script>
     <!-- End custom js for this page-->
     @await RenderSectionAsync("Scripts", required: false)
 </body>

@@ -33,7 +33,7 @@
                     <th>@SharedLocalizer["Control"]</th>
                 </tr>
             </thead>
-            <tbody >
+            <tbody id="TableBody" >
                
                 @foreach (var cat in Model.ToList())
                     {
@@ -56,9 +56,9 @@
                         <td>@cat.created_at</td>
                         <td>@cat.modified_at</td>
                             <td >
-                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#@d">Delete</button>
-                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#@e">Edit</button>
-                            <a class="btn btn-info w-50" asp-controller="SubCategories" asp-action="index" asp-route-Id="@cat.Id">Show Subcategory</a>
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#@d">@SharedLocalizer["Delete"]</button>
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#@e">@SharedLocalizer["Edit"]</button>
+                            <a class="btn btn-info w-50" asp-controller="SubCategories" asp-action="index" asp-route-Id="@cat.Id">@SharedLocalizer["Show Subcategory"]</a>
 
                         </td>
                         

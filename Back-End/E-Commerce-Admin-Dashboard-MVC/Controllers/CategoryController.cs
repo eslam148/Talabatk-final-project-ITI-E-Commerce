@@ -5,9 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using X.PagedList;
 using System.Drawing.Printing;
+using Microsoft.AspNetCore.Authorization;
 
 namespace E_Commerce_Admin_Dashboard_MVC.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CategoryController : Controller
     {
       private readonly ICategory Icategory;
@@ -60,7 +62,7 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
 
         public IActionResult SearchNameCategory(string Name, int pageIndex = 1, int pageSize = 4)
         {
-
+            Icategory.get(Name).ToPagedList(pageIndex, pageSize);
             return View("index",Icategory.get(Name).ToPagedList(pageIndex, pageSize));
         }
     }

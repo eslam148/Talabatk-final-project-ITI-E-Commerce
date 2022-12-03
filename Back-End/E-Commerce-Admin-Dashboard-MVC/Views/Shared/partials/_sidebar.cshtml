@@ -1,5 +1,5 @@
 ﻿<nav class="sidebar sidebar-offcanvas" id="sidebar">
-    <ul class="nav">
+    <ul class="nav row flex-nowrap">
         <li class="nav-item active">
             <a class="nav-link" href="index.html">
                 <i class="typcn typcn-device-desktop menu-icon"></i>
@@ -7,26 +7,26 @@
                 <div class="badge badge-danger">new</div>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="true" aria-controls="ui-basic">
+        <li class="nav-item ">
+            <a class="nav-link @SharedLocalizer["flex-dir"] " data-toggle="collapse" href="#ui-basic" aria-expanded="true" aria-controls="ui-basic">
                 <i class="typcn typcn-document-text menu-icon"></i>
-                <span class="menu-title">Category</span>
+                <span class="menu-title mx-3">@SharedLocalizer["Category"]</span>
                 <i class="menu-arrow"></i>
             </a>
-            <div class="collapse show" id="ui-basic" style="">
+            <div class="collapse @SharedLocalizer["flex-dir"] show" id="ui-basic" style="">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" asp-controller="Category" asp-action="Index">Show Category</a></li>
-                    <li class="nav-item"> <a class="nav-link" asp-controller="Category" asp-action="AddCategory">Add Category</a></li>
+                    <li class="nav-item"> <a class="nav-link" asp-controller="Category" asp-action="Index">@SharedLocalizer["ShowCategory"]</a></li>
+                    <li class="nav-item"> <a class="nav-link" asp-controller="Category" asp-action="AddCategory">@SharedLocalizer["AddCategory"]</a></li>
                 </ul>
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+            <a class="nav-link  @SharedLocalizer["flex-dir"]" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
                 <i class="typcn typcn-film menu-icon"></i>
-                <span class="menu-title"> @SharedLocalizer["Products"]</span>
+                <span class="menu-title mx-3"> @SharedLocalizer["Products"]</span>
                 <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="form-elements">
+            <div class="collapse  @SharedLocalizer["flex-dir"]" id="form-elements">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"><a class="nav-link" asp-controller="Product" asp-action="AddProduct">@SharedLocalizer["AddProduct"]</a></li>
                 </ul>
@@ -42,12 +42,12 @@
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+            <a class="nav-link  @SharedLocalizer["flex-dir"]" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
                 <i class="typcn typcn-chart-pie-outline menu-icon"></i>
                 <span class="menu-title">@SharedLocalizer["Complains"]</span>
                 <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="charts">
+            <div class="collapse  @SharedLocalizer["flex-dir"]" id="charts">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"><a class="nav-link" asp-controller="Complains" asp-action="getAll">@SharedLocalizer["All"]</a></li>
                     <li class="nav-item"><a class="nav-link" asp-controller="Complains" asp-action="getPending">@SharedLocalizer["Pending"]</a></li>
@@ -58,12 +58,12 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#chart" aria-expanded="false" aria-controls="chart">
+            <a class="nav-link  @SharedLocalizer["flex-dir"]" data-toggle="collapse" href="#chart" aria-expanded="false" aria-controls="chart">
                 <i class="typcn typcn-chart-pie-outline menu-icon"></i>
                 <span class="menu-title">@SharedLocalizer["Discounts"]</span>
                 <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="chart">
+            <div class="collapse  @SharedLocalizer["flex-dir"]" id="chart">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"><a class="nav-link" asp-controller="Discount" asp-action="Add">@SharedLocalizer["Add"]</a></li>
                     <li class="nav-item"><a class="nav-link" asp-controller="Discount" asp-action="Show">@SharedLocalizer["Show Discounts"]</a></li>
@@ -74,12 +74,12 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+            <a class="nav-link  @SharedLocalizer["flex-dir"]" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
                 <i class="typcn typcn-th-small-outline menu-icon"></i>
-                <span class="menu-title">@SharedLocalizer["Users"]</span>
+                <span class="menu-title mx-3">@SharedLocalizer["Users"]</span>
                 <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="tables">
+            <div class="collapse  @SharedLocalizer["flex-dir"]" id="tables">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" asp-action="GetBuyers" asp-controller="User">@SharedLocalizer["Buyers"]</a></li>
                     <li class="nav-item"> <a class="nav-link" asp-action="GetSellers" asp-controller="User">@SharedLocalizer["Sellers"]</a></li>
@@ -88,12 +88,12 @@
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
+            <a class="nav-link  @SharedLocalizer["flex-dir"]" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
                 <i class="typcn typcn-compass menu-icon"></i>
-                <span class="menu-title">@SharedLocalizer["Orders"]</span>
+                <span class="menu-title mx-3">@SharedLocalizer["Orders"]</span>
                 <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="icons">
+            <div class="collapse  @SharedLocalizer["flex-dir"]" id="icons">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" asp-action="Index" asp-controller="Order">@SharedLocalizer["All Orders"]</a></li>
                     <li class="nav-item"> <a class="nav-link" asp-action="GetPendingOrders" asp-controller="Order">@SharedLocalizer["Pending"]</a></li>
@@ -101,37 +101,6 @@
                 </ul>
             </div>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                <i class="typcn typcn-user-add-outline menu-icon"></i>
-                <span class="menu-title">User Pages</span>
-                <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="auth">
-                <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
-                </ul>
-            </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
-                <i class="typcn typcn-globe-outline menu-icon"></i>
-                <span class="menu-title">Error pages</span>
-                <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="error">
-                <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
-                </ul>
-            </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="https://bootstrapdash.com/demo/polluxui-free/docs/documentation.html">
-                <i class="typcn typcn-mortar-board menu-icon"></i>
-                <span class="menu-title">Documentation</span>
-            </a>
-        </li>
+       
     </ul>
 </nav>
