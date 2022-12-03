@@ -18,6 +18,7 @@ namespace E_Commerce_Admin_Dashboard_MVC.Services
 
         public async Task AddRole(RoleCreateModel Role, RoleManager<IdentityRole> roleManager)
         {
+            
             RoleManager = roleManager;
 
             await RoleManager.CreateAsync(new IdentityRole { Name=Role.Name });

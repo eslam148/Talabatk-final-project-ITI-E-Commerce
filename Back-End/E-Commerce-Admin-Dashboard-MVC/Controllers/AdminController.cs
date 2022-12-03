@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Net.Mail;
 using System.Net;
+using Microsoft.AspNetCore.SignalR;
 
 namespace E_Commerce_Admin_Dashboard_MVC.Controllers
 {
@@ -20,7 +21,8 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
             IAdmin _IAdmin
             ,RoleManager<IdentityRole> roleManager
             ,UserManager<User> _UserManager
-            ,SignInManager<User> _SignInManager)
+            ,SignInManager<User> _SignInManager
+           )
         {
             IAdmin = _IAdmin;
             UserManager = _UserManager;
