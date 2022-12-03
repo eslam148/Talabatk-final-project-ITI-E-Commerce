@@ -23,5 +23,7 @@ namespace E_Commerce_Admin_Dashboard_MVC.Services
             await RoleManager.CreateAsync(new IdentityRole { Name=Role.Name });
 
         }
+
+      
     }
 }

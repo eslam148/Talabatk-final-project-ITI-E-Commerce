@@ -14,6 +14,8 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
         RoleManager<IdentityRole> RoleManager;
         UserManager<User> UserManager;
         SignInManager<User> SignInManager;
+        [ViewData]
+        public String UserImage { get; set; }
         public AdminController(
             IAdmin _IAdmin
             ,RoleManager<IdentityRole> roleManager
@@ -29,6 +31,7 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
 
         public IActionResult AddRole()
         {
+            
             return View();
         }
         [HttpPost]
@@ -129,12 +132,19 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
                     if (!string.IsNullOrEmpty(logInModel.ReturnUrl))
                         return LocalRedirect(logInModel.ReturnUrl);
                     else
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("SignUp");
+                       // return RedirectToAction("Index", "Home");
                 }
 
             }
         }
+        [HttpGet]
+        public async Task<String> GetProfileImage()
+        {
+            var user = await UserManager.GetUserAsync(User);
 
+            return user.ProfilieImage;
+        }
         [HttpGet]
         public new async Task<IActionResult> SignOut()
         {

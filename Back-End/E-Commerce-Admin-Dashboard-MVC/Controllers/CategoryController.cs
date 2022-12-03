@@ -62,7 +62,7 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
 
         public IActionResult SearchNameCategory(string Name, int pageIndex = 1, int pageSize = 4)
         {
-
+            Icategory.get(Name).ToPagedList(pageIndex, pageSize);
             return View("index",Icategory.get(Name).ToPagedList(pageIndex, pageSize));
         }
     }
