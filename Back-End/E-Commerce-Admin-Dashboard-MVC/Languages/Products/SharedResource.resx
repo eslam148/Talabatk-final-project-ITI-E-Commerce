@@ -333,4 +333,7 @@
   <data name="Take Action" xml:space="preserve">
     <value>Take Action</value>
   </data>
+  <data name="Users" xml:space="preserve">
+    <value>Users</value>
+  </data>
 </root>

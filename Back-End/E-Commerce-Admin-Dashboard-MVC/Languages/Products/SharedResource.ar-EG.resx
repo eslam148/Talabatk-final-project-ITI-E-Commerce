@@ -345,4 +345,7 @@
   <data name="Show Subcategory" xml:space="preserve">
     <value>الصنف الفرعي</value>
   </data>
+  <data name="Users" xml:space="preserve">
+    <value>المستخدمون</value>
+  </data>
 </root>
