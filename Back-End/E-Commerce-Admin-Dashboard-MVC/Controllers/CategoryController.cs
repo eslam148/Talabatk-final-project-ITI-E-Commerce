@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using X.PagedList;
 using System.Drawing.Printing;
 using Microsoft.AspNetCore.Authorization;
+using Castle.Core.Internal;
 
 namespace E_Commerce_Admin_Dashboard_MVC.Controllers
 {
@@ -62,7 +63,11 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
 
         public IActionResult SearchNameCategory(string Name, int pageIndex = 1, int pageSize = 4)
         {
-            Icategory.get(Name).ToPagedList(pageIndex, pageSize);
+            //Icategory.get(Name).ToPagedList(pageIndex, pageSize);
+            if (Name.IsNullOrEmpty())
+            {
+                return RedirectToAction("Index");
+            }
             return View("index",Icategory.get(Name).ToPagedList(pageIndex, pageSize));
         }
     }
