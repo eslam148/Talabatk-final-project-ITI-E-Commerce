@@ -346,7 +346,7 @@
     <value>الصنف الفرعي</value>
   </data>
   <data name="Users" xml:space="preserve">
-    <value>المستخدمون</value>
+    <value>المستخدمين</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>البريد الالكتروني</value>
@@ -381,13 +381,25 @@
   <data name="User Name" xml:space="preserve">
     <value>اسم المستخدم</value>
   </data>
-  <data name="Users" xml:space="preserve">
-    <value>المستخدمين</value>
-  </data>
   <data name="Warning" xml:space="preserve">
     <value>تحذير</value>
   </data>
   <data name="Yes" xml:space="preserve">
     <value>نعم</value>
+  </data>
+  <data name="Add Product" xml:space="preserve">
+    <value>اضافة منتج</value>
+  </data>
+  <data name="Are You sure  to delete this Item?" xml:space="preserve">
+    <value>هل ترغب في مسح هذا العنصر؟</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>الغاء</value>
+  </data>
+  <data name="Confirm Delete" xml:space="preserve">
+    <value>تأكيد عملية المسح</value>
+  </data>
+  <data name="Reply" xml:space="preserve">
+    <value>رد</value>
   </data>
 </root>
