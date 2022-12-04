@@ -387,4 +387,13 @@
   <data name="Confirm Delete" xml:space="preserve">
     <value>Confirm Delete</value>
   </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Edit Item" xml:space="preserve">
+    <value>Edit Item</value>
+  </data>
+  <data name="Log Out" xml:space="preserve">
+    <value>Log Out</value>
+  </data>
 </root>

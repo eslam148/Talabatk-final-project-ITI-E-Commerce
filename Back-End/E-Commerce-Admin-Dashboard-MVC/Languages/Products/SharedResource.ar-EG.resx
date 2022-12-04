@@ -402,4 +402,10 @@
   <data name="Reply" xml:space="preserve">
     <value>رد</value>
   </data>
+  <data name="Edit Item" xml:space="preserve">
+    <value>تعديل العنصر</value>
+  </data>
+  <data name="Log Out" xml:space="preserve">
+    <value>تسجيل الخروج</value>
+  </data>
 </root>
