@@ -24,7 +24,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
         }
         public List<User> Search(string SearchedString)
         {
-            var searchedUser = db.Users.Where(u => u.First_Name.Contains(SearchedString)).ToList();
+            var searchedUser = db.Users.Where(u => u.IsDeleted == false && u.First_Name.StartsWith(SearchedString)).ToList();
             return searchedUser;
         }
     }

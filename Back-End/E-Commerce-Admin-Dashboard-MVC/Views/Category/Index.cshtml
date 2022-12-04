@@ -7,11 +7,11 @@
     int i = 0;
 }
 <div id="data" class="card-body">
-    <h4 class="card-title">Hoverable Table</h4>
+    <h4 class="card-title"></h4>
     <p class="card-description">
         <form asp-controller="Category" asp-action="SearchNameCategory">
         <div class="input-group">
-            <input name="Name" class="form-control border-end-0 border rounded-pill" type="search" value="" placeholder="Search" id="example-search-input">
+                <input name="Name" class="form-control border-end-0 border rounded-pill" type="search" value="" placeholder="@SharedLocalizer["Search"]" id="example-search-input">
             <span class="input-group-append">
                 
                 <button id="btn" class="btn btn-outline-secondary bg-white border-bottom-0 border rounded-pill ms-n5" type="submit">
