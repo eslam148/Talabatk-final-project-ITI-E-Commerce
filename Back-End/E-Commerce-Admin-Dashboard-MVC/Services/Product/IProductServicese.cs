@@ -12,6 +12,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
         public void AddProdcut(ProductsVM product);
         public void Edit(ProductsVM product);
         public IEnumerable<DiscountProductVM> GitALlDiscount();
+        public IEnumerable<ProductsVM> GetProductBySubcategory(int CatId);
 
     }
 }

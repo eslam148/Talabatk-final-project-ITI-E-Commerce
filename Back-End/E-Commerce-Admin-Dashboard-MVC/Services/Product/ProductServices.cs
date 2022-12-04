@@ -155,5 +155,28 @@ namespace E_Commerce_Admin_Dashboard_MVC
 
             context.SaveChanges();
         }
+
+        public IEnumerable<ProductsVM> GetProductBySubcategory(int CatId)
+        {
+            var data = context.Product.Where(p =>  p.IsDeleted == false && p.SubCategories_Id == CatId)
+                .Select(prod => new ProductsVM()
+            {
+                No = prod.Id,
+                Name = prod.Name,
+                Category = context.SubCategories.Where(s => s.Id == prod.SubCategories_Id).Select(b => b.BrandName).FirstOrDefault(), //prod.SubCategories_Id,
+                Description = prod.Description,
+                Price = prod.Price,
+                created_at = prod.created_at,
+                modified_at = prod.modified_at,
+                Discount = context.Discount.Where(s => s.Id == prod.discount_Id).Select(b => b.Name).FirstOrDefault(),
+                Progress = prod.Progress,
+                IsDeleted = prod.IsDeleted,
+                Qauntity=prod.Quantity,
+                SelledQauntity=prod.SelledQuantity,
+                SellerId = prod.Sellyer.Id
+            });
+            return data;
+        }
+
     }
 }

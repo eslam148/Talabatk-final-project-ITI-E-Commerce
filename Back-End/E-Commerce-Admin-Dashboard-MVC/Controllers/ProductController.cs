@@ -74,7 +74,7 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
         [HttpGet]
         public IActionResult GetAdminProduct(int pageIndex = 1, int pageSize = 4)
         {
-            var result = services.GetAllAdminProduct().ToPagedList(pageIndex, pageSize); ;
+            var result = services.GetAllAdminProduct().ToPagedList(pageIndex, pageSize); 
            // result.ToPagedList(pageIndex, pageSize);
             return View(result);
         }

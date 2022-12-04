@@ -13,7 +13,7 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
     [Authorize(Roles = "Admin")]
     public class CategoryController : Controller
     {
-      private readonly ICategory Icategory;
+        private readonly ICategory Icategory;
         public CategoryController(ICategory _category)
         {
             Icategory = _category;
@@ -70,5 +70,6 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
             }
             return View("index",Icategory.get(Name).ToPagedList(pageIndex, pageSize));
         }
+       
     }
 }
