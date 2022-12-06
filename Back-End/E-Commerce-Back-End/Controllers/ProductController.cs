@@ -21,7 +21,7 @@ namespace E_Commerce_Back_End.Controllers
         [Route("~/api/GetProducts")]
         public IActionResult GetProducts()
         {
-            if (productServices.GetAllProducts()!=null)
+            if (productServices.GetAllProducts() != null)
             {
                 var products = productServices.GetAllProducts();
                 return Ok(products);
@@ -42,15 +42,34 @@ namespace E_Commerce_Back_End.Controllers
             //ProductsVM p = new ProductsVM();
             return NotFound();
         }
-        //[HttpGet]
-        //[Route("~/api/GetProductById")]
-        //public ProductsVM GetPrById(int id)
-        //{
-        //    var res = productServices.GetProductById(id);
-        //    if (res != null)
-        //        return res;
-        //    else return null;
-        //}
+        [HttpPut]
+        [Route("~/api/UpdateProduct")]
+        public IActionResult UpdateProduct(ProductsVM product)
+        {
+            if (ModelState.IsValid)
+            {
+                productServices.Edit(product);
+                return Ok("Product Is Updated");
+            }
+            else
+            {
+                return BadRequest(" Validation Error");
+            }
 
         }
+
+
+        [HttpDelete]
+        [Route("~/api/DeleteProduct")]
+        public IActionResult DeleteProduct(int id)
+        {
+            if (productServices.GetProductById(id) != null)
+            {
+                 productServices.DeleteProduct(id);
+                return Ok("product is Deleted");
+            }
+            //ProductsVM p = new ProductsVM();
+            return NotFound("No Product By this Id");
+        }
+    }
 }
