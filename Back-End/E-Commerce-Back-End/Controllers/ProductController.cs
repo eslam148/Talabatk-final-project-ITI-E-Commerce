@@ -26,7 +26,7 @@ namespace E_Commerce_Back_End.Controllers
                 var products = productServices.GetAllProducts();
                 return Ok(products);
             }
-            //ProductsVM p = new ProductsVM();
+           
             return NotFound();
         }
 
@@ -34,23 +34,42 @@ namespace E_Commerce_Back_End.Controllers
         [Route("~/api/GetProductById/{id}")]
         public IActionResult GetProductById(int id)
         {
-            if (productServices.GetProductById(id) != null)
+            var res = productServices.GetProductById(id);
+            if (res!= null)
             {
-                var product = productServices.GetProductById(id);
-                return Ok(product);
+                return Ok(res);
             }
-            //ProductsVM p = new ProductsVM();
+            
             return NotFound();
         }
-        //[HttpGet]
-        //[Route("~/api/GetProductById")]
-        //public ProductsVM GetPrById(int id)
-        //{
-        //    var res = productServices.GetProductById(id);
-        //    if (res != null)
-        //        return res;
-        //    else return null;
-        //}
 
+        [HttpGet]
+        [Route("~/api/GetProductByCatAndPrice/{subCat_id}&{start}&{end}")]
+        public IActionResult ShowProductByPriceRange(int subCat_id ,int start,int end)
+        {
+            var res = productServices.GetProductBySubCatPriceRange(subCat_id,start, end);
+            if (res != null)
+            {
+                return Ok(res);
+            }
+
+            return NotFound();
         }
+
+        [HttpGet]
+        [Route("~/api/ShowProductBySubCat/{id}")]
+        public IActionResult ShowProductBySubCat(int id)
+        {
+            var res = productServices.GetProductBySubcategory(id);
+            if (res != null)
+            {
+                return Ok(res);
+            }
+
+            return NotFound();
+        }
+
+
+
+    }
 }
