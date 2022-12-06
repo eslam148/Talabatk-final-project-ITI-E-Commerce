@@ -4,6 +4,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
 {
     public interface IProductServices
     {
+        public IEnumerable<ProductsVM> GetAllProducts();
         public IEnumerable<ProductsVM> GetAllSold();
         public IEnumerable<ProductsVM> GetAllExisting();
         public IEnumerable<ProductsVM> GetAllAdminProduct();
@@ -13,6 +14,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
         public void Edit(ProductsVM product);
         public IEnumerable<DiscountProductVM> GitALlDiscount();
         public IEnumerable<ProductsVM> GetProductBySubcategory(int CatId);
+
 
     }
 }

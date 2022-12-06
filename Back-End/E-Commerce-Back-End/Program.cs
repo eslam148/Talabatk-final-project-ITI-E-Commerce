@@ -36,7 +36,7 @@ namespace E_Commerce_Back_End
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-
+            builder.Services.AddScoped<IProductServices, ProductServices>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

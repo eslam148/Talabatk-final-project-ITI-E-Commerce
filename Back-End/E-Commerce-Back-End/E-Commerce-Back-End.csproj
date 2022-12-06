@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\final-project-ITI-E-Commerce\E-CommerceDB\E-CommerceDB\E-CommerceDB.csproj" />
+    <ProjectReference Include="..\..\E-CommerceDB\E-CommerceDB\E-CommerceDB.csproj" />
   </ItemGroup>
 
 </Project>
