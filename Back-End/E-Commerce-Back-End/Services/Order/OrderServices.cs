@@ -34,6 +34,38 @@ namespace E_Commerce_Admin_Dashboard_MVC.Services
             var delivered = db.OrderItems.Where(o => o.Order_Details.progress == 1).ToList();
             return delivered;
         }
+ 
+        /// //////////////////////////////////////////////////////////////////////////////////////////////////////////
+     
+        public void AddOrder(OrderItemsCreateModel orderModel)
+        {
+            OrderItems order = new OrderItems()
+            {
+                Order_Details_id = orderModel.Order_Details_id,
+                Product_id = orderModel.Product_id,
+                Quantity = orderModel.Quantity,
+                created_at = orderModel.created_at,
+                modified_at = orderModel.modified_at,
+                IsDeleted = false
+            };
+            db.OrderItems.Add(order);
+            db.SaveChanges();
+        }
 
+        public void AddOrderDetails(OrderDetailsCreateModel orderDetailsModel)
+        {
+            Order_Details orderDetails = new Order_Details()
+            {
+                User_id = orderDetailsModel.User_id,
+                Total = orderDetailsModel.Total,
+                Payment_id = orderDetailsModel.Payment_id,
+                Created_at = orderDetailsModel.Created_at,
+                Modified_at = orderDetailsModel.Created_at,
+                IsDeleted = false,
+                progress = 0
+            };
+            db.Order_Details.Add(orderDetails);
+            db.SaveChanges();
+        }
     }
 }

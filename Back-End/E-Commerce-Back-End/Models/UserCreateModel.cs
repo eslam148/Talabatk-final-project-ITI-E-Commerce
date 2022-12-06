@@ -1,4 +1,6 @@
-﻿namespace E_Commerce_Back_End
+﻿using E_Commerce_Back_End.Models;
+
+namespace E_Commerce_Back_End
 {
     public class UserCreateModel
     {
@@ -13,6 +15,7 @@
 
         public bool IsDeleted { get; set; } = false;
         public string Role { get; set; }
+        public virtual ICollection<UserAddressCreateModel> UserAddressCreateModels { get; set; }
        
     }
 }
