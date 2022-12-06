@@ -1,6 +1,7 @@
 using E_CommerceDB;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using E_Commerce_Back_End.Services;
 
 namespace E_Commerce_Back_End
 {
@@ -28,7 +29,9 @@ namespace E_Commerce_Back_End
             builder.Services.AddTransient<Iorder, OrderServices>();
             builder.Services.AddTransient<IDiscount, DiscountService>();
             builder.Services.AddTransient<IAdmin, AdminServeice>();
-
+            builder.Services.AddTransient<Iaddress, UserAddressServices>();
+            builder.Services.AddTransient<IuserPayment, UserPaymentServices>();
+            builder.Services.AddTransient<Ipayment, PaymentServices>();
             #endregion
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

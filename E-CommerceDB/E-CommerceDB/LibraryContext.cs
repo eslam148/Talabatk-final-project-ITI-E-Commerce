@@ -63,7 +63,7 @@ namespace E_CommerceDB
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //base.OnConfiguring(optionsBuilder);
+            base.OnConfiguring(optionsBuilder);
             //optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=DB;Integrated Security=True");
         }
     }
