@@ -1,7 +1,7 @@
 ﻿using E_Commerce_Back_End;
 using E_CommerceDB;
 
-namespace E_Commerce_Admin_Dashboard_MVC.Services
+namespace E_Commerce_Back_End
 {
     public class OrderServices:Iorder
     {

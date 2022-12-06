@@ -1,7 +1,5 @@
-﻿using E_Commerce_Admin_Dashboard_MVC;
-using Microsoft.AspNetCore.Mvc;
-
-namespace E_Commerce_Back_End.Controllers
+﻿using Microsoft.AspNetCore.Mvc;
+namespace E_Commerce_Back_End
 {
     [ApiController]
     [Route("[controller]")]
@@ -86,19 +84,19 @@ namespace E_Commerce_Back_End.Controllers
 
         }
 
-
-    }
         [HttpDelete]
         [Route("~/api/DeleteProduct")]
         public IActionResult DeleteProduct(int id)
         {
             if (productServices.GetProductById(id) != null)
             {
-                 productServices.DeleteProduct(id);
+                productServices.DeleteProduct(id);
                 return Ok("product is Deleted");
             }
             //ProductsVM p = new ProductsVM();
             return NotFound("No Product By this Id");
         }
     }
+        
+    
 }

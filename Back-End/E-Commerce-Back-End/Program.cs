@@ -1,5 +1,3 @@
-using E_Commerce_Admin_Dashboard_MVC.Services;
-using E_Commerce_Admin_Dashboard_MVC;
 using E_CommerceDB;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;

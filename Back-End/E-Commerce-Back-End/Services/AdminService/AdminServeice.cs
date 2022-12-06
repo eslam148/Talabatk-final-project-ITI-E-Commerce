@@ -1,8 +1,7 @@
-﻿using E_Commerce_Admin_Dashboard_MVC.Services;
-using E_CommerceDB;
+﻿using E_CommerceDB;
 using Microsoft.AspNetCore.Identity;
 
-namespace E_Commerce_Admin_Dashboard_MVC.Services
+namespace E_Commerce_Back_End
 {
     public class AdminServeice: IAdmin
     {

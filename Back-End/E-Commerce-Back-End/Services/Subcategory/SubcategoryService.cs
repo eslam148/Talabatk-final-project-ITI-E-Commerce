@@ -2,7 +2,7 @@
 using E_CommerceDB;
 using Microsoft.EntityFrameworkCore;
 
-namespace E_Commerce_Admin_Dashboard_MVC
+namespace E_Commerce_Back_End
 {
     public class SubcategoryService: ISubcategory
     {

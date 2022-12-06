@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace E_Commerce_Admin_Dashboard_MVC
+namespace E_Commerce_Back_End
 {
     public class ProductsVM
     {

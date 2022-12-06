@@ -1,6 +1,6 @@
 ﻿using E_CommerceDB;
 
-namespace E_Commerce_Admin_Dashboard_MVC
+namespace E_Commerce_Back_End
 {
     public interface IDiscount
     {
