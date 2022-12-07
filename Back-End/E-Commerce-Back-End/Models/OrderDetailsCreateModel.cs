@@ -6,7 +6,7 @@ namespace E_Commerce_Back_End
 {
     public class OrderDetailsCreateModel
     {
-        public int Id { get; set; }
+        //public int Id { get; set; }
         public string User_id { get; set; }
         [Required(ErrorMessage = "This field is Required")]
         public decimal Total { get; set; }
