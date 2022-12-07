@@ -110,9 +110,9 @@ namespace E_Commerce_Back_End
         [HttpGet]
         [Route("~/api/ShowProductByCategory/{CatID}")]
 
-        public IActionResult ShowProductByCategory(int CatID)
+        public async Task<IActionResult> ShowProductByCategory(int CatID)
         {
-            var res = productServices.GetProductByCategory(CatID);
+            var res = await productServices.GetProductByCategory(CatID);
             if (res != null)
             {
                 return Ok(res);

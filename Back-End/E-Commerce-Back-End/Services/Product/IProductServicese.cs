@@ -16,7 +16,7 @@ namespace E_Commerce_Back_End
         public IEnumerable<ProductsVM> GetProductBySubcategory(int CatId);
         public IEnumerable<ProductsVM> GetProductBySubCatPriceRange(int SubCat_id,int start_price,int end_price);
         public IEnumerable<ProductsVM> GetProductByCatAndPrice(int CatID, int start_price, int end_price);
-        public IEnumerable<ProductsVM> GetProductByCategory(int CatID);
+        public Task<IEnumerable<ProductsVM>> GetProductByCategory(int CatID);
 
     }
 }

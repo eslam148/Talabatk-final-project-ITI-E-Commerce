@@ -245,9 +245,9 @@ namespace E_Commerce_Back_End
             return data;
         }
 
-        public IEnumerable<ProductsVM> GetProductByCategory(int CatID)
+        public async Task<IEnumerable<ProductsVM>> GetProductByCategory(int CatID)
         {
-            var data = context.Product.Where(p => (p.IsDeleted == false)&&(p.SubCategories.CategoryId==CatID)).Select(prod => new ProductsVM()
+            var data =  context.Product.Where(p => (p.IsDeleted == false)&&(p.SubCategories.CategoryId==CatID)).Select(prod => new ProductsVM()
             {
                 No = prod.Id,
                 Name = prod.Name,
