@@ -5,7 +5,7 @@ namespace E_Commerce_Back_End
 {
     public class OrderItemsCreateModel
     {
-        public int id { get; set; }
+        //public int id { get; set; }
         public int Order_Details_id { get; set; }
         public int Product_id { get; set; }
         [Required(ErrorMessage = "This field is Required")]
