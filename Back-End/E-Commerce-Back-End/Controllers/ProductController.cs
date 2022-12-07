@@ -108,9 +108,9 @@ namespace E_Commerce_Back_End
         }
 
         [HttpGet]
-        [Route("~/api/ShowProductByCatAndPrice/{CatID}")]
+        [Route("~/api/ShowProductByCategory/{CatID}")]
 
-        public IActionResult ShowProductByCatAndPrice(int CatID)
+        public IActionResult ShowProductByCategory(int CatID)
         {
             var res = productServices.GetProductByCategory(CatID);
             if (res != null)
