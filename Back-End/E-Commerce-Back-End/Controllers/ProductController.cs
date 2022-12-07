@@ -10,11 +10,7 @@ namespace E_Commerce_Back_End
         {
             this.productServices = productServices;
         }
-        [HttpGet]
-        public string Index()
-        {
-            return "Hello";
-        }
+    
         [HttpGet]
         [Route("~/api/GetProducts")]
         public IActionResult GetProducts()
@@ -68,6 +64,20 @@ namespace E_Commerce_Back_End
         }
 
 
+        [HttpGet]
+        [Route("~/api/ShowProductByCatAndPrice/{CatID}&{start_price}&{end_price}")]
+
+        public IActionResult ShowProductByCatAndPrice(int CatID, int start_price, int end_price)
+        {
+            var res = productServices.GetProductByCatAndPrice(CatID, start_price, end_price);
+            if (res != null)
+            {
+                return Ok(res);
+            }
+
+            return NotFound();
+        }
+
         [HttpPut]
         [Route("~/api/UpdateProduct")]
         public IActionResult UpdateProduct(ProductsVM product)
@@ -95,6 +105,20 @@ namespace E_Commerce_Back_End
             }
             //ProductsVM p = new ProductsVM();
             return NotFound("No Product By this Id");
+        }
+
+        [HttpGet]
+        [Route("~/api/ShowProductByCatAndPrice/{CatID}")]
+
+        public IActionResult ShowProductByCatAndPrice(int CatID)
+        {
+            var res = productServices.GetProductByCategory(CatID);
+            if (res != null)
+            {
+                return Ok(res);
+            }
+
+            return NotFound();
         }
     }
         

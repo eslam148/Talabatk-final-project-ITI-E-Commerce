@@ -222,5 +222,50 @@ namespace E_Commerce_Back_End
             });
             return data;
         }
+
+        public IEnumerable<ProductsVM> GetProductByCatAndPrice(int CatID, int start_price, int end_price)
+        {
+            var data = context.Product.Where(p => (p.IsDeleted == false)&&(p.SubCategories.CategoryId==CatID) &&(p.Price>start_price) && (p.Price < end_price)).Select(prod => new ProductsVM()
+            {
+                No = prod.Id,
+                Name = prod.Name,
+                Category = prod.SubCategories.BrandName, //prod.SubCategories_Id,
+                Description = prod.Description,
+                Price = prod.Price,
+                created_at = prod.created_at,
+                modified_at = prod.modified_at,
+                // inventory_Id = prod.inventory_Id,
+                Discount = context.Discount.Where(s => s.Id == prod.discount_Id).Select(b => b.Name).FirstOrDefault(),
+                Progress = prod.Progress,
+                IsDeleted = prod.IsDeleted,
+                Qauntity = prod.Quantity,
+                SelledQauntity = prod.SelledQuantity,
+                SellerId = prod.Sellyer.Id
+            });
+            return data;
+        }
+
+        public IEnumerable<ProductsVM> GetProductByCategory(int CatID)
+        {
+            var data = context.Product.Where(p => (p.IsDeleted == false)&&(p.SubCategories.CategoryId==CatID)).Select(prod => new ProductsVM()
+            {
+                No = prod.Id,
+                Name = prod.Name,
+                Category = prod.SubCategories.Category.Name, 
+                subCategory =  prod.SubCategories.CategoryId,
+                Description = prod.Description,
+                Price = prod.Price,
+                created_at = prod.created_at,
+                modified_at = prod.modified_at,
+                // inventory_Id = prod.inventory_Id,
+                Discount = context.Discount.Where(s => s.Id == prod.discount_Id).Select(b => b.Name).FirstOrDefault(),
+                Progress = prod.Progress,
+                IsDeleted = prod.IsDeleted,
+                Qauntity = prod.Quantity,
+                SelledQauntity = prod.SelledQuantity,
+                SellerId = prod.Sellyer.Id
+            });
+            return data;
+        }
     }
 }
