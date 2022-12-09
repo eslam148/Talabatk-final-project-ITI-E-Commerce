@@ -5,6 +5,7 @@ namespace E_Commerce_Back_End
     public class ProductsVM
     {
         [Required]
+        //public int id { set; get; }
         public int No { get; set; }
         [Required(ErrorMessage = "Name is Required")]
         public string Name { get; set; }

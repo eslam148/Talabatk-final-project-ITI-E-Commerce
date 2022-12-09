@@ -77,7 +77,7 @@ namespace E_Commerce_Back_End
                 Price = prod.Price,
                 created_at = prod.created_at,
                 modified_at = prod.modified_at,
-               // inventory_Id = prod.inventory_Id,
+                // inventory_Id = prod.inventory_Id,
                 Discount = context.Discount.Where(s => s.Id == prod.discount_Id).Select(b => b.Name).FirstOrDefault(),
                 Progress = prod.Progress,
                 IsDeleted = prod.IsDeleted,
@@ -100,7 +100,7 @@ namespace E_Commerce_Back_End
                 Price = prod.Price,
                 created_at = prod.created_at,
                 modified_at = prod.modified_at,
-               // inventory_Id = prod.inventory_Id,
+                // inventory_Id = prod.inventory_Id,
                 Discount = context.Discount.Where(s => s.Id == prod.discount_Id).Select(b => b.Name).FirstOrDefault(),
                 Progress = prod.Progress,
                 IsDeleted = prod.IsDeleted,
@@ -122,7 +122,7 @@ namespace E_Commerce_Back_End
                 Price = prod.Price,
                 created_at = prod.created_at,
                 modified_at = prod.modified_at,
-               // inventory_Id = prod.inventory_Id,
+                // inventory_Id = prod.inventory_Id,
                 Discount = context.Discount.Where(s => s.Id == prod.discount_Id).Select(b => b.Name).FirstOrDefault(),
                 Progress = prod.Progress,
                 IsDeleted = prod.IsDeleted,
@@ -261,6 +261,77 @@ namespace E_Commerce_Back_End
                 Discount = context.Discount.Where(s => s.Id == prod.discount_Id).Select(b => b.Name).FirstOrDefault(),
                 Progress = prod.Progress,
                 IsDeleted = prod.IsDeleted,
+                Qauntity = prod.Quantity,
+                SelledQauntity = prod.SelledQuantity,
+                SellerId = prod.Sellyer.Id
+            });
+            return data;
+        }
+
+        public void AddSellerProdcuts(ProductsVM product)
+        {
+            Product prod = new Product()
+            {
+                
+                Name = product.Name,
+                created_at = DateTime.Now,
+                modified_at = DateTime.Now,
+                Description = product.Description,
+                inventory_Id = 1,
+                discount_Id = 10,
+                Price = product.Price,
+                SubCategories_Id = 3,
+                Progress = 0,
+                IsDeleted = false,
+                Quantity = product.Qauntity,
+                SelledQuantity = 0,
+                SellerId = "09297e9d-8dd0-4d24-9230-b514a4fcff0e"
+
+            };
+            context.Product.Add(prod);
+            context.SaveChanges();
+
+        }
+
+        public IEnumerable<ProductsVM> GetNewProducts()
+        {
+            var data = context.Product.OrderByDescending(b=>b.created_at).Take(6).Select(prod => new ProductsVM()
+            {
+                No = prod.Id,
+                Name = prod.Name,
+                Category = context.SubCategories.Where(s => s.Id == prod.SubCategories_Id).Select(b => b.BrandName).FirstOrDefault(), //prod.SubCategories_Id,
+                Description = prod.Description,
+                Price = prod.Price,
+                created_at = prod.created_at,
+                modified_at = prod.modified_at,
+                // inventory_Id = prod.inventory_Id,
+                Discount = context.Discount.Where(s => s.Id == prod.discount_Id).Select(b => b.Name).FirstOrDefault(),
+                Progress = prod.Progress,
+                IsDeleted = prod.IsDeleted,
+
+                Qauntity = prod.Quantity,
+                SelledQauntity = prod.SelledQuantity,
+                SellerId = prod.Sellyer.Id
+            });
+            return data;
+        }
+
+        public IEnumerable<ProductsVM> GetBestSeller()
+        {
+            var data = context.Product.OrderByDescending(b => b.SelledQuantity).Take(8).Select(prod => new ProductsVM()
+            {
+                No = prod.Id,
+                Name = prod.Name,
+                Category = context.SubCategories.Where(s => s.Id == prod.SubCategories_Id).Select(b => b.BrandName).FirstOrDefault(), //prod.SubCategories_Id,
+                Description = prod.Description,
+                Price = prod.Price,
+                created_at = prod.created_at,
+                modified_at = prod.modified_at,
+                // inventory_Id = prod.inventory_Id,
+                Discount = context.Discount.Where(s => s.Id == prod.discount_Id).Select(b => b.Name).FirstOrDefault(),
+                Progress = prod.Progress,
+                IsDeleted = prod.IsDeleted,
+
                 Qauntity = prod.Quantity,
                 SelledQauntity = prod.SelledQuantity,
                 SellerId = prod.Sellyer.Id

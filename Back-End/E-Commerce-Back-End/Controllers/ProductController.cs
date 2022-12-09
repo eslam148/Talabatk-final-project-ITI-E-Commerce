@@ -120,6 +120,50 @@ namespace E_Commerce_Back_End
 
             return NotFound();
         }
+
+        [HttpPost]
+        [Route("~/api/AddSellerProdcuts")]
+        public IActionResult AddSellerProdcuts(ProductsVM product)
+        {
+            if (ModelState.IsValid)
+            {
+                productServices.AddSellerProdcuts(product);
+                return Ok("Product Is Added Successfully");
+            }
+            else
+            {
+                return BadRequest(" Validation Error");
+            }
+
+        }
+
+        [HttpGet]
+        [Route("~/api/GetNewProducts")]
+        public IActionResult GetNewProducts()
+        {
+            if (productServices.GetNewProducts() != null)
+            {
+                var products = productServices.GetNewProducts();
+                return Ok(products);
+            }
+
+            return NotFound();
+        }
+
+        [HttpGet]
+        [Route("~/api/GetBestSeller")]
+        public IActionResult GetBestSeller()
+        {
+            if (productServices.GetBestSeller() != null)
+            {
+                var products = productServices.GetBestSeller();
+                return Ok(products);
+            }
+
+            return NotFound();
+        }
+
+    
     }
         
     
