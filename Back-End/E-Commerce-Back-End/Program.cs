@@ -2,6 +2,9 @@ using E_CommerceDB;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using E_Commerce_Back_End.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace E_Commerce_Back_End
 {
@@ -20,7 +23,11 @@ namespace E_Commerce_Back_End
 
             builder.Services.AddIdentity<User, IdentityRole>
             ().AddEntityFrameworkStores<LibraryContext>().AddDefaultTokenProviders();
-
+            builder.Services.Configure<DataProtectionTokenProviderOptions>
+          (options =>
+          {
+              options.TokenLifespan = TimeSpan.FromMinutes(5);
+          });
             #region inject service
             builder.Services.AddTransient<ICategory, CategoryService>();
             builder.Services.AddTransient<IProductServices, ProductServices>();
@@ -38,7 +45,30 @@ namespace E_Commerce_Back_End
             {
                 options.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
-            }); ;
+            });
+            builder.Services.AddAuthentication
+       (
+           options =>
+           {
+               options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+               options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+               options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+           }
+       )
+       .AddJwtBearer(
+           options =>
+           {
+               options.TokenValidationParameters
+               = new TokenValidationParameters()
+               {
+                   ValidateIssuer=false,
+                   ValidateAudience=false,
+                   SaveSigninToken=true,
+                   IssuerSigningKey
+                    = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("IOLJYHSDSIoleJHsdsdsas98WeWsdsdQweweHgsgdf_&6#2"))
+               };
+           }
+       );
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -51,6 +81,9 @@ namespace E_Commerce_Back_End
                     i.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
                 });
             });
+
+          
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -61,7 +94,7 @@ namespace E_Commerce_Back_End
             }
 
             app.UseAuthorization();
-
+          
             app.UseCors();
             app.MapControllers();
 
