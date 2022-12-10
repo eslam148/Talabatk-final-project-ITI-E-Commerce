@@ -387,7 +387,30 @@
   <data name="Yes" xml:space="preserve">
     <value>نعم</value>
   </data>
+<<<<<<< HEAD
   <data name="Image" xml:space="preserve">
     <value>الصور</value>
+=======
+  <data name="Add Product" xml:space="preserve">
+    <value>اضافة منتج</value>
+  </data>
+  <data name="Are You sure  to delete this Item?" xml:space="preserve">
+    <value>هل ترغب في مسح هذا العنصر؟</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>الغاء</value>
+  </data>
+  <data name="Confirm Delete" xml:space="preserve">
+    <value>تأكيد عملية المسح</value>
+  </data>
+  <data name="Reply" xml:space="preserve">
+    <value>رد</value>
+  </data>
+  <data name="Edit Item" xml:space="preserve">
+    <value>تعديل العنصر</value>
+  </data>
+  <data name="Log Out" xml:space="preserve">
+    <value>تسجيل الخروج</value>
+>>>>>>> e9b81be1a55fd1a44b309fa5269080aa86edf282
   </data>
 </root>

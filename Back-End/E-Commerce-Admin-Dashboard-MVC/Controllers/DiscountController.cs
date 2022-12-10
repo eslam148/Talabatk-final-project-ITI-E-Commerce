@@ -1,10 +1,14 @@
 ﻿using E_CommerceDB;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using System.Security.Cryptography.X509Certificates;
 using X.PagedList;
 
 namespace E_Commerce_Admin_Dashboard_MVC
 {
+    [Authorize(Roles = "Admin")]
+
     public class DiscountController : Controller
     {
         private readonly IDiscount idisc;

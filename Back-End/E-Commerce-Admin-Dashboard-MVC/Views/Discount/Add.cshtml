@@ -5,13 +5,13 @@
             <div asp-validation-summary="ModelOnly"></div>
             <div class="form-group">
                 <label asp-for="Name">@SharedLocalizer["Name"]</label>
-                <input asp-for="Name" class="form-control" placeholder="Name">
+                <input asp-for="Name" class="form-control" placeholder="@SharedLocalizer["Name"]">
                 <span asp-validation-for="Name" class="alert-danger"></span>
 
             </div>
             <div class="form-group">
                 <label asp-for="Disc_Percent">@SharedLocalizer["Discoun Percent"]</label>
-                <input asp-for="Disc_Percent" class="form-control" placeholder="Discoun Percent">
+                <input asp-for="Disc_Percent" class="form-control" placeholder="@SharedLocalizer["Discoun Percent"]">
                 <span asp-validation-for="Disc_Percent" class="alert-danger"></span>
 
             </div>

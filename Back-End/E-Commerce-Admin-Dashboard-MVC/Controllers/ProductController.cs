@@ -1,11 +1,13 @@
 ﻿using E_Commerce_Admin_Dashboard_MVC;
 using E_Commerce_Admin_Dashboard_MVC.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using X.PagedList;
 
 namespace E_Commerce_Admin_Dashboard_MVC.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ProductController : Controller
     {
         private readonly IProductServices services;
@@ -72,7 +74,7 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
         [HttpGet]
         public IActionResult GetAdminProduct(int pageIndex = 1, int pageSize = 4)
         {
-            var result = services.GetAllAdminProduct().ToPagedList(pageIndex, pageSize); ;
+            var result = services.GetAllAdminProduct().ToPagedList(pageIndex, pageSize); 
            // result.ToPagedList(pageIndex, pageSize);
             return View(result);
         }

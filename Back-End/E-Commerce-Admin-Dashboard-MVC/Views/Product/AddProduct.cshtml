@@ -4,6 +4,7 @@
 }
 
 
+<<<<<<< HEAD
 <div class="col-12 grid-margin ">
     @*       <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     *@              <div class="card d-flex justify-content-center">
@@ -15,6 +16,19 @@
                 </p>
                 <div class="row">
                     <div class="col-md-6">
+=======
+   <div class="col-12 grid-margin ">
+@*       <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+*@              <div class="card d-flex justify-content-center">
+                <div class="card-body">
+                  <h4 class="card-title">@SharedLocalizer["Add Product"]</h4>
+                  <form data-ajax="true" enctype="multipart/form-data"  class="form-sample" data-ajax-complete="ProductAdd"  method="post" asp-action="AddProduct" asp-controller="Product" >
+                    <p class="card-description">
+                      @SharedLocalizer["ProductInfo"]
+                    </p>
+                    <div class="row">
+                      <div class="col-md-6">
+>>>>>>> e9b81be1a55fd1a44b309fa5269080aa86edf282
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">@SharedLocalizer["ProductName"]</label>
                             <div class="col-sm-9">

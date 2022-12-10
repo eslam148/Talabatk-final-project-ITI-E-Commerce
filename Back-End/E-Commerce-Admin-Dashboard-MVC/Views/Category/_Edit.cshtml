@@ -7,7 +7,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">Edite Item</h1>
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">@SharedLocalizer["Edit Item"]</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -19,13 +19,13 @@
                     </div>
                     <div asp-validation-summary="ModelOnly"></div>
                     <div class="form-group">
-                        <label asp-for="Name">Name</label>
+                        <label asp-for="Name">@SharedLocalizer["Name"]</label>
                         <input asp-for="Name" class="form-control" placeholder="Name" value="@Model.Name">
                         <span asp-validation-for="Name" class="alert-danger"></span>
 
                     </div>
                     <div class="form-group">
-                        <label asp-for="Description">Description</label>
+                        <label asp-for="Description">@SharedLocalizer["Description"]</label>
                         <textarea asp-for="Description" class="form-control" rows="4" value="@Model.Description"></textarea>
                         <span asp-validation-for="Description" class="alert-danger"></span>
 
@@ -34,8 +34,8 @@
                     <button class="btn btn-light">Cancel</button>*@
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Edit</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@SharedLocalizer["Close"]</button>
+                        <button type="submit" class="btn btn-primary">@SharedLocalizer["Edit"]</button>
                     </div>
                 </form>
 

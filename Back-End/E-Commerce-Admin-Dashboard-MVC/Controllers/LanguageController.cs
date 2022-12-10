@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace E_Commerce_Admin_Dashboard_MVC.Controllers
 {
+
     public class LanguageController : Controller
     {
         [HttpGet]

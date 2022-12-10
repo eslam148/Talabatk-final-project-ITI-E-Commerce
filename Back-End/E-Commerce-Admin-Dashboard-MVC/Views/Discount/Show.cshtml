@@ -14,6 +14,15 @@
     <tbody>
         @foreach (var item in Model.ToList<Discount>())
         {
+            String d = "delete" + item.Id.ToString();
+            ConfirmModel y = new ConfirmModel()
+                {
+                    Id = item.Id,
+                    TagID = d,
+                    Controller = "Discount",
+                    Action = "Delete"
+
+                };
             <tr>
                 <td>@item.Name</td>
                 @*<td>Not Avilable</td>*@
@@ -31,10 +40,11 @@
                 }*@
                 <td>@item.created_at</td>
                 <td>
-                    <a class="btn btn-danger" asp-action="Delete" asp-controller="Discount" asp-route-id="@item.Id">@SharedLocalizer["Delete"]</a>
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#@d">@SharedLocalizer["Delete"]</button>
+                  @*  <a class="btn btn-danger" asp-action="Delete" asp-controller="Discount" asp-route-id="@item.Id">@SharedLocalizer["Delete"]</a>*@
                 </td>
             </tr>
-
+            <partial name="Confirm" model="y"></partial>
         }
     </tbody>
 </table>

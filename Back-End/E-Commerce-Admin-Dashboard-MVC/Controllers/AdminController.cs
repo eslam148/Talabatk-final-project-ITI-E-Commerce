@@ -134,8 +134,8 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
                     if (!string.IsNullOrEmpty(logInModel.ReturnUrl))
                         return LocalRedirect(logInModel.ReturnUrl);
                     else
-                        return RedirectToAction("SignUp");
-                       // return RedirectToAction("Index", "Home");
+                        //return RedirectToAction("index");
+                        return RedirectToAction("Index", "Home");
                 }
 
             }

@@ -30,6 +30,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
 
             builder.Services.AddIdentity<User, IdentityRole>
             ().AddEntityFrameworkStores<LibraryContext>().AddDefaultTokenProviders();
+     
             builder.Services.Configure<IdentityOptions>(options =>
             {
                 options.Password.RequireDigit = false;
@@ -37,16 +38,22 @@ namespace E_Commerce_Admin_Dashboard_MVC
                 options.Password.RequireUppercase = false;
                 options.Password.RequireNonAlphanumeric = false;
 
-                //options.Lockout.MaxFailedAccessAttempts = 3;
-                //options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(1);
-
-                //options.SignIn.RequireConfirmedEmail = true;
+                options.Lockout.MaxFailedAccessAttempts = 50;
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(1);
+                
             });
+
             builder.Services.ConfigureApplicationCookie(options =>
             {
                 options.LoginPath = "/admin/login";
-               // options.AccessDeniedPath = "/User/NotAuthorized";
+                // options.AccessDeniedPath = "/User/NotAuthorized";
             });
+
+            builder.Services.Configure<DataProtectionTokenProviderOptions>
+                (options =>
+                {
+                    options.TokenLifespan = TimeSpan.FromMinutes(5);
+                });
             #region inject service
             builder.Services.AddTransient<ICategory, CategoryService>();
                 builder.Services.AddTransient<IProductServices, ProductServices>();
@@ -104,8 +111,8 @@ namespace E_Commerce_Admin_Dashboard_MVC
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
-
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=admin}/{action=login}/{id?}");

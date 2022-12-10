@@ -84,7 +84,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
 
         public List<CategoryCreateModel> get(string Name)
         {
-            var cats = db.Category.Where(c => c.IsDeleted ==false && c.Name.StartsWith("c"));
+            var cats = db.Category.Where(c => c.IsDeleted ==false && c.Name.StartsWith(Name));
             List<CategoryCreateModel> CatList = new List<CategoryCreateModel>();
             foreach (var cat in cats)
             {

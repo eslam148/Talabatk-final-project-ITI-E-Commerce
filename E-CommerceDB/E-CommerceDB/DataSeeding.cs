@@ -1,6 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +13,13 @@ namespace E_CommerceDB
     {
         public static void SeedData(this ModelBuilder builder)
         {
+            List<IdentityRole> Roles = new List<IdentityRole>()
+            {
+                new IdentityRole{Name = "Admin"},
+                new IdentityRole{Name = "Seller"},
+                new IdentityRole{Name = "Buyer"}
+            };
+            builder.Entity<IdentityRole>().HasData(Roles);
             builder.Entity<Category>()
                 .HasData(new Category() { Id=1, Name="Electronic", Description="Electronic Devices" });
 
@@ -18,7 +27,6 @@ namespace E_CommerceDB
               .HasData(new Category() { Id=2, Name="Clothes", Description="Electronic Devices" });
             builder.Entity<Category>()
               .HasData(new Category() { Id=3, Name="goods", Description="Electronic Devices" });
-
             builder.Entity<SubCategories>()
              .HasData(new SubCategories() { Id=1, BrandName="Samsung", CategoryId =1 });
 
@@ -27,6 +35,8 @@ namespace E_CommerceDB
 
             builder.Entity<SubCategories>()
           .HasData(new SubCategories() { Id=3, BrandName="Keriaze", CategoryId =3 });
+            builder.Entity<User>()
+              .HasData(new User() { First_Name="Mohamed", Last_Name="Ahmed", Email="Eslam@ss.com",UserName = "Admin" });
 
             builder.Entity<User>()
                .HasData(new User() { First_Name="Mohamed", Last_Name="Ahmed", Email="Eslam@ss.com" });
