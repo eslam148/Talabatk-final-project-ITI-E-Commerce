@@ -34,7 +34,7 @@ namespace E_Commerce_Back_End
                 options.Lockout.MaxFailedAccessAttempts = 50;
                 options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(1);
 
-                options.SignIn.RequireConfirmedEmail = false;
+                options.SignIn.RequireConfirmedEmail = true;
             });
             builder.Services.Configure<DataProtectionTokenProviderOptions>
           (options =>
