@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using System.Globalization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.FileProviders;
+
 
 namespace E_Commerce_Admin_Dashboard_MVC
 {
@@ -66,11 +68,17 @@ namespace E_Commerce_Admin_Dashboard_MVC
                         factory.Create(typeof(SharedResource));
                    }); ;
             builder.Services.AddScoped<IProductServices, ProductServices>();
-
-  
+          
             var app = builder.Build();
-
-           //Localiztion
+            //read from Files
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                RequestPath = "/Content",
+                FileProvider = new PhysicalFileProvider
+            (Path.Combine(Directory.GetCurrentDirectory(),
+            "Content"))
+            });
+            //Localiztion
             var supportedCultures = new[] {
                       new CultureInfo("ar-EG"),
                       new CultureInfo("en-US"),

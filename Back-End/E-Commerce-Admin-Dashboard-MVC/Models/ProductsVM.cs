@@ -35,6 +35,9 @@ namespace E_Commerce_Admin_Dashboard_MVC
         
         public int? SelledQauntity { get; set; } = 0;
         public string? SellerId { get; set; }
-
+        [ImageFilter]
+      //  [Required(ErrorMessage = "Images is Required at least one")]
+        
+        public List<IFormFile> Images { get; set; }
     }
 }
