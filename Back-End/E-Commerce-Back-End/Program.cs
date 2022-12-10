@@ -5,6 +5,7 @@ using E_Commerce_Back_End.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Microsoft.Extensions.FileProviders;
 
 namespace E_Commerce_Back_End
 {
@@ -23,6 +24,18 @@ namespace E_Commerce_Back_End
 
             builder.Services.AddIdentity<User, IdentityRole>
             ().AddEntityFrameworkStores<LibraryContext>().AddDefaultTokenProviders();
+            builder.Services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+
+                options.Lockout.MaxFailedAccessAttempts = 50;
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(1);
+
+                options.SignIn.RequireConfirmedEmail = false;
+            });
             builder.Services.Configure<DataProtectionTokenProviderOptions>
           (options =>
           {
@@ -86,6 +99,13 @@ namespace E_Commerce_Back_End
 
             var app = builder.Build();
 
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                RequestPath = "/Content",
+                FileProvider = new PhysicalFileProvider
+                  (Path.Combine(Directory.GetCurrentDirectory(),
+                  "Content"))
+            });
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
@@ -93,8 +113,9 @@ namespace E_Commerce_Back_End
                 app.UseSwaggerUI();
             }
 
+            app.UseAuthentication();
             app.UseAuthorization();
-          
+
             app.UseCors();
             app.MapControllers();
 

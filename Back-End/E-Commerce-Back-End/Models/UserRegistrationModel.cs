@@ -3,7 +3,7 @@ using System.Xml.Linq;
 
 namespace E_Commerce_Back_End
 {
-    public class AdminRegistrationModel
+    public class UserRegistrationModel
     {
         [Required, MaxLength(200), MinLength(3), Display(Name = "First Name")]
         public string FirstName { get; set; }
@@ -24,6 +24,5 @@ namespace E_Commerce_Back_End
         [Required, Compare("Password")]
         [Display(Name = "Confirm Password"), DataType(DataType.Password)]
         public string ConfirmPassword { get; set; }
-        public string Role { get; set; }
     }
 }

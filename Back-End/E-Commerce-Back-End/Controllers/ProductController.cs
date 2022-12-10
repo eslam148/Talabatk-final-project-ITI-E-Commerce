@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 namespace E_Commerce_Back_End
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class ProductController : ControllerBase
     {
         private readonly IProductServices productServices;
@@ -66,7 +68,6 @@ namespace E_Commerce_Back_End
 
         [HttpGet]
         [Route("~/api/ShowProductByCatAndPrice/{CatID}&{start_price}&{end_price}")]
-
         public IActionResult ShowProductByCatAndPrice(int CatID, int start_price, int end_price)
         {
             var res = productServices.GetProductByCatAndPrice(CatID, start_price, end_price);
