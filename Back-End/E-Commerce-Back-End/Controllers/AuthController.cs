@@ -18,11 +18,14 @@ namespace E_Commerce_Back_End.Controllers
     {
         UserManager<User> UserManager;
         SignInManager<User> SignInManager;
+        public static IWebHostEnvironment _environment;
         public AuthController(UserManager<User> _UserManager,
-          SignInManager<User> _SignInManager)
+          SignInManager<User> _SignInManager,
+          IWebHostEnvironment environment)
         {
             UserManager = _UserManager;
             SignInManager = _SignInManager;
+            _environment = environment;
         }
         [HttpPost]
         [Route("~/api/SignIn")]
@@ -205,44 +208,91 @@ namespace E_Commerce_Back_End.Controllers
             }
         }
 
+        //[HttpPost]
+        //[Route("~/api/upload")]
+        //public async Task<IActionResult> upload([FromBody] image model)
+        //{
+        //    var result = new ResultViewModel();
+        //    result.Success = true;
+        //    if (ModelState.IsValid == false)
+        //    {
+        //        List<string> ModelErros = new List<string>();
+        //        var errors =
+        //            ModelState.SelectMany(i => i.Value.Errors.Select(x => x.ErrorMessage));
+
+        //        foreach (string err in errors)
+        //            ModelErros.Add(err);
+        //        result.Success = false;
+        //        result.Data = ModelErros;
+        //    }
+        //    else
+        //    {
+
+        //        //List<BookImage> images = new List<BookImage>();
+        //        foreach (IFormFile file in model.Images)
+        //        {
+        //            string NewName = Guid.NewGuid().ToString() + file.FileName;
+                   
+        //            FileStream fs = new FileStream(
+        //                Path.Combine(Directory.GetCurrentDirectory(),
+        //                "Content", NewName)
+        //                , FileMode.OpenOrCreate, FileAccess.ReadWrite);
+        //            file.CopyTo(fs);
+        //            fs.Position = 0;
+        //        }
+               
+        //        result.Message = "Added Successfulyy";
+            
+        //    }
+        //    return Ok(result);
+        //}
+
+
         [HttpPost]
         [Route("~/api/upload")]
-        public async Task<IActionResult> upload([FromBody] image model)
+        public async Task<ActionResult> UploadImage([FromBody] List<IFormFile> Images)
         {
-            var result = new ResultViewModel();
-            result.Success = true;
-            if (ModelState.IsValid == false)
+            bool Results = false;
+            try
             {
-                List<string> ModelErros = new List<string>();
-                var errors =
-                    ModelState.SelectMany(i => i.Value.Errors.Select(x => x.ErrorMessage));
-
-                foreach (string err in errors)
-                    ModelErros.Add(err);
-                result.Success = false;
-                result.Data = ModelErros;
-            }
-            else
-            {
-
-                //List<BookImage> images = new List<BookImage>();
-                foreach (IFormFile file in model.Images)
+                var _uploadedfiles = Request.Form.Files;
+                foreach (IFormFile source in _uploadedfiles)
                 {
-                    string NewName = Guid.NewGuid().ToString() + file.FileName;
+                    string Filename = Guid.NewGuid().ToString() + source.FileName;
+                    string Filepath = _environment.WebRootPath+"\\ProductImages";
+
+                    if (!System.IO.Directory.Exists(Filepath))
+                    {
+                        System.IO.Directory.CreateDirectory(Filepath);
+                    }
+
+                    string imagepath = Filepath+"\\"+Filename;
+
+                    if (System.IO.File.Exists(imagepath))
+                    {
+                        System.IO.File.Delete(imagepath);
+                    }
+                    using (FileStream stream = System.IO.File.Create(imagepath))
+                    {
+                        await source.CopyToAsync(stream);
+                        Results = true;
+                    }
                    
-                    FileStream fs = new FileStream(
-                        Path.Combine(Directory.GetCurrentDirectory(),
-                        "Content", NewName)
-                        , FileMode.OpenOrCreate, FileAccess.ReadWrite);
-                    file.CopyTo(fs);
-                    fs.Position = 0;
+
                 }
-               
-                result.Message = "Added Successfulyy";
-            
             }
-            return Ok(result);
+            catch (Exception ex)
+            {
+
+            }
+            return Ok(Results);
         }
+
+        //[NonAction]
+        //private string GetFilePath(string ProductCode)
+        //{
+        //    return ;
+        //}
 
     }
     
