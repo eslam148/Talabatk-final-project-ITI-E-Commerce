@@ -375,11 +375,10 @@
   <data name="Yes" xml:space="preserve">
     <value>Yes</value>
   </data>
-<<<<<<< HEAD
-  <data name="Image" xml:space="preserve">
+	<data name="Image" xml:space="preserve">
     <value>Image</value>
-=======
-  <data name="Add Product" xml:space="preserve">
+</data>
+<data name="Add Product" xml:space="preserve">
     <value>Add Product</value>
   </data>
   <data name="Are You sure  to delete this Item?" xml:space="preserve">
