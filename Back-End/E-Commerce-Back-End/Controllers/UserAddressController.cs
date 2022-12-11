@@ -24,7 +24,7 @@ namespace E_Commerce_Back_End.Controllers
             if (ModelState.IsValid)
             {
                 userAddress.AddAddress(addressModel);
-                return Ok("UserAdrress Is Added Successfully");
+                return Ok(addressModel);
             }
             else
             {

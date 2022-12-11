@@ -295,7 +295,7 @@ namespace E_Commerce_Back_End
 
         public IEnumerable<ProductsVM> GetNewProducts()
         {
-            var data = context.Product.OrderByDescending(b=>b.created_at).Take(6).Select(prod => new ProductsVM()
+            var data = context.Product.Where(p=>p.IsDeleted==false).OrderByDescending(b=>b.created_at).Take(6).Select(prod => new ProductsVM()
             {
                 No = prod.Id,
                 Name = prod.Name,
@@ -318,7 +318,7 @@ namespace E_Commerce_Back_End
 
         public IEnumerable<ProductsVM> GetBestSeller()
         {
-            var data = context.Product.OrderByDescending(b => b.SelledQuantity).Take(8).Select(prod => new ProductsVM()
+            var data = context.Product.Where(p=>p.IsDeleted==false).OrderByDescending(b => b.SelledQuantity).Take(8).Select(prod => new ProductsVM()
             {
                 No = prod.Id,
                 Name = prod.Name,

@@ -4,7 +4,7 @@ namespace E_Commerce_Back_End
 {
     [ApiController]
     [Route("[controller]")]
-    [Authorize]
+    //[Authorize]
     public class ProductController : ControllerBase
     {
         private readonly IProductServices productServices;
