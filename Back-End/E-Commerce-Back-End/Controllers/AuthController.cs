@@ -189,14 +189,15 @@ namespace E_Commerce_Back_End.Controllers
 
         [HttpPost]
         [Route("~/api/ChangePassword")]
-        public async Task<IActionResult> ChangePassword(ChangePasswordModel model)
+        [Authorize]
+        public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordModel model)
         {
             if (ModelState.IsValid == false) return null;
             else
             {
-                var user = await UserManager.GetUserAsync(User);
+                var user = await UserManager.FindByIdAsync(model.Id);
                 var result = await UserManager.ChangePasswordAsync(user, model.CurrentPassword, model.NewPassword);
-                if(result.Succeeded == true)
+                if (result.Succeeded == true)
                 {
                     return Ok(model);
 
@@ -232,7 +233,7 @@ namespace E_Commerce_Back_End.Controllers
         //        foreach (IFormFile file in model.Images)
         //        {
         //            string NewName = Guid.NewGuid().ToString() + file.FileName;
-                   
+
         //            FileStream fs = new FileStream(
         //                Path.Combine(Directory.GetCurrentDirectory(),
         //                "Content", NewName)
@@ -240,9 +241,9 @@ namespace E_Commerce_Back_End.Controllers
         //            file.CopyTo(fs);
         //            fs.Position = 0;
         //        }
-               
+
         //        result.Message = "Added Successfulyy";
-            
+
         //    }
         //    return Ok(result);
         //}
@@ -288,11 +289,31 @@ namespace E_Commerce_Back_End.Controllers
             return Ok(Results);
         }
 
-        //[NonAction]
-        //private string GetFilePath(string ProductCode)
-        //{
-        //    return ;
-        //}
+        [HttpPost]
+        [Route("~/api/EditUserInfo")]
+        public async Task<ActionResult> EditUserInfo([FromBody] UserEditModel model)
+        {
+            ResultViewModel myModel = new ResultViewModel();
+
+            if (ModelState.IsValid == false)
+            {
+                myModel.Success = false;
+                myModel.Data =
+                    ModelState.Values.SelectMany
+                            (i => i.Errors.Select(x => x.ErrorMessage));
+                return BadRequest(myModel);
+            }
+            else
+            {
+                var user = await UserManager.FindByIdAsync(model.Id);
+                user.First_Name = model.FirstName;
+                user.Last_Name = model.LastName;
+                user.PhoneNumber = model.PhoneNumber;
+                user.Email = model.Email;
+                var result = await UserManager.UpdateAsync(user);
+                return Ok(result);
+            }
+        }
 
     }
     

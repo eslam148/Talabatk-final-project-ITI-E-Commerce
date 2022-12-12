@@ -5,6 +5,8 @@ namespace E_Commerce_Back_End
 {
     public class ChangePasswordModel
     {
+        [Required]
+        public string Id { get; set; }
         [Required, MinLength(4), MaxLength(16),
            Display(Name = "Current Password"),
            DataType(DataType.Password)]
