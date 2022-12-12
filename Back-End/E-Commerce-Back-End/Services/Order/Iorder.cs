@@ -13,8 +13,8 @@ namespace E_Commerce_Back_End
      
         /// ////////////////////////////////////////////////////////////
 
-        public void AddOrder(OrderItemsCreateModel orderModel);
-        public void AddOrderDetails(OrderDetailsCreateModel orderDetailsModel);
+        public Task AddOrder(OrderItemsCreateModel[] orderModel);
+        public Order_Details AddOrderDetails(OrderDetailsCreateModel orderDetailsModel);
 
 
     }

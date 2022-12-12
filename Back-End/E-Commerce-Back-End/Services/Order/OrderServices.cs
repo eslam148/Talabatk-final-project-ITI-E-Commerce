@@ -37,22 +37,28 @@ namespace E_Commerce_Back_End
  
         /// //////////////////////////////////////////////////////////////////////////////////////////////////////////
      
-        public void AddOrder(OrderItemsCreateModel orderModel)
+        public async Task AddOrder(OrderItemsCreateModel[] orderModel)
         {
-            OrderItems order = new OrderItems()
+            List<OrderItems> items = new List<OrderItems>();
+            foreach (var item in orderModel)
             {
-                Order_Details_id = orderModel.Order_Details_id,
-                Product_id = orderModel.Product_id,
-                Quantity = orderModel.Quantity,
-                created_at = orderModel.created_at,
-                modified_at = orderModel.modified_at,
-                IsDeleted = false
-            };
-            db.OrderItems.Add(order);
-            db.SaveChanges();
+                OrderItems order = new OrderItems()
+                {
+                    Order_Details_id = item.Order_Details_id,
+                    Product_id = item.Product_id,
+                    Quantity = item.Quantity,
+                    created_at = item.created_at,
+                    modified_at = item.modified_at,
+                    IsDeleted = false
+                };
+                items.Add(order);
+            }
+
+            await db.OrderItems.AddRangeAsync(items);
+            await db.SaveChangesAsync();
         }
 
-        public void AddOrderDetails(OrderDetailsCreateModel orderDetailsModel)
+        public Order_Details AddOrderDetails(OrderDetailsCreateModel orderDetailsModel)
         {
             Order_Details orderDetails = new Order_Details()
             {
@@ -66,6 +72,7 @@ namespace E_Commerce_Back_End
             };
             db.Order_Details.Add(orderDetails);
             db.SaveChanges();
+            return db.Order_Details.Last();
         }
     }
 }

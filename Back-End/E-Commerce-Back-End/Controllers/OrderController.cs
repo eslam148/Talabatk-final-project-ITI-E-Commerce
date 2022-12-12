@@ -17,12 +17,12 @@ namespace E_Commerce_Back_End.Controllers
 
         [HttpPost]
         [Route("~/api/AddOrderItems")]
-        public IActionResult AddOrderItems(OrderItemsCreateModel orderItemsModel)
+        public IActionResult AddOrderItems(OrderItemsCreateModel[] orderItemsModel)
         {
             if (ModelState.IsValid)
             {
                 order.AddOrder(orderItemsModel);
-                return Ok("OrderItems Is Added Successfully");
+                return Ok(orderItemsModel);
             }
             else
             {
@@ -36,12 +36,12 @@ namespace E_Commerce_Back_End.Controllers
         {
             if (ModelState.IsValid)
             {
-                order.AddOrderDetails(orderDetailsModel);
-                return Ok("OrderDetails Is Added Successfully");
+               var OrderDetalis =  order.AddOrderDetails(orderDetailsModel);
+                return Ok(OrderDetalis);
             }
             else
             {
-                return BadRequest("Validation Error");
+                return BadRequest(orderDetailsModel);
             }
         }
     }
