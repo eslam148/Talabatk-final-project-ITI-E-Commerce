@@ -375,10 +375,10 @@
   <data name="Yes" xml:space="preserve">
     <value>Yes</value>
   </data>
-	<data name="Image" xml:space="preserve">
+  <data name="Image" xml:space="preserve">
     <value>Image</value>
-</data>
-<data name="Add Product" xml:space="preserve">
+  </data>
+  <data name="Add Product" xml:space="preserve">
     <value>Add Product</value>
   </data>
   <data name="Are You sure  to delete this Item?" xml:space="preserve">
@@ -396,8 +396,13 @@
   <data name="Edit Item" xml:space="preserve">
     <value>Edit Item</value>
   </data>
-  <data name="Log Out" xml:space="preserve">
-    <value>Log Out</value>
->>>>>>> e9b81be1a55fd1a44b309fa5269080aa86edf282
+  <data name="LogOut" xml:space="preserve">
+    <value>LogOut</value>
+  </data>
+  <data name="PendingProduct" xml:space="preserve">
+    <value>PendingProduct</value>
+  </data>
+  <data name="Approve" xml:space="preserve">
+    <value>Approve</value>
   </data>
 </root>

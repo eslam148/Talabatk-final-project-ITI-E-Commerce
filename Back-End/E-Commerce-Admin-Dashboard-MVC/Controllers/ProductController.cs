@@ -36,6 +36,7 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
             var prod = services.GetProductById(Id);
             return View(prod);
         }
+        [HttpGet]
         public IActionResult ConfirmDelete(int Id)
         {
             services.DeleteProduct(Id);
@@ -107,6 +108,26 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
                 services.Edit(product);
                 return Redirect("GetAdminProduct");
             }
+        }
+        [HttpGet]
+        public IActionResult PendingProduct(int pageIndex = 1, int pageSize = 4)
+        {
+            var result = services.GetPendingProducts().ToPagedList(pageIndex, pageSize);
+            // result.ToPagedList(pageIndex, pageSize);
+            return View(result);
+           
+        }
+        [HttpGet]
+        public IActionResult Approve(int Id)
+        {
+            var prod = services.GetProductById(Id);
+            return View(prod);
+        }
+        [HttpGet]
+        public IActionResult ConfirmAprove(int Id)
+        {
+            services.ApproveProduct(Id);
+            return RedirectToAction("PendingProduct");
         }
     }
 }
