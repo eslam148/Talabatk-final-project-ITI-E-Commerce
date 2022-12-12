@@ -7,6 +7,7 @@ using System.Net.Mail;
 using System.Net;
 using System.Security.Claims;
 using System.Text;
+using Microsoft.AspNetCore.Authorization;
 
 namespace E_Commerce_Back_End.Controllers
 {
