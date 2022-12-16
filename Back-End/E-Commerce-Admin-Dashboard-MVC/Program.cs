@@ -68,14 +68,24 @@ namespace E_Commerce_Admin_Dashboard_MVC
 
             builder.Services.AddControllersWithViews()
                 //locazation
-                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix).AddNewtonsoftJson(options =>
+                {
+                    options.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
+                    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+                })
                 .AddDataAnnotationsLocalization(options =>
                 {
                     options.DataAnnotationLocalizerProvider = (type, factory) =>
                         factory.Create(typeof(SharedResource));
-                   }); ;
+                });
             builder.Services.AddScoped<IProductServices, ProductServices>();
-          
+            builder.Services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(i =>
+                {
+                    i.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                });
+            });
             var app = builder.Build();
             //read from Files
             app.UseStaticFiles(new StaticFileOptions()
@@ -107,12 +117,14 @@ namespace E_Commerce_Admin_Dashboard_MVC
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
             app.UseStaticFiles();
 
             app.UseRouting();
 
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseCors();
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=admin}/{action=login}/{id?}");

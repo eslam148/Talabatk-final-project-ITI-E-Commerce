@@ -22,7 +22,6 @@ namespace E_Commerce_Admin_Dashboard_MVC
                 Price = prod.Price,
                 created_at = prod.created_at,
                 modified_at = prod.modified_at,
-                // inventory_Id = prod.inventory_Id,
                 Discount = context.Discount.Where(s => s.Id == prod.discount_Id).Select(b => b.Name).FirstOrDefault(),
                 Progress = prod.Progress,
                 IsDeleted = prod.IsDeleted,
@@ -61,9 +60,9 @@ namespace E_Commerce_Admin_Dashboard_MVC
                 modified_at = product.modified_at,
                 Description = product.Description,
                 inventory_Id = 1,
-                discount_Id = product.DiscountID,
+                discount_Id = 1,
                 Price = product.Price,
-                SubCategories_Id = product.subCategory,
+                SubCategories_Id = 1,//product.subCategory,
                 Progress = 0,
                 IsDeleted = false,
                 Quantity = product.Qauntity,
@@ -195,6 +194,30 @@ namespace E_Commerce_Admin_Dashboard_MVC
             });
             return data;
         }
+        public Product AddProdcutAPI(ProductsVM product)
+        {
+            context.Product.Add(new Product
+            {
+                Name = product.Name,
+                created_at = product.created_at,
+                modified_at = product.modified_at,
+                Description = product.Description,
+                inventory_Id = 1,
+                discount_Id = 1,
+                Price = product.Price,
+                SubCategories_Id = 1,//product.subCategory,
+                Progress = 0,
+                IsDeleted = false,
+                Quantity = product.Qauntity,
+                SelledQuantity = 0,
+                SellerId = product.SellerId,
+              
 
+
+            });
+            context.SaveChanges();
+
+            return context.Product.Where(p => p.SellerId== product.SellerId).OrderBy(p=>p.Id).Last();
+        }
     }
 }

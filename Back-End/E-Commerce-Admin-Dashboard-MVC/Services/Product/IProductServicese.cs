@@ -1,4 +1,5 @@
 ﻿using E_Commerce_Admin_Dashboard_MVC.Models;
+using E_CommerceDB;
 
 namespace E_Commerce_Admin_Dashboard_MVC
 {
@@ -13,6 +14,8 @@ namespace E_Commerce_Admin_Dashboard_MVC
         public void Edit(ProductsVM product);
         public IEnumerable<DiscountProductVM> GitALlDiscount();
         public IEnumerable<ProductsVM> GetProductBySubcategory(int CatId);
+        public Product AddProdcutAPI(ProductsVM product);
+
 
     }
 }

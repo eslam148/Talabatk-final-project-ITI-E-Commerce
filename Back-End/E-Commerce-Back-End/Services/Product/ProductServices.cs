@@ -37,27 +37,45 @@ namespace E_Commerce_Back_End
 
         public void AddProdcut(ProductsVM product)
         {
-            Product prod = new Product() { 
-
+            List<Images> prodcutImages = new List<Images>();
+            foreach (IFormFile img in product.Images)
+            {
+                string newName = Guid.NewGuid() + img.FileName;
+                prodcutImages.Add(new Images
+                {
+                    Image = newName,
+                    // ProductId = product.No,
+                });
+                FileStream fs = new FileStream(Path.Combine(Directory.GetCurrentDirectory(),
+                    "wwwroot", "Images", newName)
+                    , FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                img.CopyTo(fs);
+                fs.Position = 0;
+            }
+            // Product prod =
+            context.Product.Add(new Product
+            {
                 Name = product.Name,
-                created_at=product.created_at,
-                modified_at =product.modified_at,
-                Description =product.Description,
-                inventory_Id=1,
+                created_at = product.created_at,
+                modified_at = product.modified_at,
+                Description = product.Description,
+                inventory_Id = 1,
                 discount_Id = product.DiscountID,
-                Price= product.Price,
+                Price = product.Price,
                 SubCategories_Id = product.subCategory,
                 Progress = 0,
-                IsDeleted=false,
-                Quantity=product.Qauntity,
-                SelledQuantity=0,
-                SellerId = "09297e9d-8dd0-4d24-9230-b514a4fcff0e"
+                IsDeleted = false,
+                Quantity = product.Qauntity,
+                SelledQuantity = 0,
+                SellerId = "09297e9d-8dd0-4d24-9230-b514a4fcff0e",
+                Images = prodcutImages,
 
-            };
-            context.Product.Add(prod);
+
+            });
             context.SaveChanges();
-            
+
         }
+
 
         public void DeleteProduct(int id)
         {

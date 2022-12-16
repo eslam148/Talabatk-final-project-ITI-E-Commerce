@@ -164,7 +164,27 @@ namespace E_Commerce_Back_End
             return NotFound();
         }
 
-    
+        [HttpPost]
+        [Route("~/api/uploudImage")]
+        public IActionResult AddProduct(ProductsVM product)
+        {
+            if (ModelState.IsValid == false)
+            {
+                var errors =
+                    ModelState.SelectMany(i => i.Value.Errors.Select(x => x.ErrorMessage));
+
+               
+                return BadRequest(errors);
+            }
+            else
+            {
+                productServices.AddProdcut(product);
+                return Ok(); //RedirectToAction("GetAdminProduct");
+            }
+            //  return RedirectToAction("GetAdminProduct");
+        }
+
+
     }
         
     
