@@ -1,5 +1,6 @@
 ﻿using E_Commerce_Back_End;
 using E_CommerceDB;
+using Microsoft.EntityFrameworkCore;
 
 namespace E_Commerce_Back_End
 {
@@ -36,12 +37,15 @@ namespace E_Commerce_Back_End
         }
  
         /// //////////////////////////////////////////////////////////////////////////////////////////////////////////
-     
+          
         public async Task AddOrder(OrderItemsCreateModel[] orderModel)
         {
             List<OrderItems> items = new List<OrderItems>();
             foreach (var item in orderModel)
             {
+                var pro = db.Product.Where(p => p.Id == item.Product_id).FirstOrDefault();
+                pro.Quantity-=item.Quantity;
+                pro.SelledQuantity+=item.Quantity;
                 OrderItems order = new OrderItems()
                 {
                     Order_Details_id = item.Order_Details_id,
@@ -74,5 +78,15 @@ namespace E_Commerce_Back_End
             db.SaveChanges();
             return db.Order_Details.Last();
         }
+        public Task<List<Order_Details>> GetOrderDetails(string Id)
+        {
+           return  db.Order_Details.Where(o => o.User_id == Id).ToListAsync();
+        }
+        public Task<List<OrderItems>> GetOrderItems(int Id)
+        {
+            return db.OrderItems.Where(o => o.Order_Details_id == Id).ToListAsync();
+
+        }
+
     }
 }

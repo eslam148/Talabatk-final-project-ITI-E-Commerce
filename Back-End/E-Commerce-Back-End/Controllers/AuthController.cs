@@ -250,45 +250,7 @@ namespace E_Commerce_Back_End.Controllers
         //}
 
 
-        [HttpPost]
-        [Route("~/api/upload")]
-        public async Task<ActionResult> UploadImage([FromBody] List<IFormFile> Images)
-        {
-            bool Results = false;
-            try
-            {
-                var _uploadedfiles = Request.Form.Files;
-                foreach (IFormFile source in _uploadedfiles)
-                {
-                    string Filename = Guid.NewGuid().ToString() + source.FileName;
-                    string Filepath = _environment.WebRootPath+"\\ProductImages";
-
-                    if (!System.IO.Directory.Exists(Filepath))
-                    {
-                        System.IO.Directory.CreateDirectory(Filepath);
-                    }
-
-                    string imagepath = Filepath+"\\"+Filename;
-
-                    if (System.IO.File.Exists(imagepath))
-                    {
-                        System.IO.File.Delete(imagepath);
-                    }
-                    using (FileStream stream = System.IO.File.Create(imagepath))
-                    {
-                        await source.CopyToAsync(stream);
-                        Results = true;
-                    }
-                   
-
-                }
-            }
-            catch (Exception ex)
-            {
-
-            }
-            return Ok(Results);
-        }
+        
 
         [HttpPost]
         [Route("~/api/EditUserInfo")]

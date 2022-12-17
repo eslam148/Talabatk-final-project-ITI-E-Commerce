@@ -15,6 +15,9 @@ namespace E_Commerce_Back_End
 
         public Task AddOrder(OrderItemsCreateModel[] orderModel);
         public Order_Details AddOrderDetails(OrderDetailsCreateModel orderDetailsModel);
+        public Task<List<Order_Details>> GetOrderDetails(string Id);
+        public Task<List<OrderItems>> GetOrderItems(int Id);
+
 
 
     }

@@ -20,6 +20,7 @@ namespace E_Commerce_Back_End
         public void AddSellerProdcuts(ProductsVM product);
         public IEnumerable<ProductsVM> GetNewProducts();
         public IEnumerable<ProductsVM> GetBestSeller();
+        public IEnumerable<ProductsVM> GetSellerProduct(string SellerId);
 
     }
 }

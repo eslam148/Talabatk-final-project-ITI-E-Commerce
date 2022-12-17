@@ -1,5 +1,6 @@
 ﻿using E_Commerce_Back_End;
 using E_CommerceDB;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace E_Commerce_Back_End
 {
@@ -13,7 +14,7 @@ namespace E_Commerce_Back_End
         }
         public IEnumerable<ProductsVM> GetAllAdminProduct()
         {
-            var data = context.Product.Where(p=>p.SellerId == "09297e9d-8dd0-4d24-9230-b514a4fcff0e").Select(prod => new ProductsVM()
+            var data = context.Product.Where(p => p.SellerId == "09297e9d-8dd0-4d24-9230-b514a4fcff0e").Select(prod => new ProductsVM()
             {
                 No = prod.Id,
                 Name = prod.Name,
@@ -26,11 +27,11 @@ namespace E_Commerce_Back_End
                 Discount = context.Discount.Where(s => s.Id == prod.discount_Id).Select(b => b.Name).FirstOrDefault(),
                 Progress = prod.Progress,
                 IsDeleted = prod.IsDeleted,
-
+                images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList(),
                 Qauntity = prod.Quantity,
                 SelledQauntity = prod.SelledQuantity,
                 SellerId = prod.Sellyer.Id
-            });
+            })  ;
             return data;
         }
 
@@ -99,7 +100,7 @@ namespace E_Commerce_Back_End
                 Discount = context.Discount.Where(s => s.Id == prod.discount_Id).Select(b => b.Name).FirstOrDefault(),
                 Progress = prod.Progress,
                 IsDeleted = prod.IsDeleted,
-
+                images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList(),
                 Qauntity = prod.Quantity,
                 SelledQauntity = prod.SelledQuantity,
                 SellerId = prod.Sellyer.Id
@@ -124,7 +125,9 @@ namespace E_Commerce_Back_End
                 IsDeleted = prod.IsDeleted,
                 Qauntity=prod.Quantity,
                 SelledQauntity=prod.SelledQuantity,
-                SellerId = prod.Sellyer.Id
+                SellerId = prod.Sellyer.Id,
+                images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList(),
+
             }); 
             return data;
         }
@@ -144,6 +147,7 @@ namespace E_Commerce_Back_End
                 Discount = context.Discount.Where(s => s.Id == prod.discount_Id).Select(b => b.Name).FirstOrDefault(),
                 Progress = prod.Progress,
                 IsDeleted = prod.IsDeleted,
+                images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList(),
             }).FirstOrDefault();
            // ProductsVM product = new ProductsVM();
 
@@ -191,8 +195,9 @@ namespace E_Commerce_Back_End
                 IsDeleted = prod.IsDeleted,
                 Qauntity=prod.Quantity,
                 SelledQauntity=prod.SelledQuantity,
-                SellerId = prod.Sellyer.Id
-            });
+                SellerId = prod.Sellyer.Id,
+                    images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList()
+                });
             return data;
         }
 
@@ -213,7 +218,8 @@ namespace E_Commerce_Back_End
                 IsDeleted = prod.IsDeleted,
                 Qauntity = prod.Quantity,
                 SelledQauntity = prod.SelledQuantity,
-                SellerId = prod.Sellyer.Id
+                SellerId = prod.Sellyer.Id,
+                images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList(),
             });
              return data;
             //return null;
@@ -236,7 +242,8 @@ namespace E_Commerce_Back_End
                 IsDeleted = prod.IsDeleted,
                 Qauntity = prod.Quantity,
                 SelledQauntity = prod.SelledQuantity,
-                SellerId = prod.Sellyer.Id
+                SellerId = prod.Sellyer.Id,
+                images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList()
             });
             return data;
         }
@@ -258,7 +265,8 @@ namespace E_Commerce_Back_End
                 IsDeleted = prod.IsDeleted,
                 Qauntity = prod.Quantity,
                 SelledQauntity = prod.SelledQuantity,
-                SellerId = prod.Sellyer.Id
+                SellerId = prod.Sellyer.Id,
+                images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList()
             });
             return data;
         }
@@ -281,7 +289,8 @@ namespace E_Commerce_Back_End
                 IsDeleted = prod.IsDeleted,
                 Qauntity = prod.Quantity,
                 SelledQauntity = prod.SelledQuantity,
-                SellerId = prod.Sellyer.Id
+                SellerId = prod.Sellyer.Id,
+                images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList()
             });
             return data;
         }
@@ -326,7 +335,7 @@ namespace E_Commerce_Back_End
                 Discount = context.Discount.Where(s => s.Id == prod.discount_Id).Select(b => b.Name).FirstOrDefault(),
                 Progress = prod.Progress,
                 IsDeleted = prod.IsDeleted,
-
+                images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList(),
                 Qauntity = prod.Quantity,
                 SelledQauntity = prod.SelledQuantity,
                 SellerId = prod.Sellyer.Id
@@ -349,7 +358,30 @@ namespace E_Commerce_Back_End
                 Discount = context.Discount.Where(s => s.Id == prod.discount_Id).Select(b => b.Name).FirstOrDefault(),
                 Progress = prod.Progress,
                 IsDeleted = prod.IsDeleted,
+                images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList(),
+                Qauntity = prod.Quantity,
+                SelledQauntity = prod.SelledQuantity,
+                SellerId = prod.Sellyer.Id
+            });
+            return data;
+        }
 
+        public IEnumerable<ProductsVM> GetSellerProduct(string SellerId)
+        {
+            var data = context.Product.Where(p => p.IsDeleted==false&& p.SellerId == SellerId).OrderByDescending(b => b.SelledQuantity).Select(prod => new ProductsVM()
+            {
+                No = prod.Id,
+                Name = prod.Name,
+                Category = context.SubCategories.Where(s => s.Id == prod.SubCategories_Id).Select(b => b.BrandName).FirstOrDefault(), //prod.SubCategories_Id,
+                Description = prod.Description,
+                Price = prod.Price,
+                created_at = prod.created_at,
+                modified_at = prod.modified_at,
+                // inventory_Id = prod.inventory_Id,
+                Discount = context.Discount.Where(s => s.Id == prod.discount_Id).Select(b => b.Name).FirstOrDefault(),
+                Progress = prod.Progress,
+                IsDeleted = prod.IsDeleted,
+                images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList(),
                 Qauntity = prod.Quantity,
                 SelledQauntity = prod.SelledQuantity,
                 SellerId = prod.Sellyer.Id

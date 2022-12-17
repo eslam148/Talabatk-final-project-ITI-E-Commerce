@@ -183,7 +183,19 @@ namespace E_Commerce_Back_End
             }
             //  return RedirectToAction("GetAdminProduct");
         }
+        [HttpGet]
+        [Route("~/api/GetSellerProduct/{SellerId}")]
+        public IActionResult GetSellerProduct(string SellerId)
+        {
+            var pro = productServices.GetSellerProduct(SellerId);
+            if (pro != null)
+            {
+                var products = productServices.GetBestSeller();
+                return Ok(pro);
+            }
 
+            return NotFound();
+        }
 
     }
         

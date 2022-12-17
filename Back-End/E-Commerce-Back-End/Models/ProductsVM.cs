@@ -71,7 +71,7 @@ namespace E_Commerce_Back_End
         //  [Required(ErrorMessage = "Images is Required at least one")]
 
         public List<IFormFile> Images { get; set; }
-
+        public List<string> images2 { get; set; }
 
 
     }
