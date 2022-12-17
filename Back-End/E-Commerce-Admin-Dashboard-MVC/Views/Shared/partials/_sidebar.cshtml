@@ -67,8 +67,6 @@
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"><a class="nav-link" asp-controller="Discount" asp-action="Add">@SharedLocalizer["Add"]</a></li>
                     <li class="nav-item"><a class="nav-link" asp-controller="Discount" asp-action="Show">@SharedLocalizer["Show Discounts"]</a></li>
-
-
                 </ul>
             </div>
         </li>
@@ -83,7 +81,7 @@
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" asp-action="GetBuyers" asp-controller="User">@SharedLocalizer["Buyers"]</a></li>
                     <li class="nav-item"> <a class="nav-link" asp-action="GetSellers" asp-controller="User">@SharedLocalizer["Sellers"]</a></li>
-
+                    <li class="nav-item"> <a class="nav-link" asp-action="SignUp" asp-controller="Admin">@SharedLocalizer["Register"]</a></li>
                 </ul>
             </div>
         </li>
@@ -101,6 +99,8 @@
                 </ul>
             </div>
         </li>
+
+       
        
     </ul>
 </nav>

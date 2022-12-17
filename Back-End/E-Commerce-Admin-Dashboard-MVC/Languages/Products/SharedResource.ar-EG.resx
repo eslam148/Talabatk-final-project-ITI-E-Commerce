@@ -387,9 +387,9 @@
   <data name="Yes" xml:space="preserve">
     <value>نعم</value>
   </data>
-	<data name="Image" xml:space="preserve">
+  <data name="Image" xml:space="preserve">
     <value>الصور</value>
-	  </data>
+  </data>
   <data name="Add Product" xml:space="preserve">
     <value>اضافة منتج</value>
   </data>
@@ -410,6 +410,8 @@
   </data>
   <data name="Log Out" xml:space="preserve">
     <value>تسجيل الخروج</value>
->>>>>>> e9b81be1a55fd1a44b309fa5269080aa86edf282
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>تسجيل مستخدم جديد</value>
   </data>
 </root>

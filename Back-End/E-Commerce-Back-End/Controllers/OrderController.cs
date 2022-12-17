@@ -60,22 +60,7 @@ namespace E_Commerce_Back_End.Controllers
                 return BadRequest();
             }
         }
-        //[HttpGet]
-        //[Route("~/api/GetOrderDetails/{Id}")]
-        //public async Task<IActionResult> GetOrderDetails(string Id)
-        //{
-        //    var OrderDetalis = await order.GetOrderDetails(Id);
-
-        //    if (OrderDetalis != null)
-        //    {
-        //        var OrderDetalis = await order.GetOrderDetails(Id);
-        //        return Ok(OrderDetalis);
-        //    }
-        //    else
-        //    {
-        //        return BadRequest();
-        //    }
-        //}
+       
 
         [HttpGet]
         [Route("~/api/GetOrderitems/{Id}")]
