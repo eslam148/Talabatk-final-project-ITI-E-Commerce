@@ -60,7 +60,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
                 modified_at = product.modified_at,
                 Description = product.Description,
                 inventory_Id = 1,
-                discount_Id = 1,
+                discount_Id = product.DiscountID,
                 Price = product.Price,
                 SubCategories_Id = 1,//product.subCategory,
                 Progress = 0,
@@ -85,7 +85,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
 
         public IEnumerable<ProductsVM> GetAllExisting()
         {
-            var data = context.Product.Where(p => p.IsDeleted == false && p.SelledQuantity == 0 && p.SellerId != "09297e9d-8dd0-4d24-9230-b514a4fcff0e").Select(prod => new ProductsVM()
+            var data = context.Product.Where(p => p.IsDeleted == false && p.Progress == 1 && p.SelledQuantity == 0 && p.SellerId != "09297e9d-8dd0-4d24-9230-b514a4fcff0e").Select(prod => new ProductsVM()
             {
                 No = prod.Id,
                 Name = prod.Name,
@@ -108,7 +108,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
 
         public IEnumerable<ProductsVM> GetAllSold()
         {
-            var data = context.Product.Where(p => p.SelledQuantity > 0 && p.IsDeleted == false && p.SellerId != "09297e9d-8dd0-4d24-9230-b514a4fcff0e").Select(prod => new ProductsVM()
+            var data = context.Product.Where(p => p.SelledQuantity > 0&& p.Progress==1 && p.IsDeleted == false && p.SellerId != "09297e9d-8dd0-4d24-9230-b514a4fcff0e").Select(prod => new ProductsVM()
             {
                 No = prod.Id,
                 Name = prod.Name,

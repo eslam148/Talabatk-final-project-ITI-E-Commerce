@@ -203,7 +203,7 @@ namespace E_Commerce_Back_End
 
         public IEnumerable<ProductsVM> GetAllProducts()
         {
-            var data = context.Product.Where(p => p.IsDeleted == false).Select(prod => new ProductsVM()
+            var data = context.Product.Where(p => p.IsDeleted == false&&p.Progress==1).Select(prod => new ProductsVM()
             {
                 No = prod.Id,
                 Name = prod.Name,

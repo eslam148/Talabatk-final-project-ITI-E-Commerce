@@ -408,6 +408,14 @@
   <data name="Edit Item" xml:space="preserve">
     <value>تعديل العنصر</value>
   </data>
+  <data name="LogOut" xml:space="preserve">
+    <value>خروج</value>
+  </data>
+  <data name="PendingProduct" xml:space="preserve">
+    <value>المنتجات المعلقه</value>
+  </data>
+  <data name="Approve" xml:space="preserve">
+    <value>تاكيد </value>
   <data name="Log Out" xml:space="preserve">
     <value>تسجيل الخروج</value>
   </data>

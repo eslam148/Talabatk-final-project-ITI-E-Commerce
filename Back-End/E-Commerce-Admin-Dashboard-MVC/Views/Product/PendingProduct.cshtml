@@ -1,0 +1,75 @@
+﻿@using X.PagedList.Web.Common
+@model IPagedList<ProductsVM>
+@{
+    ViewData["Title"] = SharedLocalizer["PendingProduct"];
+    
+}
+
+  
+
+<div class="table-responsive">
+    <table id="prodcuts" class="table table-striped">
+        <thead>
+            <tr>
+          
+                <th>
+                    @SharedLocalizer["Name"]
+                </th>
+                <th>
+                   @SharedLocalizer["Description"]
+                </th>
+                <th>
+                     @SharedLocalizer["price"]
+                </th>
+                <th>
+                     @SharedLocalizer["CreatedAt"]
+                </th>
+                <th>
+                      @SharedLocalizer["ModefiedAt"]
+                </th>
+                
+                <th>                    
+                      @SharedLocalizer["Category"]
+                </th>
+                <th>
+                    @SharedLocalizer["Quantity"]
+                </th>
+                <th>
+                   @SharedLocalizer["Discount"]
+                </th>
+                <th>
+                    @SharedLocalizer["progress"]
+                </th>
+                <th>
+                      @SharedLocalizer["Delete"]
+                </th>
+                  <th>
+                      @SharedLocalizer["Approve"]
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model.ToList<ProductsVM>())
+            {
+                <tr>
+                    
+                    <td>@product.Name</td>
+                    <td>@product.Description</td>
+                    <td>@product.Price</td>
+                    <td>@product.created_at</td>
+                    <td>@product.modified_at</td>
+                   
+                    <td>@product.Category</td>
+                    <td>@product.Qauntity</td>
+                    <td>@product.Discount</td>
+                    <td>@product.Progress</td>
+                    <td><a asp-action="Delete" asp-controller="Product" asp-route-Id="@product.No" class="btn btn-danger">@SharedLocalizer["Delete"]</a></td>
+                    <td><a asp-action="Approve" asp-controller="Product" asp-route-Id="@product.No" class="btn btn-info">@SharedLocalizer["Approve"]</a></td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+     @Html.PagedListPager(Model, pageIndex => Url.Action("GetAdminProduct", new { pageIndex  }))
+</div>
+

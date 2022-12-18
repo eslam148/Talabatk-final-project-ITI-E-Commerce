@@ -396,6 +396,14 @@
   <data name="Edit Item" xml:space="preserve">
     <value>Edit Item</value>
   </data>
+  <data name="LogOut" xml:space="preserve">
+    <value>LogOut</value>
+  </data>
+  <data name="PendingProduct" xml:space="preserve">
+    <value>PendingProduct</value>
+  </data>
+  <data name="Approve" xml:space="preserve">
+    <value>Approve</value>
   <data name="Log Out" xml:space="preserve">
     <value>Log Out</value>
   </data>
