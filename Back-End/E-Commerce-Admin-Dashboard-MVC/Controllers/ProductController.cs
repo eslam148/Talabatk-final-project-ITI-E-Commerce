@@ -1,6 +1,8 @@
 ﻿using E_Commerce_Admin_Dashboard_MVC;
 using E_Commerce_Admin_Dashboard_MVC.Models;
+using E_CommerceDB;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using X.PagedList;
@@ -12,10 +14,12 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
     {
         private readonly IProductServices services;
         private readonly ISubcategory subcategory;
-        public ProductController(IProductServices services, ISubcategory subcategory)
+        UserManager<User> UserManager;
+        public ProductController(IProductServices services, ISubcategory subcategory, UserManager<User> _UserManager)
         {
             this.services = services;
             this.subcategory = subcategory;
+            UserManager = _UserManager;
         }
         [HttpGet]
         public IActionResult GetProductExisting()
@@ -66,6 +70,7 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
                 return View();
             }
             else {
+                product.SellerId = UserManager.GetUserId(User);
                 services.AddProdcut(product);
                 return View(); //RedirectToAction("GetAdminProduct");
             }

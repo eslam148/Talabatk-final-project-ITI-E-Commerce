@@ -16,7 +16,6 @@ namespace E_Commerce_Admin_Dashboard_MVC
         public IEnumerable<DiscountProductVM> GitALlDiscount();
         public IEnumerable<ProductsVM> GetProductBySubcategory(int CatId);
         public Product AddProdcutAPI(ProductsVM product);
-
         public IEnumerable<ProductsVM> GetPendingProducts();
 
 

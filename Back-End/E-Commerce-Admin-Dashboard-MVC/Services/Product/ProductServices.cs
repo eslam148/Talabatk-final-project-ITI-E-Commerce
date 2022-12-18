@@ -219,5 +219,35 @@ namespace E_Commerce_Admin_Dashboard_MVC
 
             return context.Product.Where(p => p.SellerId== product.SellerId).OrderBy(p=>p.Id).Last();
         }
+
+        public void ApproveProduct(int Id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<ProductsVM> GetPendingProducts()
+        {
+            var data = context.Product.Where(p => p.IsDeleted == false && p.Progress == 0).Select(prod => new ProductsVM()
+            {
+                No = prod.Id,
+                Name = prod.Name,
+                Category = context.SubCategories.Where(s => s.Id == prod.SubCategories_Id).Select(b => b.BrandName).FirstOrDefault(), //prod.SubCategories_Id,
+                Description = prod.Description,
+                Price = prod.Price,
+                created_at = prod.created_at,
+                modified_at = prod.modified_at,
+                // inventory_Id = prod.inventory_Id,
+                Discount = context.Discount.Where(s => s.Id == prod.discount_Id).Select(b => b.Name).FirstOrDefault(),
+                Progress = prod.Progress,
+                IsDeleted = prod.IsDeleted,
+
+
+
+                Qauntity = prod.Quantity,
+                SelledQauntity = prod.SelledQuantity,
+                SellerId = prod.Sellyer.Id
+            }).OrderByDescending(i => i.No);
+            return data;
+        }
     }
 }

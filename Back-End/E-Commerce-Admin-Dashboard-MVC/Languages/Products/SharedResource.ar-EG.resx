@@ -414,12 +414,13 @@
   <data name="PendingProduct" xml:space="preserve">
     <value>المنتجات المعلقه</value>
   </data>
-  <data name="Approve" xml:space="preserve">
-    <value>تاكيد </value>
   <data name="Log Out" xml:space="preserve">
     <value>تسجيل الخروج</value>
   </data>
   <data name="Register" xml:space="preserve">
     <value>تسجيل مستخدم جديد</value>
+  </data>
+  <data name="Approve" xml:space="preserve">
+    <value>تاكيد</value>
   </data>
 </root>

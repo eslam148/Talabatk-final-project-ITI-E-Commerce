@@ -14,26 +14,30 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
     {
 
         private readonly Iuser Iuser;
-        public UserController(Iuser _Iuser)
+        UserManager<User> userManager;
+        public UserController(Iuser _Iuser, UserManager<User> _UserManager)
         {
             Iuser = _Iuser;
+            userManager=_UserManager;
         }
 
   
         [HttpGet]
-        public IActionResult GetBuyers(string SearchedString, int PageIndex=1, int PageSize=2)
+        public async Task<IActionResult> GetBuyers(string SearchedString, int PageIndex=1, int PageSize=2)
         {
             if (!String.IsNullOrEmpty(SearchedString))
             {
-                var users = Iuser.Search(SearchedString).Where(u => u.Role == "Buyer").ToPagedList(PageIndex, PageSize);
+                var users = await userManager.GetUsersInRoleAsync("Buyer"); //Iuser.Search(SearchedString).Where(u => u.Role == "Buyer").ToPagedList(PageIndex, PageSize);
+                users.Where(u => u.IsDeleted == false && u.First_Name.StartsWith(SearchedString)).ToPagedList(PageIndex, PageSize);
                 return View(users);
             }
             else
             {
-                var buyers = Iuser.GetAllusers().Where(u => u.Role == "Buyer").ToPagedList(PageIndex, PageSize);
+
+                var buyers = await userManager.GetUsersInRoleAsync("Buyer");// Iuser.GetAllusers().Where(u => u.Role == "Buyer").ToPagedList(PageIndex, PageSize);
                 if (buyers != null)
                 {
-                    return View(buyers);
+                    return View(buyers.ToPagedList(PageIndex, PageSize));
                 }
                 else
                 {
@@ -43,19 +47,21 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
             }
         }
         [HttpGet]
-        public IActionResult GetSellers(string SearchedString, int PageIndex = 1, int PageSize = 2)
+        public async Task<IActionResult> GetSellers(string SearchedString, int PageIndex = 1, int PageSize = 2)
         {
             if (!String.IsNullOrEmpty(SearchedString))
             {
-                var users = Iuser.Search(SearchedString).Where(u => u.Role == "Seller").ToPagedList(PageIndex, PageSize);
+                var users = await userManager.GetUsersInRoleAsync("Seller"); //Iuser.Search(SearchedString).Where(u => u.Role == "Buyer").ToPagedList(PageIndex, PageSize);
+                users.Where(u => u.IsDeleted == false && u.First_Name.StartsWith(SearchedString)).ToPagedList(PageIndex, PageSize);
+              // var users = Iuser.Search(SearchedString).Where(u => u.Role == "Seller").ToPagedList(PageIndex, PageSize);
                 return View(users);
             }
             else
             {
-                var sellers = Iuser.GetAllusers().Where(u => u.Role == "Seller").ToPagedList(PageIndex, PageSize);
+                var sellers = await userManager.GetUsersInRoleAsync("Seller"); //Iuser.GetAllusers().Where(u => u.Role == "Seller").ToPagedList(PageIndex, PageSize);
                 if (sellers != null)
                 {
-                    return View(sellers);
+                    return View(sellers.ToPagedList(PageIndex, PageSize));
                 }
                 else
                 {
