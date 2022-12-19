@@ -27,8 +27,9 @@ namespace E_CommerceDB
         public bool? IsDeleted { get; set; } = false;
         public int Quantity { get; set; }
         public int SelledQuantity { get; set; } = 0;
-        public String? SellerId { get; set; }
-
+        public string? SellerId { get; set; }
+        public int ratingCount { get; set; } = 0;
+        public int totalRating { get; set; } = 0;
         public virtual SubCategories SubCategories { get; set; }
         public virtual Inventory inventory { get; set; }
         public virtual Discount? discount { get; set; }

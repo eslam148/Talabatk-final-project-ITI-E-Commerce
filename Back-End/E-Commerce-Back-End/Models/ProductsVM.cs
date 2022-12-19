@@ -66,6 +66,9 @@ namespace E_Commerce_Back_End
         [Required(ErrorMessage = "Qunatity is Required")]
         public int Qauntity { get; set; }
 
+        public int ratingCount { get; set; } = 0;
+        public int totalRating { get; set; } = 0;
+
         public int? SelledQauntity { get; set; } = 0;
         public string? SellerId { get; set; }
         //  [Required(ErrorMessage = "Images is Required at least one")]

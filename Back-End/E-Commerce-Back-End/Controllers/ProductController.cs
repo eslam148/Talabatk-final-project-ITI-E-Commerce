@@ -25,6 +25,18 @@ namespace E_Commerce_Back_End
            
             return NotFound();
         }
+        [HttpGet]
+        [Route("~/api/GetDescountedProducts")]
+        public IActionResult GetDescountedProducts()
+        {
+            if (productServices.GetDescountedroducts() != null)
+            {
+                var products = productServices.GetDescountedroducts();
+                return Ok(products);
+            }
+
+            return NotFound();
+        }
 
         [HttpGet]
         [Route("~/api/GetProductById/{id}")]
@@ -122,21 +134,7 @@ namespace E_Commerce_Back_End
             return NotFound();
         }
 
-        [HttpPost]
-        [Route("~/api/AddSellerProdcuts")]
-        public IActionResult AddSellerProdcuts(ProductsVM product)
-        {
-            if (ModelState.IsValid)
-            {
-                productServices.AddSellerProdcuts(product);
-                return Ok("Product Is Added Successfully");
-            }
-            else
-            {
-                return BadRequest(" Validation Error");
-            }
-
-        }
+       
 
         [HttpGet]
         [Route("~/api/GetNewProducts")]
@@ -195,6 +193,15 @@ namespace E_Commerce_Back_End
             }
 
             return NotFound();
+        }
+
+        [HttpPost]
+        [Route("~/api/Rating/{Id}/{Rating}")]
+        public async Task<IActionResult> Ratting(int Id,int Rating=0)
+        {
+           productServices.Rating(Id, Rating);
+            
+            return Ok();
         }
 
     }

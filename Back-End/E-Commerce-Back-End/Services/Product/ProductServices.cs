@@ -1,5 +1,6 @@
 ﻿using E_Commerce_Back_End;
 using E_CommerceDB;
+using Microsoft.EntityFrameworkCore;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace E_Commerce_Back_End
@@ -11,28 +12,6 @@ namespace E_Commerce_Back_End
         {
             this.context = context;
 
-        }
-        public IEnumerable<ProductsVM> GetAllAdminProduct()
-        {
-            var data = context.Product.Where(p => p.SellerId == "09297e9d-8dd0-4d24-9230-b514a4fcff0e").Select(prod => new ProductsVM()
-            {
-                No = prod.Id,
-                Name = prod.Name,
-                Category = context.SubCategories.Where(s => s.Id == prod.SubCategories_Id).Select(b => b.BrandName).FirstOrDefault(), //prod.SubCategories_Id,
-                Description = prod.Description,
-                Price = prod.Price,
-                created_at = prod.created_at,
-                modified_at = prod.modified_at,
-                // inventory_Id = prod.inventory_Id,
-                Discount = context.Discount.Where(s => s.Id == prod.discount_Id).Select(b => b.Name).FirstOrDefault(),
-                Progress = prod.Progress,
-                IsDeleted = prod.IsDeleted,
-                images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList(),
-                Qauntity = prod.Quantity,
-                SelledQauntity = prod.SelledQuantity,
-                SellerId = prod.Sellyer.Id
-            })  ;
-            return data;
         }
 
 
@@ -68,7 +47,7 @@ namespace E_Commerce_Back_End
                 IsDeleted = false,
                 Quantity = product.Qauntity,
                 SelledQuantity = 0,
-                SellerId = "09297e9d-8dd0-4d24-9230-b514a4fcff0e",
+                SellerId = product.SellerId,
                 Images = prodcutImages,
 
 
@@ -85,29 +64,7 @@ namespace E_Commerce_Back_End
             context.SaveChanges();
         }
 
-        public IEnumerable<ProductsVM> GetAllExisting()
-        {
-            var data = context.Product.Where(p => p.IsDeleted == false&& p.SelledQuantity==0&&p.SellerId!= "09297e9d-8dd0-4d24-9230-b514a4fcff0e").Select(prod => new ProductsVM()
-            {
-                No = prod.Id,
-                Name = prod.Name,
-                Category = context.SubCategories.Where(s => s.Id == prod.SubCategories_Id).Select(b => b.BrandName).FirstOrDefault(), //prod.SubCategories_Id,
-                Description = prod.Description,
-                Price = prod.Price,
-                created_at = prod.created_at,
-                modified_at = prod.modified_at,
-                // inventory_Id = prod.inventory_Id,
-                Discount = context.Discount.Where(s => s.Id == prod.discount_Id).Select(b => b.Name).FirstOrDefault(),
-                Progress = prod.Progress,
-                IsDeleted = prod.IsDeleted,
-                images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList(),
-                Qauntity = prod.Quantity,
-                SelledQauntity = prod.SelledQuantity,
-                SellerId = prod.Sellyer.Id
-            });
-            return data;
-        }
-
+       
         public IEnumerable<ProductsVM> GetAllSold()
         {
             var data = context.Product.Where(p => p.SelledQuantity > 0 && p.IsDeleted == false&& p.SellerId != "09297e9d-8dd0-4d24-9230-b514a4fcff0e").Select(prod => new ProductsVM()
@@ -148,6 +105,8 @@ namespace E_Commerce_Back_End
                 Progress = prod.Progress,
                 IsDeleted = prod.IsDeleted,
                 images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList(),
+                totalRating = prod.totalRating,
+                ratingCount = prod.ratingCount
             }).FirstOrDefault();
            // ProductsVM product = new ProductsVM();
 
@@ -220,6 +179,8 @@ namespace E_Commerce_Back_End
                 SelledQauntity = prod.SelledQuantity,
                 SellerId = prod.Sellyer.Id,
                 images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList(),
+                totalRating = prod.totalRating,
+                ratingCount = prod.ratingCount
             });
              return data;
             //return null;
@@ -243,7 +204,9 @@ namespace E_Commerce_Back_End
                 Qauntity = prod.Quantity,
                 SelledQauntity = prod.SelledQuantity,
                 SellerId = prod.Sellyer.Id,
-                images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList()
+                images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList(),
+                totalRating = prod.totalRating,
+                ratingCount = prod.ratingCount
             });
             return data;
         }
@@ -266,7 +229,9 @@ namespace E_Commerce_Back_End
                 Qauntity = prod.Quantity,
                 SelledQauntity = prod.SelledQuantity,
                 SellerId = prod.Sellyer.Id,
-                images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList()
+                images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList(),
+                totalRating = prod.totalRating,
+                ratingCount = prod.ratingCount
             });
             return data;
         }
@@ -290,35 +255,14 @@ namespace E_Commerce_Back_End
                 Qauntity = prod.Quantity,
                 SelledQauntity = prod.SelledQuantity,
                 SellerId = prod.Sellyer.Id,
-                images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList()
+                images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList(),
+                totalRating = prod.totalRating,
+                ratingCount = prod.ratingCount
             });
             return data;
         }
 
-        public void AddSellerProdcuts(ProductsVM product)
-        {
-            Product prod = new Product()
-            {
-                
-                Name = product.Name,
-                created_at = DateTime.Now,
-                modified_at = DateTime.Now,
-                Description = product.Description,
-                inventory_Id = 1,
-                discount_Id = 10,
-                Price = product.Price,
-                SubCategories_Id = 3,
-                Progress = 0,
-                IsDeleted = false,
-                Quantity = product.Qauntity,
-                SelledQuantity = 0,
-                SellerId = "09297e9d-8dd0-4d24-9230-b514a4fcff0e"
-
-            };
-            context.Product.Add(prod);
-            context.SaveChanges();
-
-        }
+      
 
         public IEnumerable<ProductsVM> GetNewProducts()
         {
@@ -338,7 +282,9 @@ namespace E_Commerce_Back_End
                 images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList(),
                 Qauntity = prod.Quantity,
                 SelledQauntity = prod.SelledQuantity,
-                SellerId = prod.Sellyer.Id
+                SellerId = prod.Sellyer.Id,
+                totalRating = prod.totalRating,
+                ratingCount = prod.ratingCount
             });
             return data;
         }
@@ -361,7 +307,9 @@ namespace E_Commerce_Back_End
                 images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList(),
                 Qauntity = prod.Quantity,
                 SelledQauntity = prod.SelledQuantity,
-                SellerId = prod.Sellyer.Id
+                SellerId = prod.Sellyer.Id,
+                totalRating = prod.totalRating,
+                ratingCount = prod.ratingCount
             });
             return data;
         }
@@ -384,9 +332,44 @@ namespace E_Commerce_Back_End
                 images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList(),
                 Qauntity = prod.Quantity,
                 SelledQauntity = prod.SelledQuantity,
-                SellerId = prod.Sellyer.Id
+                SellerId = prod.Sellyer.Id,
+                totalRating = prod.totalRating,
+                ratingCount = prod.ratingCount
             });
             return data;
         }
+
+        public void Rating(int Id, int rating)
+        {
+            var pro =  context.Product.Where(p=>p.Id==Id).FirstOrDefault();
+            pro.totalRating+= rating;
+            pro.ratingCount++;
+            context.SaveChanges();
+        }
+        public IEnumerable<ProductsVM> GetDescountedroducts() 
+        {
+            var data = context.Product.Where(p => p.IsDeleted == false&&p.Progress==1&&p.discount_Id!=1).Select(prod => new ProductsVM()
+            {
+                No = prod.Id,
+                Name = prod.Name,
+                Category = context.SubCategories.Where(s => s.Id == prod.SubCategories_Id).Select(b => b.BrandName).FirstOrDefault(), //prod.SubCategories_Id,
+                Description = prod.Description,
+                Price = prod.Price,
+                created_at = prod.created_at,
+                modified_at = prod.modified_at,
+                // inventory_Id = prod.inventory_Id,
+                Discount = context.Discount.Where(s => s.Id == prod.discount_Id).Select(b => b.Disc_Percent).FirstOrDefault().ToString(),
+                Progress = prod.Progress,
+                IsDeleted = prod.IsDeleted,
+                Qauntity = prod.Quantity,
+                SelledQauntity = prod.SelledQuantity,
+                SellerId = prod.Sellyer.Id,
+                images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList(),
+                totalRating = prod.totalRating,
+                ratingCount = prod.ratingCount
+            });
+            return data;
+        }
+
     }
 }

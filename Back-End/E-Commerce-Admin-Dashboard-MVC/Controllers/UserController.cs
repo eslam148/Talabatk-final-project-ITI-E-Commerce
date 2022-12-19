@@ -23,7 +23,7 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
 
   
         [HttpGet]
-        public async Task<IActionResult> GetBuyers(string SearchedString, int PageIndex=1, int PageSize=2)
+        public async Task<IActionResult> GetBuyers(string SearchedString, int PageIndex=1, int PageSize=5)
         {
             if (!String.IsNullOrEmpty(SearchedString))
             {
@@ -47,7 +47,7 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
             }
         }
         [HttpGet]
-        public async Task<IActionResult> GetSellers(string SearchedString, int PageIndex = 1, int PageSize = 2)
+        public async Task<IActionResult> GetSellers(string SearchedString, int PageIndex = 1, int PageSize = 3)
         {
             if (!String.IsNullOrEmpty(SearchedString))
             {
