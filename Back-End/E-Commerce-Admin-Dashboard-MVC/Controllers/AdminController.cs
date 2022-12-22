@@ -96,7 +96,9 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
                 }
                 else
                 {
-                    await UserManager.AddToRoleAsync(user, admin.Role);
+                   // await UserManager.AddToRoleAsync(user, admin.Role);
+                    await UserManager.AddToRoleAsync(user, "Admin");
+
                     return RedirectToAction("LogIn");
 
                     

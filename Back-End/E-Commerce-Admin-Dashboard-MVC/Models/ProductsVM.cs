@@ -14,14 +14,13 @@ namespace E_Commerce_Admin_Dashboard_MVC
         //public string SKU { get; set; }
         [Required(ErrorMessage = "Price is Required")]
         public int Price { get; set; }
-        [Required (ErrorMessage = "Record Required")]
         public DateTime created_at { get; set; }
-        [Required(ErrorMessage = "Record Required")]
         public DateTime modified_at { get; set; }
         
         public DateTime? deleted_at { get; set; }
        
         public string Category { get; set; }
+
         [Required(ErrorMessage = "Category Required")]
         public int subCategory { get; set; }
         public int? inventory_Id { get; set; }

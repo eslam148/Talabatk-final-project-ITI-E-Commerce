@@ -79,7 +79,7 @@ namespace E_Commerce_Back_End.Controllers
                                  ,
                                  SecurityAlgorithms.HmacSha256
                              ),
-                            expires: DateTime.Now.AddDays(1),
+                            expires: DateTime.Now.AddHours(1),
                             claims: claims
                         );
 
@@ -95,7 +95,7 @@ namespace E_Commerce_Back_End.Controllers
                         ProfileImage = user.ProfilieImage,
                         email = user.Email,
                         Roles = roles,
-                        expires = DateTime.Now.AddMinutes(3)
+                        expires = DateTime.Now.AddHours(1)
                     };
                 }
             }
@@ -210,45 +210,7 @@ namespace E_Commerce_Back_End.Controllers
             }
         }
 
-        //[HttpPost]
-        //[Route("~/api/upload")]
-        //public async Task<IActionResult> upload([FromBody] image model)
-        //{
-        //    var result = new ResultViewModel();
-        //    result.Success = true;
-        //    if (ModelState.IsValid == false)
-        //    {
-        //        List<string> ModelErros = new List<string>();
-        //        var errors =
-        //            ModelState.SelectMany(i => i.Value.Errors.Select(x => x.ErrorMessage));
-
-        //        foreach (string err in errors)
-        //            ModelErros.Add(err);
-        //        result.Success = false;
-        //        result.Data = ModelErros;
-        //    }
-        //    else
-        //    {
-
-        //        //List<BookImage> images = new List<BookImage>();
-        //        foreach (IFormFile file in model.Images)
-        //        {
-        //            string NewName = Guid.NewGuid().ToString() + file.FileName;
-
-        //            FileStream fs = new FileStream(
-        //                Path.Combine(Directory.GetCurrentDirectory(),
-        //                "Content", NewName)
-        //                , FileMode.OpenOrCreate, FileAccess.ReadWrite);
-        //            file.CopyTo(fs);
-        //            fs.Position = 0;
-        //        }
-
-        //        result.Message = "Added Successfulyy";
-
-        //    }
-        //    return Ok(result);
-        //}
-
+        
 
         
 

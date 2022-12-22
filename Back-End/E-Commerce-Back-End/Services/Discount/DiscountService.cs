@@ -26,7 +26,17 @@ namespace E_Commerce_Back_End
 
         public List<Discount> getAllDiscount()
         {
-            return db.Discount.Where(i=>i.IsDeleted==false).ToList();
+            var d =  db.Discount.Where(i=>i.IsDeleted==false).ToList();
+            List<Discount> discountList = new List<Discount>();
+            foreach (var item in d)
+            {
+                discountList.Add(new Discount()
+                {
+                    Id = item.Id,
+                    Name = item.Name
+                });
+            }
+            return discountList;
         }
     }
 }

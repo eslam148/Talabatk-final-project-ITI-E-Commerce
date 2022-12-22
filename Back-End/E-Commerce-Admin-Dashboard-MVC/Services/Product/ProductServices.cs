@@ -62,12 +62,12 @@ namespace E_Commerce_Admin_Dashboard_MVC
                 inventory_Id = 1,
                 discount_Id = product.DiscountID,
                 Price = product.Price,
-                SubCategories_Id = 1,//product.subCategory,
+                SubCategories_Id = product.subCategory,
                 Progress = 0,
                 IsDeleted = false,
                 Quantity = product.Qauntity,
                 SelledQuantity = 0,
-                SellerId = "09297e9d-8dd0-4d24-9230-b514a4fcff0e",
+                SellerId = product.SellerId,//"09297e9d-8dd0-4d24-9230-b514a4fcff0e",
                 Images = prodcutImages,
 
 

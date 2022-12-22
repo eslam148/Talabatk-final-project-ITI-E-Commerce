@@ -27,7 +27,7 @@ namespace E_Commerce_Back_End.Services
                 telephone = address.Telephone,
                 mobile = address.Mobile,
                 IsDeleted = false,
-                user_id= "2eaf560a-d376-4456-b127-22403304bb01"
+                user_id= address.User_id
             };
             db.UserAddress.Add(userAddress);
             db.SaveChanges();

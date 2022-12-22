@@ -8,9 +8,11 @@ namespace E_Commerce_Back_End
     public class ProductController : ControllerBase
     {
         private readonly IProductServices productServices;
-        public ProductController(IProductServices productServices)
+        private readonly IDiscount Discount;
+        public ProductController(IProductServices productServices, IDiscount _Discount)
         {
             this.productServices = productServices;
+            Discount = _Discount;
         }
     
         [HttpGet]
@@ -33,6 +35,19 @@ namespace E_Commerce_Back_End
             {
                 var products = productServices.GetDescountedroducts();
                 return Ok(products);
+            }
+
+            return NotFound();
+        }
+        [HttpGet]
+        [Route("~/api/GetDiscounts")]
+        public IActionResult GetDiscounts()
+        {
+            var discount = Discount.getAllDiscount();
+            if (discount != null)
+            {
+                
+                return Ok(discount);
             }
 
             return NotFound();
