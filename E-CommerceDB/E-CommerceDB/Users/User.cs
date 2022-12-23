@@ -21,11 +21,11 @@ namespace E_CommerceDB
 
 
 
-        public virtual ICollection<ShoppingSession> ShoppingSession { get; set; }
+        //public virtual ICollection<ShoppingSession> ShoppingSession { get; set; }
 
         public virtual ICollection<UserAddress> UserAddress { get; set; }
 
-        public virtual ICollection<UserPayment> UserPayment { get; set; }
+        //public virtual ICollection<UserPayment> UserPayment { get; set; }
 
         public virtual ICollection<Order_Details> Order_Details { get; set; }
 

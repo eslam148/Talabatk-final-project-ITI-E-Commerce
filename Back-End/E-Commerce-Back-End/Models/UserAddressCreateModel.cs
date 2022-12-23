@@ -11,9 +11,6 @@ namespace E_Commerce_Back_End.Models
         public string Address_line1 { get; set; }
         [Required(ErrorMessage = "This field is Required")]
         [MinLength(3)]
-        public string Address_line2 { get; set; }
-        [Required(ErrorMessage = "This field is Required")]
-        [MinLength(3)]
         public string Country { get; set; }
         [Required(ErrorMessage = "This field is Required")]
         [MinLength(3)]
@@ -21,9 +18,6 @@ namespace E_Commerce_Back_End.Models
         [Required(ErrorMessage = "This field is Required")]
         [MinLength(3)]
         public string Postal_Code { get; set; }
-        [Required(ErrorMessage = "This field is Required")]
-       
-        public string Telephone { get; set; }
         [Required(ErrorMessage = "This field is Required")]
         [RegularExpression(@"^(010|011|012|015)[0-9]{8}$")]
         public string Mobile { get; set; }

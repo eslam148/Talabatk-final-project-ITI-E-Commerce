@@ -219,7 +219,7 @@
   <data name="Orders" xml:space="preserve">
     <value>الطلبات</value>
   </data>
-  <data name="Payent Details" xml:space="preserve">
+  <data name="Payment Details" xml:space="preserve">
     <value>تفاصيل الدفع</value>
   </data>
   <data name="Pending" xml:space="preserve">
@@ -422,5 +422,14 @@
   </data>
   <data name="Approve" xml:space="preserve">
     <value>تاكيد</value>
+  </data>
+  <data name="shipped" xml:space="preserve">
+    <value>شحن</value>
+  </data>
+  <data name="Shipping" xml:space="preserve">
+    <value>تم الشحن</value>
+  </data>
+  <data name="Shipping Orders list:" xml:space="preserve">
+    <value>الطلبات المشحونه</value>
   </data>
 </root>

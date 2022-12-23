@@ -203,7 +203,7 @@ namespace E_Commerce_Back_End
             var pro = productServices.GetSellerProduct(SellerId);
             if (pro != null)
             {
-                var products = productServices.GetBestSeller();
+               // var products = productServices.GetBestSeller();
                 return Ok(pro);
             }
 

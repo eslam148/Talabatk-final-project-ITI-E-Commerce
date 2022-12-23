@@ -11,8 +11,11 @@ namespace E_CommerceDB
 {
     public static class DataSeeding
     {
-        public static void SeedData(this ModelBuilder builder)
+
+
+        public static async void SeedData(this ModelBuilder builder)
         {
+           
             List<IdentityRole> Roles = new List<IdentityRole>()
             {
                 new IdentityRole{Name = "Admin"},
@@ -20,6 +23,17 @@ namespace E_CommerceDB
                 new IdentityRole{Name = "Buyer"}
             };
             builder.Entity<IdentityRole>().HasData(Roles);
+            User user = new User()
+            {
+                First_Name = "admin",
+                Last_Name = "admin",
+                UserName = "admin",
+                Email = "Islam12476794@gmail.com",
+                PhoneNumber ="01229384960"
+
+            };
+            //IdentityResult result = await UserManager.CreateAsync(user,"123456");
+            //await UserManager.AddToRoleAsync(user, "Admin");
             builder.Entity<Category>()
                 .HasData(new Category() { Id=1, Name="Electronic", Description="Electronic Devices" });
 

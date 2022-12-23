@@ -31,11 +31,11 @@ namespace E_CommerceDB
         public int ratingCount { get; set; } = 0;
         public int totalRating { get; set; } = 0;
         public virtual SubCategories SubCategories { get; set; }
-        public virtual Inventory inventory { get; set; }
+     //   public virtual Inventory inventory { get; set; }
         public virtual Discount? discount { get; set; }
 
         public virtual ICollection<OrderItems> OrderItems { get; set; }
-        public virtual ICollection<CartItem> CartItem { get; set; }
+       // public virtual ICollection<CartItem> CartItem { get; set; }
 
         public virtual User Sellyer { get; set; }
 

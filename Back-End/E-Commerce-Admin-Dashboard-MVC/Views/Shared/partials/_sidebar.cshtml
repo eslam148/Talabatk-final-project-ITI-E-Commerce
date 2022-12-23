@@ -38,7 +38,7 @@
                 </ul>
             </div>
         </li>
-        <li class="nav-item">
+       @* <li class="nav-item">
             <a class="nav-link  @SharedLocalizer["flex-dir"]" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
                 <i class="typcn typcn-chart-pie-outline menu-icon"></i>
                 <span class="menu-title">@SharedLocalizer["Complains"]</span>
@@ -52,7 +52,7 @@
 
                 </ul>
             </div>
-        </li>
+        </li>*@
 
         <li class="nav-item">
             <a class="nav-link  @SharedLocalizer["flex-dir"]" data-toggle="collapse" href="#chart" aria-expanded="false" aria-controls="chart">
@@ -90,9 +90,11 @@
             </a>
             <div class="collapse  @SharedLocalizer["flex-dir"]" id="icons">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" asp-action="Index" asp-controller="Order">@SharedLocalizer["All Orders"]</a></li>
+                    @*<li class="nav-item"> <a class="nav-link" asp-action="Index" asp-controller="Order">@SharedLocalizer["All Orders"]</a></li>*@
                     <li class="nav-item"> <a class="nav-link" asp-action="GetPendingOrders" asp-controller="Order">@SharedLocalizer["Pending"]</a></li>
+                    <li class="nav-item"> <a class="nav-link" asp-action="GetShippingOrders" asp-controller="Order">@SharedLocalizer["Shipping"]</a></li>
                     <li class="nav-item"> <a class="nav-link" asp-action="GetDeliveredOrders" asp-controller="Order">@SharedLocalizer["Delivered"]</a></li>
+
                 </ul>
             </div>
         </li>

@@ -219,7 +219,7 @@
   <data name="Orders" xml:space="preserve">
     <value>Orders</value>
   </data>
-  <data name="Payent Details" xml:space="preserve">
+  <data name="Payment Details" xml:space="preserve">
     <value>Payent Details</value>
   </data>
   <data name="Pending" xml:space="preserve">
@@ -410,5 +410,14 @@
   </data>
   <data name="Approve" xml:space="preserve">
     <value>Approve</value>
+  </data>
+  <data name="shipped" xml:space="preserve">
+    <value>shipped</value>
+  </data>
+  <data name="Shipping" xml:space="preserve">
+    <value>Shipping</value>
+  </data>
+  <data name="Shipping Orders list:" xml:space="preserve">
+    <value>Shipping Orders list:</value>
   </data>
 </root>

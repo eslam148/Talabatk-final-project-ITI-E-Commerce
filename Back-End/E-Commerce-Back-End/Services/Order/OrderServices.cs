@@ -1,4 +1,5 @@
 ﻿using E_Commerce_Back_End;
+using E_Commerce_Back_End.Models;
 using E_CommerceDB;
 using Microsoft.EntityFrameworkCore;
 
@@ -44,18 +45,22 @@ namespace E_Commerce_Back_End
             foreach (var item in orderModel)
             {
                 var pro = db.Product.Where(p => p.Id == item.Product_id).FirstOrDefault();
-                pro.Quantity-=item.Quantity;
-                pro.SelledQuantity+=item.Quantity;
-                OrderItems order = new OrderItems()
+                if(pro.Quantity>= item.Quantity)
                 {
-                    Order_Details_id = item.Order_Details_id,
-                    Product_id = item.Product_id,
-                    Quantity = item.Quantity,
-                    created_at = item.created_at,
-                    modified_at = item.modified_at,
-                    IsDeleted = false
-                };
-                items.Add(order);
+                    pro.Quantity-=item.Quantity;
+                    pro.SelledQuantity+=item.Quantity;
+                    OrderItems order = new OrderItems()
+                    {
+                        Order_Details_id = item.Order_Details_id,
+                        Product_id = item.Product_id,
+                        Quantity = item.Quantity,
+                        created_at = item.created_at,
+                        modified_at = item.modified_at,
+                        IsDeleted = false
+                    };
+                    items.Add(order);
+                }
+               
             }
 
             await db.OrderItems.AddRangeAsync(items);
@@ -76,16 +81,40 @@ namespace E_Commerce_Back_End
             };
             db.Order_Details.Add(orderDetails);
             db.SaveChanges();
-            return db.Order_Details.Last();
+            return db.Order_Details.OrderBy(i=>i.Id).Last();
         }
-        public Task<List<Order_Details>> GetOrderDetails(string Id)
+        public List<Order_Details> GetOrderDetails(string Id)
         {
-           return  db.Order_Details.Where(o => o.User_id == Id).ToListAsync();
+           var re= db.Order_Details.Where(o => o.User_id == Id).ToList();
+            
+            List<Order_Details> od = new List<Order_Details>();
+            re.ForEach(o=>
+            {
+                od.Add(new Order_Details()
+                {
+                    Id = o.Id,
+                    User_id = o.User_id,
+                    Total = o.Total,
+                    progress = o.progress,
+                    Payment_id = o.Payment_id
+                });
+            });
+            return od;
         }
-        public Task<List<OrderItems>> GetOrderItems(int Id)
+        public async Task<List<GetOrderItemModel>> GetOrderItems(int Id)
         {
-            return db.OrderItems.Where(o => o.Order_Details_id == Id).ToListAsync();
-
+            List<GetOrderItemModel> res = new List<GetOrderItemModel>();
+            var b = await db.OrderItems.Where(o => o.Order_Details_id == Id).ToListAsync();
+            b.ForEach(i =>
+            {
+                res.Add(new GetOrderItemModel()
+                {
+                    Name = i.Product.Name,
+                    price = i.Product.Price,
+                    Quantity = i.Quantity
+                });
+            });
+            return res;
         }
 
     }

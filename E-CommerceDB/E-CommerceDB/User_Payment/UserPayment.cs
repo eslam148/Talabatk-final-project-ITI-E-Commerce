@@ -16,7 +16,7 @@ namespace E_CommerceDB
         public DateTime expire_date { get; set; }
         public bool? IsDeleted { get; set; } = false;
 
-        public virtual User user { get; set; }
+        //public virtual User user { get; set; }
 
 
     }

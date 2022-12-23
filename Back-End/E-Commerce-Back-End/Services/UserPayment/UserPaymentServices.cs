@@ -22,7 +22,7 @@ namespace E_Commerce_Back_End.Services
                 expire_date = userPaymentModel.Expire_Date,
                 IsDeleted = false,
             };
-            db.UserPayment.Add(userPayment);
+        //    db.UserPayment.Add(userPayment);
             db.SaveChanges();
         }
     }

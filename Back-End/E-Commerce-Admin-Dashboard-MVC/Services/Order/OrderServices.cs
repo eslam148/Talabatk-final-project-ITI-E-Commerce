@@ -1,5 +1,6 @@
 ﻿using E_Commerce_Admin_Dashboard_MVC.Models;
 using E_CommerceDB;
+using Microsoft.EntityFrameworkCore;
 
 namespace E_Commerce_Admin_Dashboard_MVC.Services
 {
@@ -18,20 +19,32 @@ namespace E_Commerce_Admin_Dashboard_MVC.Services
         }
         public void Delete(int id)
         {
-            var order = db.OrderItems.FirstOrDefault(o=>o.Id== id);
+            var order = db.Order_Details.FirstOrDefault(o=>o.Id== id);
             order.IsDeleted =true;
             db.SaveChanges();
         }
 
-        public List<OrderItems> GetPendingOrders()
+        public List<Order_Details> GetPendingOrders()
         {
-            var pending = db.OrderItems.Where(o => o.Order_Details.progress == 0).ToList();
+            var pending = db.Order_Details.Where(o => o.progress == 0 && o.IsDeleted == false).ToList();
             return pending;
         }
 
-        public List<OrderItems> GetDeliveredOrders()
+        public List<Order_Details> GetDeliveredOrders()
         {
-            var delivered = db.OrderItems.Where(o => o.Order_Details.progress == 1).ToList();
+            var delivered = db.Order_Details.Where(o => o.progress == 2 && o.IsDeleted == false).ToList();
+            return delivered;
+        }
+
+        public void updateProgress(int id, int Progress)
+        {
+            var order = db.Order_Details.Where(o => o.Id == id).FirstOrDefault();
+            order.progress = Progress;
+            db.SaveChanges();
+        }
+        public List<Order_Details> GetShippingOrders()
+        {
+            var delivered = db.Order_Details.Where(o => o.progress == 1 && o.IsDeleted == false).ToList();
             return delivered;
         }
 

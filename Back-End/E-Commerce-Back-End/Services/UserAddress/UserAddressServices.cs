@@ -20,11 +20,9 @@ namespace E_Commerce_Back_End.Services
             UserAddress userAddress = new UserAddress()
             {
                 address_line1 = address.Address_line1,
-                address_line2 = address.Address_line2,
                 country = address.Country,
                 city = address.City,
                 postal_code = address.Postal_Code,
-                telephone = address.Telephone,
                 mobile = address.Mobile,
                 IsDeleted = false,
                 user_id= address.User_id

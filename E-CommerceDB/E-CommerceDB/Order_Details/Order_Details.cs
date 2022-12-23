@@ -18,10 +18,10 @@ namespace E_CommerceDB
         public DateTime Created_at { get; set; } = DateTime.Now;
         public DateTime Modified_at { get; set; }=  DateTime.Now;
         public bool IsDeleted { get; set; } = false;
-        public int progress { get; set; }
+        public int progress { get; set; } = 0;
         public virtual User user { get; set; }
 
-        public virtual PaymentDetails? PaymentDetails { get; set; }
+      //  public virtual PaymentDetails? PaymentDetails { get; set; }
 
         public virtual ICollection<OrderItems> OrderItems { get; set; }
     }

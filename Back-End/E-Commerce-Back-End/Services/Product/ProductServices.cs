@@ -139,7 +139,7 @@ namespace E_Commerce_Back_End
 
         public IEnumerable<ProductsVM> GetProductBySubcategory(int CatId)
         {
-            var data = context.Product.Where(p => ( p.IsDeleted == false) && (p.SubCategories_Id == CatId))
+            var data = context.Product.Where(p => ( p.IsDeleted == false)&&p.Progress==1 && (p.SubCategories_Id == CatId) && p.Quantity>0)
                 .Select(prod => new ProductsVM()
             {
                 No = prod.Id,
@@ -162,7 +162,7 @@ namespace E_Commerce_Back_End
 
         public IEnumerable<ProductsVM> GetAllProducts()
         {
-            var data = context.Product.Where(p => p.IsDeleted == false&&p.Progress==1).Select(prod => new ProductsVM()
+            var data = context.Product.Where(p => p.IsDeleted == false&&p.Progress==1&& p.Quantity>0).Select(prod => new ProductsVM()
             {
                 No = prod.Id,
                 Name = prod.Name,
@@ -188,7 +188,7 @@ namespace E_Commerce_Back_End
 
         public IEnumerable<ProductsVM> GetProductBySubCatPriceRange(int subCat_id, int start_price, int end_price)
         {
-            var data = context.Product.Where(p => (p.IsDeleted == false)&&(p.SubCategories_Id==subCat_id) &&(p.Price>start_price) && (p.Price < end_price)).Select(prod => new ProductsVM()
+            var data = context.Product.Where(p => (p.IsDeleted == false)&&(p.SubCategories_Id==subCat_id) &&(p.Price>start_price) && (p.Price < end_price) &&p.Progress==1&& p.Quantity>0).Select(prod => new ProductsVM()
             {
                 No = prod.Id,
                 Name = prod.Name,
@@ -213,7 +213,7 @@ namespace E_Commerce_Back_End
 
         public IEnumerable<ProductsVM> GetProductByCatAndPrice(int CatID, int start_price, int end_price)
         {
-            var data = context.Product.Where(p => (p.IsDeleted == false)&&(p.SubCategories.CategoryId==CatID) &&(p.Price>start_price) && (p.Price < end_price)).Select(prod => new ProductsVM()
+            var data = context.Product.Where(p => (p.IsDeleted == false)&&(p.SubCategories.CategoryId==CatID) &&(p.Price>start_price) && (p.Price < end_price)&&p.Progress==1&& p.Quantity>0).Select(prod => new ProductsVM()
             {
                 No = prod.Id,
                 Name = prod.Name,
@@ -238,7 +238,7 @@ namespace E_Commerce_Back_End
 
         public async Task<IEnumerable<ProductsVM>> GetProductByCategory(int CatID)
         {
-            var data =  context.Product.Where(p => (p.IsDeleted == false)&&(p.SubCategories.CategoryId==CatID)).Select(prod => new ProductsVM()
+            var data =  context.Product.Where(p => (p.IsDeleted == false)&&(p.SubCategories.CategoryId==CatID)&&p.Progress==1&& p.Quantity>0).Select(prod => new ProductsVM()
             {
                 No = prod.Id,
                 Name = prod.Name,
@@ -266,7 +266,7 @@ namespace E_Commerce_Back_End
 
         public IEnumerable<ProductsVM> GetNewProducts()
         {
-            var data = context.Product.Where(p=>p.IsDeleted==false).OrderByDescending(b=>b.created_at).Take(6).Select(prod => new ProductsVM()
+            var data = context.Product.Where(p=>p.IsDeleted==false&&p.Progress==1&& p.Quantity>0).OrderByDescending(b=>b.created_at).Take(6).Select(prod => new ProductsVM()
             {
                 No = prod.Id,
                 Name = prod.Name,
@@ -291,7 +291,7 @@ namespace E_Commerce_Back_End
 
         public IEnumerable<ProductsVM> GetBestSeller()
         {
-            var data = context.Product.Where(p=>p.IsDeleted==false).OrderByDescending(b => b.SelledQuantity).Take(8).Select(prod => new ProductsVM()
+            var data = context.Product.Where(p=>p.IsDeleted==false&&p.Progress==1&& p.Quantity>0).OrderByDescending(b => b.SelledQuantity).Take(8).Select(prod => new ProductsVM()
             {
                 No = prod.Id,
                 Name = prod.Name,
@@ -316,7 +316,7 @@ namespace E_Commerce_Back_End
 
         public IEnumerable<ProductsVM> GetSellerProduct(string SellerId)
         {
-            var data = context.Product.Where(p => p.IsDeleted==false&& p.SellerId == SellerId).OrderByDescending(b => b.SelledQuantity).Select(prod => new ProductsVM()
+            var data = context.Product.Where(p => p.IsDeleted==false&& p.SellerId == SellerId&& p.Quantity>0).OrderByDescending(b => b.SelledQuantity).Select(prod => new ProductsVM()
             {
                 No = prod.Id,
                 Name = prod.Name,
@@ -348,7 +348,7 @@ namespace E_Commerce_Back_End
         }
         public IEnumerable<ProductsVM> GetDescountedroducts() 
         {
-            var data = context.Product.Where(p => p.IsDeleted == false&&p.Progress==1&&p.discount_Id!=1).Select(prod => new ProductsVM()
+            var data = context.Product.Where(p => p.IsDeleted == false&&p.Progress==1&&p.discount_Id!=1&& p.Quantity >0).Select(prod => new ProductsVM()
             {
                 No = prod.Id,
                 Name = prod.Name,

@@ -49,7 +49,7 @@ namespace E_Commerce_Back_End.Controllers
         [Route("~/api/GetOrderDetails/{Id}")]
         public async Task<IActionResult> GetOrderDetails(string Id)
         {
-            var OrderDetails = await order.GetOrderDetails(Id);
+            var OrderDetails =  order.GetOrderDetails(Id);
             if (OrderDetails != null)
             {
 

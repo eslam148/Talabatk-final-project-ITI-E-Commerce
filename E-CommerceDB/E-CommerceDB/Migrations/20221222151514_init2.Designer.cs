@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace E_CommerceDB.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    [Migration("20221219162929_init")]
-    partial class init
+    [Migration("20221222151514_init2")]
+    partial class init2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,42 +23,6 @@ namespace E_CommerceDB.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
-            modelBuilder.Entity("E_CommerceDB.CartItem", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool?>("IsDeleted")
-                        .IsRequired()
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("ModefiedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Product_id")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SessionId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Product_id");
-
-                    b.HasIndex("SessionId");
-
-                    b.ToTable("CartItem", (string)null);
-                });
 
             modelBuilder.Entity("E_CommerceDB.Category", b =>
                 {
@@ -100,8 +64,8 @@ namespace E_CommerceDB.Migrations
                             Description = "Electronic Devices",
                             IsDeleted = false,
                             Name = "Electronic",
-                            created_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(2484),
-                            modified_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(2502)
+                            created_at = new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1625),
+                            modified_at = new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1636)
                         },
                         new
                         {
@@ -109,8 +73,8 @@ namespace E_CommerceDB.Migrations
                             Description = "Electronic Devices",
                             IsDeleted = false,
                             Name = "Clothes",
-                            created_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(2788),
-                            modified_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(2793)
+                            created_at = new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1670),
+                            modified_at = new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1670)
                         },
                         new
                         {
@@ -118,8 +82,8 @@ namespace E_CommerceDB.Migrations
                             Description = "Electronic Devices",
                             IsDeleted = false,
                             Name = "goods",
-                            created_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(2856),
-                            modified_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(2859)
+                            created_at = new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1687),
+                            modified_at = new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1688)
                         });
                 });
 
@@ -211,8 +175,8 @@ namespace E_CommerceDB.Migrations
                             Disc_Percent = 10m,
                             IsDeleted = false,
                             Name = "hh",
-                            created_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3429),
-                            modified_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3431)
+                            created_at = new DateTime(2022, 12, 22, 17, 15, 13, 591, DateTimeKind.Local).AddTicks(3210),
+                            modified_at = new DateTime(2022, 12, 22, 17, 15, 13, 591, DateTimeKind.Local).AddTicks(3211)
                         });
                 });
 
@@ -268,7 +232,7 @@ namespace E_CommerceDB.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Inventory", (string)null);
+                    b.ToTable("Inventory");
 
                     b.HasData(
                         new
@@ -276,16 +240,16 @@ namespace E_CommerceDB.Migrations
                             Id = 1,
                             Quantity = 5,
                             SelledQuantity = 0,
-                            created_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3301),
-                            modified_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3303)
+                            created_at = new DateTime(2022, 12, 22, 17, 15, 13, 591, DateTimeKind.Local).AddTicks(3094),
+                            modified_at = new DateTime(2022, 12, 22, 17, 15, 13, 591, DateTimeKind.Local).AddTicks(3102)
                         },
                         new
                         {
                             Id = 2,
                             Quantity = 5,
                             SelledQuantity = 0,
-                            created_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3384),
-                            modified_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3386)
+                            created_at = new DateTime(2022, 12, 22, 17, 15, 13, 591, DateTimeKind.Local).AddTicks(3181),
+                            modified_at = new DateTime(2022, 12, 22, 17, 15, 13, 591, DateTimeKind.Local).AddTicks(3182)
                         });
                 });
 
@@ -319,10 +283,6 @@ namespace E_CommerceDB.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("Payment_id")
-                        .IsUnique()
-                        .HasFilter("[Payment_id] IS NOT NULL");
 
                     b.HasIndex("User_id");
 
@@ -365,36 +325,6 @@ namespace E_CommerceDB.Migrations
                     b.ToTable("OrderItems", (string)null);
                 });
 
-            modelBuilder.Entity("E_CommerceDB.PaymentDetails", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
-
-                    b.Property<int>("Amount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Provider")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("created_at")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("modified_at")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("id");
-
-                    b.ToTable("PaymentDetails", (string)null);
-                });
-
             modelBuilder.Entity("E_CommerceDB.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -406,6 +336,9 @@ namespace E_CommerceDB.Migrations
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("InventoryId")
+                        .HasColumnType("int");
 
                     b.Property<bool?>("IsDeleted")
                         .IsRequired()
@@ -451,21 +384,21 @@ namespace E_CommerceDB.Migrations
                     b.Property<DateTime>("modified_at")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("ratingcount")
+                    b.Property<int>("ratingCount")
                         .HasColumnType("int");
 
-                    b.Property<int>("totalrating")
+                    b.Property<int>("totalRating")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("InventoryId");
 
                     b.HasIndex("SellyerId");
 
                     b.HasIndex("SubCategories_Id");
 
                     b.HasIndex("discount_Id");
-
-                    b.HasIndex("inventory_Id");
 
                     b.ToTable("Products", (string)null);
 
@@ -481,13 +414,13 @@ namespace E_CommerceDB.Migrations
                             Quantity = 0,
                             SelledQuantity = 0,
                             SubCategories_Id = 2,
-                            created_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3523),
+                            created_at = new DateTime(2022, 12, 22, 17, 15, 13, 591, DateTimeKind.Local).AddTicks(3235),
                             deleted_at = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             discount_Id = 1,
                             inventory_Id = 2,
-                            modified_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3527),
-                            ratingcount = 0,
-                            totalrating = 0
+                            modified_at = new DateTime(2022, 12, 22, 17, 15, 13, 591, DateTimeKind.Local).AddTicks(3236),
+                            ratingCount = 0,
+                            totalRating = 0
                         },
                         new
                         {
@@ -500,13 +433,13 @@ namespace E_CommerceDB.Migrations
                             Quantity = 0,
                             SelledQuantity = 0,
                             SubCategories_Id = 2,
-                            created_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3609),
+                            created_at = new DateTime(2022, 12, 22, 17, 15, 13, 591, DateTimeKind.Local).AddTicks(3258),
                             deleted_at = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             discount_Id = 1,
                             inventory_Id = 2,
-                            modified_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3611),
-                            ratingcount = 0,
-                            totalrating = 0
+                            modified_at = new DateTime(2022, 12, 22, 17, 15, 13, 591, DateTimeKind.Local).AddTicks(3259),
+                            ratingCount = 0,
+                            totalRating = 0
                         },
                         new
                         {
@@ -519,45 +452,14 @@ namespace E_CommerceDB.Migrations
                             Quantity = 0,
                             SelledQuantity = 0,
                             SubCategories_Id = 2,
-                            created_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3668),
+                            created_at = new DateTime(2022, 12, 22, 17, 15, 13, 591, DateTimeKind.Local).AddTicks(3273),
                             deleted_at = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             discount_Id = 1,
                             inventory_Id = 1,
-                            modified_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3688),
-                            ratingcount = 0,
-                            totalrating = 0
+                            modified_at = new DateTime(2022, 12, 22, 17, 15, 13, 591, DateTimeKind.Local).AddTicks(3274),
+                            ratingCount = 0,
+                            totalRating = 0
                         });
-                });
-
-            modelBuilder.Entity("E_CommerceDB.ShoppingSession", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool?>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("ModifiedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<decimal>("total")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("ShoppingSession", (string)null);
                 });
 
             modelBuilder.Entity("E_CommerceDB.SubCategories", b =>
@@ -596,8 +498,8 @@ namespace E_CommerceDB.Migrations
                             BrandName = "Samsung",
                             CategoryId = 1,
                             IsDeleted = false,
-                            created_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(2914),
-                            modified_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(2916)
+                            created_at = new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1708),
+                            modified_at = new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1709)
                         },
                         new
                         {
@@ -605,8 +507,8 @@ namespace E_CommerceDB.Migrations
                             BrandName = "Appile",
                             CategoryId = 1,
                             IsDeleted = false,
-                            created_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(2958),
-                            modified_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(2960)
+                            created_at = new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1842),
+                            modified_at = new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1843)
                         },
                         new
                         {
@@ -614,8 +516,8 @@ namespace E_CommerceDB.Migrations
                             BrandName = "Keriaze",
                             CategoryId = 3,
                             IsDeleted = false,
-                            created_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(2996),
-                            modified_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(2998)
+                            created_at = new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1864),
+                            modified_at = new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1865)
                         });
                 });
 
@@ -707,10 +609,10 @@ namespace E_CommerceDB.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "b79afd8b-b868-4a4a-968f-c99e17c86f34",
+                            Id = "967581be-db51-4625-bbfd-0292a6556cf2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "894cb813-637d-4b56-8118-6329f418766a",
-                            Created_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3049),
+                            ConcurrencyStamp = "70a0c54f-a9fa-44fd-9765-ec5810b14433",
+                            Created_at = new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1886),
                             Email = "Eslam@ss.com",
                             EmailConfirmed = false,
                             First_Name = "Mohamed",
@@ -719,17 +621,17 @@ namespace E_CommerceDB.Migrations
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
                             ProfilieImage = "https://www.w3schools.com/w3images/avatar3.png",
-                            SecurityStamp = "3f287fd9-0e6b-4aa4-a73d-b463fe0794c0",
+                            SecurityStamp = "544bd976-8c48-4b70-ab81-a5a06c0243c5",
                             TwoFactorEnabled = false,
                             UserName = "Admin",
-                            modified_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3051)
+                            modified_at = new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1887)
                         },
                         new
                         {
-                            Id = "0a33a68e-54b6-40fa-b937-8c7c75ebff83",
+                            Id = "e0815894-1748-4957-8ed7-d1e3d6c46994",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4803de9a-b566-4000-b087-8c7758b25320",
-                            Created_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3140),
+                            ConcurrencyStamp = "70ca3a84-5847-4eb7-a3a2-81ac93cca018",
+                            Created_at = new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1950),
                             Email = "Eslam@ss.com",
                             EmailConfirmed = false,
                             First_Name = "Mohamed",
@@ -738,16 +640,16 @@ namespace E_CommerceDB.Migrations
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
                             ProfilieImage = "https://www.w3schools.com/w3images/avatar3.png",
-                            SecurityStamp = "b4a7fdf7-23cd-492c-99fc-3df980d67f51",
+                            SecurityStamp = "3c974ee1-1b65-4110-af8c-6b3dd1b01317",
                             TwoFactorEnabled = false,
-                            modified_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3142)
+                            modified_at = new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1951)
                         },
                         new
                         {
-                            Id = "b544ba2a-17c2-4fd5-94a6-f399498979da",
+                            Id = "58ba496c-c2e8-4088-a6d3-c213ed01a2ab",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "715c0dce-84ed-4296-8336-b43daaf9648f",
-                            Created_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3219),
+                            ConcurrencyStamp = "d7c97474-a13d-4bbf-999f-ae095ed46207",
+                            Created_at = new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1977),
                             Email = "Eslam@ss.com",
                             EmailConfirmed = false,
                             First_Name = "Ahmed",
@@ -756,9 +658,9 @@ namespace E_CommerceDB.Migrations
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
                             ProfilieImage = "https://www.w3schools.com/w3images/avatar3.png",
-                            SecurityStamp = "48a3a9b1-5d19-4009-b057-81e164e309bf",
+                            SecurityStamp = "3da82c17-5b3c-4112-8587-a5c78f41ca35",
                             TwoFactorEnabled = false,
-                            modified_at = new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3221)
+                            modified_at = new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1978)
                         });
                 });
 
@@ -812,43 +714,6 @@ namespace E_CommerceDB.Migrations
                     b.ToTable("User_Address", (string)null);
                 });
 
-            modelBuilder.Entity("E_CommerceDB.UserPayment", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<bool?>("IsDeleted")
-                        .IsRequired()
-                        .HasColumnType("bit");
-
-                    b.Property<int>("account_no")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("expire_date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("paymenr_type")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("provider")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("user_id")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("user_id");
-
-                    b.ToTable("User_Payment", (string)null);
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -878,20 +743,20 @@ namespace E_CommerceDB.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "213b92ce-b82e-4f1f-8edf-cf8d8344f019",
-                            ConcurrencyStamp = "74ece556-b73d-44c9-8511-2c31119ae0f3",
+                            Id = "35d02365-dd5c-448a-b0a1-f31b16ebc1ee",
+                            ConcurrencyStamp = "bae13058-f5c6-4de8-9ca3-5bc53277fe6d",
                             Name = "Admin"
                         },
                         new
                         {
-                            Id = "4d283782-09dc-4d9c-b339-1456c3dfc67b",
-                            ConcurrencyStamp = "6ef22079-bba5-4a67-b1ca-9a1ee38fba2f",
+                            Id = "0510745e-3e5a-4c00-aaf3-cb04996c98e9",
+                            ConcurrencyStamp = "b90d67aa-4f2f-46e8-a302-eae25fff2567",
                             Name = "Seller"
                         },
                         new
                         {
-                            Id = "6de12ed4-e5d3-461a-a9cd-3bee0d98d961",
-                            ConcurrencyStamp = "e5c2ffd9-5277-47df-92b7-aca2974aaa97",
+                            Id = "908d1b75-5c31-40e0-859a-1a121140937e",
+                            ConcurrencyStamp = "3f9ed1c0-6dbc-4390-b8d7-be176de3abd6",
                             Name = "Buyer"
                         });
                 });
@@ -1002,25 +867,6 @@ namespace E_CommerceDB.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("E_CommerceDB.CartItem", b =>
-                {
-                    b.HasOne("E_CommerceDB.Product", "Product")
-                        .WithMany("CartItem")
-                        .HasForeignKey("Product_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("E_CommerceDB.ShoppingSession", "ShoppingSession")
-                        .WithMany("CartItem")
-                        .HasForeignKey("SessionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Product");
-
-                    b.Navigation("ShoppingSession");
-                });
-
             modelBuilder.Entity("E_CommerceDB.Complaints", b =>
                 {
                     b.HasOne("E_CommerceDB.User", "Buyer")
@@ -1058,17 +904,10 @@ namespace E_CommerceDB.Migrations
 
             modelBuilder.Entity("E_CommerceDB.Order_Details", b =>
                 {
-                    b.HasOne("E_CommerceDB.PaymentDetails", "PaymentDetails")
-                        .WithOne("Order_Details")
-                        .HasForeignKey("E_CommerceDB.Order_Details", "Payment_id")
-                        .OnDelete(DeleteBehavior.Cascade);
-
                     b.HasOne("E_CommerceDB.User", "user")
                         .WithMany("Order_Details")
                         .HasForeignKey("User_id")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.Navigation("PaymentDetails");
 
                     b.Navigation("user");
                 });
@@ -1094,6 +933,10 @@ namespace E_CommerceDB.Migrations
 
             modelBuilder.Entity("E_CommerceDB.Product", b =>
                 {
+                    b.HasOne("E_CommerceDB.Inventory", null)
+                        .WithMany("products")
+                        .HasForeignKey("InventoryId");
+
                     b.HasOne("E_CommerceDB.User", "Sellyer")
                         .WithMany()
                         .HasForeignKey("SellyerId");
@@ -1108,30 +951,11 @@ namespace E_CommerceDB.Migrations
                         .WithMany("products")
                         .HasForeignKey("discount_Id");
 
-                    b.HasOne("E_CommerceDB.Inventory", "inventory")
-                        .WithMany("products")
-                        .HasForeignKey("inventory_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Sellyer");
 
                     b.Navigation("SubCategories");
 
                     b.Navigation("discount");
-
-                    b.Navigation("inventory");
-                });
-
-            modelBuilder.Entity("E_CommerceDB.ShoppingSession", b =>
-                {
-                    b.HasOne("E_CommerceDB.User", "user")
-                        .WithMany("ShoppingSession")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("user");
                 });
 
             modelBuilder.Entity("E_CommerceDB.SubCategories", b =>
@@ -1149,17 +973,6 @@ namespace E_CommerceDB.Migrations
                 {
                     b.HasOne("E_CommerceDB.User", "user")
                         .WithMany("UserAddress")
-                        .HasForeignKey("user_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("user");
-                });
-
-            modelBuilder.Entity("E_CommerceDB.UserPayment", b =>
-                {
-                    b.HasOne("E_CommerceDB.User", "user")
-                        .WithMany("UserPayment")
                         .HasForeignKey("user_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1238,25 +1051,13 @@ namespace E_CommerceDB.Migrations
                     b.Navigation("OrderItems");
                 });
 
-            modelBuilder.Entity("E_CommerceDB.PaymentDetails", b =>
-                {
-                    b.Navigation("Order_Details");
-                });
-
             modelBuilder.Entity("E_CommerceDB.Product", b =>
                 {
-                    b.Navigation("CartItem");
-
                     b.Navigation("Complaints");
 
                     b.Navigation("Images");
 
                     b.Navigation("OrderItems");
-                });
-
-            modelBuilder.Entity("E_CommerceDB.ShoppingSession", b =>
-                {
-                    b.Navigation("CartItem");
                 });
 
             modelBuilder.Entity("E_CommerceDB.SubCategories", b =>
@@ -1272,11 +1073,7 @@ namespace E_CommerceDB.Migrations
 
                     b.Navigation("Order_Details");
 
-                    b.Navigation("ShoppingSession");
-
                     b.Navigation("UserAddress");
-
-                    b.Navigation("UserPayment");
                 });
 #pragma warning restore 612, 618
         }

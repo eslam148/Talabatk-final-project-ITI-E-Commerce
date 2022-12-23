@@ -25,7 +25,7 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
         public IActionResult Delete(int id)
         {
             Iorder.Delete(id);
-            return RedirectToAction("Index");
+            return RedirectToAction("GetPendingOrders");
         }
         [HttpGet]
         public IActionResult GetPendingOrders(int PageIndex = 1, int PageSize = 2)
@@ -39,6 +39,27 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
             var delivered = Iorder.GetDeliveredOrders().ToPagedList(PageIndex, PageSize);
             return View(delivered);
         }
-       
+        [HttpGet]
+        public IActionResult GetShippingOrders(int PageIndex = 1, int PageSize = 2)
+        {
+            var delivered = Iorder.GetShippingOrders().ToPagedList(PageIndex, PageSize);
+            return View(delivered);
+        }
+
+        [HttpGet]
+        public IActionResult ChangeOrderProgressShipping(int id)
+        {
+            Iorder.updateProgress(id, 1);
+            return RedirectToAction("GetPendingOrders");
+        }
+      
+
+        [HttpGet]
+        public IActionResult ChangeOrderProgressDelivered(int id)
+        {
+            Iorder.updateProgress(id, 2);
+            return RedirectToAction("GetShippingOrders");
+        }
+      
     }
 }

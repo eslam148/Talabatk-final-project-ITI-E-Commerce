@@ -21,7 +21,7 @@ namespace E_Commerce_Back_End.Services
                 created_at = paymentDetailsModel.Created_at,
                 modified_at = paymentDetailsModel.Modified_at
             };
-            db.Payment_Details.Add(paymentDetails);
+          //  db.Payment_Details.Add(paymentDetails);
             db.SaveChanges();
         }
     }

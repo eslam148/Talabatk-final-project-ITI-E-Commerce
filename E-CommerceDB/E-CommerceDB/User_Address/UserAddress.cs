@@ -10,11 +10,9 @@ namespace E_CommerceDB
     {
         public int Id { get; set; }
         public string address_line1 { get; set; }
-        public string address_line2 { get; set; }
         public string country { get; set; }
         public string city { get; set; }
         public string postal_code { get; set; }
-        public string telephone { get; set; }
         public string mobile { get; set; }
         public bool? IsDeleted { get; set; } = false;
 

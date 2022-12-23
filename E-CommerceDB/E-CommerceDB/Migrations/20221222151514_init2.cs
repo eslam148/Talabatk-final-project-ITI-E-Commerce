@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace E_CommerceDB.Migrations
 {
-    public partial class init : Migration
+    public partial class init2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -108,23 +108,6 @@ namespace E_CommerceDB.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Inventory", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "PaymentDetails",
-                columns: table => new
-                {
-                    id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Amount = table.Column<int>(type: "int", nullable: false),
-                    Provider = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    modified_at = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_PaymentDetails", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -234,23 +217,25 @@ namespace E_CommerceDB.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ShoppingSession",
+                name: "Order_Details",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    total = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: true)
+                    User_id = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    Total = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Payment_id = table.Column<int>(type: "int", nullable: true),
+                    Created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Modified_at = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    progress = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ShoppingSession", x => x.Id);
+                    table.PrimaryKey("PK_Order_Details", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ShoppingSession_AspNetUsers_UserId",
-                        column: x => x.UserId,
+                        name: "FK_Order_Details_AspNetUsers_User_id",
+                        column: x => x.User_id,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -284,30 +269,6 @@ namespace E_CommerceDB.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "User_Payment",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    user_id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    paymenr_type = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    provider = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    account_no = table.Column<int>(type: "int", nullable: false),
-                    expire_date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_User_Payment", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_User_Payment_AspNetUsers_user_id",
-                        column: x => x.user_id,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "SubCategories",
                 columns: table => new
                 {
@@ -331,37 +292,6 @@ namespace E_CommerceDB.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Order_Details",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    User_id = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    Total = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Payment_id = table.Column<int>(type: "int", nullable: true),
-                    Created_at = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Modified_at = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    progress = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Order_Details", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Order_Details_AspNetUsers_User_id",
-                        column: x => x.User_id,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Order_Details_PaymentDetails_Payment_id",
-                        column: x => x.Payment_id,
-                        principalTable: "PaymentDetails",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Products",
                 columns: table => new
                 {
@@ -381,9 +311,10 @@ namespace E_CommerceDB.Migrations
                     Quantity = table.Column<int>(type: "int", nullable: false),
                     SelledQuantity = table.Column<int>(type: "int", nullable: false),
                     SellerId = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ratingcount = table.Column<int>(type: "int", nullable: false),
-                    totalrating = table.Column<int>(type: "int", nullable: false),
-                    SellyerId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    ratingCount = table.Column<int>(type: "int", nullable: false),
+                    totalRating = table.Column<int>(type: "int", nullable: false),
+                    SellyerId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    InventoryId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -399,45 +330,14 @@ namespace E_CommerceDB.Migrations
                         principalTable: "Discount",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Products_Inventory_inventory_Id",
-                        column: x => x.inventory_Id,
+                        name: "FK_Products_Inventory_InventoryId",
+                        column: x => x.InventoryId,
                         principalTable: "Inventory",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Products_SubCategories_SubCategories_Id",
                         column: x => x.SubCategories_Id,
                         principalTable: "SubCategories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "CartItem",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    SessionId = table.Column<int>(type: "int", nullable: false),
-                    Quantity = table.Column<int>(type: "int", nullable: false),
-                    Product_id = table.Column<int>(type: "int", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModefiedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CartItem", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_CartItem_Products_Product_id",
-                        column: x => x.Product_id,
-                        principalTable: "Products",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CartItem_ShoppingSession_SessionId",
-                        column: x => x.SessionId,
-                        principalTable: "ShoppingSession",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -535,9 +435,9 @@ namespace E_CommerceDB.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "213b92ce-b82e-4f1f-8edf-cf8d8344f019", "74ece556-b73d-44c9-8511-2c31119ae0f3", "Admin", null },
-                    { "4d283782-09dc-4d9c-b339-1456c3dfc67b", "6ef22079-bba5-4a67-b1ca-9a1ee38fba2f", "Seller", null },
-                    { "6de12ed4-e5d3-461a-a9cd-3bee0d98d961", "e5c2ffd9-5277-47df-92b7-aca2974aaa97", "Buyer", null }
+                    { "0510745e-3e5a-4c00-aaf3-cb04996c98e9", "b90d67aa-4f2f-46e8-a302-eae25fff2567", "Seller", null },
+                    { "35d02365-dd5c-448a-b0a1-f31b16ebc1ee", "bae13058-f5c6-4de8-9ca3-5bc53277fe6d", "Admin", null },
+                    { "908d1b75-5c31-40e0-859a-1a121140937e", "3f9ed1c0-6dbc-4390-b8d7-be176de3abd6", "Buyer", null }
                 });
 
             migrationBuilder.InsertData(
@@ -545,9 +445,9 @@ namespace E_CommerceDB.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Created_at", "Email", "EmailConfirmed", "First_Name", "IsDeleted", "Last_Name", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "ProfilieImage", "Role", "SecurityStamp", "TwoFactorEnabled", "UserName", "modified_at" },
                 values: new object[,]
                 {
-                    { "0a33a68e-54b6-40fa-b937-8c7c75ebff83", 0, "4803de9a-b566-4000-b087-8c7758b25320", new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3140), "Eslam@ss.com", false, "Mohamed", false, "Ahmed", false, null, null, null, null, null, false, "https://www.w3schools.com/w3images/avatar3.png", null, "b4a7fdf7-23cd-492c-99fc-3df980d67f51", false, null, new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3142) },
-                    { "b544ba2a-17c2-4fd5-94a6-f399498979da", 0, "715c0dce-84ed-4296-8336-b43daaf9648f", new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3219), "Eslam@ss.com", false, "Ahmed", false, "Amir", false, null, null, null, null, null, false, "https://www.w3schools.com/w3images/avatar3.png", null, "48a3a9b1-5d19-4009-b057-81e164e309bf", false, null, new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3221) },
-                    { "b79afd8b-b868-4a4a-968f-c99e17c86f34", 0, "894cb813-637d-4b56-8118-6329f418766a", new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3049), "Eslam@ss.com", false, "Mohamed", false, "Ahmed", false, null, null, null, null, null, false, "https://www.w3schools.com/w3images/avatar3.png", null, "3f287fd9-0e6b-4aa4-a73d-b463fe0794c0", false, "Admin", new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3051) }
+                    { "58ba496c-c2e8-4088-a6d3-c213ed01a2ab", 0, "d7c97474-a13d-4bbf-999f-ae095ed46207", new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1977), "Eslam@ss.com", false, "Ahmed", false, "Amir", false, null, null, null, null, null, false, "https://www.w3schools.com/w3images/avatar3.png", null, "3da82c17-5b3c-4112-8587-a5c78f41ca35", false, null, new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1978) },
+                    { "967581be-db51-4625-bbfd-0292a6556cf2", 0, "70a0c54f-a9fa-44fd-9765-ec5810b14433", new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1886), "Eslam@ss.com", false, "Mohamed", false, "Ahmed", false, null, null, null, null, null, false, "https://www.w3schools.com/w3images/avatar3.png", null, "544bd976-8c48-4b70-ab81-a5a06c0243c5", false, "Admin", new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1887) },
+                    { "e0815894-1748-4957-8ed7-d1e3d6c46994", 0, "70ca3a84-5847-4eb7-a3a2-81ac93cca018", new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1950), "Eslam@ss.com", false, "Mohamed", false, "Ahmed", false, null, null, null, null, null, false, "https://www.w3schools.com/w3images/avatar3.png", null, "3c974ee1-1b65-4110-af8c-6b3dd1b01317", false, null, new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1951) }
                 });
 
             migrationBuilder.InsertData(
@@ -555,54 +455,54 @@ namespace E_CommerceDB.Migrations
                 columns: new[] { "Id", "Description", "IsDeleted", "Name", "created_at", "deleted_at", "modified_at" },
                 values: new object[,]
                 {
-                    { 1, "Electronic Devices", false, "Electronic", new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(2484), null, new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(2502) },
-                    { 2, "Electronic Devices", false, "Clothes", new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(2788), null, new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(2793) },
-                    { 3, "Electronic Devices", false, "goods", new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(2856), null, new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(2859) }
+                    { 1, "Electronic Devices", false, "Electronic", new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1625), null, new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1636) },
+                    { 2, "Electronic Devices", false, "Clothes", new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1670), null, new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1670) },
+                    { 3, "Electronic Devices", false, "goods", new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1687), null, new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1688) }
                 });
 
             migrationBuilder.InsertData(
                 table: "Discount",
                 columns: new[] { "Id", "Active", "Description", "Disc_Percent", "IsDeleted", "Name", "created_at", "deleted_at", "modified_at" },
-                values: new object[] { 1, true, "gg", 10m, false, "hh", new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3429), null, new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3431) });
+                values: new object[] { 1, true, "gg", 10m, false, "hh", new DateTime(2022, 12, 22, 17, 15, 13, 591, DateTimeKind.Local).AddTicks(3210), null, new DateTime(2022, 12, 22, 17, 15, 13, 591, DateTimeKind.Local).AddTicks(3211) });
 
             migrationBuilder.InsertData(
                 table: "Inventory",
                 columns: new[] { "Id", "Quantity", "SelledQuantity", "created_at", "deleted_at", "modified_at" },
                 values: new object[,]
                 {
-                    { 1, 5, 0, new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3301), null, new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3303) },
-                    { 2, 5, 0, new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3384), null, new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3386) }
+                    { 1, 5, 0, new DateTime(2022, 12, 22, 17, 15, 13, 591, DateTimeKind.Local).AddTicks(3094), null, new DateTime(2022, 12, 22, 17, 15, 13, 591, DateTimeKind.Local).AddTicks(3102) },
+                    { 2, 5, 0, new DateTime(2022, 12, 22, 17, 15, 13, 591, DateTimeKind.Local).AddTicks(3181), null, new DateTime(2022, 12, 22, 17, 15, 13, 591, DateTimeKind.Local).AddTicks(3182) }
                 });
 
             migrationBuilder.InsertData(
                 table: "SubCategories",
                 columns: new[] { "Id", "BrandName", "CategoryId", "IsDeleted", "created_at", "modified_at" },
-                values: new object[] { 1, "Samsung", 1, false, new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(2914), new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(2916) });
+                values: new object[] { 1, "Samsung", 1, false, new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1708), new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1709) });
 
             migrationBuilder.InsertData(
                 table: "SubCategories",
                 columns: new[] { "Id", "BrandName", "CategoryId", "IsDeleted", "created_at", "modified_at" },
-                values: new object[] { 2, "Appile", 1, false, new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(2958), new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(2960) });
+                values: new object[] { 2, "Appile", 1, false, new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1842), new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1843) });
 
             migrationBuilder.InsertData(
                 table: "SubCategories",
                 columns: new[] { "Id", "BrandName", "CategoryId", "IsDeleted", "created_at", "modified_at" },
-                values: new object[] { 3, "Keriaze", 3, false, new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(2996), new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(2998) });
+                values: new object[] { 3, "Keriaze", 3, false, new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1864), new DateTime(2022, 12, 22, 17, 15, 13, 589, DateTimeKind.Local).AddTicks(1865) });
 
             migrationBuilder.InsertData(
                 table: "Products",
-                columns: new[] { "Id", "Description", "IsDeleted", "Name", "Price", "Progress", "Quantity", "SelledQuantity", "SellerId", "SellyerId", "SubCategories_Id", "created_at", "deleted_at", "discount_Id", "inventory_Id", "modified_at", "ratingcount", "totalrating" },
-                values: new object[] { 1, "Samsung Phone", false, "Samasung A32", 5000, 0, 0, 0, null, null, 2, new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3523), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 2, new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3527), 0, 0 });
+                columns: new[] { "Id", "Description", "InventoryId", "IsDeleted", "Name", "Price", "Progress", "Quantity", "SelledQuantity", "SellerId", "SellyerId", "SubCategories_Id", "created_at", "deleted_at", "discount_Id", "inventory_Id", "modified_at", "ratingCount", "totalRating" },
+                values: new object[] { 1, "Samsung Phone", null, false, "Samasung A32", 5000, 0, 0, 0, null, null, 2, new DateTime(2022, 12, 22, 17, 15, 13, 591, DateTimeKind.Local).AddTicks(3235), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 2, new DateTime(2022, 12, 22, 17, 15, 13, 591, DateTimeKind.Local).AddTicks(3236), 0, 0 });
 
             migrationBuilder.InsertData(
                 table: "Products",
-                columns: new[] { "Id", "Description", "IsDeleted", "Name", "Price", "Progress", "Quantity", "SelledQuantity", "SellerId", "SellyerId", "SubCategories_Id", "created_at", "deleted_at", "discount_Id", "inventory_Id", "modified_at", "ratingcount", "totalrating" },
-                values: new object[] { 2, "Samsung Phone", false, "Samasung A52", 6000, 0, 0, 0, null, null, 2, new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3609), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 2, new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3611), 0, 0 });
+                columns: new[] { "Id", "Description", "InventoryId", "IsDeleted", "Name", "Price", "Progress", "Quantity", "SelledQuantity", "SellerId", "SellyerId", "SubCategories_Id", "created_at", "deleted_at", "discount_Id", "inventory_Id", "modified_at", "ratingCount", "totalRating" },
+                values: new object[] { 2, "Samsung Phone", null, false, "Samasung A52", 6000, 0, 0, 0, null, null, 2, new DateTime(2022, 12, 22, 17, 15, 13, 591, DateTimeKind.Local).AddTicks(3258), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 2, new DateTime(2022, 12, 22, 17, 15, 13, 591, DateTimeKind.Local).AddTicks(3259), 0, 0 });
 
             migrationBuilder.InsertData(
                 table: "Products",
-                columns: new[] { "Id", "Description", "IsDeleted", "Name", "Price", "Progress", "Quantity", "SelledQuantity", "SellerId", "SellyerId", "SubCategories_Id", "created_at", "deleted_at", "discount_Id", "inventory_Id", "modified_at", "ratingcount", "totalrating" },
-                values: new object[] { 3, "Samsung Phone", false, "Samasung A72", 7000, 0, 0, 0, null, null, 2, new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3668), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 1, new DateTime(2022, 12, 19, 18, 29, 26, 957, DateTimeKind.Local).AddTicks(3688), 0, 0 });
+                columns: new[] { "Id", "Description", "InventoryId", "IsDeleted", "Name", "Price", "Progress", "Quantity", "SelledQuantity", "SellerId", "SellyerId", "SubCategories_Id", "created_at", "deleted_at", "discount_Id", "inventory_Id", "modified_at", "ratingCount", "totalRating" },
+                values: new object[] { 3, "Samsung Phone", null, false, "Samasung A72", 7000, 0, 0, 0, null, null, 2, new DateTime(2022, 12, 22, 17, 15, 13, 591, DateTimeKind.Local).AddTicks(3273), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 1, new DateTime(2022, 12, 22, 17, 15, 13, 591, DateTimeKind.Local).AddTicks(3274), 0, 0 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -644,16 +544,6 @@ namespace E_CommerceDB.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CartItem_Product_id",
-                table: "CartItem",
-                column: "Product_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CartItem_SessionId",
-                table: "CartItem",
-                column: "SessionId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Complaints_BuyerId",
                 table: "Complaints",
                 column: "BuyerId");
@@ -667,13 +557,6 @@ namespace E_CommerceDB.Migrations
                 name: "IX_Complaints_SellerId",
                 table: "Complaints",
                 column: "SellerId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Order_Details_Payment_id",
-                table: "Order_Details",
-                column: "Payment_id",
-                unique: true,
-                filter: "[Payment_id] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Order_Details_User_id",
@@ -701,9 +584,9 @@ namespace E_CommerceDB.Migrations
                 column: "discount_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Products_inventory_Id",
+                name: "IX_Products_InventoryId",
                 table: "Products",
-                column: "inventory_Id");
+                column: "InventoryId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Products_SellyerId",
@@ -716,11 +599,6 @@ namespace E_CommerceDB.Migrations
                 column: "SubCategories_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ShoppingSession_UserId",
-                table: "ShoppingSession",
-                column: "UserId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_SubCategories_CategoryId",
                 table: "SubCategories",
                 column: "CategoryId");
@@ -728,11 +606,6 @@ namespace E_CommerceDB.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_User_Address_user_id",
                 table: "User_Address",
-                column: "user_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_User_Payment_user_id",
-                table: "User_Payment",
                 column: "user_id");
         }
 
@@ -754,9 +627,6 @@ namespace E_CommerceDB.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "CartItem");
-
-            migrationBuilder.DropTable(
                 name: "Complaints");
 
             migrationBuilder.DropTable(
@@ -769,22 +639,13 @@ namespace E_CommerceDB.Migrations
                 name: "User_Address");
 
             migrationBuilder.DropTable(
-                name: "User_Payment");
-
-            migrationBuilder.DropTable(
                 name: "AspNetRoles");
-
-            migrationBuilder.DropTable(
-                name: "ShoppingSession");
 
             migrationBuilder.DropTable(
                 name: "Order_Details");
 
             migrationBuilder.DropTable(
                 name: "Products");
-
-            migrationBuilder.DropTable(
-                name: "PaymentDetails");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

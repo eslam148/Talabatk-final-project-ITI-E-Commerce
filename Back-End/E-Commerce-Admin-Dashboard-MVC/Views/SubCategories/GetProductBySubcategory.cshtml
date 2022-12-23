@@ -70,6 +70,6 @@
             }
         </tbody>
     </table>
-    @Html.PagedListPager(Model, pageIndex => Url.Action("GetAdminProduct", new { pageIndex  }))
+    @Html.PagedListPager(Model, pageIndex => Url.Action("GetProductBySubcategory", new { pageIndex  }))
 </div>
 

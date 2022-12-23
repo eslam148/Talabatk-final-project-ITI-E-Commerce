@@ -13,7 +13,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
         }
         public IEnumerable<ProductsVM> GetAllAdminProduct()
         {
-            var data = context.Product.Where(p => p.SellerId == "09297e9d-8dd0-4d24-9230-b514a4fcff0e").Select(prod => new ProductsVM()
+            var data = context.Product.Where(p => p.SellerId == "862f410a-9e8d-44c7-853e-512d1abc86e2").Select(prod => new ProductsVM()
             {
                 No = prod.Id,
                 Name = prod.Name,
@@ -175,7 +175,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
 
         public IEnumerable<ProductsVM> GetProductBySubcategory(int CatId)
         {
-            var data = context.Product.Where(p =>  p.IsDeleted == false && p.SubCategories_Id == CatId)
+            var data = context.Product.Where(p =>  p.IsDeleted == false && p.SubCategories_Id == CatId  )
                 .Select(prod => new ProductsVM()
             {
                 No = prod.Id,
@@ -222,7 +222,10 @@ namespace E_Commerce_Admin_Dashboard_MVC
 
         public void ApproveProduct(int Id)
         {
-            throw new NotImplementedException();
+           var p = context.Product.Where(p => p.Id == Id).FirstOrDefault();
+            p.Progress = 1;
+            context.SaveChanges();
+
         }
 
         public IEnumerable<ProductsVM> GetPendingProducts()
