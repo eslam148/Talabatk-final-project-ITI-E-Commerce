@@ -432,4 +432,7 @@
   <data name="Shipping Orders list:" xml:space="preserve">
     <value>الطلبات المشحونه</value>
   </data>
+  <data name="AddSubcategory" xml:space="preserve">
+    <value>اضافه صنف فرعي</value>
+  </data>
 </root>

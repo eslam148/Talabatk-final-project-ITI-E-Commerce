@@ -420,4 +420,7 @@
   <data name="Shipping Orders list:" xml:space="preserve">
     <value>Shipping Orders list:</value>
   </data>
+  <data name="AddSubcategory" xml:space="preserve">
+    <value>Add Subcategory</value>
+  </data>
 </root>

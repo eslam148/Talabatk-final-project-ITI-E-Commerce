@@ -28,8 +28,8 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
             if (!String.IsNullOrEmpty(SearchedString))
             {
                 var users = await userManager.GetUsersInRoleAsync("Buyer"); //Iuser.Search(SearchedString).Where(u => u.Role == "Buyer").ToPagedList(PageIndex, PageSize);
-                users.Where(u => u.IsDeleted == false && u.First_Name.StartsWith(SearchedString)).ToPagedList(PageIndex, PageSize);
-                return View(users);
+                users =  users.Where(u => u.IsDeleted == false && u.First_Name.StartsWith(SearchedString)).ToList();
+                return View(users.ToPagedList(PageIndex, PageSize));
             }
             else
             {
@@ -52,9 +52,9 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
             if (!String.IsNullOrEmpty(SearchedString))
             {
                 var users = await userManager.GetUsersInRoleAsync("Seller"); //Iuser.Search(SearchedString).Where(u => u.Role == "Buyer").ToPagedList(PageIndex, PageSize);
-                users.Where(u => u.IsDeleted == false && u.First_Name.StartsWith(SearchedString)).ToPagedList(PageIndex, PageSize);
+               users =  users.Where(u => u.IsDeleted == false && u.First_Name.StartsWith(SearchedString)).ToList();
               // var users = Iuser.Search(SearchedString).Where(u => u.Role == "Seller").ToPagedList(PageIndex, PageSize);
-                return View(users);
+                return View(users.ToPagedList(PageIndex, PageSize));
             }
             else
             {
