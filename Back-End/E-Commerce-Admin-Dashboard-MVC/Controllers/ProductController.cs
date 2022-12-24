@@ -71,7 +71,7 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
             }
             else {
                 product.Progress=1;
-                product.SellerId = "862f410a-9e8d-44c7-853e-512d1abc86e2";//UserManager.GetUserId(User);
+                product.SellerId = "248d7261-521d-46c6-a62e-fec646548071";//UserManager.GetUserId(User);
                 services.AddProdcut(product);
                 return View(); //RedirectToAction("GetAdminProduct");
             }

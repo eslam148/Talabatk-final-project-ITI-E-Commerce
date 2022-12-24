@@ -45,7 +45,7 @@ namespace E_Commerce_Back_End
                 SubCategories_Id = product.subCategory,
                 Progress = 0,
                 IsDeleted = false,
-                Quantity = product.Qauntity,
+                Quantity = product.Quantity,
                 SelledQuantity = 0,
                 SellerId = product.SellerId,
                 Images = prodcutImages,
@@ -80,7 +80,7 @@ namespace E_Commerce_Back_End
                 Discount = context.Discount.Where(s => s.Id == prod.discount_Id).Select(b => b.Name).FirstOrDefault(),
                 Progress = prod.Progress,
                 IsDeleted = prod.IsDeleted,
-                Qauntity=prod.Quantity,
+                Quantity=prod.Quantity,
                 SelledQauntity=prod.SelledQuantity,
                 SellerId = prod.Sellyer.Id,
                 images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList(),
@@ -132,7 +132,7 @@ namespace E_Commerce_Back_End
             prod.Description = product.Description;
             prod.SubCategories_Id = product.subCategory;
             prod.Price=product.Price;
-            prod.Quantity = product.Qauntity;
+            prod.Quantity = product.Quantity;
 
             context.SaveChanges();
         }
@@ -152,7 +152,7 @@ namespace E_Commerce_Back_End
                 Discount = context.Discount.Where(s => s.Id == prod.discount_Id).Select(b => b.Name).FirstOrDefault(),
                 Progress = prod.Progress,
                 IsDeleted = prod.IsDeleted,
-                Qauntity=prod.Quantity,
+                Quantity=prod.Quantity,
                 SelledQauntity=prod.SelledQuantity,
                 SellerId = prod.Sellyer.Id,
                     images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList()
@@ -175,7 +175,7 @@ namespace E_Commerce_Back_End
                 Discount = context.Discount.Where(s => s.Id == prod.discount_Id).Select(b => b.Name).FirstOrDefault(),
                 Progress = prod.Progress,
                 IsDeleted = prod.IsDeleted,
-                Qauntity = prod.Quantity,
+                Quantity = prod.Quantity,
                 SelledQauntity = prod.SelledQuantity,
                 SellerId = prod.Sellyer.Id,
                 images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList(),
@@ -201,7 +201,7 @@ namespace E_Commerce_Back_End
                 Discount = context.Discount.Where(s => s.Id == prod.discount_Id).Select(b => b.Name).FirstOrDefault(),
                 Progress = prod.Progress,
                 IsDeleted = prod.IsDeleted,
-                Qauntity = prod.Quantity,
+                Quantity = prod.Quantity,
                 SelledQauntity = prod.SelledQuantity,
                 SellerId = prod.Sellyer.Id,
                 images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList(),
@@ -226,7 +226,7 @@ namespace E_Commerce_Back_End
                 Discount = context.Discount.Where(s => s.Id == prod.discount_Id).Select(b => b.Name).FirstOrDefault(),
                 Progress = prod.Progress,
                 IsDeleted = prod.IsDeleted,
-                Qauntity = prod.Quantity,
+                Quantity = prod.Quantity,
                 SelledQauntity = prod.SelledQuantity,
                 SellerId = prod.Sellyer.Id,
                 images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList(),
@@ -252,7 +252,7 @@ namespace E_Commerce_Back_End
                 Discount = context.Discount.Where(s => s.Id == prod.discount_Id).Select(b => b.Name).FirstOrDefault(),
                 Progress = prod.Progress,
                 IsDeleted = prod.IsDeleted,
-                Qauntity = prod.Quantity,
+                Quantity = prod.Quantity,
                 SelledQauntity = prod.SelledQuantity,
                 SellerId = prod.Sellyer.Id,
                 images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList(),
@@ -280,7 +280,7 @@ namespace E_Commerce_Back_End
                 Progress = prod.Progress,
                 IsDeleted = prod.IsDeleted,
                 images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList(),
-                Qauntity = prod.Quantity,
+                Quantity = prod.Quantity,
                 SelledQauntity = prod.SelledQuantity,
                 SellerId = prod.Sellyer.Id,
                 totalRating = prod.totalRating,
@@ -305,7 +305,7 @@ namespace E_Commerce_Back_End
                 Progress = prod.Progress,
                 IsDeleted = prod.IsDeleted,
                 images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList(),
-                Qauntity = prod.Quantity,
+                Quantity = prod.Quantity,
                 SelledQauntity = prod.SelledQuantity,
                 SellerId = prod.Sellyer.Id,
                 totalRating = prod.totalRating,
@@ -330,7 +330,7 @@ namespace E_Commerce_Back_End
                 Progress = prod.Progress,
                 IsDeleted = prod.IsDeleted,
                 images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList(),
-                Qauntity = prod.Quantity,
+                Quantity = prod.Quantity,
                 SelledQauntity = prod.SelledQuantity,
                 SellerId = prod.Sellyer.Id,
                 totalRating = prod.totalRating,
@@ -361,7 +361,7 @@ namespace E_Commerce_Back_End
                 Discount = context.Discount.Where(s => s.Id == prod.discount_Id).Select(b => b.Disc_Percent).FirstOrDefault().ToString(),
                 Progress = prod.Progress,
                 IsDeleted = prod.IsDeleted,
-                Qauntity = prod.Quantity,
+                Quantity = prod.Quantity,
                 SelledQauntity = prod.SelledQuantity,
                 SellerId = prod.Sellyer.Id,
                 images2 = context.ProductImages.Where(i => i.ProductId == prod.Id).Select(i => i.Image).ToList(),

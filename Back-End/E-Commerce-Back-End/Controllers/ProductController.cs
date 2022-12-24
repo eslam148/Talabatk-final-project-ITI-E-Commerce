@@ -218,7 +218,14 @@ namespace E_Commerce_Back_End
             
             return Ok();
         }
+        [HttpPost]
+        [Route("~/api/EditProduct")]
+        public async Task<IActionResult> EditProduct([FromBody] ProductsVM products)
+        {
+            productServices.Edit(products);
 
+            return Ok();
+        }
     }
         
     

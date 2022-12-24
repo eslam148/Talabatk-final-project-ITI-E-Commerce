@@ -64,7 +64,7 @@ namespace E_Commerce_Back_End
         public int? Progress { get; set; } = 0;
         public bool? IsDeleted { get; set; } = false;
         [Required(ErrorMessage = "Qunatity is Required")]
-        public int Qauntity { get; set; }
+        public int Quantity { get; set; }
 
         public int ratingCount { get; set; } = 0;
         public int totalRating { get; set; } = 0;
