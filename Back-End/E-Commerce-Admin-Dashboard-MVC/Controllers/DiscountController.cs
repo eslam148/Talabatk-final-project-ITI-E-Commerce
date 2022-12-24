@@ -44,7 +44,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
 
                 };
                 idisc.addDiscount(disc);
-                return RedirectToAction("Add");
+                return RedirectToAction("Home");
             }
         }
         [HttpGet]

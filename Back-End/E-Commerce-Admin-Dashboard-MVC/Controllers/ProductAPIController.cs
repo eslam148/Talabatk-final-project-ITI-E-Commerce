@@ -56,6 +56,7 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
                         Images.Add(fromFile);
                     
                 }
+                product.Progress = 0;
                    product.Images = Images;
                 services.AddProdcut(product);
 
