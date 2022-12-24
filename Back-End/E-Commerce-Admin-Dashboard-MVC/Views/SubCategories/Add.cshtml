@@ -5,20 +5,17 @@
 
 <div class="card">
     <div class="card-body">
-        <h4 class="card-title">Default form</h4>
-        <p class="card-description">
-            Basic form layout
-        </p>
-        <form class="forms-sample" data-ajax="true" method="post" asp-controller="SubCategories" asp-action="Add" enctype="multipart/form-data">
+       
+        <form class="forms-sample" data-ajax="true" method="post" data-ajax-complete="sucess" asp-controller="SubCategories" asp-action="Add" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly"></div>
             <div class="form-group">
-                <label asp-for="BrandName">BrandName</label>
+                <label asp-for="BrandName">@SharedLocalizer["BrandName"]</label>
                 <input asp-for="BrandName" class="form-control" placeholder="Name">
                 <span asp-validation-for="BrandName" class="alert-danger"></span>
 
             </div>
             <div class="form-group">
-                <label asp-for="CategoryId">Category</label>
+                <label asp-for="CategoryId">@SharedLocalizer["Category"]</label>
                 <select asp-for="CategoryId" class="form-select" aria-label="Default select example">
                     <option selected>Open this select menu</option>
                     @foreach (var cat in ViewBag.Category)
@@ -29,13 +26,13 @@
                 <span asp-validation-for="CategoryId" class="alert-danger"></span>
 
             </div>
-            <button type="submit" class="btn btn-primary mr-2">Submit</button>
-            <button class="btn btn-light">Cancel</button>
+            <button type="submit" class="btn btn-primary mr-2">@SharedLocalizer["Add"]</button>
+            <button class="btn btn-light">@SharedLocalizer["Cancel"]</button>
         </form>
     </div>
 </div>
 <script>
-    function ProductAdd(data) {
+    function sucess(data) {
         window.location.href = "/ Category/Index"
     }
 </script>
