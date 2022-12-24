@@ -63,7 +63,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
                 discount_Id = product.DiscountID,
                 Price = product.Price,
                 SubCategories_Id = product.subCategory,
-                Progress = 0,
+                Progress = (int)product.Progress,
                 IsDeleted = false,
                 Quantity = product.Qauntity,
                 SelledQuantity = 0,

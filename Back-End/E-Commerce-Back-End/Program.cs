@@ -100,13 +100,13 @@ namespace E_Commerce_Back_End
 
             var app = builder.Build();
 
-            app.UseStaticFiles(new StaticFileOptions()
-            {
-                RequestPath = "/wwwroot",
-                FileProvider = new PhysicalFileProvider
-            (Path.Combine(Directory.GetCurrentDirectory(),
-            "wwwroot"))
-            });
+            //app.UseStaticFiles(new StaticFileOptions()
+            //{
+            //    RequestPath = "/wwwroot",
+            //    FileProvider = new PhysicalFileProvider
+            //(Path.Combine(Directory.GetCurrentDirectory(),
+            //"wwwroot"))
+            //});
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
