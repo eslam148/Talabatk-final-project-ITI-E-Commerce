@@ -82,21 +82,21 @@ namespace E_Commerce_Back_End
                };
            }
        );
+            builder.Services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(i =>
+                {
+                    i.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                });
+            });
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddScoped<IProductServices, ProductServices>();
 
-            builder.Services.AddCors(options =>
-            {
-                options.AddDefaultPolicy(i =>
-                {
-                    
-                    i.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
-                });
-            });
+         
 
-          
+
 
             var app = builder.Build();
 

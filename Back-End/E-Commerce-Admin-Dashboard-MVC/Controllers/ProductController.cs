@@ -9,7 +9,7 @@ using X.PagedList;
 
 namespace E_Commerce_Admin_Dashboard_MVC.Controllers
 {
-   // [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class ProductController : Controller
     {
         private readonly IProductServices services;

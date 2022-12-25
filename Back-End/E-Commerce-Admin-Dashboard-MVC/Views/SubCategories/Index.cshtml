@@ -47,26 +47,14 @@
                         </td>
                        
                     </tr>
-                  @*  <partial name="_Edit" model="subcat"></partial>*@
+                    <partial name="_Edit" model="subcat"></partial>
                     <partial name="Confirm" model="y"></partial>
                 }
 
 
             </tbody>
         </table>
-        @Html.PagedListPager(Model, pageIndex => Url.Action("index", new { pageIndex  }),
-        PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(
-        new PagedListRenderOptions()
-        {
-        MaximumPageNumbersToDisplay=1,
-        LiElementClasses = new List<string> {"Page navigation example","pagination", "page-item","page-link"}
-        },
-        new AjaxOptions()
-        {
-        HttpMethod ="GET",
-        UpdateTargetId="data"
-        }
-        ))
+        @Html.PagedListPager(Model, pageIndex => Url.Action("index", new { pageIndex  }))
     </div>
 </div>
 

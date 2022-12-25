@@ -66,7 +66,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
 
         public List<SubcategoryModelView> GetSubcategoryByCategoryId(int Id)
         {
-            var Subs = db.SubCategories.Where(c=>c.Id == Id).ToList();
+            var Subs = db.SubCategories.Where(c=>c.CategoryId == Id).ToList();
             List<SubcategoryModelView> sub = new List<SubcategoryModelView>();
             foreach (var s in Subs)
             {

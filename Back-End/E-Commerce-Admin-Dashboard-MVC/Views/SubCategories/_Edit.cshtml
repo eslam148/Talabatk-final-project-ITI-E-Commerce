@@ -1,0 +1,66 @@
+﻿@{
+    String x = "edite" + Model.Id.ToString();
+}
+@model SubcategoryModelView
+
+<div class="modal fade" id="@x" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">@SharedLocalizer["Edit Item"]</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+
+                <form class="forms-sample" method="post" asp-controller="SubCategories" asp-action="EditSubCategory" enctype="multipart/form-data">
+                    <div class="form-group" hidden = "true">
+                        <input asp-for="Id" class="form-control" placeholder="Name" value="@Model.Id">
+                    </div>
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <div class="form-group">
+                        <label asp-for="BrandName">@SharedLocalizer["Name"]</label>
+                        <input asp-for="BrandName" class="form-control" placeholder="Name" value="@Model.BrandName">
+                        <span asp-validation-for="BrandName" class="alert-danger"></span>
+
+                    </div>
+                   
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@SharedLocalizer["Close"]</button>
+                        <button type="submit" class="btn btn-primary">@SharedLocalizer["Edit"]</button>
+                    </div>
+                </form>
+
+
+            </div>
+           
+        </div>
+    </div>
+</div>
+
+
+@*<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Default form</h4>
+        <p class="card-description">
+            Basic form layout
+        </p>
+        <form class="forms-sample" data-ajax="true" method="post" asp-controller="Category" asp-action="AddCategory" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="form-group">
+                <label asp-for="Name">Name</label>
+                <input asp-for="Name" class="form-control" placeholder="Name">
+                <span asp-validation-for="Name" class="alert-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Description">Description</label>
+                <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="Description" class="alert-danger"></span>
+
+            </div>
+            <button type="submit" class="btn btn-primary mr-2">Submit</button>
+            <button class="btn btn-light">Cancel</button>
+        </form>
+    </div>
+</div>*@

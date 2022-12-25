@@ -50,9 +50,25 @@ namespace E_Commerce_Admin_Dashboard_MVC.Controllers
 
             } 
         }
+        [HttpGet]
         public IActionResult GetProductBySubcategory(int CatId, int pageIndex = 1, int pageSize = 4)
         {
-            return View(IProductServices.GetProductBySubcategory(CatId).ToPagedList(pageIndex, pageSize));
+            return View("GetProductBySubcategory", IProductServices.GetProductBySubcategory(CatId).ToPagedList(pageIndex, pageSize));
+        }
+
+
+        public IActionResult DeleteSubCategories(int id)
+        {
+            ISubCategorie.Delete(id);
+            return RedirectToAction("index");
+        }
+
+        public IActionResult EditSubCategory(SubcategoryModelView Subcategory)
+        {
+
+            ISubCategorie.Update(Subcategory.Id,Subcategory);
+
+            return RedirectToAction("index");
         }
     }
 }
