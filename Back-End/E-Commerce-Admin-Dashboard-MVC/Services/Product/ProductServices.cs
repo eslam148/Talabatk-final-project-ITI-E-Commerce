@@ -13,7 +13,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
         }
         public IEnumerable<ProductsVM> GetAllAdminProduct()
         {
-            var data = context.Product.Where(p => p.SellerId == "248d7261-521d-46c6-a62e-fec646548071").Select(prod => new ProductsVM()
+            var data = context.Product.Where(p => p.SellerId == "248d7261-521d-46c6-a62e-fec646548071"&&p.IsDeleted == false).Select(prod => new ProductsVM()
             {
                 No = prod.Id,
                 Name = prod.Name,

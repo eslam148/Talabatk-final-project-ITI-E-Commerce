@@ -13,8 +13,8 @@
     <hr />
 
 <div class="table-responsive">
-    <table class="table table-striped table-hover table-bordered border-dark table-sm">
-        <thead class="table-dark">
+    <table class="table table-hover">
+        <thead class="">
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">@SharedLocalizer["First Name"]</th>
@@ -22,8 +22,6 @@
                 <th scope="col">@SharedLocalizer["Email"]</th>
                 <th scope="col">@SharedLocalizer["User Name"]</th>
                 <th scope="col">@SharedLocalizer["Mobile Number"]</th>
-                <th scope="col">@SharedLocalizer["Created at"]</th>
-                <th scope="col">@SharedLocalizer["Modified at"]</th>
                 <th scope="col">@SharedLocalizer["Delete"]</th>
             </tr>
         </thead>
@@ -37,8 +35,8 @@
                     <td>@user.Email</td>
                     <td>@user.UserName</td>
                     <td>@user.PhoneNumber</td>
-                    <td>@user.Created_at</td>
-                    <td>@user.modified_at</td>
+                   @* <td>@user.Created_at</td>
+                    <td>@user.modified_at</td>*@
                     <td>
                         <a class="btn btn-danger" asp-action="ConfirmDelete" asp-controller="User"
                        asp-route-id="@user.Id"
