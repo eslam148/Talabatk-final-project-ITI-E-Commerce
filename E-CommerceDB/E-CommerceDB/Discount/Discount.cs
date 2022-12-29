@@ -11,6 +11,7 @@ namespace E_CommerceDB
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        public string DescriptionAr { get; set; }
         public decimal Disc_Percent { get; set; }
         public bool Active { get; set; } = true;
         public DateTime created_at { get; set; } = DateTime.Now;

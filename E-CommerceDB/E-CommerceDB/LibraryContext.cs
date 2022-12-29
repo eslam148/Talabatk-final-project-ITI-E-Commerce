@@ -57,14 +57,14 @@ namespace E_CommerceDB
 
 
             modelBuilder.MappRelationships();
-            modelBuilder.SeedData();
+            //modelBuilder.SeedData();
             base.OnModelCreating(modelBuilder);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            //optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=DB;Integrated Security=True");
+           optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=DB;Integrated Security=True");
         }
     }
 }
