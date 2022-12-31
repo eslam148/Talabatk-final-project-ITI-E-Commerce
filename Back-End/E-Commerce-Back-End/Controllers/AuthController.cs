@@ -95,6 +95,7 @@ namespace E_Commerce_Back_End.Controllers
                         ProfileImage = user.ProfilieImage,
                         email = user.Email,
                         Roles = roles,
+                        PhoneNumber= user.PhoneNumber,
                         expires = DateTime.Now.AddHours(1)
                     };
                 }

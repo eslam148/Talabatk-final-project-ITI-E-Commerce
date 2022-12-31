@@ -14,10 +14,21 @@
                 <span asp-validation-for="Name" class="alert-danger"></span>
 
             </div>
+            <div class="form-group ">
+                <label asp-for="NameAr" class="form-label @SharedLocalizer["float"]">@SharedLocalizer["CategoryNameAr"]</label>
+                <input asp-for="NameAr" class="form-control" placeholder="@SharedLocalizer["CategoryNameAr"]">
+                <span asp-validation-for="NameAr" class="alert-danger"></span>
+            </div>
             <div class="form-group">
                 <label asp-for="Description" class="form-label @SharedLocalizer["float"]"></label>
                 <textarea asp-for="Description" class="form-control" rows="4"></textarea>
                 <span asp-validation-for="Description" class="alert-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="DescriptionAr" class="form-label @SharedLocalizer["float"]">@SharedLocalizer["DescriptionAr"]</label>
+                <textarea asp-for="DescriptionAr" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="DescriptionAr" class="alert-danger"></span>
 
             </div>
             <input type="submit" class="btn btn-primary mr-2  @SharedLocalizer["float"]" value="@SharedLocalizer["Add"]">

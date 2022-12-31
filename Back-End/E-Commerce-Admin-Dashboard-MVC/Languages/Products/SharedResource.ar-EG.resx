@@ -178,7 +178,7 @@
     <value>قائمة الطلبات المستلمة</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>الوصف</value>
+    <value>الوصف بالانجليزي</value>
   </data>
   <data name="Discount" xml:space="preserve">
     <value>الخصم</value>
@@ -301,7 +301,7 @@
     <value>تم الحل</value>
   </data>
   <data name="Status" xml:space="preserve">
-    <value>حالة الشكوى</value>
+    <value>الحالة</value>
   </data>
   <data name="Submit" xml:space="preserve">
     <value>إرسال</value>
@@ -316,10 +316,10 @@
     <value>عرض الاصناف</value>
   </data>
   <data name="BrandName" xml:space="preserve">
-    <value>اسم العلامه التجاريه</value>
+    <value>اسم العلامه التجاريه بالانجليزيه </value>
   </data>
   <data name="CategoryName" xml:space="preserve">
-    <value>اسم الصنف</value>
+    <value>اسم الصنف بالانجليزي</value>
   </data>
   <data name="Control" xml:space="preserve">
     <value>التحكم</value>
@@ -434,5 +434,26 @@
   </data>
   <data name="AddSubcategory" xml:space="preserve">
     <value>اضافه صنف فرعي</value>
+  </data>
+  <data name="BrandNameAr" xml:space="preserve">
+    <value>اسم العلامه التجاريه بالعربي</value>
+  </data>
+  <data name="CategoryNameAr" xml:space="preserve">
+    <value>اسم الصنف بالعربي</value>
+  </data>
+  <data name="Chose Category" xml:space="preserve">
+    <value>اختار صنف</value>
+  </data>
+  <data name="DescriptionAr" xml:space="preserve">
+    <value>الوصف بالعربي</value>
+  </data>
+  <data name="Order_Id" xml:space="preserve">
+    <value>رقم الطلب</value>
+  </data>
+  <data name="ProductNameAr" xml:space="preserve">
+    <value>اسم المنتج بالعربي</value>
+  </data>
+  <data name="disc" xml:space="preserve">
+    <value>الوصف</value>
   </data>
 </root>

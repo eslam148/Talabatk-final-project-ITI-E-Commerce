@@ -41,9 +41,14 @@ namespace E_Commerce_Back_End
         public int No { get; set; }
         [Required(ErrorMessage = "Name is Required")]
         public string Name { get; set; }
+        [Required(ErrorMessage = "Name is Required")]
+        public string NameAr { get; set; }
         [Required(ErrorMessage = "Description Required")]
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
+        [Required(ErrorMessage = "Description Required")]
+        [DataType(DataType.MultilineText)]
+        public string DescriptionAr { get; set; }
         //public string SKU { get; set; }
         [Required(ErrorMessage = "Price is Required")]
         public int Price { get; set; }
@@ -55,6 +60,7 @@ namespace E_Commerce_Back_End
         public DateTime? deleted_at { get; set; }
 
         public string Category { get; set; }
+        public string CategoryAr { get; set; }
         [Required(ErrorMessage = "Category Required")]
         public int subCategory { get; set; }
         public int? inventory_Id { get; set; }

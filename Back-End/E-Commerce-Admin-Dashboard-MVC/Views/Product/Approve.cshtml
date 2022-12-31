@@ -8,7 +8,7 @@
             <div class="col-md-8 col-lg-6 col-xl-4">
                 <div class="card text-black">
                     <i class="fab fa-apple fa-lg pt-3 pb-1 px-3"></i>
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/3.webp"
+                    <img src="~/Content/Images/@Model.images2[0]"
                          class="card-img-top" alt="Apple Computer" />
                     <div class="card-body">
                         <div class="text-center">
@@ -36,7 +36,7 @@
                         <div class="d-flex justify-content-around total font-weight-bold mt-4">
                             <a asp-action="PendingProduct" asp-controller="Product" class="btn btn-secondary">@SharedLocalizer["Cancel"]</a>
 
-                            <a asp-action="ConfirmAprove" asp-controller="Product" asp-route-Id="@Model.No" class="btn btn-success">@SharedLocalizer["Approve"]</a>
+                            <a asp-action="ConfirmAprove" asp-controller="Product" asp-route-Id="@Model.No" class="btn btn-info">@SharedLocalizer["Approve"]</a>
 
                         </div>
                     </div>

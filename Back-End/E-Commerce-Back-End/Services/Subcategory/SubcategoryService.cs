@@ -43,8 +43,10 @@ namespace E_Commerce_Back_End
                 {
                     Id  = s.Id,
                     BrandName = s.BrandName,
+                    BrandNameAr = s.BrandNameAr,
                     CategoryId = s.CategoryId,
                     CategoryName = db.Category.Where(i=>i.Id==s.CategoryId).Select(x=>x.Name).FirstOrDefault(),
+                    CategoryNameAr = db.Category.Where(i => i.Id==s.CategoryId).Select(x => x.NameAr).FirstOrDefault(),
                     IsDeleted = s.IsDeleted
                 });
             };
@@ -58,8 +60,11 @@ namespace E_Commerce_Back_End
             return new SubcategoryModelView()
             {
                 BrandName = s.BrandName,
+                BrandNameAr = s.BrandNameAr,
                 CategoryId = s.CategoryId,
                 CategoryName = db.Category.Where(i => i.Id==s.CategoryId).Select(x => x.Name).FirstOrDefault(),
+                CategoryNameAr = db.Category.Where(i => i.Id==s.CategoryId).Select(x => x.NameAr).FirstOrDefault(),
+
                 IsDeleted = s.IsDeleted
             };
         }
@@ -74,8 +79,10 @@ namespace E_Commerce_Back_End
                 {
                     Id=s.Id,
                     BrandName = s.BrandName,
+                    BrandNameAr = s.BrandNameAr,
                     CategoryId = s.CategoryId,
                     CategoryName = db.Category.Where(i => i.Id==s.CategoryId).Select(x => x.Name).FirstOrDefault(),
+                    CategoryNameAr = db.Category.Where(i => i.Id==s.CategoryId).Select(x => x.NameAr).FirstOrDefault(),
                     created_at = s.created_at,
                     modified_at = s.modified_at,
                     IsDeleted = s.IsDeleted

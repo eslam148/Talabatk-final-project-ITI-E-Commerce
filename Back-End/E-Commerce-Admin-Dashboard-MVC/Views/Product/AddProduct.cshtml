@@ -2,7 +2,9 @@
 @{
     ViewData["Title"] = SharedLocalizer["AddProduct"];
 }
-
+@{
+    var Culture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
+}
 
 <div class="col-12 grid-margin ">
     <div class="row">
@@ -10,11 +12,10 @@
             <div class="col-12 grid-margin ">
                 <div class="card d-flex justify-content-center">
                     <div class="card-body">
-                        <h4 class="card-title">@SharedLocalizer["Add Product"]</h4>
+                    @*<h4 class="card-title  @SharedLocalizer["float"]">@SharedLocalizer["Add Product"]</h4>*@
+
                         <form data-ajax="true" enctype="multipart/form-data" class="form-sample" data-ajax-complete="ProductAdd" method="post" asp-action="AddProduct" asp-controller="Product">
-                            <p class="card-description">
-                                @SharedLocalizer["ProductInfo"]
-                            </p>
+                           
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group row">
@@ -25,6 +26,14 @@
                                         </div>
 
                                     </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">@SharedLocalizer["ProductNameAr"]</label>
+                                    <div class="col-sm-9">
+                                        <input asp-for="NameAr" type="text" class="form-control" />
+                                        <span asp-validation-for="NameAr"></span>
+                                    </div>
+
+                                </div>
                                 </div>
                                 @*  <div class="col-md-6">
                                 <div class="form-group row">
@@ -43,7 +52,15 @@
                                             <select asp-for="subCategory" class="form-control">
                                                 @foreach (var cat in ViewBag.Category)
                                                 {
+                                                @if (Culture == "ar-EG")
+                                                {
+                                                    <option value="@cat.Id">@cat.BrandNameAr</option>
+                                                }
+                                                else
+                                                {
                                                     <option value="@cat.Id">@cat.BrandName</option>
+                                                }
+                                                    
                                                 }
                                             </select>
                                             <span asp-validation-for="subCategory"></span>
@@ -72,29 +89,27 @@
                                 </div>
 
                             </div>
-                            @*  <div class="row">
-                            <div class="col-md-6">
-                            <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">@SharedLocalizer["CreatedAt"]</label>
-                            <div class="col-sm-9">
-                            <input type="datetime" asp-for="created_at" class="form-control" placeholder="dd/mm/yyyy"/>
-                            <span asp-validation-for="created_at"></span>
-                            </div>
-                            </div>
-                            </div>
-                            </div>
+                        
                             <div class="row">
-                            <div class="col-md-6">
-                            <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">@SharedLocalizer["ModefiedAt"]</label>
-                            <div class="col-sm-9">
-                            <input type="datetime" asp-for="modified_at" class="form-control" placeholder="dd/mm/yyyy"/>
-                            <span asp-validation-for="modified_at"></span>
-                            </div>
-                            </div>
-                            </div>
-                            </div>
-                            *@
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label asp-for="Description" class="col-sm-3 col-form-label"> @SharedLocalizer["Description"]</label>
+                                        <div class="col-sm-9">
+                                            <textarea asp-for="Description" type="text" class="form-control" rows="4"></textarea>
+                                            <span asp-validation-for="Description"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label asp-for="DescriptionAr" class="col-sm-3 col-form-label"> @SharedLocalizer["DescriptionAr"]</label>
+                                        <div class="col-sm-9">
+                                            <textarea asp-for="DescriptionAr" type="text" class="form-control" rows="4"></textarea>
+                                            <span asp-validation-for="DescriptionAr"></span>
+                                        </div>
+                                    </div>
+                                </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group row">
@@ -108,17 +123,7 @@
 
                             </div>
 
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group row">
-                                        <label asp-for="Description" class="col-sm-3 col-form-label"> @SharedLocalizer["Description"]</label>
-                                        <div class="col-sm-9">
-                                            <textarea asp-for="Description" type="text" class="form-control" rows="4"></textarea>
-                                            <span asp-validation-for="Description"></span>
-                                        </div>
-                                    </div>
-                                </div>
-
+                          
                             </div>
                             <div class="row">
                                 <div class="col-md-6">

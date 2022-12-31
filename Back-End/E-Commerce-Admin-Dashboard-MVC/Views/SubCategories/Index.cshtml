@@ -1,6 +1,9 @@
 ﻿@*@model List<SubcategoryModelView>*@
 @model IPagedList<SubcategoryModelView>
+@{
+    var Culture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
 
+}
 
 <div class="card-body">
     <h4 class="card-title"></h4>
@@ -12,7 +15,7 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>@SharedLocalizer["BrandName"]</th>
+                    <th>@SharedLocalizer["Name"]</th>
                     <th>@SharedLocalizer["Category"]</th>
                     <th>@SharedLocalizer["Control"]</th>
 
@@ -37,11 +40,21 @@
                     i++;
                     <tr>
                         <td>@i</td>
-                        <td>@subcat.BrandName</td>
-                        <td>@subcat.CategoryName</td>
+                        @if (Culture == "ar-EG")
+                        {
+                            <td>@subcat.BrandNameAr</td>
+                            <td>@subcat.CategoryNameAr</td>
+                        }
+                        else
+                        {
+                            <td>@subcat.BrandName</td>
+                            <td>@subcat.CategoryName</td>
+                        }
+                      
+                        
                         <td>
                             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#@d">@SharedLocalizer["Delete"]</button>
-                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#@e">@SharedLocalizer["Edit"]</button>
+                            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#@e">@SharedLocalizer["Edit"]</button>
                             <a class="btn btn-info" asp-controller="SubCategories" asp-action="GetProductBySubcategory" asp-route-CatId="@subcat.Id">@SharedLocalizer["Show Product"]</a>
 
                         </td>

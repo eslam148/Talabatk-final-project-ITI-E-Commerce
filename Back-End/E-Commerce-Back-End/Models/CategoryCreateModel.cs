@@ -13,6 +13,10 @@ namespace E_Commerce_Back_End
         [Required(ErrorMessage = "Required")]
         [MinLength(4, ErrorMessage = "MinLength")]
          public string Name { get; set; }
+        [Display(Name = "CategoryName")]
+        [Required(ErrorMessage = "Required")]
+        [MinLength(4, ErrorMessage = "MinLength")]
+        public string NameAr { get; set; }
         [MinLength(4, ErrorMessage = "MinLength")]
         [Display(Name = "Description")]
         [Required(ErrorMessage = "Required")]

@@ -21,6 +21,8 @@ namespace E_Commerce_Admin_Dashboard_MVC
             {
                 Name = category.Name,
                 Description = category.Description,
+                NameAr = category.NameAr,
+                DescriptionAr = category.DescriptionAr,
                 created_at = DateTime.Now,
                 deleted_at = DateTime.Now,
                 modified_at = DateTime.Now
@@ -47,6 +49,8 @@ namespace E_Commerce_Admin_Dashboard_MVC
                 {
                     Id = cat.Id,
                     Name = cat.Name,
+                    NameAr = cat.NameAr,
+                    DescriptionAr = cat.DescriptionAr,
                     created_at = cat.created_at,
                     Description = cat.Description,
                     modified_at = cat.modified_at,
@@ -64,6 +68,8 @@ namespace E_Commerce_Admin_Dashboard_MVC
             {
                 Id = cats.Id,
                 Name = cats.Name,
+                NameAr = cats.NameAr,
+                DescriptionAr = cats.DescriptionAr,
                 created_at = cats.created_at,
                 Description = cats.Description,
                 modified_at = cats.modified_at,
@@ -75,6 +81,8 @@ namespace E_Commerce_Admin_Dashboard_MVC
             cat.Name = category.Name;
             cat.modified_at = DateTime.Now;
             cat.Description = category.Description;
+            cat.NameAr =  category.NameAr;
+            cat.DescriptionAr= category.DescriptionAr;
             save();
         }
         public void save()
@@ -92,6 +100,8 @@ namespace E_Commerce_Admin_Dashboard_MVC
                 {
                     Id = cat.Id,
                     Name = cat.Name,
+                    NameAr = cat.NameAr,
+                    DescriptionAr = cat.DescriptionAr,
                     created_at = cat.created_at,
                     Description = cat.Description,
                     modified_at = cat.modified_at,

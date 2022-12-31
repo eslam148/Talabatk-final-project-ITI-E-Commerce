@@ -5,7 +5,10 @@
 
 @{
     int i = 0;
+    var Culture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
+
 }
+
 <div id="data" class="card-body">
     <h4 class="card-title"></h4>
     <p class="card-description">
@@ -28,7 +31,7 @@
                     <th>#</th>
                     @*<th>Id</th>*@
                     <th>@SharedLocalizer["Category"]</th>
-                    <th>@SharedLocalizer["Description"]</th>
+                    <th>@SharedLocalizer["disc"]</th>
                     <th>@SharedLocalizer["CreatedAt"]</th>
                     <th>@SharedLocalizer["ModefiedAt"]</th>
                     <th>@SharedLocalizer["Control"]</th>
@@ -52,13 +55,22 @@
                         <tr>
                         <td>@(++i)</td>
                         @*<td>@cat.Id</td>*@
-                        <td>@cat.Name</td>
-                        <td>@cat.Description</td>
+                        @if (Culture == "ar-EG")
+                        {
+                            <td>@cat.NameAr</td>
+                            <td>@cat.DescriptionAr</td>
+                        }
+                        else
+                        {
+                            <td>@cat.Name</td>
+                            <td>@cat.Description</td>
+                        }
+                        
                         <td>@cat.created_at</td>
                         <td>@cat.modified_at</td>
                             <td >
                             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#@d">@SharedLocalizer["Delete"]</button>
-                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#@e">@SharedLocalizer["Edit"]</button>
+                            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#@e">@SharedLocalizer["Edit"]</button>
                             <a class="btn btn-info w-50" asp-controller="SubCategories" asp-action="index" asp-route-Id="@cat.Id">@SharedLocalizer["Show Subcategory"]</a>
 
                         </td>

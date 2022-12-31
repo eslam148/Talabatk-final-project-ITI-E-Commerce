@@ -1,29 +1,44 @@
 ﻿@model SubcategoryModelView
+@{
+    var Culture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
+}
 <div class="card">
     <div class="card-body">
        
         <form class="forms-sample" data-ajax="true" method="post" data-ajax-complete="sucess" asp-controller="SubCategories" asp-action="Add" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly"></div>
             <div class="form-group">
-                <label asp-for="BrandName">@SharedLocalizer["BrandName"]</label>
-                <input asp-for="BrandName" class="form-control" placeholder="Name">
+                <label asp-for="BrandName" class="form-label @SharedLocalizer["float"]">@SharedLocalizer["BrandName"]</label>
+                <input asp-for="BrandName" class="form-control" placeholder="@SharedLocalizer["BrandName"]">
                 <span asp-validation-for="BrandName" class="alert-danger"></span>
 
             </div>
             <div class="form-group">
-                <label asp-for="CategoryId">@SharedLocalizer["Category"]</label>
+                <label asp-for="BrandNameAr" class="form-label @SharedLocalizer["float"]">@SharedLocalizer["BrandNameAr"]</label>
+                <input asp-for="BrandNameAr" class="form-control" placeholder="@SharedLocalizer["BrandNameAr"]">
+                <span asp-validation-for="BrandNameAr" class="alert-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryId" class="form-label @SharedLocalizer["float"]">@SharedLocalizer["Category"]</label>
                 <select asp-for="CategoryId" class="form-select" aria-label="Default select example">
-                    <option selected>Open this select menu</option>
+                    <option selected>@SharedLocalizer["Chose Category"]</option>
                     @foreach (var cat in ViewBag.Category)
                     {
-                        <option value="@cat.Id">@cat.Name</option>
+                        @if (Culture == "ar-EG")
+                        {
+                            <option value="@cat.Id">@cat.NameAr</option>
+                        }
+                        else 
+                        {
+                            <option value="@cat.Id">@cat.Name</option>
+                        }
                     }
                 </select>
                 <span asp-validation-for="CategoryId" class="alert-danger"></span>
 
             </div>
-            <button type="submit" class="btn btn-primary mr-2">@SharedLocalizer["Add"]</button>
-            <button class="btn btn-light">@SharedLocalizer["Cancel"]</button>
+            <button type="submit" class="btn btn-primary mr-2 @SharedLocalizer["float"]">@SharedLocalizer["Add"]</button>
+            <button class="btn btn-light @SharedLocalizer["float"]">@SharedLocalizer["Cancel"]</button>
         </form>
     </div>
 </div>

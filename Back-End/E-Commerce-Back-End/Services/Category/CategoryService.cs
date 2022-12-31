@@ -46,6 +46,7 @@ namespace E_Commerce_Back_End
                 {
                     Id = cat.Id,
                     Name = cat.Name,
+                    NameAr = cat.NameAr,
                     created_at = cat.created_at,
                     Description = cat.Description,
                     modified_at = cat.modified_at,
@@ -63,6 +64,7 @@ namespace E_Commerce_Back_End
             {
                 Id = cats.Id,
                 Name = cats.Name,
+                NameAr = cats.NameAr,
                 created_at = cats.created_at,
                 Description = cats.Description,
                 modified_at = cats.modified_at,
@@ -72,6 +74,8 @@ namespace E_Commerce_Back_End
         {
             var cat = db.Category.FirstOrDefault(c => c.Id == category.Id);
             cat.Name = category.Name;
+            cat.NameAr = category.NameAr;
+
             cat.modified_at = DateTime.Now;
             cat.Description = category.Description;
             save();
@@ -91,6 +95,7 @@ namespace E_Commerce_Back_End
                 {
                     Id = cat.Id,
                     Name = cat.Name,
+                    NameAr = cat.NameAr,
                     created_at = cat.created_at,
                     Description = cat.Description,
                     modified_at = cat.modified_at,

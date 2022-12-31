@@ -19,6 +19,9 @@ namespace E_Commerce_Admin_Dashboard_MVC
                 Name = prod.Name,
                 Category = context.SubCategories.Where(s => s.Id == prod.SubCategories_Id).Select(b => b.BrandName).FirstOrDefault(), //prod.SubCategories_Id,
                 Description = prod.Description,
+                NameAr = prod.NameAr,
+                CategoryAr = context.SubCategories.Where(s => s.Id == prod.SubCategories_Id).Select(b => b.BrandNameAr).FirstOrDefault(), //prod.SubCategories_Id,
+                DescriptionAr = prod.DescriptionAr,
                 Price = prod.Price,
                 created_at = prod.created_at,
                 modified_at = prod.modified_at,
@@ -56,9 +59,11 @@ namespace E_Commerce_Admin_Dashboard_MVC
             context.Product.Add(new Product
             {
                 Name = product.Name,
+                NameAr = product.NameAr,
+                Description = product.Description,
+                DescriptionAr = product.DescriptionAr,
                 created_at = product.created_at,
                 modified_at = product.modified_at,
-                Description = product.Description,
                 inventory_Id = 1,
                 discount_Id = product.DiscountID,
                 Price = product.Price,
@@ -91,6 +96,9 @@ namespace E_Commerce_Admin_Dashboard_MVC
                 Name = prod.Name,
                 Category = context.SubCategories.Where(s => s.Id == prod.SubCategories_Id).Select(b => b.BrandName).FirstOrDefault(), //prod.SubCategories_Id,
                 Description = prod.Description,
+                NameAr = prod.NameAr,
+                CategoryAr = context.SubCategories.Where(s => s.Id == prod.SubCategories_Id).Select(b => b.BrandNameAr).FirstOrDefault(), //prod.SubCategories_Id,
+                DescriptionAr = prod.DescriptionAr,
                 Price = prod.Price,
                 created_at = prod.created_at,
                 modified_at = prod.modified_at,
@@ -114,6 +122,9 @@ namespace E_Commerce_Admin_Dashboard_MVC
                 Name = prod.Name,
                 Category = context.SubCategories.Where(s => s.Id == prod.SubCategories_Id).Select(b => b.BrandName).FirstOrDefault(), //prod.SubCategories_Id,
                 Description = prod.Description,
+                NameAr = prod.NameAr,
+                CategoryAr = context.SubCategories.Where(s => s.Id == prod.SubCategories_Id).Select(b => b.BrandNameAr).FirstOrDefault(), //prod.SubCategories_Id,
+                DescriptionAr = prod.DescriptionAr,
                 Price = prod.Price,
                 created_at = prod.created_at,
                 modified_at = prod.modified_at,
@@ -136,6 +147,9 @@ namespace E_Commerce_Admin_Dashboard_MVC
                 Name = prod.Name,
                 Category = context.SubCategories.Where(s => s.Id == prod.SubCategories_Id).Select(b => b.BrandName).FirstOrDefault(), //prod.SubCategories_Id,
                 Description = prod.Description,
+                NameAr = prod.NameAr,
+                CategoryAr = context.SubCategories.Where(s => s.Id == prod.SubCategories_Id).Select(b => b.BrandNameAr).FirstOrDefault(), //prod.SubCategories_Id,
+                DescriptionAr = prod.DescriptionAr,
                 Price = prod.Price,
                 created_at = prod.created_at,
                 modified_at = prod.modified_at,
@@ -143,6 +157,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
                 Discount = context.Discount.Where(s => s.Id == prod.discount_Id).Select(b => b.Name).FirstOrDefault(),
                 Progress = prod.Progress,
                 IsDeleted = prod.IsDeleted,
+                images2 = prod.Images.Select(i => i.Image).ToList()
             }).FirstOrDefault();
             // ProductsVM product = new ProductsVM();
 
@@ -155,7 +170,8 @@ namespace E_Commerce_Admin_Dashboard_MVC
             {
                 Id = d.Id,
                 Name = d.Name,
-                Description = d.Description
+                Description = d.Description,
+                DescriptionAr = d.DescriptionAr
             });
             return res;
         }
@@ -164,8 +180,10 @@ namespace E_Commerce_Admin_Dashboard_MVC
         {
             var prod = context.Product.Where(p => p.Id == product.No).FirstOrDefault();
             prod.Name = product.Name;
+            prod.NameAr = product.NameAr;
             prod.discount_Id = product.DiscountID;
             prod.Description = product.Description;
+            prod.DescriptionAr = product.DescriptionAr;
             prod.SubCategories_Id = product.subCategory;
             prod.Price = product.Price;
             prod.Quantity = product.Qauntity;
@@ -182,6 +200,9 @@ namespace E_Commerce_Admin_Dashboard_MVC
                 Name = prod.Name,
                 Category = context.SubCategories.Where(s => s.Id == prod.SubCategories_Id).Select(b => b.BrandName).FirstOrDefault(), //prod.SubCategories_Id,
                 Description = prod.Description,
+                NameAr = prod.NameAr,
+                CategoryAr = context.SubCategories.Where(s => s.Id == prod.SubCategories_Id).Select(b => b.BrandNameAr).FirstOrDefault(), //prod.SubCategories_Id,
+                DescriptionAr = prod.DescriptionAr,
                 Price = prod.Price,
                 created_at = prod.created_at,
                 modified_at = prod.modified_at,
@@ -236,6 +257,9 @@ namespace E_Commerce_Admin_Dashboard_MVC
                 Name = prod.Name,
                 Category = context.SubCategories.Where(s => s.Id == prod.SubCategories_Id).Select(b => b.BrandName).FirstOrDefault(), //prod.SubCategories_Id,
                 Description = prod.Description,
+                NameAr = prod.NameAr,
+                CategoryAr = context.SubCategories.Where(s => s.Id == prod.SubCategories_Id).Select(b => b.BrandNameAr).FirstOrDefault(), //prod.SubCategories_Id,
+                DescriptionAr = prod.DescriptionAr,
                 Price = prod.Price,
                 created_at = prod.created_at,
                 modified_at = prod.modified_at,

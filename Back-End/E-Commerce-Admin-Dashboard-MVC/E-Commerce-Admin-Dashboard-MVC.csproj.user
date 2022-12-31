@@ -10,7 +10,7 @@
     <WebStackScaffolding_IsPartialViewSelected>False</WebStackScaffolding_IsPartialViewSelected>
     <WebStackScaffolding_IsReferencingScriptLibrariesSelected>False</WebStackScaffolding_IsReferencingScriptLibrariesSelected>
     <WebStackScaffolding_LayoutPageFile />
-    <NameOfLastUsedPublishProfile>D:\ITI Sohage .NET\New folder %284%29\final-project-ITI-E-Commerce\Back-End\E-Commerce-Admin-Dashboard-MVC\Properties\PublishProfiles\islam1998-001-site1 - FTP.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>D:\ITI Sohage .NET\New folder %284%29\final-project-ITI-E-Commerce\Back-End\E-Commerce-Admin-Dashboard-MVC\Properties\PublishProfiles\FolderProfile.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Update="Languages\Products\SharedResource.ar-EG.resx">

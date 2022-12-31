@@ -9,3 +9,6 @@
 
 @inject IStringLocalizer<SharedResource> SharedLocalizer
 
+@{
+	var Culture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
+}

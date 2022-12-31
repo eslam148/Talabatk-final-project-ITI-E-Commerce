@@ -1,7 +1,8 @@
 ﻿@model IEnumerable<ProductsVM>
 @{
     ViewData["Title"] = "GetProductExisting";
-   
+    var Culture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
+
 }
 
 <div class="table-responsive">
@@ -13,18 +14,11 @@
                     @SharedLocalizer["Name"]
                 </th>
                 <th>
-                   @SharedLocalizer["Description"]
+                   @SharedLocalizer["disc"]
                 </th>
                 <th>
                      @SharedLocalizer["price"]
                 </th>
-       @*         <th>
-                     @SharedLocalizer["CreatedAt"]
-                </th>
-                <th>
-                      @SharedLocalizer["ModefiedAt"]
-                </th>*@
-               
                 <th>                    
                       @SharedLocalizer["Category"]
                 </th>
@@ -34,9 +28,7 @@
                 <th>
                    @SharedLocalizer["Discount"]
                 </th>
-                <th>
-                    @SharedLocalizer["progress"]
-                </th>
+            
                 <th>
                       @SharedLocalizer["Delete"]
                 </th>
@@ -46,17 +38,25 @@
             @foreach(var product in Model)
             {
                 <tr>
-                      
-                    <td>@product.Name</td>
-                    <td>@product.Description</td>
-                    <td>@product.Price</td>
-              @*      <td>@product.created_at</td>
-                    <td>@product.modified_at</td>*@
-                   
-                    <td>@product.Category</td>
-                    <td>@product.Qauntity</td>
-                    <td>@product.Discount</td>
-                    <td>@product.Progress</td>
+                    @if (Culture == "ar-EG")
+                    {
+                        <td>@product.NameAr</td>
+                        <td>@product.DescriptionAr</td>
+                        <td>@product.Price</td>
+                        <td>@product.CategoryAr</td>
+                        <td>@product.Qauntity</td>
+                        <td>@product.Discount</td>
+                    }
+                    else
+                    {
+                        <td>@product.Name</td>
+                        <td>@product.Description</td>
+                        <td>@product.Price</td>
+                        <td>@product.Category</td>
+                        <td>@product.Qauntity</td>
+                        <td>@product.Discount</td>
+                    }
+                 
 
                     <td><a asp-action="Delete" asp-controller="Product" asp-route-Id="@product.No" class="btn btn-danger">@SharedLocalizer["Delete"]</a></td>
                </tr>

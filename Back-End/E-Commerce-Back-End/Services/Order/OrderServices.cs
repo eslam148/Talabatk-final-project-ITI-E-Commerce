@@ -110,6 +110,7 @@ namespace E_Commerce_Back_End
                 res.Add(new GetOrderItemModel()
                 {
                     Name = i.Product.Name,
+                    NameAr = i.Product.NameAr,
                     price = i.Product.Price,
                     Quantity = i.Quantity
                 });

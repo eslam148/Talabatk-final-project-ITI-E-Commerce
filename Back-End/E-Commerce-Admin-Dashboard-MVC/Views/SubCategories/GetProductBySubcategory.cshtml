@@ -2,6 +2,7 @@
 @model IPagedList<ProductsVM>
 @{
     ViewData["Title"] = SharedLocalizer["SelledProducts"];
+    var Culture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
 
 }
 
@@ -16,7 +17,7 @@
                     @SharedLocalizer["Name"]
                 </th>
                 <th>
-                    @SharedLocalizer["Description"]
+                    @SharedLocalizer["disc"]
                 </th>
                 <th>
                     @SharedLocalizer["price"]
@@ -46,14 +47,27 @@
             {
                 <tr>
 
-                    <td>@product.Name</td>
-                    <td>@product.Description</td>
-                    <td>@product.Price</td>
-                    <td>@product.Category</td>
-                    <td>@product.Qauntity</td>
-                    <td>@product.Discount</td>
+                    @if (Culture == "ar-EG")
+                    {
+                        <td>@product.NameAr</td>
+                        <td>@product.DescriptionAr</td>
+                        <td>@product.Price</td>
+                        <td>@product.CategoryAr</td>
+                        <td>@product.Qauntity</td>
+                        <td>@product.Discount</td>
+                    }
+                    else
+                    {
+                        <td>@product.Name</td>
+                        <td>@product.Description</td>
+                        <td>@product.Price</td>
+                        <td>@product.Category</td>
+                        <td>@product.Qauntity</td>
+                        <td>@product.Discount</td>
+                    }
+                    
                     <td><a asp-action="Delete" asp-controller="Product" asp-route-Id="@product.No" class="btn btn-danger">@SharedLocalizer["Delete"]</a></td>
-                    <td><a asp-action="Edit" asp-controller="Product" asp-route-Id="@product.No" class="btn btn-success">@SharedLocalizer["Edit"]</a></td>
+                    <td><a asp-action="Edit" asp-controller="Product" asp-route-Id="@product.No" class="btn btn-secondary">@SharedLocalizer["Edit"]</a></td>
 
                 </tr>
             }

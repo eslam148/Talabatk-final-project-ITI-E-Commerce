@@ -15,8 +15,8 @@
                 <th scope="col">@SharedLocalizer["Total Price"]</th>
                 <th scope="col">@SharedLocalizer["User Full Name"]</th>
                 <th scope="col">@SharedLocalizer["User Email"]</th>
-                <th scope="col">@SharedLocalizer["Payment Details"]</th>
-                <th scope="col">@SharedLocalizer["Delete Order"]</th>
+@*                <th scope="col">@SharedLocalizer["Payment Details"]</th>
+*@                <th scope="col">@SharedLocalizer["Delete Order"]</th>
             </tr>
         </thead>
         <tbody>
@@ -37,8 +37,8 @@
                     <td>@order.Total</td>
                     <td>@order.user.First_Name  @order.user.First_Name</td>
                     <td>@order.user.Email</td>
-                    <td>@order.Payment_id</td>
-               
+@*                    <td>@order.Payment_id</td>
+*@               
                     <td>
                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#@d">@SharedLocalizer["Delete"]</button>
                     </td>

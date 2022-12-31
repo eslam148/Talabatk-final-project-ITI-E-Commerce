@@ -20,6 +20,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
             db.SubCategories.Add(new SubCategories()
             {
                 BrandName = sub.BrandName,
+                BrandNameAr = sub.BrandNameAr,
                 CategoryId = sub.CategoryId
             });
             Save();
@@ -44,6 +45,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
                     Id  = s.Id,
                     BrandName = s.BrandName,
                     CategoryId = s.CategoryId,
+                    BrandNameAr = s.BrandNameAr,
                     CategoryName = db.Category.Where(i=>i.Id==s.CategoryId).Select(x=>x.Name).FirstOrDefault(),
                     IsDeleted = s.IsDeleted
                 });
@@ -58,6 +60,8 @@ namespace E_Commerce_Admin_Dashboard_MVC
             return new SubcategoryModelView()
             {
                 BrandName = s.BrandName,
+                BrandNameAr = s.BrandNameAr,
+
                 CategoryId = s.CategoryId,
                 CategoryName = db.Category.Where(i => i.Id==s.CategoryId).Select(x => x.Name).FirstOrDefault(),
                 IsDeleted = s.IsDeleted
@@ -74,8 +78,11 @@ namespace E_Commerce_Admin_Dashboard_MVC
                 {
                     Id=s.Id,
                     BrandName = s.BrandName,
+                    BrandNameAr = s.BrandNameAr,
                     CategoryId = s.CategoryId,
                     CategoryName = db.Category.Where(i => i.Id==s.CategoryId).Select(x => x.Name).FirstOrDefault(),
+                    CategoryNameAr = db.Category.Where(i => i.Id==s.CategoryId).Select(x => x.NameAr).FirstOrDefault(),
+
                     created_at = s.created_at,
                     modified_at = s.modified_at,
                     IsDeleted = s.IsDeleted
@@ -94,6 +101,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
         {
             var s = db.SubCategories.FirstOrDefault(s => s.Id == id);
             s.BrandName = sub.BrandName;
+            s.BrandNameAr = sub.BrandNameAr;
             s.CategoryId = sub.CategoryId;
             Save();
         }

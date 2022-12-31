@@ -2,7 +2,8 @@
 @model IPagedList<ProductsVM>
 @{
     ViewData["Title"] = SharedLocalizer["SelledProducts"];
-    
+    var Culture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
+
 }
 
   
@@ -16,18 +17,11 @@
                     @SharedLocalizer["Name"]
                 </th>
                 <th>
-                   @SharedLocalizer["Description"]
+                   @SharedLocalizer["disc"]
                 </th>
                 <th>
                      @SharedLocalizer["price"]
                 </th>
-           @*     <th>
-                     @SharedLocalizer["CreatedAt"]
-                </th>
-                <th>
-                      @SharedLocalizer["ModefiedAt"]
-                </th>*@
-                
                 <th>                    
                       @SharedLocalizer["Category"]
                 </th>
@@ -58,21 +52,30 @@
 
                 };
                 <tr>
-                    
-                    <td>@product.Name</td>
-                    <td>@product.Description</td>
-                    <td>@product.Price</td>
-              @*      <td>@product.created_at</td>
-                    <td>@product.modified_at</td>*@
+                    @if (Culture == "ar-EG")
+                    {
+                        <td>@product.NameAr</td>
+                        <td>@product.DescriptionAr</td>
+                        <td>@product.Price</td>
+                        <td>@product.CategoryAr</td>
+                        <td>@product.Qauntity</td>
+                        <td>@product.Discount</td>
+                    }
+                    else
+                    {
+                        <td>@product.Name</td>
+                        <td>@product.Description</td>
+                        <td>@product.Price</td>
+                        <td>@product.Category</td>
+                        <td>@product.Qauntity</td>
+                        <td>@product.Discount</td>
+                    }
                    
-                    <td>@product.Category</td>
-                    <td>@product.Qauntity</td>
-                    <td>@product.Discount</td>
                     <td>
                         @*<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#@d">@SharedLocalizer["Delete"]</button>*@
 
                         <a asp-action="Delete" asp-controller="Product" asp-route-Id="@product.No" class="btn btn-danger">@SharedLocalizer["Delete"]</a></td>
-                    <td><a asp-action="Edit" asp-controller="Product" asp-route-Id="@product.No" class="btn btn-success">@SharedLocalizer["Edit"]</a></td>
+                    <td><a asp-action="Edit" asp-controller="Product" asp-route-Id="@product.No" class="btn btn-secondary">@SharedLocalizer["Edit"]</a></td>
 
                     <partial name="Confirm" model="y"></partial>
 

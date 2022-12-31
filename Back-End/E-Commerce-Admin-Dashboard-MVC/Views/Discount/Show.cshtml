@@ -1,10 +1,13 @@
 ﻿@model IPagedList<Discount>
+@{
+    var Culture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
 
+}
 <table class="table table-hover">
     <thead>
         <tr>
             <th>@SharedLocalizer["Discount Name"]</th>
-            <th>@SharedLocalizer["Description"]</th>
+            <th>@SharedLocalizer["disc"]</th>
             <th>@SharedLocalizer["Discoun Percent"]</th>
             
             <th>@SharedLocalizer["CreatedAt"]</th>
@@ -24,21 +27,21 @@
 
                 };
             <tr>
-                <td>@item.Name</td>
-                @*<td>Not Avilable</td>*@
-                <td>@item.Description</td>
-                <td>@item.Disc_Percent</td>
-              @*  @if(item.products!=null)
+                @if (Culture == "ar-EG")
                 {
-                    <td>@item.products.Name</td>
-
+                    <td>@item.Name</td>
+                    <td>@item.DescriptionAr</td>
+                    <td>@item.Disc_Percent</td>
+                    <td>@item.created_at</td>
                 }
                 else
                 {
-                    <td>No Product To Show</td>
-
-                }*@
-                <td>@item.created_at</td>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                    <td>@item.Disc_Percent</td>
+                    <td>@item.created_at</td>
+                }
+                
                 <td>
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#@d">@SharedLocalizer["Delete"]</button>
                   @*  <a class="btn btn-danger" asp-action="Delete" asp-controller="Discount" asp-route-id="@item.Id">@SharedLocalizer["Delete"]</a>*@

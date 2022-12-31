@@ -14,8 +14,9 @@
                 <th scope="col">@SharedLocalizer["Total Price"]</th>
                 <th scope="col">@SharedLocalizer["User Full Name"]</th>
                 <th scope="col">@SharedLocalizer["User Email"]</th>
-                <th scope="col">@SharedLocalizer["Payment Details"]</th>
-                <th scope="col">@SharedLocalizer["status"]</th>
+@*                <th scope="col">@SharedLocalizer["Payment Details"]</th>
+                *@
+                <th scope="col">@SharedLocalizer["Status"]</th>
                 <th scope="col">@SharedLocalizer["Delete Order"]</th>
             </tr>
         </thead>
@@ -37,7 +38,7 @@
                     <td>@order.Total</td>
                     <td>@order.user.First_Name  @order.user.First_Name</td>
                     <td>@order.user.Email</td>
-                    <td>@order.Payment_id</td>
+                    @*<td>@order.Payment_id</td>*@
                     <td>
                         <a type="button" class="btn btn-success" asp-controller="Order" asp-action="ChangeOrderProgressShipping" asp-route-id="@order.Id">@SharedLocalizer["shipped"]</a>
                     </td>

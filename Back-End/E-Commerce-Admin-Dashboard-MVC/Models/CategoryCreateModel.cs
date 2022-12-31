@@ -13,11 +13,20 @@ namespace E_Commerce_Admin_Dashboard_MVC.Models
         [Required(ErrorMessage = "Required")]
         [MinLength(4, ErrorMessage = "MinLength")]
          public string Name { get; set; }
+        [Display(Name = "CategoryName")]
+        [Required(ErrorMessage = "Required")]
+        [MinLength(4, ErrorMessage = "MinLength")]
+        public string NameAr { get; set; }
         [MinLength(4, ErrorMessage = "MinLength")]
         [Display(Name = "Description")]
         [Required(ErrorMessage = "Required")]
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
+        [MinLength(4, ErrorMessage = "MinLength")]
+        [Display(Name = "Description")]
+        [Required(ErrorMessage = "Required")]
+        [DataType(DataType.MultilineText)]
+        public string DescriptionAr { get; set; }
         public DateTime created_at { get; set; } = DateTime.Now;
         public DateTime modified_at { get; set; }= DateTime.Now;
         public DateTime deleted_at { get; set; }=DateTime.Now;
