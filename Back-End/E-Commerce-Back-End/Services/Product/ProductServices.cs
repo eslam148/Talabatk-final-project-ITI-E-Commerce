@@ -136,6 +136,8 @@ namespace E_Commerce_Back_End
             prod.Name = product.Name;
             prod.discount_Id = product.DiscountID;
             prod.Description = product.Description;
+            prod.NameAr = product.NameAr;
+            prod.DescriptionAr = product.DescriptionAr;
             prod.SubCategories_Id = product.subCategory;
             prod.Price=product.Price;
             prod.Quantity = product.Quantity;
