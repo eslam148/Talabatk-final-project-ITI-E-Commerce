@@ -90,10 +90,10 @@ namespace E_Commerce_Admin_Dashboard_MVC
             //read from Files
             app.UseStaticFiles(new StaticFileOptions()
             {
-                RequestPath = "/Content",
+                RequestPath = "/wwwroot",
                 FileProvider = new PhysicalFileProvider
             (Path.Combine(Directory.GetCurrentDirectory(),
-            "Content"))
+            "wwwroot"))
             });
             //Localiztion
             var supportedCultures = new[] {

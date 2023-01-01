@@ -50,7 +50,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
                     // ProductId = product.No,
                 });
                 FileStream fs = new FileStream(Path.Combine(Directory.GetCurrentDirectory(),
-                    "Content", "Images", newName)
+                    "wwwroot", "Images", newName)
                     , FileMode.OpenOrCreate, FileAccess.ReadWrite);
                 img.CopyTo(fs);
                 fs.Position = 0;
