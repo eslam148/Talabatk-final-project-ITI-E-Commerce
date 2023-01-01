@@ -35,6 +35,7 @@ namespace E_Commerce_Admin_Dashboard_MVC
                 var disc = new Discount {
                     Name=discM.Name,
                     Description=discM.Description,
+                    DescriptionAr = discM.DescriptionAr,
                     Disc_Percent=discM.Disc_Percent,
                     created_at=DateTime.Now,
                     modified_at=DateTime.Now,
