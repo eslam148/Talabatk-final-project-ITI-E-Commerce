@@ -456,4 +456,13 @@
   <data name="disc" xml:space="preserve">
     <value>الوصف</value>
   </data>
+  <data name="Confirm Password" xml:space="preserve">
+    <value>تأكيد الرقم السري</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>الرقم السري</value>
+  </data>
+  <data name="Phone Number" xml:space="preserve">
+    <value>رقم التليفون</value>
+  </data>
 </root>
